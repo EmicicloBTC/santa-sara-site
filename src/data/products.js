@@ -1,4 +1,17 @@
-/** @typedef {{ id: number, title: string, kind: string, price: string, status: string, family: string, claim: string, colors: string[], shape: 'lamp'|'vase'|'bottle'|'plate'|'tile', photo: string }} Product */
+/**
+ * @typedef {object} Product
+ * @property {number} id
+ * @property {string} title
+ * @property {string} kind
+ * @property {string} price
+ * @property {string} status
+ * @property {string} family
+ * @property {string} claim
+ * @property {string[]} colors
+ * @property {'lamp'|'vase'|'bottle'|'plate'|'tile'} shape
+ * @property {string} photo — immagine principale in lista / hero (path tipo "/images/nome.jpg")
+ * @property {string[]} [gallery] — altre foto dello stesso pezzo (solo nella scheda dettaglio: grande + miniature)
+ */
 
 /** @type {Product[]} */
 export const works = [
@@ -12,7 +25,8 @@ export const works = [
     claim: "Viola lucido, figure femminili, tensione classica.",
     colors: ["#2b133f", "#7d42a1", "#efc081", "#111111"],
     shape: "lamp",
-    photo: "",
+    photo: "/images/Florence.png",
+    // gallery: ["/images/Florence-dettaglio.png"], // più foto: aggiungi file in public/images e path qui
   },
   {
     id: 2,
@@ -77,6 +91,26 @@ export const works = [
 ];
 
 export const families = ["tutti", "vasi", "lampade", "piatti", "bottiglie", "mattonelle"];
+
+/** Tutte le URL foto del pezzo: prima `photo`, poi `gallery` senza duplicati. */
+export function productImages(item) {
+  const out = [];
+  const push = (u) => {
+    const s = typeof u === "string" ? u.trim() : "";
+    if (s && !out.includes(s)) out.push(s);
+  };
+  push(item.photo);
+  if (Array.isArray(item.gallery)) {
+    for (const u of item.gallery) push(u);
+  }
+  return out;
+}
+
+/** Copertina lista / hero: prima immagine disponibile. */
+export function primaryPhoto(item) {
+  const imgs = productImages(item);
+  return imgs[0] ?? "";
+}
 
 export function assertProductData() {
   const hasValidWorks = works.every(

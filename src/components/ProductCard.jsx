@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { primaryPhoto } from "../data/products.js";
 import { Bag } from "./icons.jsx";
 import { CeramicVisual } from "./CeramicVisual.jsx";
 
@@ -21,7 +22,7 @@ export function ProductCard({ item, index, onSelect, isSelected = false }) {
         className="block w-full text-left"
       >
         <div className="relative aspect-[4/5] border-b border-stone-950">
-          <CeramicVisual item={item} />
+          <CeramicVisual item={item} photoSrc={primaryPhoto(item) || undefined} />
         </div>
         <div className="p-4 sm:p-5">
           <div className="mb-4 flex items-center justify-between gap-3 text-[11px] uppercase tracking-[0.24em] text-stone-600">

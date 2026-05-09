@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 
-export function CeramicVisual({ item, hero = false }) {
+export function CeramicVisual({ item, hero = false, photoSrc }) {
   const [a, b, c, d] = item.colors;
+  const resolvedPhoto = (photoSrc ?? item.photo ?? "").trim();
 
-  if (item.photo && item.photo.trim() !== "") {
+  if (resolvedPhoto) {
     return (
       <div className="relative h-full w-full overflow-hidden bg-stone-900">
         <img
-          src={item.photo}
+          src={resolvedPhoto}
           alt={item.title}
           loading={hero ? "eager" : "lazy"}
           decoding="async"

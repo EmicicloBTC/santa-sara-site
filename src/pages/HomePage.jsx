@@ -1,11 +1,12 @@
 import React, { useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { works, families } from "../data/products.js";
+import { works, families, primaryPhoto } from "../data/products.js";
 import { Arrow, Close, Menu } from "../components/icons.jsx";
 import { CeramicVisual } from "../components/CeramicVisual.jsx";
 import { NoiseLayer } from "../components/NoiseLayer.jsx";
 import { Marquee } from "../components/Marquee.jsx";
 import { ProductCard } from "../components/ProductCard.jsx";
+import { ProductDetailGallery } from "../components/ProductDetailGallery.jsx";
 
 export default function HomePage() {
   const operaPanelRef = useRef(null);
@@ -135,10 +136,10 @@ export default function HomePage() {
             </div>
 
             <div className="absolute right-[4%] top-[22%] h-[42%] w-[52%] max-w-[280px] rotate-[4deg] overflow-hidden rounded-[1.4rem] border border-stone-950 shadow-[10px_10px_0_#111] sm:h-[48%] sm:max-w-[360px] sm:rounded-[2rem] md:right-[8%] md:top-[16%] md:h-[58%] md:w-[48%] md:max-w-[520px] md:rotate-[5deg]">
-              <CeramicVisual item={selected} hero />
+              <CeramicVisual item={selected} hero photoSrc={primaryPhoto(selected) || undefined} />
             </div>
             <div className="absolute left-[6%] top-[48%] hidden h-[22%] w-[24%] -rotate-[8deg] overflow-hidden rounded-[1.6rem] border border-stone-950 shadow-[7px_7px_0_#111] md:block">
-              <CeramicVisual item={works[1]} />
+              <CeramicVisual item={works[1]} photoSrc={primaryPhoto(works[1]) || undefined} />
             </div>
           </div>
 
@@ -239,8 +240,8 @@ export default function HomePage() {
             </AnimatePresence>
           </div>
 
-          <div className="min-h-[360px] overflow-hidden rounded-[2rem] border border-stone-950 shadow-[12px_12px_0_#111] sm:min-h-[480px] lg:min-h-[560px] sm:rounded-[2.4rem]">
-            <CeramicVisual item={selected} hero />
+          <div className="min-h-[360px] overflow-hidden rounded-[2rem] border border-stone-950 bg-[#111] shadow-[12px_12px_0_#111] sm:min-h-[480px] lg:min-h-[560px] sm:rounded-[2.4rem]">
+            <ProductDetailGallery item={selected} />
           </div>
         </div>
       </section>
