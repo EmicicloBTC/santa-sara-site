@@ -6,7 +6,7 @@ export function CeramicVisual({ item, hero = false, photoSrc }) {
 
   if (resolvedPhoto) {
     return (
-      <div className="relative h-full w-full overflow-hidden bg-stone-900">
+      <div className="relative h-full w-full overflow-hidden bg-[#14110f]">
         <img
           src={resolvedPhoto}
           alt={item.title}
@@ -14,10 +14,14 @@ export function CeramicVisual({ item, hero = false, photoSrc }) {
           decoding="async"
           className="h-full w-full object-cover"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
-        <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 text-white">
-          <p className="max-w-[12rem] font-serif text-2xl leading-none md:text-3xl drop-shadow-md">{item.title}</p>
-          <p className="text-xs uppercase tracking-[0.26em] drop-shadow-md">{item.status}</p>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
+        <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 text-white sm:bottom-5 sm:left-5 sm:right-5">
+          <p className="max-w-[14rem] font-serif text-2xl font-light leading-[1.05] tracking-[-0.015em] md:text-3xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
+            {item.title}
+          </p>
+          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/85 drop-shadow-[0_1px_3px_rgba(0,0,0,0.45)]">
+            {item.status}
+          </p>
         </div>
       </div>
     );
@@ -59,9 +63,9 @@ export function CeramicVisual({ item, hero = false, photoSrc }) {
         <div className="absolute left-[18%] top-[67%] h-[4px] w-[62%] rotate-[7deg] rounded-full" style={{ background: d }} />
       </motion.div>
 
-      <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 text-white mix-blend-difference">
-        <p className="max-w-[12rem] font-serif text-2xl leading-none md:text-3xl">{item.title}</p>
-        <p className="text-xs uppercase tracking-[0.26em]">{item.status}</p>
+      <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 text-white mix-blend-difference sm:bottom-5 sm:left-5 sm:right-5">
+        <p className="max-w-[14rem] font-serif text-2xl font-light leading-[1.05] tracking-[-0.015em] md:text-3xl">{item.title}</p>
+        <p className="text-[10px] font-medium uppercase tracking-[0.3em]">{item.status}</p>
       </div>
     </div>
   );
