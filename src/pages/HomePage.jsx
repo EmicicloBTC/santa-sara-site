@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { works, families } from "../data/products.js";
 import { Arrow, Close, Menu } from "../components/icons.jsx";
@@ -8,9 +8,19 @@ import { Marquee } from "../components/Marquee.jsx";
 import { ProductCard } from "../components/ProductCard.jsx";
 
 export default function HomePage() {
+  const operaPanelRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFamily, setActiveFamily] = useState("tutti");
   const [selected, setSelected] = useState(works[0]);
+
+  function handleSelectProduct(item, { scroll = true } = {}) {
+    setSelected(item);
+    if (scroll && operaPanelRef.current) {
+      requestAnimationFrame(() => {
+        operaPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }
 
   const filteredWorks = useMemo(() => {
     if (activeFamily === "tutti") return works;
@@ -184,13 +194,24 @@ export default function HomePage() {
 
           <div id="opere" className="grid gap-7 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
             {filteredWorks.map((item, index) => (
-              <ProductCard key={item.id} item={item} index={index} onSelect={setSelected} />
+              <ProductCard
+                key={item.id}
+                item={item}
+                index={index}
+                isSelected={selected.id === item.id}
+                onSelect={(product) => handleSelectProduct(product)}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-4 pb-16 md:px-7 md:pb-28">
+      <section
+        ref={operaPanelRef}
+        id="opera-selezionata"
+        className="scroll-mt-28 px-4 pb-16 md:scroll-mt-32 md:px-7 md:pb-28"
+        aria-label="Dettaglio opera selezionata"
+      >
         <div className="mx-auto grid max-w-[1520px] gap-6 lg:grid-cols-[1fr_1fr]">
           <div className="overflow-hidden rounded-[2rem] border border-stone-950 bg-[#c9ff3d] p-5 shadow-[12px_12px_0_#111] sm:rounded-[2.4rem] sm:p-6 md:p-10">
             <p className="text-xs font-black uppercase tracking-[0.3em]">opera selezionata</p>

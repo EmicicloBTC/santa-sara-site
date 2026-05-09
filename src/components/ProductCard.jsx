@@ -2,16 +2,24 @@ import { motion } from "framer-motion";
 import { Bag } from "./icons.jsx";
 import { CeramicVisual } from "./CeramicVisual.jsx";
 
-export function ProductCard({ item, index, onSelect }) {
+export function ProductCard({ item, index, onSelect, isSelected = false }) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 35 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.55, delay: index * 0.05 }}
-      className="group relative overflow-hidden rounded-[2rem] border border-stone-950 bg-[#f8f1e6] shadow-[9px_9px_0_#111] transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[15px_15px_0_#111]"
+      className={`group relative overflow-hidden rounded-[2rem] border bg-[#f8f1e6] shadow-[9px_9px_0_#111] transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[15px_15px_0_#111] ${
+        isSelected ? "border-stone-950 ring-4 ring-[#ff4f2f] ring-offset-2 ring-offset-[#f4efe6]" : "border-stone-950"
+      }`}
     >
-      <button type="button" onClick={() => onSelect(item)} className="block w-full text-left">
+      <button
+        type="button"
+        onClick={() => onSelect(item)}
+        aria-pressed={isSelected}
+        aria-label={`Apri dettaglio ${item.title}`}
+        className="block w-full text-left"
+      >
         <div className="relative aspect-[4/5] border-b border-stone-950">
           <CeramicVisual item={item} />
         </div>
