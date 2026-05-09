@@ -87,6 +87,8 @@ export const works = [
     colors: ["#5c1a2e", "#f4e4dc", "#c9a227", "#1a1a1a"],
     shape: "vase",
     photo: "/images/Romance.jpg",
+    // TEST galleria: stesso file ripetuto 10 URL diversi (?g=) perché productImages non duplica stringhe uguali. Rimuovi `gallery` dopo il test.
+    gallery: [2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => `/images/Romance.jpg?g=${n}`),
   },
 ];
 
