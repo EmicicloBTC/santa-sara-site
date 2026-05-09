@@ -1,0 +1,22 @@
+SANTA SARA — Guida rapida (senza terminale)
+
+1) Devi avere Node.js installato (gratis): https://nodejs.org — scegli "LTS", installa, riavvia il PC se serve.
+
+2) Anteprima sul tuo computer:
+   - Doppio clic su: AVVIA-SITO.bat
+   - Nel browser apri l'indirizzo che compare (es. http://localhost:5173)
+
+3) Mettere il sito online su Netlify:
+   - Apri e segui: NETLIFY-PASSO-PASSO.txt (due modi: trascina cartella oppure script)
+   - Metodo veloce: account su https://www.netlify.com → CREA-PER-NETLIFY.bat
+     → trascina la cartella "dist" su Netlify (Deploy manually)
+   - Metodo da PC (dopo login): ACCEDI-NETLIFY.bat → COLLEGA-SITO-UNAVOLTA.bat
+     (solo la prima volta) → poi ogni volta DEPLOY-NETLIFY.bat
+
+4) Foto prodotti:
+   - Metti le immagini in: public\images\
+   - Apri con Blocco note o Cursor il file: src\data\products.js
+   - Per un pezzo imposta: photo: "/images/nomefile.jpg"
+   - Poi di nuovo CREA-PER-NETLIFY.bat e ricarica su Netlify
+
+5) Se qualcosa non funziona, apri Cursor, incolla l'errore nella chat con l'assistente.

@@ -1,0 +1,120 @@
+================================================================================
+  SANTA SARA — Netlify: guida passo passo (italiano)
+================================================================================
+
+Perché non può farlo qualcun altro al posto tuo
+  Netlify deve sapere che sei TU. Il login si apre nel TUO browser o nel TUO
+  terminale: senza quello, nessun deploy è possibile (né da Cursor né da altri).
+
+--------------------------------------------------------------------------------
+  MODALITÀ A — LA PIÙ SEMPLICE (trascina la cartella, senza “netlify login”)
+--------------------------------------------------------------------------------
+
+  Passo 1 — Account
+    • Apri il browser e vai su: https://www.netlify.com
+    • Clicca Sign up (registrati) e crea un account gratuito
+      (puoi usare email, oppure “Continua con Google”).
+
+  Passo 2 — Crea la cartella da pubblicare
+    • Sul PC, vai nella cartella del progetto Santa Sara.
+    • Doppio clic su: CREA-PER-NETLIFY.bat
+    • Aspetta che finisca: si aprirà Esplora file sulla cartella “dist”.
+
+  Passo 3 — Carica su Netlify
+    • Nel sito Netlify, dopo aver fatto login, cerca un pulsante tipo:
+        “Add new site”  oppure  “Add site”
+    • Scegli: “Deploy manually”  oppure  “Import an existing project”
+      e poi l’opzione per caricare una cartella / drag and drop
+      (a volte è sotto “Deploy without Git” o “Try Netlify Drop”).
+    • TRASCINA dentro la finestra del browser l’intera cartella DIST
+      (quella che si è aperta con CREA-PER-NETLIFY.bat).
+    • Aspetta qualche secondo: Netlify ti mostra un link, tipo
+      https://qualcosa.netlify.app  — è il tuo sito online.
+
+  Passo 4 — Aggiornare il sito dopo modifiche
+    • Ogni volta che cambi testi o foto: di nuovo CREA-PER-NETLIFY.bat
+    • Poi su Netlify: stesso sito → “Deploys” → trascina di nuovo “dist”
+      (oppure “Deploy site” / upload — dipende dalla nuova interfaccia).
+
+--------------------------------------------------------------------------------
+  MODALITÀ B — DA PC (login una volta, poi un solo file .bat per pubblicare)
+--------------------------------------------------------------------------------
+
+  Ordine da fare UNA VOLTA:
+
+    1) ACCEDI-NETLIFY.bat
+       • Si apre il browser: accedi a Netlify e autorizza.
+       • Quando vedi “You are logged in”, torna alla finestra nera e premi un tasto.
+
+    2) COLLEGA-SITO-UNAVOLTA.bat
+       • Rispondi alle domande nel terminale (freccette e Invio).
+       • Scegli di creare un sito NUOVO e dagli un nome (es. santa-sara).
+       • Alla fine nella cartella del progetto compare una sottocartella
+         nascosta “.netlify”: è normale.
+
+  Ogni volta che vuoi pubblicare le ultime modifiche:
+
+    3) DEPLOY-NETLIFY.bat
+       • Ricompila il sito e lo manda in produzione su Netlify.
+       • Alla fine ti mostra di nuovo l’URL del sito.
+
+  Se DEPLOY-NETLIFY.bat chiede ancora il login, esegui di nuovo ACCEDI-NETLIFY.bat.
+
+--------------------------------------------------------------------------------
+  MODALITÀ C — GITHUB + NETLIFY (deploy automatico ad ogni push)
+--------------------------------------------------------------------------------
+
+  Così funziona:
+    • Il codice sta su GitHub.
+    • Netlify è collegato al repository: ogni volta che fai PUSH sul branch
+      principale (es. main), Netlify esegue da solo “npm install” + “npm run build”
+      e pubblica la cartella dist.
+    • Non serve più trascinare “dist”.
+
+  Cosa NON può fare nessuno al posto tuo (nemmeno Cursor):
+    • Creare il repository sul TUO GitHub e autorizzare Netlify: serve il TUO login
+      nel browser una volta.
+
+  Cosa puoi fare dopo il collegamento:
+    • Modifiche nel progetto → commit → push su GitHub → il sito si aggiorna solo.
+
+  Passi (una volta sola):
+
+    1) Su GitHub (github.com): New repository → nome es. santa-sara-site → crea
+       (senza obbligo di README se poi carichi da PC).
+
+    2) Sul PC, nella cartella del progetto (dove c’è package.json), apri
+       terminale o Cursor e incolla questi comandi (sostituisci TUO-USER e NOME-REPO):
+
+          git init
+          git add .
+          git commit -m "Santa Sara: primo push"
+          git branch -M main
+          git remote add origin https://github.com/TUO-USER/NOME-REPO.git
+          git push -u origin main
+
+       Se GitHub chiede login, usa le sue istruzioni (browser o token).
+
+    3) Su Netlify: “Add new project” → “Import an existing project” → GitHub.
+       Autorizza Netlify ad accedere ai repo se richiesto.
+       Scegli il repository santa-sara-site.
+
+    4) Impostazioni build (Netlify spesso le legge da netlify.toml già nel progetto):
+       • Build command: npm run build
+       • Publish directory: dist
+       Branch: main → Deploy.
+
+    5) Opzionale: il vecchio sito fatto con Drop (es. clinquant-dragon-…) puoi
+       tenerlo come test o eliminarlo da Team → Sites, per non confonderti.
+
+  Il file netlify.toml nel progetto contiene già command e publish corretti.
+
+--------------------------------------------------------------------------------
+  Se qualcosa va storto
+--------------------------------------------------------------------------------
+
+  • Copia TUTTO il testo dalla finestra nera (nero/cmd) e incollalo in Cursor
+    nella chat: così si capisce l’errore.
+  • Verifica che Node sia installato: https://nodejs.org (versione LTS).
+
+================================================================================

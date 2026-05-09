@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output (Netlify la ricrea con npm run build)
+dist/
+
+# Local env / secrets
+.env
+.env.*
+
+# Logs & OS
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Netlify local link (opzionale: alcuni preferiscono committarlo per CI)
+.netlify/
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
