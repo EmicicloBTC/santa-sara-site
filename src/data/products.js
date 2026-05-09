@@ -9,8 +9,10 @@
  * @property {string} claim
  * @property {string[]} colors
  * @property {'lamp'|'vase'|'bottle'|'plate'|'tile'} shape
- * @property {string} photo — immagine principale in lista / hero (path tipo "/images/nome.jpg")
- * @property {string[]} [gallery] — altre foto dello stesso pezzo (solo nella scheda dettaglio: grande + miniature)
+ * @property {string} [photo] — singola immagine o copertina se non usi imagesFolder
+ * @property {string[]} [gallery] — altri path manuali (nessun autoplay speciale: conta come più URL)
+ * @property {{ slug: string, count: number, ext?: string }} [imagesFolder]
+ *   Cartella: public/images/products/{slug}/1.ext, 2.ext, … — slug minuscolo, senza spazi.
  */
 
 /** @type {Product[]} */
@@ -25,8 +27,8 @@ export const works = [
     claim: "Viola lucido, figure femminili, tensione classica.",
     colors: ["#2b133f", "#7d42a1", "#efc081", "#111111"],
     shape: "lamp",
-    photo: "/images/Florence.png",
-    // gallery: ["/images/Florence-dettaglio.png"], // più foto: aggiungi file in public/images e path qui
+    photo: "",
+    imagesFolder: { slug: "florence", count: 1, ext: ".png" },
   },
   {
     id: 2,
@@ -87,15 +89,26 @@ export const works = [
     colors: ["#5c1a2e", "#f4e4dc", "#c9a227", "#1a1a1a"],
     shape: "vase",
     photo: "/images/Romance.jpg",
-    // TEST galleria: stesso file ripetuto 10 URL diversi (?g=) perché productImages non duplica stringhe uguali. Rimuovi `gallery` dopo il test.
-    gallery: [2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => `/images/Romance.jpg?g=${n}`),
   },
 ];
 
 export const families = ["tutti", "vasi", "lampade", "piatti", "bottiglie", "mattonelle"];
 
-/** Tutte le URL foto del pezzo: prima `photo`, poi `gallery` senza duplicati. */
+function urlsFromImagesFolder(folder) {
+  if (!folder || typeof folder.slug !== "string") return [];
+  const slug = folder.slug.trim().toLowerCase().replace(/[^a-z0-9-]/g, "");
+  const count = Math.min(80, Math.max(0, Number(folder.count) || 0));
+  let ext = typeof folder.ext === "string" ? folder.ext.trim() : ".jpg";
+  if (!ext.startsWith(".")) ext = `.${ext}`;
+  if (!slug || count < 1) return [];
+  return Array.from({ length: count }, (_, i) => `/images/products/${slug}/${i + 1}${ext}`);
+}
+
+/** Tutte le URL foto: se c'è `imagesFolder` valido usa solo quello; altrimenti `photo` + `gallery`. */
 export function productImages(item) {
+  const fromFolder = urlsFromImagesFolder(item.imagesFolder);
+  if (fromFolder.length > 0) return fromFolder;
+
   const out = [];
   const push = (u) => {
     const s = typeof u === "string" ? u.trim() : "";

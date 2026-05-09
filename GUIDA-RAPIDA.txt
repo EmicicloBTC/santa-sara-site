@@ -14,9 +14,11 @@ SANTA SARA — Guida rapida (senza terminale)
      (solo la prima volta) → poi ogni volta DEPLOY-NETLIFY.bat
 
 4) Foto prodotti:
-   - Metti le immagini in: public\images\
-   - Apri con Blocco note o Cursor il file: src\data\products.js
-   - Per un pezzo imposta: photo: "/images/nomefile.jpg"
-   - Poi di nuovo CREA-PER-NETLIFY.bat e ricarica su Netlify
+   - Una sola foto: public\images\Nome.jpg + in src\data\products.js campo photo: "/images/Nome.jpg"
+   - Più foto numerate (carosello nel dettaglio): cartella public\images\products\nome-pezzo\
+     file 1.jpg, 2.jpg, 3.jpg … e in products.js:
+       imagesFolder: { slug: "nome-pezzo", count: 3, ext: ".jpg" }
+     slug = nome cartella (minuscolo, senza spazi). Se count > 1 il carosello cambia foto ogni 4 secondi (pausa col mouse sulla foto).
+   - Dopo modifiche: git push (Netlify aggiorna da solo se collegato a GitHub).
 
 5) Se qualcosa non funziona, apri Cursor, incolla l'errore nella chat con l'assistente.
