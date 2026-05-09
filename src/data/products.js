@@ -62,6 +62,18 @@ export const works = [
     shape: "tile",
     photo: "",
   },
+  {
+    id: 6,
+    title: "Romance",
+    kind: "Pezzo ornamentale",
+    price: "su richiesta",
+    status: "disponibile",
+    family: "vasi",
+    claim: "Decorazione a mano: sensualità barocca, ritmo contemporaneo.",
+    colors: ["#5c1a2e", "#f4e4dc", "#c9a227", "#1a1a1a"],
+    shape: "vase",
+    photo: "/images/Romance.jpg",
+  },
 ];
 
 export const families = ["tutti", "vasi", "lampade", "piatti", "bottiglie", "mattonelle"];
