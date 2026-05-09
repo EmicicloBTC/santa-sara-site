@@ -43,12 +43,12 @@ export default function HomePage() {
           <a href="#home" className="flex min-w-0 items-center gap-2 sm:gap-3" onClick={closeMenu}>
             <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-stone-950 bg-stone-950 font-serif text-sm text-white sm:h-11 sm:w-11">SS</div>
             <div className="min-w-0 leading-none">
-              <p className="truncate font-serif text-xl font-normal tracking-[-0.015em] sm:text-2xl">Santa Sara</p>
+              <p className="truncate font-serif text-xl tracking-[-0.05em] sm:text-2xl">Santa Sara</p>
               <p className="mt-1 text-[10px] uppercase tracking-[0.25em] text-stone-600">ornamental ceramics</p>
             </div>
           </a>
 
-          <nav className="hidden items-center gap-1 rounded-full border border-stone-950/90 bg-white/55 p-1 text-[11px] font-medium uppercase tracking-[0.22em] md:flex">
+          <nav className="hidden items-center gap-2 rounded-full border border-stone-950 bg-white/45 p-1 text-xs font-semibold uppercase tracking-[0.18em] md:flex">
             {["shop", "opere", "processo", "atelier"].map((item) => (
               <a key={item} href={`#${item}`} className="rounded-full px-4 py-2 transition hover:bg-stone-950 hover:text-white">
                 {item}
@@ -58,7 +58,7 @@ export default function HomePage() {
 
           <a
             href="#shop"
-            className="hidden items-center gap-2 rounded-full bg-[#b85245] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-white ring-1 ring-stone-950/90 transition duration-300 hover:bg-[#a04438] md:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-[#ff4f2f] px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-stone-950 ring-1 ring-stone-950 transition hover:-rotate-2 md:inline-flex"
           >
             vedi shop <Arrow size={15} />
           </a>
@@ -76,7 +76,7 @@ export default function HomePage() {
 
         {menuOpen && (
           <div className="border-t border-stone-950 bg-[#f4efe6] px-5 py-5 md:hidden">
-            <nav className="grid gap-3 text-sm font-semibold uppercase tracking-[0.18em]" aria-label="Navigazione mobile">
+            <nav className="grid gap-3 text-sm font-black uppercase tracking-[0.18em]" aria-label="Navigazione mobile">
               <a href="#shop" className="py-1" onClick={closeMenu}>
                 Shop
               </a>
@@ -89,7 +89,7 @@ export default function HomePage() {
               <a href="#atelier" className="py-1" onClick={closeMenu}>
                 Atelier
               </a>
-              <a href="#shop" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#b85245] px-4 py-3 text-center text-white ring-1 ring-stone-950/90" onClick={closeMenu}>
+              <a href="#shop" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#ff4f2f] px-4 py-3 text-center ring-1 ring-stone-950" onClick={closeMenu}>
                 vedi shop <Arrow size={15} />
               </a>
             </nav>
@@ -98,76 +98,69 @@ export default function HomePage() {
       </header>
 
       <section id="home" className="relative overflow-hidden px-4 pb-16 pt-24 sm:pt-28 md:px-7 md:pb-24 md:pt-32">
-        <div className="absolute left-0 top-16 hidden h-px w-full bg-stone-950/15 md:block" />
+        <div className="absolute left-0 top-16 hidden h-px w-full bg-stone-950 md:block" />
         <div className="mx-auto grid max-w-[1520px] gap-6 lg:grid-cols-[1.15fr_.85fr]">
-          <div className="relative min-h-[520px] overflow-hidden rounded-[2rem] border border-stone-950 bg-[#f8f1e6] p-4 shadow-[0_28px_60px_-22px_rgba(20,17,15,0.32)] sm:rounded-[2.4rem] sm:p-5 md:p-8 lg:min-h-[680px] xl:min-h-[760px]">
-            <div className="absolute right-3 top-3 z-10 rounded-full border border-stone-950/90 bg-[#c8a866] px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.32em] text-stone-950 sm:right-5 sm:top-5 sm:px-4 sm:py-2 sm:text-[11px]">
+          <div className="relative min-h-[520px] overflow-hidden rounded-[2rem] border border-stone-950 bg-[#f8f1e6] p-4 shadow-[12px_12px_0_#111] sm:rounded-[2.4rem] sm:p-5 md:p-8 lg:min-h-[680px] xl:min-h-[760px]">
+            <div className="absolute right-3 top-3 z-10 rounded-full border border-stone-950 bg-[#c9ff3d] px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] sm:right-5 sm:top-5 sm:px-4 sm:py-2 sm:text-xs">
               shop / gallery
             </div>
 
             <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="relative z-10 max-w-[980px] pr-[42%] sm:pr-0">
-              <p className="mt-12 text-[10px] font-medium uppercase tracking-[0.42em] text-stone-600 sm:mt-14 sm:text-[11px] md:mt-8">
-                Ceramiche d'autore · fatte per non stare zitte
+              <p className="mt-12 text-[10px] font-black uppercase tracking-[0.35em] text-stone-600 sm:mt-14 sm:text-xs md:mt-8">
+                ceramiche d'autore · fatte per non stare zitte
               </p>
-              <h1 className="mt-6 font-serif text-[15vw] font-light leading-[0.86] tracking-[-0.035em] sm:mt-8 sm:text-[12vw] md:text-[9.5rem] lg:text-[11rem] xl:text-[13.5rem]">
+              <h1 className="mt-6 font-serif text-[15vw] leading-[0.73] tracking-[-0.1em] sm:mt-8 sm:text-[12vw] md:text-[9.5rem] lg:text-[11rem] xl:text-[13.5rem]">
                 Santa
-                <span className="block pl-[.18em] italic font-normal text-[#b85245]">Sara</span>
+                <span className="block pl-[.26em] italic text-[#ff4f2f]">Sara</span>
               </h1>
             </motion.div>
 
             <div className="absolute bottom-4 left-4 right-4 z-20 grid gap-4 sm:bottom-6 sm:left-5 sm:right-5 md:left-8 md:right-8 md:grid-cols-[.9fr_1.1fr] md:items-end">
-              <div className="rounded-[1.4rem] border border-stone-950 bg-white/80 p-5 backdrop-blur-xl sm:rounded-[1.7rem] sm:p-6">
-                <p className="font-serif text-2xl font-light leading-[1.05] tracking-[-0.02em] sm:text-3xl md:text-[2.85rem]">
-                  Oggetti decorati a mano.
-                  <span className="block italic text-stone-700">Con carattere, non con timidezza.</span>
-                </p>
+              <div className="rounded-[1.4rem] border border-stone-950 bg-white/75 p-4 backdrop-blur-xl sm:rounded-[1.7rem] sm:p-5">
+                <p className="font-serif text-2xl leading-none tracking-[-0.04em] sm:text-3xl md:text-5xl">Oggetti decorati a mano. Con carattere, non con timidezza.</p>
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 <a
                   href="#shop"
-                  className="group flex items-center justify-between rounded-full border border-stone-950 bg-stone-950 px-5 py-3.5 text-[11px] font-medium uppercase tracking-[0.32em] text-white transition duration-300 hover:bg-[#b85245] sm:px-6 sm:py-4"
+                  className="group flex items-center justify-between rounded-full border border-stone-950 bg-stone-950 px-4 py-3 font-black uppercase tracking-[0.14em] text-white transition hover:bg-[#ff4f2f] hover:text-stone-950 sm:px-5 sm:py-4"
                 >
                   vedi shop <Arrow className="transition group-hover:translate-x-1" />
                 </a>
                 <a
                   href="#processo"
-                  className="group flex items-center justify-between rounded-full border border-stone-950 bg-[#f4efe6] px-5 py-3.5 text-[11px] font-medium uppercase tracking-[0.32em] text-stone-950 transition duration-300 hover:bg-[#c8a866] sm:px-6 sm:py-4"
+                  className="group flex items-center justify-between rounded-full border border-stone-950 bg-[#f4efe6] px-4 py-3 font-black uppercase tracking-[0.14em] transition hover:bg-[#c9ff3d] sm:px-5 sm:py-4"
                 >
                   il processo <Arrow className="transition group-hover:translate-x-1" />
                 </a>
               </div>
             </div>
 
-            <div className="absolute right-[4%] top-[22%] h-[42%] w-[52%] max-w-[280px] rotate-[4deg] overflow-hidden rounded-[1.4rem] border border-stone-950 shadow-[0_22px_55px_-22px_rgba(20,17,15,0.28)] sm:h-[48%] sm:max-w-[360px] sm:rounded-[2rem] md:right-[8%] md:top-[16%] md:h-[58%] md:w-[48%] md:max-w-[520px] md:rotate-[5deg]">
+            <div className="absolute right-[4%] top-[22%] h-[42%] w-[52%] max-w-[280px] rotate-[4deg] overflow-hidden rounded-[1.4rem] border border-stone-950 shadow-[10px_10px_0_#111] sm:h-[48%] sm:max-w-[360px] sm:rounded-[2rem] md:right-[8%] md:top-[16%] md:h-[58%] md:w-[48%] md:max-w-[520px] md:rotate-[5deg]">
               <CeramicVisual item={selected} hero photoSrc={primaryPhoto(selected) || undefined} />
             </div>
-            <div className="absolute left-[6%] top-[48%] hidden h-[22%] w-[24%] -rotate-[8deg] overflow-hidden rounded-[1.6rem] border border-stone-950 shadow-[0_14px_38px_-18px_rgba(20,17,15,0.22)] md:block">
+            <div className="absolute left-[6%] top-[48%] hidden h-[22%] w-[24%] -rotate-[8deg] overflow-hidden rounded-[1.6rem] border border-stone-950 shadow-[7px_7px_0_#111] md:block">
               <CeramicVisual item={works[1]} photoSrc={primaryPhoto(works[1]) || undefined} />
             </div>
           </div>
 
           <aside className="grid gap-6">
-            <div className="rounded-[2rem] border border-stone-950 bg-stone-950 p-6 text-[#f4efe6] shadow-[0_30px_70px_-22px_rgba(184,82,69,0.45)] sm:rounded-[2.4rem] md:p-8">
-              <p className="text-[11px] font-medium uppercase tracking-[0.42em] text-[#c8a866]">— Manifesto</p>
-              <h2 className="mt-6 font-serif text-4xl font-light leading-[1.02] tracking-[-0.03em] sm:text-5xl md:text-6xl lg:text-7xl">
-                Non souvenir.
-                <span className="block italic text-[#e6dccb]">Non bomboniere.</span>
-                Non cose carine.
-              </h2>
-              <p className="mt-7 max-w-xl text-base font-light leading-[1.7] text-stone-300 sm:mt-8 sm:text-lg">
+            <div className="rounded-[2rem] border border-stone-950 bg-stone-950 p-6 text-[#f4efe6] shadow-[12px_12px_0_#ff4f2f] sm:rounded-[2.4rem] md:p-8">
+              <p className="text-xs font-black uppercase tracking-[0.28em] text-[#c9ff3d]">manifesto</p>
+              <h2 className="mt-6 font-serif text-4xl leading-[0.9] tracking-[-0.08em] sm:text-5xl md:text-6xl lg:text-7xl">Non souvenir. Non bomboniere. Non cose carine.</h2>
+              <p className="mt-6 max-w-xl text-base leading-7 text-stone-300 sm:mt-8 sm:text-lg sm:leading-8">
                 Santa Sara è uno shop d'atelier: pezzi unici, decorazioni manuali, oggetti che sembrano usciti da una casa antica dopo una discussione con il presente.
               </p>
             </div>
 
-            <div className="grid grid-cols-3 overflow-hidden rounded-[2rem] border border-stone-950 bg-[#f8f1e6] text-center shadow-[0_18px_45px_-20px_rgba(20,17,15,0.25)]">
+            <div className="grid grid-cols-3 overflow-hidden rounded-[2rem] border border-stone-950 bg-[#f8f1e6] text-center shadow-[8px_8px_0_#111]">
               {[
                 ["1/1", "pezzi"],
                 ["hand", "painted"],
                 ["IT", "atelier"],
               ].map(([value, label]) => (
-                <div key={label} className="border-r border-stone-950 p-4 last:border-r-0 sm:p-6">
-                  <p className="font-serif text-2xl font-light tracking-[-0.015em] sm:text-4xl">{value}</p>
-                  <p className="mt-2 text-[9px] font-medium uppercase tracking-[0.32em] text-stone-600 sm:text-[10px]">{label}</p>
+                <div key={label} className="border-r border-stone-950 p-3 last:border-r-0 sm:p-5">
+                  <p className="font-serif text-2xl tracking-[-0.05em] sm:text-4xl">{value}</p>
+                  <p className="mt-2 text-[9px] font-black uppercase tracking-[0.2em] text-stone-600 sm:text-[10px]">{label}</p>
                 </div>
               ))}
             </div>
@@ -181,10 +174,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1520px]">
           <div className="mb-10 grid gap-8 lg:grid-cols-[.7fr_1.3fr] lg:items-end">
             <div>
-              <p className="text-[11px] font-medium uppercase tracking-[0.42em] text-stone-600">— Shop</p>
-              <h2 className="mt-4 font-serif text-5xl font-light leading-[1.02] tracking-[-0.03em] sm:text-6xl md:text-7xl lg:text-[7.5rem]">
-                Opere <span className="italic text-stone-700">disponibili</span>
-              </h2>
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-stone-600">shop</p>
+              <h2 className="mt-4 font-serif text-5xl leading-[0.85] tracking-[-0.08em] sm:text-6xl md:text-7xl lg:text-9xl">Opere disponibili</h2>
             </div>
             <div className="flex flex-wrap gap-2 lg:justify-end">
               {families.map((family) => (
@@ -192,10 +183,8 @@ export default function HomePage() {
                   key={family}
                   type="button"
                   onClick={() => setActiveFamily(family)}
-                  className={`rounded-full border px-4 py-2 text-[10px] font-medium uppercase tracking-[0.28em] transition duration-300 sm:px-5 sm:text-[11px] ${
-                    activeFamily === family
-                      ? "border-stone-950 bg-stone-950 text-white"
-                      : "border-stone-950/70 bg-white/55 text-stone-800 hover:border-stone-950 hover:bg-[#c8a866] hover:text-stone-950"
+                  className={`rounded-full border border-stone-950 px-3 py-2 text-[10px] font-black uppercase tracking-[0.16em] transition sm:px-4 sm:text-xs ${
+                    activeFamily === family ? "bg-stone-950 text-white" : "bg-white/45 hover:bg-[#c9ff3d]"
                   }`}
                 >
                   {family}
@@ -225,49 +214,44 @@ export default function HomePage() {
         aria-label="Dettaglio opera selezionata"
       >
         <div className="mx-auto grid max-w-[1520px] gap-6 lg:grid-cols-[1fr_1fr]">
-          <div className="overflow-hidden rounded-[2rem] border border-stone-950 bg-[#e7d8b3] p-6 shadow-[0_28px_60px_-22px_rgba(20,17,15,0.32)] sm:rounded-[2.4rem] sm:p-8 md:p-12">
-            <p className="text-[11px] font-medium uppercase tracking-[0.42em] text-stone-800">— Opera selezionata</p>
+          <div className="overflow-hidden rounded-[2rem] border border-stone-950 bg-[#c9ff3d] p-5 shadow-[12px_12px_0_#111] sm:rounded-[2.4rem] sm:p-6 md:p-10">
+            <p className="text-xs font-black uppercase tracking-[0.3em]">opera selezionata</p>
             <AnimatePresence mode="wait">
               <motion.div key={selected.id} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -18 }} transition={{ duration: 0.3 }}>
-                <h2 className="mt-6 font-serif text-5xl font-light leading-[1.02] tracking-[-0.03em] sm:text-6xl md:text-7xl lg:text-[7.5rem]">
-                  <span className="italic">{selected.title}</span>
-                </h2>
+                <h2 className="mt-6 font-serif text-5xl leading-[0.82] tracking-[-0.08em] sm:text-6xl md:text-7xl lg:text-9xl">{selected.title}</h2>
                 <div className="mt-8 grid gap-4 md:grid-cols-2">
-                  <div className="rounded-[1.25rem] border border-stone-950/80 bg-[#f4efe6] p-5">
-                    <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-600">Tipologia</p>
-                    <p className="mt-2 font-serif text-2xl font-normal tracking-[-0.015em]">{selected.kind}</p>
+                  <div className="rounded-[1.5rem] border border-stone-950 bg-[#f4efe6] p-5">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-stone-600">tipologia</p>
+                    <p className="mt-2 text-xl font-bold">{selected.kind}</p>
                   </div>
-                  <div className="rounded-[1.25rem] border border-stone-950/80 bg-[#f4efe6] p-5">
-                    <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-600">Prezzo</p>
-                    <p className="mt-2 font-serif text-2xl font-normal tracking-[-0.015em]">{selected.price}</p>
+                  <div className="rounded-[1.5rem] border border-stone-950 bg-[#f4efe6] p-5">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-stone-600">prezzo</p>
+                    <p className="mt-2 text-xl font-bold">{selected.price}</p>
                   </div>
                 </div>
-                <p className="mt-8 max-w-2xl text-lg font-light leading-[1.7] text-stone-800 sm:text-xl">{selected.claim}</p>
+                <p className="mt-7 max-w-2xl text-lg leading-8 sm:text-xl">{selected.claim}</p>
                 <a
                   href="#shop"
-                  className="mt-10 inline-flex items-center gap-3 rounded-full border border-stone-950 bg-stone-950 px-7 py-4 text-[11px] font-medium uppercase tracking-[0.32em] text-white transition duration-300 hover:bg-[#b85245]"
+                  className="mt-8 inline-flex items-center gap-3 rounded-full border border-stone-950 bg-stone-950 px-6 py-4 text-sm font-black uppercase tracking-[0.16em] text-white transition hover:-rotate-1 hover:bg-[#ff4f2f] hover:text-stone-950"
                 >
-                  Chiedi disponibilità <Arrow />
+                  chiedi disponibilità <Arrow />
                 </a>
               </motion.div>
             </AnimatePresence>
           </div>
 
-          <div className="min-h-[360px] overflow-hidden rounded-[2rem] border border-stone-950 bg-[#14110f] shadow-[0_28px_60px_-22px_rgba(20,17,15,0.32)] sm:min-h-[480px] lg:min-h-[560px] sm:rounded-[2.4rem]">
+          <div className="min-h-[360px] overflow-hidden rounded-[2rem] border border-stone-950 bg-[#111] shadow-[12px_12px_0_#111] sm:min-h-[480px] lg:min-h-[560px] sm:rounded-[2.4rem]">
             <ProductDetailGallery item={selected} />
           </div>
         </div>
       </section>
 
-      <section id="processo" className="border-y border-stone-950 bg-[#14110f] px-4 py-20 text-[#f4efe6] md:px-7 md:py-32">
+      <section id="processo" className="border-y border-stone-950 bg-stone-950 px-4 py-16 text-[#f4efe6] md:px-7 md:py-28">
         <div className="mx-auto max-w-[1520px]">
-          <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-start lg:gap-16">
+          <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
             <div className="lg:sticky lg:top-28">
-              <p className="text-[11px] font-medium uppercase tracking-[0.42em] text-[#c8a866]">— Processo</p>
-              <h2 className="mt-5 font-serif text-5xl font-light leading-[1.02] tracking-[-0.03em] sm:text-6xl md:text-7xl lg:text-[7.5rem]">
-                Dal bianco
-                <span className="block italic text-[#c8a866]">al disturbo.</span>
-              </h2>
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-[#ff4f2f]">processo</p>
+              <h2 className="mt-5 font-serif text-5xl leading-[0.82] tracking-[-0.08em] sm:text-6xl md:text-7xl lg:text-9xl">Dal bianco al disturbo.</h2>
             </div>
 
             <div className="grid gap-4">
@@ -282,13 +266,12 @@ export default function HomePage() {
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                  className="grid gap-6 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-7 backdrop-blur-sm md:grid-cols-[120px_1fr] lg:grid-cols-[140px_1fr] md:p-9"
+                  className="grid gap-5 rounded-[2rem] border border-[#f4efe6] bg-white/[0.04] p-6 md:grid-cols-[120px_1fr] lg:grid-cols-[140px_1fr] md:p-8"
                 >
-                  <p className="font-serif text-5xl font-light leading-none text-[#c8a866] sm:text-6xl md:text-7xl">{num}</p>
+                  <p className="font-serif text-5xl leading-none text-[#c9ff3d] sm:text-6xl md:text-7xl">{num}</p>
                   <div>
-                    <h3 className="font-serif text-3xl font-light leading-[1.05] tracking-[-0.02em] sm:text-4xl">{title}</h3>
-                    <p className="mt-4 max-w-2xl text-base font-light leading-[1.75] text-stone-400 sm:text-lg">{text}</p>
+                    <h3 className="font-serif text-3xl leading-none tracking-[-0.05em] sm:text-4xl">{title}</h3>
+                    <p className="mt-4 max-w-2xl text-base leading-7 text-stone-300 sm:text-lg sm:leading-8">{text}</p>
                   </div>
                 </motion.div>
               ))}
@@ -299,29 +282,24 @@ export default function HomePage() {
 
       <section id="atelier" className="px-4 py-16 md:px-7 md:py-28">
         <div className="mx-auto grid max-w-[1520px] gap-6 lg:grid-cols-[1.2fr_.8fr]">
-          <div className="rounded-[2rem] border border-stone-950 bg-[#b85245] p-7 text-[#fbf7ef] shadow-[0_28px_60px_-22px_rgba(20,17,15,0.32)] sm:rounded-[2.4rem] sm:p-9 md:p-14">
-            <p className="text-[11px] font-medium uppercase tracking-[0.42em] text-[#fbf7ef]/85">— Atelier / brand</p>
-            <h2 className="mt-6 font-serif text-5xl font-light leading-[1.02] tracking-[-0.03em] sm:text-6xl md:text-7xl lg:text-[8rem]">
-              Barocco,
-              <span className="block italic">ma con le scarpe sporche.</span>
-            </h2>
-            <p className="mt-8 max-w-3xl text-lg font-light leading-[1.75] sm:text-xl">
+          <div className="rounded-[2rem] border border-stone-950 bg-[#ff4f2f] p-6 shadow-[12px_12px_0_#111] sm:rounded-[2.4rem] sm:p-7 md:p-12">
+            <p className="text-xs font-black uppercase tracking-[0.3em]">atelier / brand</p>
+            <h2 className="mt-6 font-serif text-5xl leading-[0.82] tracking-[-0.08em] sm:text-6xl md:text-7xl lg:text-[10rem]">Barocco, ma con le scarpe sporche.</h2>
+            <p className="mt-6 max-w-3xl text-lg leading-8 sm:mt-8 sm:text-xl sm:leading-9">
               Una direzione più forte per Santa Sara: non “ceramiche carine”, ma oggetti con una posizione. Decorazione classica, taglio contemporaneo, vendita pulita.
             </p>
           </div>
 
           <div className="grid gap-6">
-            <div className="rounded-[2rem] border border-stone-950 bg-[#f8f3ea] p-7 shadow-[0_22px_55px_-22px_rgba(20,17,15,0.28)] sm:rounded-[2.4rem] sm:p-8 md:p-10">
-              <p className="text-[10px] font-medium uppercase tracking-[0.42em] text-stone-600">— 01</p>
-              <h3 className="mt-3 font-serif text-3xl font-light leading-[1.05] tracking-[-0.02em] sm:text-4xl">Regola del sito</h3>
-              <p className="mt-5 text-base font-light leading-[1.75] text-stone-700 sm:text-lg">
+            <div className="rounded-[2rem] border border-stone-950 bg-[#f8f1e6] p-6 shadow-[10px_10px_0_#111] sm:rounded-[2.4rem] sm:p-7 md:p-9">
+              <h3 className="font-serif text-4xl leading-[0.9] tracking-[-0.07em] sm:text-5xl">Regola del sito</h3>
+              <p className="mt-5 text-base leading-7 text-stone-700 sm:text-lg sm:leading-8">
                 Ogni pagina deve vendere senza sembrare un mercatino. Foto grandi, testo secco, prezzo chiaro, pochi prodotti e identità forte.
               </p>
             </div>
-            <div className="rounded-[2rem] border border-stone-950 bg-white p-7 shadow-[0_22px_55px_-22px_rgba(20,17,15,0.28)] sm:rounded-[2.4rem] sm:p-8 md:p-10">
-              <p className="text-[10px] font-medium uppercase tracking-[0.42em] text-stone-600">— 02</p>
-              <h3 className="mt-3 font-serif text-3xl font-light leading-[1.05] tracking-[-0.02em] sm:text-4xl">Prossimo passo</h3>
-              <p className="mt-5 text-base font-light leading-[1.75] text-stone-700 sm:text-lg">
+            <div className="rounded-[2rem] border border-stone-950 bg-white p-6 shadow-[10px_10px_0_#111] sm:rounded-[2.4rem] sm:p-7 md:p-9">
+              <h3 className="font-serif text-4xl leading-[0.9] tracking-[-0.07em] sm:text-5xl">Prossimo passo</h3>
+              <p className="mt-5 text-base leading-7 text-stone-700 sm:text-lg sm:leading-8">
                 Quando inserisci le foto reali, questa struttura diventa un sito vero: home, shop, scheda prodotto, commissioni private e archivio opere vendute.
               </p>
             </div>
@@ -330,20 +308,17 @@ export default function HomePage() {
       </section>
 
       <section className="px-4 pb-16 md:px-7 md:pb-28">
-        <div className="mx-auto overflow-hidden rounded-[2rem] border border-stone-950 bg-[#f8f3ea] shadow-[0_28px_60px_-22px_rgba(20,17,15,0.32)] sm:rounded-[2.4rem]">
+        <div className="mx-auto overflow-hidden rounded-[2rem] border border-stone-950 bg-[#f8f1e6] shadow-[12px_12px_0_#111] sm:rounded-[2.4rem]">
           <div className="grid lg:grid-cols-[.9fr_1.1fr]">
-            <div className="border-b border-stone-950 p-7 md:p-14 lg:border-b-0 lg:border-r">
-              <p className="text-[11px] font-medium uppercase tracking-[0.42em] text-stone-600">— Drop alert</p>
-              <h2 className="mt-6 font-serif text-5xl font-light leading-[1.02] tracking-[-0.03em] sm:text-6xl md:text-7xl lg:text-[7rem]">
-                Nuovi pezzi.
-                <span className="block italic text-stone-700">Zero spam.</span>
-              </h2>
+            <div className="border-b border-stone-950 p-6 md:p-12 lg:border-b-0 lg:border-r">
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-stone-600">drop alert</p>
+              <h2 className="mt-6 font-serif text-5xl leading-[0.82] tracking-[-0.08em] sm:text-6xl md:text-7xl lg:text-9xl">Nuovi pezzi. Zero spam.</h2>
             </div>
-            <div className="flex flex-col justify-end p-7 md:p-14">
-              <p className="max-w-2xl text-lg font-light leading-[1.75] text-stone-700 sm:text-xl">
+            <div className="flex flex-col justify-end p-6 md:p-12">
+              <p className="max-w-2xl text-lg leading-8 text-stone-700 sm:text-xl sm:leading-9">
                 Una newsletter pensata non come riempitivo, ma come invito ai nuovi drop: quando arriva un pezzo nuovo, chi è dentro lo vede prima.
               </p>
-              <form className="mt-10 grid gap-3 md:grid-cols-[1fr_auto]" onSubmit={handleNewsletterSubmit} noValidate>
+              <form className="mt-8 grid gap-3 md:grid-cols-[1fr_auto]" onSubmit={handleNewsletterSubmit} noValidate>
                 <label htmlFor="newsletter-email" className="sr-only">
                   Email per la newsletter
                 </label>
@@ -352,14 +327,14 @@ export default function HomePage() {
                   name="email"
                   type="email"
                   autoComplete="email"
-                  placeholder="la tua email"
-                  className="h-14 rounded-full border border-stone-950 bg-white px-6 text-base font-light outline-none transition placeholder:text-stone-400 focus:border-[#b85245] focus:ring-2 focus:ring-[#b85245]/30 sm:h-16 sm:px-7"
+                  placeholder="email"
+                  className="h-14 rounded-full border border-stone-950 bg-white px-5 text-base outline-none focus:bg-[#c9ff3d] sm:h-16 sm:px-6"
                 />
                 <button
                   type="submit"
-                  className="h-14 rounded-full border border-stone-950 bg-stone-950 px-8 text-[11px] font-medium uppercase tracking-[0.32em] text-white transition duration-300 hover:bg-[#b85245] sm:h-16 sm:px-10"
+                  className="h-14 rounded-full border border-stone-950 bg-stone-950 px-6 text-sm font-black uppercase tracking-[0.16em] text-white transition hover:bg-[#ff4f2f] hover:text-stone-950 sm:h-16 sm:px-8"
                 >
-                  Avvisami
+                  avvisami
                 </button>
               </form>
             </div>
@@ -367,32 +342,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="border-t border-stone-950/80 px-4 py-10 md:px-7 md:py-12">
-        <div className="mx-auto flex max-w-[1520px] flex-col justify-between gap-6 md:flex-row md:items-center">
+      <footer className="border-t border-stone-950 px-4 py-8 md:px-7">
+        <div className="mx-auto flex max-w-[1520px] flex-col justify-between gap-5 md:flex-row md:items-center">
           <div>
-            <p className="font-serif text-3xl font-light leading-none tracking-[-0.02em] sm:text-4xl">
-              Santa <span className="italic text-[#b85245]">Sara</span>
-            </p>
-            <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.42em] text-stone-600">Ceramiche ornamentali decorate a mano</p>
+            <p className="font-serif text-3xl leading-none tracking-[-0.06em] sm:text-4xl">Santa Sara</p>
+            <p className="mt-2 text-xs font-black uppercase tracking-[0.22em] text-stone-600">ceramiche ornamentali decorate a mano</p>
           </div>
-          <div className="flex flex-wrap gap-2 text-[10px] font-medium uppercase tracking-[0.32em] sm:gap-3">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="rounded-full border border-stone-950/80 px-4 py-2 transition duration-300 hover:bg-stone-950 hover:text-white">
-              Instagram
+          <div className="flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.18em] sm:gap-3">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="rounded-full border border-stone-950 px-4 py-2 hover:bg-stone-950 hover:text-white">
+              instagram
             </a>
-            <a href="#shop" className="rounded-full border border-stone-950/80 px-4 py-2 transition duration-300 hover:bg-stone-950 hover:text-white">
-              Spedizioni
+            <a href="#shop" className="rounded-full border border-stone-950 px-4 py-2 hover:bg-stone-950 hover:text-white">
+              spedizioni
             </a>
-            <a href="#atelier" className="rounded-full border border-stone-950/80 px-4 py-2 transition duration-300 hover:bg-stone-950 hover:text-white">
-              Contatti
+            <a href="#atelier" className="rounded-full border border-stone-950 px-4 py-2 hover:bg-stone-950 hover:text-white">
+              contatti
             </a>
-            <a href="#home" className="rounded-full border border-stone-950/80 px-4 py-2 transition duration-300 hover:bg-stone-950 hover:text-white">
-              Privacy
+            <a href="#home" className="rounded-full border border-stone-950 px-4 py-2 hover:bg-stone-950 hover:text-white">
+              privacy
             </a>
           </div>
         </div>
-        <p className="mx-auto mt-8 max-w-[1520px] text-[10px] font-medium uppercase tracking-[0.32em] text-stone-500">
-          © {new Date().getFullYear()} Santa Sara · Atelier — Tutti i diritti riservati
-        </p>
       </footer>
     </main>
   );
