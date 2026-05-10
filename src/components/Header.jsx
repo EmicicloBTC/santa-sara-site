@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Close, Menu, Instagram } from "./icons.jsx";
+import { Close, Menu, Instagram, TikTok, ShoppingBag } from "./icons.jsx";
+import { site } from "../data/site.js";
 
 export function Header({ onOpenInfo }) {
   const [open, setOpen] = useState(false);
@@ -38,7 +39,7 @@ export function Header({ onOpenInfo }) {
 
         {open && (
           <div
-            className="absolute right-0 mt-2 w-56 overflow-hidden rounded-xl bg-white/85 text-stone-950 shadow-lg ring-1 ring-stone-950/15 backdrop-blur-xl"
+            className="absolute right-0 mt-2 w-60 overflow-hidden rounded-xl bg-white/85 text-stone-950 shadow-lg ring-1 ring-stone-950/15 backdrop-blur-xl"
             role="menu"
           >
             <button
@@ -50,18 +51,51 @@ export function Header({ onOpenInfo }) {
               Bio &amp; atelier
               <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">info</span>
             </button>
+
             <a
-              href="https://instagram.com"
+              href={site.social.etsy.url}
               target="_blank"
               rel="noopener noreferrer"
               role="menuitem"
               className="flex w-full items-center justify-between border-t border-stone-950/10 px-4 py-3 text-sm transition hover:bg-stone-950/5"
             >
-              Instagram
-              <Instagram size={15} />
+              <span className="flex items-center gap-2">
+                <ShoppingBag size={15} />
+                Etsy shop
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">acquista</span>
             </a>
+
             <a
-              href="mailto:hello@santasara.com"
+              href={site.social.instagram.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              role="menuitem"
+              className="flex w-full items-center justify-between border-t border-stone-950/10 px-4 py-3 text-sm transition hover:bg-stone-950/5"
+            >
+              <span className="flex items-center gap-2">
+                <Instagram size={15} />
+                Instagram
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{site.social.instagram.handle}</span>
+            </a>
+
+            <a
+              href={site.social.tiktok.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              role="menuitem"
+              className="flex w-full items-center justify-between border-t border-stone-950/10 px-4 py-3 text-sm transition hover:bg-stone-950/5"
+            >
+              <span className="flex items-center gap-2">
+                <TikTok size={15} />
+                TikTok
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{site.social.tiktok.handle}</span>
+            </a>
+
+            <a
+              href={`mailto:${site.email}`}
               role="menuitem"
               className="flex w-full items-center justify-between border-t border-stone-950/10 px-4 py-3 text-sm transition hover:bg-stone-950/5"
             >

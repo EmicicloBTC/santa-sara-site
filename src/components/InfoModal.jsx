@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Close } from "./icons.jsx";
+import { Close, Instagram, TikTok, ShoppingBag } from "./icons.jsx";
+import { site } from "../data/site.js";
 
 export function InfoModal({ open, onClose }) {
   useEffect(() => {
@@ -56,15 +57,50 @@ export function InfoModal({ open, onClose }) {
             </p>
             <p className="mt-4 text-base leading-[1.75] text-stone-700">
               Per disponibilità, commissioni private o visite all’atelier scrivere a{" "}
-              <a className="underline underline-offset-4 hover:text-stone-950" href="mailto:hello@santasara.com">
-                hello@santasara.com
-              </a>{" "}
-              oppure su{" "}
-              <a className="underline underline-offset-4 hover:text-stone-950" href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                Instagram
+              <a className="underline underline-offset-4 hover:text-stone-950" href={`mailto:${site.email}`}>
+                {site.email}
               </a>
               .
             </p>
+
+            <div className="mt-7 grid gap-2 sm:grid-cols-3">
+              <a
+                href={site.social.etsy.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-xl bg-white/70 px-4 py-3 text-sm ring-1 ring-stone-950/10 transition hover:bg-white"
+              >
+                <span className="flex items-center gap-2">
+                  <ShoppingBag size={16} />
+                  Etsy
+                </span>
+                <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">shop</span>
+              </a>
+              <a
+                href={site.social.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-xl bg-white/70 px-4 py-3 text-sm ring-1 ring-stone-950/10 transition hover:bg-white"
+              >
+                <span className="flex items-center gap-2">
+                  <Instagram size={16} />
+                  Instagram
+                </span>
+                <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{site.social.instagram.handle}</span>
+              </a>
+              <a
+                href={site.social.tiktok.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-xl bg-white/70 px-4 py-3 text-sm ring-1 ring-stone-950/10 transition hover:bg-white"
+              >
+                <span className="flex items-center gap-2">
+                  <TikTok size={16} />
+                  TikTok
+                </span>
+                <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{site.social.tiktok.handle}</span>
+              </a>
+            </div>
           </motion.div>
         </motion.div>
       )}
