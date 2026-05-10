@@ -62,4 +62,19 @@ export const scenes = [
       { productId: "romance", x: 60, y: 55, r: 7 },
     ],
   },
+  {
+    id: "scene-3",
+    title: "Scena · 03",
+    image: "/images/scenes/scene-3.png",
+    imageMobile: "/images/scenes/scene-3-mobile.png",
+    alt: "Ambiente Santa Sara con ceramiche e oggetti quotidiani",
+    hotspots: [
+      { productId: "florence", x: 40, y: 50, r: 6 },
+      { productId: "romance", x: 60, y: 55, r: 6 },
+    ],
+    hotspotsMobile: [
+      { productId: "florence", x: 40, y: 55, r: 7 },
+      { productId: "romance", x: 60, y: 60, r: 7 },
+    ],
+  },
 ];
