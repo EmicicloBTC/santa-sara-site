@@ -63,4 +63,14 @@ SANTA SARA — Guida rapida (senza terminale)
    - Solo trascina cartella: doppio clic CREA-PER-NETLIFY.bat e trascina la
      cartella "dist" su Netlify.
 
-8) Se qualcosa non funziona, copia l'errore della finestra nera in chat.
+8) Foto pesanti? Si ottimizzano da sole.
+   - Ogni volta che fai "npm run build" (o quando deploya Netlify), uno script
+     comprime automaticamente tutte le immagini in public\images\ (PNG e JPG),
+     le ridimensiona se più larghe di 2400px e le riscrive sul disco.
+   - I file già ottimizzati vengono saltati grazie a un manifest in
+     .image-cache.json (committato nel repo).
+   - Quindi tu carica le foto a piena risoluzione: ci pensa il sistema.
+   - Per lanciare l'ottimizzazione manualmente in qualunque momento:
+        npm run optimize-images
+
+9) Se qualcosa non funziona, copia l'errore della finestra nera in chat.
