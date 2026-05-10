@@ -16,19 +16,36 @@ SANTA SARA — Guida rapida (senza terminale)
 
 4) Cambiare le foto delle SCENE:
    - Mettile in: public\images\scenes\
+   - Per ogni scena servono DUE foto: una desktop (orizzontale) e una mobile
+     (verticale). Esempio:
+       desktop:  scene-1.png         (1920x1080 o simile)
+       mobile:   scene-1-mobile.png  (1080x1920 o simile)
+     Se non hai ancora la mobile, lascia stare: il sito usa la desktop come
+     fallback (su telefono però l'immagine viene croppata ai lati).
    - Apri src\data\scenes.js e per ogni scena imposta:
-       image: "/images/scenes/nome-file.png"
-       title: "..."  (compare nel footer)
-       hotspots: [ { productId: "florence", x: 38, y: 52, r: 6 }, ... ]
-   - Per posizionare facilmente i hotspot:
-       - Avvia il sito (AVVIA-SITO.bat).
-       - Sulla landing premi "?" sulla tastiera (modalità editor, banner giallo).
-       - Clicca sull'immagine sopra il prodotto: appare una riga di codice.
-       - Premi "Copia", incollala dentro l'array hotspots della scena giusta in scenes.js.
-       - Cambia "?" del campo productId con "florence" o "romance".
-       - Premi di nuovo "?" per chiudere l'editor.
+       image:        "/images/scenes/scene-1.png"
+       imageMobile:  "/images/scenes/scene-1-mobile.png"   (opzionale)
+       title:        "..."        (compare nel footer)
+       hotspots:        [ { productId: "florence", x: 38, y: 52, r: 6 }, ... ]   // versione desktop
+       hotspotsMobile:  [ { productId: "florence", x: 38, y: 60, r: 7 }, ... ]   // versione mobile (opzionale)
 
-5) Cambiare i PRODOTTI:
+5) Posizionare i HOTSPOT (i puntini cliccabili sopra ai prodotti):
+   - Avvia il sito (AVVIA-SITO.bat).
+   - Sulla landing premi "E" (oppure "?") sulla tastiera: si apre il pannello
+     editor in alto a destra. In alto al pannello trovi un'etichetta:
+        "Desktop · orizzontale"  oppure  "Mobile · verticale"
+     che ti dice in che modalità sei. Per testare la mobile rimpicciolisci la
+     finestra del browser fino a farla diventare verticale (oppure ruota il
+     telefono).
+   - Nel pannello scegli il bottone con il nome del prodotto (Florence/Romance).
+   - Clicca sulla foto sopra al prodotto: compare una riga di codice già pronta.
+   - Premi "Copia riga" e incollala in scenes.js dentro:
+        hotspots: [...]        se eri su desktop
+        hotspotsMobile: [...]  se eri su mobile
+     (te lo ricorda anche il pannello: "3. Incolla in scenes.js dentro: …").
+   - Premi di nuovo "E" per chiudere l'editor.
+
+6) Cambiare i PRODOTTI:
    - Foto: cartella public\images\products\NOME-PRODOTTO\1.jpg, 2.jpg, ...
      (NOME minuscolo, senza spazi)
    - Dati: src\data\products.js — aggiorna title, kind, dimensions, description,
@@ -36,7 +53,7 @@ SANTA SARA — Guida rapida (senza terminale)
    - Per usare un prodotto in una scena, metti la sua chiave (es. "florence")
      in productId dentro hotspots.
 
-6) Mettere online le modifiche:
+7) Mettere online le modifiche:
    - Se hai collegato GitHub a Netlify (modalità attuale): apri Cursor o terminale,
        cd c:\Users\pucci\Desktop\CODICI\santa-sara-site
        git add .
@@ -46,4 +63,4 @@ SANTA SARA — Guida rapida (senza terminale)
    - Solo trascina cartella: doppio clic CREA-PER-NETLIFY.bat e trascina la
      cartella "dist" su Netlify.
 
-7) Se qualcosa non funziona, copia l'errore della finestra nera in chat.
+8) Se qualcosa non funziona, copia l'errore della finestra nera in chat.

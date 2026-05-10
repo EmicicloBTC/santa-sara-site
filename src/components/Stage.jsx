@@ -7,15 +7,40 @@ import { ChevronLeft, ChevronRight } from "./icons.jsx";
 
 const SWIPE_THRESHOLD = 60;
 
+/**
+ * Hook: true quando lo schermo è in formato verticale (telefono in piedi,
+ * tablet stretto, ecc.). Si aggiorna in tempo reale se l'utente ruota.
+ */
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(orientation: portrait), (max-width: 767px)").matches;
+  });
+  useEffect(() => {
+    const mql = window.matchMedia("(orientation: portrait), (max-width: 767px)");
+    const onChange = (e) => setIsMobile(e.matches);
+    mql.addEventListener?.("change", onChange);
+    return () => mql.removeEventListener?.("change", onChange);
+  }, []);
+  return isMobile;
+}
+
 export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
   const scene = scenes[sceneIndex];
   const sceneCount = scenes.length;
+  const isMobile = useIsMobile();
   const imgRef = useRef(null);
   const [editor, setEditor] = useState(() => {
     if (typeof window === "undefined") return false;
     return window.location.hash.includes("edit") || window.location.search.includes("edit");
   });
   const [lastClick, setLastClick] = useState(null);
+
+  // sceglie immagine + hotspot in base al device, con fallback intelligente
+  const currentImage = isMobile && scene.imageMobile ? scene.imageMobile : scene.image;
+  const currentHotspots =
+    isMobile && scene.hotspotsMobile ? scene.hotspotsMobile : scene.hotspots;
+  const usingMobileSet = isMobile && Boolean(scene.hotspotsMobile);
 
   useEffect(() => {
     function onKey(e) {
@@ -57,7 +82,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
     <div className="absolute inset-0 overflow-hidden bg-stone-950" onClick={handleStageClick}>
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
-          key={scene.id}
+          key={`${scene.id}-${isMobile ? "m" : "d"}`}
           className="absolute inset-0"
           initial={{ opacity: 0, scale: 1.02 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -73,7 +98,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
         >
           <div ref={imgRef} className="relative h-full w-full select-none">
             <img
-              src={scene.image}
+              src={currentImage}
               alt={scene.alt}
               draggable={false}
               className="h-full w-full object-cover"
@@ -83,7 +108,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
             <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/35 to-transparent" />
             <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/40 to-transparent" />
 
-            {scene.hotspots.map((h, i) => (
+            {currentHotspots.map((h, i) => (
               <Hotspot
                 key={`${scene.id}-${h.productId}-${i}`}
                 hotspot={h}
@@ -92,7 +117,15 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
               />
             ))}
 
-            <HotspotEditor enabled={editor} sceneId={scene.id} lastClick={lastClick} products={products} />
+            <HotspotEditor
+              enabled={editor}
+              sceneId={scene.id}
+              lastClick={lastClick}
+              products={products}
+              isMobile={isMobile}
+              targetField={isMobile ? "hotspotsMobile" : "hotspots"}
+              usingMobileSet={usingMobileSet}
+            />
           </div>
         </motion.div>
       </AnimatePresence>
