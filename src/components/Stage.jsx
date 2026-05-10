@@ -71,14 +71,20 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
     useMobileVariant && scene.hotspotsMobile ? scene.hotspotsMobile : scene.hotspots;
   const usingMobileSet = useMobileVariant && Boolean(scene.hotspotsMobile);
 
-  // Quando la scena ha un video, gli hotspot sono nascosti finché il video
-  // non finisce: appaiono con un fade morbido. Per le scene senza video sono
-  // visibili subito.
+  // Memoria delle scene il cui video è già stato visto in questa sessione:
+  // quando l'utente torna su una scena già "vissuta", l'intro non riparte.
+  // È volutamente in-memory: se ricarica la pagina, il video torna a partire.
+  const [playedVideos, setPlayedVideos] = useState(() => new Set());
   const hasVideo = Boolean(scene.video?.src);
-  const [hotspotsReady, setHotspotsReady] = useState(!hasVideo);
+  const playVideoNow = hasVideo && !playedVideos.has(scene.id);
+
+  // Quando la scena ha un video DA RIPRODURRE, gli hotspot sono nascosti
+  // finché il video non finisce. Altrimenti (scena senza video o video già
+  // visto) sono subito visibili.
+  const [hotspotsReady, setHotspotsReady] = useState(!playVideoNow);
   useEffect(() => {
-    setHotspotsReady(!hasVideo);
-  }, [scene.id, useMobileVariant, hasVideo]);
+    setHotspotsReady(!playVideoNow);
+  }, [scene.id, useMobileVariant, playVideoNow]);
 
   useEffect(() => {
     function onKey(e) {
@@ -139,7 +145,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
               className="absolute inset-0 h-full w-full object-cover"
             />
 
-            {scene.video?.src && (
+            {playVideoNow && (
               <video
                 key={`${scene.id}-video`}
                 src={scene.video.src}
@@ -151,6 +157,11 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
                 onEnded={(e) => {
                   e.currentTarget.pause();
                   setHotspotsReady(true);
+                  setPlayedVideos((prev) => {
+                    const next = new Set(prev);
+                    next.add(scene.id);
+                    return next;
+                  });
                 }}
                 className="absolute inset-0 h-full w-full object-cover"
               />
