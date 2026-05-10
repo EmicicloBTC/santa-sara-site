@@ -47,11 +47,15 @@ export const scenes = [
     id: "scene-2",
     title: "Tavolo · Sera",
     image: "/images/scenes/scene-2.png",
-    // imageMobile: "/images/scenes/scene-2-mobile.png", // aggiungi quando carichi la foto verticale
+    imageMobile: "/images/scenes/scene-2-mobile.png",
     alt: "Dettaglio interno con ceramiche Santa Sara fra oggetti casuali",
     hotspots: [
       { productId: "florence", x: 42, y: 48, r: 6 },
       { productId: "romance", x: 60, y: 55, r: 6 },
+    ],
+    hotspotsMobile: [
+      { productId: "florence", x: 42, y: 48, r: 7 },
+      { productId: "romance", x: 60, y: 55, r: 7 },
     ],
   },
   {
