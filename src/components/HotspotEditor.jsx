@@ -20,6 +20,8 @@ export function HotspotEditor({
   isMobile,
   targetField = "hotspots",
   usingMobileSet,
+  viewOverride = "auto",
+  onChangeViewOverride,
 }) {
   const productList = useMemo(() => Object.values(products || {}), [products]);
   const [productId, setProductId] = useState(productList[0]?.id ?? "");
@@ -65,6 +67,30 @@ export function HotspotEditor({
         >
           {deviceLabel}
         </span>
+      </div>
+
+      <p className="mb-1 text-[10px] font-medium uppercase tracking-[0.2em] text-stone-500">
+        Vista
+      </p>
+      <div className="mb-3 grid grid-cols-3 gap-1 rounded-md bg-white/70 p-1 ring-1 ring-stone-200">
+        {[
+          { id: "auto", label: "Auto" },
+          { id: "desktop", label: "Desktop" },
+          { id: "mobile", label: "Mobile" },
+        ].map((opt) => (
+          <button
+            key={opt.id}
+            type="button"
+            onClick={() => onChangeViewOverride?.(opt.id)}
+            className={`rounded px-2 py-1 text-[10px] font-medium uppercase tracking-[0.15em] transition ${
+              viewOverride === opt.id
+                ? "bg-stone-900 text-white"
+                : "text-stone-600 hover:bg-stone-100"
+            }`}
+          >
+            {opt.label}
+          </button>
+        ))}
       </div>
 
       <p className="mb-1 text-[10px] font-medium uppercase tracking-[0.2em] text-stone-500">

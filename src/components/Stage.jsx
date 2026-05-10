@@ -7,6 +7,20 @@ import { ChevronLeft, ChevronRight } from "./icons.jsx";
 
 const SWIPE_THRESHOLD = 60;
 
+// Chiave segreta per attivare l'editor in produzione.
+// In sviluppo (npm run dev) l'editor è sempre disponibile.
+// In produzione devi aprire il sito con questa stringa nell'URL, es.
+//   https://...netlify.app/#santa-edit
+// Cambia il valore se vuoi una chiave personale.
+const EDITOR_KEY = "santa-edit";
+
+function isEditorAllowed() {
+  if (typeof window === "undefined") return false;
+  if (import.meta.env.DEV) return true;
+  const { hash, search } = window.location;
+  return hash.includes(EDITOR_KEY) || search.includes(EDITOR_KEY);
+}
+
 // Curva morbida tipo "ease-in-out" cinematografico, e tempi calibrati per
 // dare la sensazione di un dissolvenza pulita senza essere lenti.
 const SCENE_EASE = [0.4, 0, 0.2, 1];
@@ -37,13 +51,17 @@ function useIsMobile() {
 export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
   const scene = scenes[sceneIndex];
   const sceneCount = scenes.length;
-  const isMobile = useIsMobile();
+  const detectedMobile = useIsMobile();
   const imgRef = useRef(null);
-  const [editor, setEditor] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return window.location.hash.includes("edit") || window.location.search.includes("edit");
-  });
+  const editorAllowed = isEditorAllowed();
+  const [editor, setEditor] = useState(() => editorAllowed);
   const [lastClick, setLastClick] = useState(null);
+  // override manuale per l'editor: "auto" segue il device, "desktop"/"mobile"
+  // forzano la variante (utile per posizionare hotspot mobile da PC)
+  const [viewOverride, setViewOverride] = useState("auto");
+
+  const isMobile =
+    viewOverride === "mobile" ? true : viewOverride === "desktop" ? false : detectedMobile;
 
   // sceglie immagine + hotspot in base al device, con fallback intelligente:
   // se manca la foto mobile usiamo la desktop e (di conseguenza) i suoi hotspot
@@ -61,8 +79,10 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
         (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable);
       if (isFormField) return;
 
-      // Toggle editor: ?, /, oppure tasto E (più affidabile su tastiera italiana)
+      // Toggle editor: ?, /, oppure tasto E (più affidabile su tastiera italiana).
+      // In produzione richiede la chiave segreta nell'URL (vedi EDITOR_KEY).
       if (e.key === "?" || (e.code === "Slash" && e.shiftKey) || e.key === "e" || e.key === "E") {
+        if (!editorAllowed) return;
         e.preventDefault();
         setEditor((v) => !v);
         return;
@@ -75,7 +95,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [sceneIndex, sceneCount, onChangeScene]);
+  }, [sceneIndex, sceneCount, onChangeScene, editorAllowed]);
 
   function handleStageClick(e) {
     if (!editor || !imgRef.current) return;
@@ -122,13 +142,15 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
             ))}
 
             <HotspotEditor
-              enabled={editor}
+              enabled={editor && editorAllowed}
               sceneId={scene.id}
               lastClick={lastClick}
               products={products}
               isMobile={isMobile}
               targetField={isMobile ? "hotspotsMobile" : "hotspots"}
               usingMobileSet={usingMobileSet}
+              viewOverride={viewOverride}
+              onChangeViewOverride={setViewOverride}
             />
           </div>
         </SceneLayer>

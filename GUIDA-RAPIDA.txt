@@ -30,20 +30,32 @@ SANTA SARA — Guida rapida (senza terminale)
        hotspotsMobile:  [ { productId: "florence", x: 38, y: 60, r: 7 }, ... ]   // versione mobile (opzionale)
 
 5) Posizionare i HOTSPOT (i puntini cliccabili sopra ai prodotti):
-   - Avvia il sito (AVVIA-SITO.bat).
-   - Sulla landing premi "E" (oppure "?") sulla tastiera: si apre il pannello
-     editor in alto a destra. In alto al pannello trovi un'etichetta:
-        "Desktop · orizzontale"  oppure  "Mobile · verticale"
-     che ti dice in che modalità sei. Per testare la mobile rimpicciolisci la
-     finestra del browser fino a farla diventare verticale (oppure ruota il
-     telefono).
-   - Nel pannello scegli il bottone con il nome del prodotto (Florence/Romance).
+
+   IMPORTANTE — chi può aprire l'editor?
+   - In LOCALE (AVVIA-SITO.bat / npm run dev) l'editor è SEMPRE attivabile
+     premendo E o ?.
+   - Sul SITO PUBBLICATO (Netlify) il pannello è NASCOSTO: chiunque visiti il
+     sito e prema E non vede nulla. Per attivarlo apri l'URL aggiungendo la
+     chiave segreta dopo il #, ad esempio:
+        https://NOMETUOSITO.netlify.app/#santa-edit
+     Solo dopo aver caricato la pagina con quella chiave, il tasto E apre
+     il pannello. La chiave si cambia in src\components\Stage.jsx
+     (costante EDITOR_KEY).
+
+   COME SI USA il pannello:
+   - Premi E (o ?): si apre il pannello arancione in alto a destra.
+   - Riga "Vista": tre bottoni Auto / Desktop / Mobile.
+        Auto    = segue la dimensione della finestra (default)
+        Desktop = forza la modalità orizzontale
+        Mobile  = forza la modalità verticale
+     Usa Mobile quando vuoi posizionare gli hotspot della versione mobile
+     senza dover restringere la finestra del browser.
+   - Riga "1. Scegli il prodotto": clicca Florence o Romance.
    - Clicca sulla foto sopra al prodotto: compare una riga di codice già pronta.
-   - Premi "Copia riga" e incollala in scenes.js dentro:
-        hotspots: [...]        se eri su desktop
-        hotspotsMobile: [...]  se eri su mobile
-     (te lo ricorda anche il pannello: "3. Incolla in scenes.js dentro: …").
-   - Premi di nuovo "E" per chiudere l'editor.
+   - Riga "3. Incolla in scenes.js dentro": ti dice esattamente il campo dove
+     incollarla (hotspots o hotspotsMobile, automaticamente in base alla vista).
+   - Premi "Copia riga" e incollala nello scenes.js della scena giusta.
+   - Premi di nuovo E per chiudere l'editor.
 
 6) Cambiare i PRODOTTI:
    - Foto: cartella public\images\products\NOME-PRODOTTO\1.jpg, 2.jpg, ...
