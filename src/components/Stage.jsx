@@ -1,11 +1,20 @@
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useIsPresent } from "framer-motion";
 import { products } from "../data/products.js";
 import { Hotspot } from "./Hotspot.jsx";
 import { HotspotEditor } from "./HotspotEditor.jsx";
 import { ChevronLeft, ChevronRight } from "./icons.jsx";
 
 const SWIPE_THRESHOLD = 60;
+
+// Curva morbida tipo "ease-in-out" cinematografico, e tempi calibrati per
+// dare la sensazione di un dissolvenza pulita senza essere lenti.
+const SCENE_EASE = [0.4, 0, 0.2, 1];
+const SCENE_TRANSITION = {
+  opacity: { duration: 1.1, ease: SCENE_EASE },
+  filter: { duration: 1.1, ease: SCENE_EASE },
+  scale: { duration: 1.4, ease: SCENE_EASE },
+};
 
 /**
  * Hook: true quando lo schermo è in formato verticale (telefono in piedi,
@@ -80,17 +89,10 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
 
   return (
     <div className="absolute inset-0 overflow-hidden bg-stone-950" onClick={handleStageClick}>
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div
+      <AnimatePresence initial={false}>
+        <SceneLayer
           key={`${scene.id}-${isMobile ? "m" : "d"}`}
-          className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.02 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.99 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           drag={sceneCount > 1 ? "x" : false}
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={0.18}
           onDragEnd={(_, info) => {
             if (info.offset.x < -SWIPE_THRESHOLD) go(1);
             else if (info.offset.x > SWIPE_THRESHOLD) go(-1);
@@ -127,7 +129,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
               usingMobileSet={usingMobileSet}
             />
           </div>
-        </motion.div>
+        </SceneLayer>
       </AnimatePresence>
 
       {sceneCount > 1 && (
@@ -151,5 +153,30 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
         </>
       )}
     </div>
+  );
+}
+
+/**
+ * Singola "scena" animata. Estratta in un sotto-componente per poter usare
+ * useIsPresent: quando l'elemento sta uscendo (durante il crossfade) i click
+ * non devono più passare ai suoi hotspot.
+ */
+function SceneLayer({ children, drag, onDragEnd }) {
+  const present = useIsPresent();
+  return (
+    <motion.div
+      className="absolute inset-0 will-change-[opacity,filter,transform]"
+      style={{ pointerEvents: present ? "auto" : "none" }}
+      initial={{ opacity: 0, filter: "blur(10px)", scale: 1.015 }}
+      animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+      exit={{ opacity: 0, filter: "blur(8px)", scale: 1.005 }}
+      transition={SCENE_TRANSITION}
+      drag={drag}
+      dragConstraints={{ left: 0, right: 0 }}
+      dragElastic={0.18}
+      onDragEnd={onDragEnd}
+    >
+      {children}
+    </motion.div>
   );
 }
