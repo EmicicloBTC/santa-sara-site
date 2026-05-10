@@ -2,6 +2,11 @@
 
 Questo file è il **manuale del sito**. Tutto quello che ti serve per aggiungere foto, prodotti, scene, modificare il logo, pubblicare. Tienilo aperto, ti basterà.
 
+> ### ⚠ PROMEMORIA — peso/dimensioni delle FOTO
+> **Non devi fare niente.** Le foto vengono ridimensionate (max 2400px) e ricompresse **in automatico** ogni volta che pushi: lo script parte da solo prima del deploy su Netlify (vedi sezione 11). Quindi tu carica i file a piena risoluzione, anche da 10-20 MB: ci pensa il sistema a tagliarli per il web.
+>
+> **L'unica cosa da non dimenticare**: se vuoi vedere subito quanto pesano dopo l'ottimizzazione (prima di pushare), lancia `npm run optimize-images` da terminale. È utile solo per curiosità, il deploy lo fa comunque da solo.
+
 ---
 
 ## 1. Riassunto a memoria corta
@@ -230,19 +235,26 @@ Cambi qui, tutto il sito si aggiorna (header, modal bio, mailto delle CTA, …).
 
 ## 11. Ottimizzazione automatica delle FOTO
 
-Non preoccuparti di ridimensionare/comprimere a mano. Ogni volta che fai `npm run build` (e quindi anche al deploy Netlify) parte uno script che:
+> **TL;DR — è automatico, non serve ricordartelo.**
+> Ogni nuova foto che aggiungi (scene, foto prodotti, logo, qualsiasi cosa in `public/images/`) viene ottimizzata **da sola** la prossima volta che pushi. Quindi puoi caricare file enormi senza pensieri.
 
-- Ridimensiona le immagini più grandi di 2400px sul lato lungo.
-- Ricomprime PNG e JPG ai migliori valori.
-- Sovrascrive il file solo se l'output è più piccolo (non perde mai qualità inutilmente).
-- Tiene traccia dei file già ottimizzati in `.image-cache.json`, così build successive sono no-op.
+### Cosa fa esattamente
+Lo script `scripts/optimize-images.js` parte automaticamente prima di ogni build (è agganciato a `prebuild` in `package.json`) sia in locale (`npm run build`) sia su Netlify (al deploy). Per ogni file in `public/images/`:
 
-Per lanciarlo a mano in qualunque momento:
+- Ridimensiona se più grande di 2400px sul lato lungo (sufficiente per qualsiasi schermo retina).
+- Ricomprime PNG (palette+quality 80) e JPG (mozjpeg quality 82).
+- Sovrascrive il file **solo se** l'output è effettivamente più piccolo: non perde mai qualità inutilmente.
+- Salta i file già ottimizzati grazie al manifest `.image-cache.json` (committato): le build successive sono istantanee.
+
+### Esempio reale già visto
+Durante lo sviluppo siamo passati da **22 MB → 4,7 MB** totali (-79%) senza muovere un dito. Le foto delle scene da 9 MB sono diventate ~1,5 MB ciascuna, mantenendo la stessa resa visiva.
+
+### Lanciarlo a mano (opzionale)
+Se prima di pushare vuoi vedere quanto risparmierai, da terminale:
 ```bash
 npm run optimize-images
 ```
-
-> Quindi tu carica le foto a piena risoluzione: ci pensa il sistema a farle leggere.
+Stamperà un report file per file con dimensione prima/dopo. Ma anche se non lo lanci, il deploy lo fa per te.
 
 ---
 
