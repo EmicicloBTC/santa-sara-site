@@ -71,6 +71,15 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
     useMobileVariant && scene.hotspotsMobile ? scene.hotspotsMobile : scene.hotspots;
   const usingMobileSet = useMobileVariant && Boolean(scene.hotspotsMobile);
 
+  // Quando la scena ha un video, gli hotspot sono nascosti finché il video
+  // non finisce: appaiono con un fade morbido. Per le scene senza video sono
+  // visibili subito.
+  const hasVideo = Boolean(scene.video?.src);
+  const [hotspotsReady, setHotspotsReady] = useState(!hasVideo);
+  useEffect(() => {
+    setHotspotsReady(!hasVideo);
+  }, [scene.id, useMobileVariant, hasVideo]);
+
   useEffect(() => {
     function onKey(e) {
       const target = e.target;
@@ -139,7 +148,10 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
                 muted
                 playsInline
                 preload="auto"
-                onEnded={(e) => e.currentTarget.pause()}
+                onEnded={(e) => {
+                  e.currentTarget.pause();
+                  setHotspotsReady(true);
+                }}
                 className="absolute inset-0 h-full w-full object-cover"
               />
             )}
@@ -148,14 +160,22 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
             <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/35 to-transparent" />
             <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/40 to-transparent" />
 
-            {currentHotspots.map((h, i) => (
-              <Hotspot
-                key={`${scene.id}-${h.productId}-${i}`}
-                hotspot={h}
-                product={products[h.productId]}
-                onOpen={onOpenProduct}
-              />
-            ))}
+            <motion.div
+              className="absolute inset-0"
+              initial={false}
+              animate={{ opacity: hotspotsReady ? 1 : 0 }}
+              transition={{ duration: 0.7, ease: SCENE_EASE }}
+              style={{ pointerEvents: hotspotsReady ? "auto" : "none" }}
+            >
+              {currentHotspots.map((h, i) => (
+                <Hotspot
+                  key={`${scene.id}-${h.productId}-${i}`}
+                  hotspot={h}
+                  product={products[h.productId]}
+                  onOpen={onOpenProduct}
+                />
+              ))}
+            </motion.div>
 
             <HotspotEditor
               enabled={editor && editorAllowed}
