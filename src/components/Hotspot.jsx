@@ -1,0 +1,44 @@
+import { Plus } from "./icons.jsx";
+
+/** Punto interattivo su un prodotto dentro la scena. Le coordinate sono in % rispetto al box scena. */
+export function Hotspot({ hotspot, product, onOpen }) {
+  if (!product) return null;
+  const radius = hotspot.r ?? 5;
+  const size = `${radius * 2}%`;
+  return (
+    <button
+      type="button"
+      onClick={() => onOpen(product)}
+      aria-label={`Apri scheda ${product.title}`}
+      style={{
+        left: `${hotspot.x}%`,
+        top: `${hotspot.y}%`,
+        width: size,
+        aspectRatio: "1 / 1",
+      }}
+      className="group absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer focus:outline-none"
+    >
+      {/* alone glow ampio: appare in hover/focus */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-[-120%] rounded-full opacity-0 blur-2xl transition duration-500 ease-out group-hover:opacity-90 group-focus-visible:opacity-90"
+        style={{ background: "radial-gradient(circle, rgba(255,236,200,0.85) 0%, rgba(255,200,140,0.35) 35%, transparent 70%)" }}
+      />
+      {/* anello pulsante leggero a riposo */}
+      <span aria-hidden className="absolute inset-0 rounded-full ring-1 ring-white/40 opacity-60 transition group-hover:opacity-0" />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-[-25%] rounded-full ring-1 ring-white/35 opacity-30 transition duration-700 ease-out group-hover:scale-125 group-hover:opacity-0"
+        style={{ animation: "ssPing 2.6s ease-out infinite" }}
+      />
+      {/* punto centrale */}
+      <span className="absolute inset-1/2 grid h-9 w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white/85 text-stone-950 shadow-[0_6px_22px_-6px_rgba(0,0,0,0.55)] backdrop-blur-md ring-1 ring-stone-950/20 transition duration-300 group-hover:scale-110 group-hover:bg-white">
+        <Plus size={14} />
+      </span>
+      {/* tooltip nome prodotto in hover */}
+      <span className="pointer-events-none absolute left-1/2 top-full mt-3 -translate-x-1/2 whitespace-nowrap rounded-full bg-stone-950/85 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.28em] text-white opacity-0 backdrop-blur-md transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+        {product.title} · {product.price}
+      </span>
+    </button>
+  );
+}

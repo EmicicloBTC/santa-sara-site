@@ -6,19 +6,44 @@ SANTA SARA — Guida rapida (senza terminale)
    - Doppio clic su: AVVIA-SITO.bat
    - Nel browser apri l'indirizzo che compare (es. http://localhost:5173)
 
-3) Mettere il sito online su Netlify:
-   - Apri e segui: NETLIFY-PASSO-PASSO.txt (due modi: trascina cartella oppure script)
-   - Metodo veloce: account su https://www.netlify.com → CREA-PER-NETLIFY.bat
-     → trascina la cartella "dist" su Netlify (Deploy manually)
-   - Metodo da PC (dopo login): ACCEDI-NETLIFY.bat → COLLEGA-SITO-UNAVOLTA.bat
-     (solo la prima volta) → poi ogni volta DEPLOY-NETLIFY.bat
+3) Concept attuale del sito:
+   - Una sola schermata fullscreen con foto editoriale (catalogo).
+   - Sopra ai prodotti in vendita ci sono "hotspot" cliccabili (puntino con +).
+   - Click sul puntino = si apre il modal con foto, dimensioni, prezzo, CTA.
+   - Frecce sinistra/destra (o swipe su mobile) per cambiare scena.
+   - Header in alto con logo + menu (Bio, Instagram, Contatti).
+   - Footer in basso con titolo scena + numero scena (es. 01 / 02).
 
-4) Foto prodotti:
-   - Una sola foto: public\images\Nome.jpg + in src\data\products.js campo photo: "/images/Nome.jpg"
-   - Più foto numerate (carosello nel dettaglio): cartella public\images\products\nome-pezzo\
-     file 1.jpg, 2.jpg, 3.jpg … e in products.js:
-       imagesFolder: { slug: "nome-pezzo", count: 3, ext: ".jpg" }
-     slug = nome cartella (minuscolo, senza spazi). Se count > 1 il carosello cambia foto ogni 4 secondi (pausa col mouse sulla foto).
-   - Dopo modifiche: git push (Netlify aggiorna da solo se collegato a GitHub).
+4) Cambiare le foto delle SCENE:
+   - Mettile in: public\images\scenes\
+   - Apri src\data\scenes.js e per ogni scena imposta:
+       image: "/images/scenes/nome-file.png"
+       title: "..."  (compare nel footer)
+       hotspots: [ { productId: "florence", x: 38, y: 52, r: 6 }, ... ]
+   - Per posizionare facilmente i hotspot:
+       - Avvia il sito (AVVIA-SITO.bat).
+       - Sulla landing premi "?" sulla tastiera (modalità editor, banner giallo).
+       - Clicca sull'immagine sopra il prodotto: appare una riga di codice.
+       - Premi "Copia", incollala dentro l'array hotspots della scena giusta in scenes.js.
+       - Cambia "?" del campo productId con "florence" o "romance".
+       - Premi di nuovo "?" per chiudere l'editor.
 
-5) Se qualcosa non funziona, apri Cursor, incolla l'errore nella chat con l'assistente.
+5) Cambiare i PRODOTTI:
+   - Foto: cartella public\images\products\NOME-PRODOTTO\1.jpg, 2.jpg, ...
+     (NOME minuscolo, senza spazi)
+   - Dati: src\data\products.js — aggiorna title, kind, dimensions, description,
+     price, cta, ctaHref e images: { slug: "nome", count: N, ext: "jpg" }.
+   - Per usare un prodotto in una scena, metti la sua chiave (es. "florence")
+     in productId dentro hotspots.
+
+6) Mettere online le modifiche:
+   - Se hai collegato GitHub a Netlify (modalità attuale): apri Cursor o terminale,
+       cd c:\Users\pucci\Desktop\CODICI\santa-sara-site
+       git add .
+       git commit -m "messaggio"
+       git push
+     Netlify rifa il deploy da solo in 1-2 minuti.
+   - Solo trascina cartella: doppio clic CREA-PER-NETLIFY.bat e trascina la
+     cartella "dist" su Netlify.
+
+7) Se qualcosa non funziona, copia l'errore della finestra nera in chat.
