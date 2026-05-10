@@ -199,6 +199,44 @@ In pratica:
 
 ---
 
+## 8b. Aggiungere un VIDEO a una scena (opzionale)
+
+Una scena può avere un video che parte da solo quando ci arrivi (es. uno zoom che si ferma sulla foto). Il video parte muto, una volta sola, e si ferma sull'ultimo frame.
+
+### Come si fa
+1. Prepara un video MP4 (H.264). Idealmente l'**ultimo frame** del video deve essere identico all'immagine `scene-N.png` di quella scena, così si "innesta" senza salti.
+2. Mettilo in `public/videos/scene-N.mp4`.
+3. Estrai facoltativamente l'ultimo frame come poster JPG (mostrato durante il caricamento), in `public/videos/scene-N-poster.jpg`.
+4. In `src/data/scenes.js`, sulla scena interessata, aggiungi:
+   ```js
+   video: {
+     src: "/videos/scene-N.mp4",
+     poster: "/videos/scene-N-poster.jpg", // opzionale
+   },
+   ```
+5. Push.
+
+### Invertire un video con ffmpeg
+Se hai uno zoom IN (parte largo, finisce zoomato dentro) e vuoi farlo partire al contrario (zoom OUT, finisce sull'inquadratura larga), prima inverti:
+```bash
+ffmpeg -i originale.mp4 -vf reverse -an -c:v libx264 -preset slow -crf 26 -movflags +faststart -pix_fmt yuv420p public/videos/scene-N.mp4
+```
+- `-vf reverse` inverte i frame
+- `-an` toglie l'audio (non serve)
+- `-crf 26` qualità/peso bilanciati
+
+Poi estrai l'ultimo frame come poster:
+```bash
+ffmpeg -sseof -0.05 -i public/videos/scene-N.mp4 -vframes 1 -q:v 2 public/videos/scene-N-poster.jpg
+```
+
+> Se non hai ffmpeg installato, scaricalo da [gyan.dev/ffmpeg/builds](https://www.gyan.dev/ffmpeg/builds/).
+
+### Togliere un video
+Cancella la riga `video: { ... }` nella scena di `scenes.js` e (facoltativo) i file in `public/videos/`. La scena tornerà ad essere una foto statica.
+
+---
+
 ## 9. Cambiare il LOGO
 
 1. Sostituisci il file `public/logo.png` con il nuovo (PNG con sfondo trasparente, almeno 512×512).

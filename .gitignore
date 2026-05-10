@@ -21,3 +21,13 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# Sorgenti video originali pesanti che non finiscono sul sito.
+# I video pubblicati stanno in public/videos/ (versione web).
+*.mp4
+*.mov
+*.avi
+*.m4v
+*.MP4
+*.MOV
+!public/videos/*

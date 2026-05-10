@@ -23,6 +23,9 @@
  * @property {string} alt
  * @property {Hotspot[]} hotspots
  * @property {Hotspot[]} [hotspotsMobile]
+ * @property {{ src: string, poster?: string }} [video]
+ *   Video opzionale: parte automuto quando si entra nella scena, si ferma
+ *   sull'ultimo frame (che dovrebbe coincidere con `image`), non si ripete.
  *
  * Per posizionare i hotspot facilmente attiva l'editor: premi "E" (o "?") sulla
  * landing e clicca sopra il prodotto. In alto a destra appare la riga da
@@ -37,6 +40,10 @@ export const scenes = [
     title: "Soggiorno · Pomeriggio",
     image: "/images/scenes/scene-1.png",
     // imageMobile: "/images/scenes/scene-1-mobile.png", // aggiungi quando carichi la foto verticale
+    video: {
+      src: "/videos/scene-1.mp4",
+      poster: "/videos/scene-1-poster.jpg",
+    },
     alt: "Interno casa con pezzi Santa Sara mischiati ad oggetti quotidiani",
     hotspots: [
       { productId: "florence", x: 38, y: 52, r: 6 },

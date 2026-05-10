@@ -121,12 +121,28 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
           }}
         >
           <div ref={imgRef} className="relative h-full w-full select-none">
+            {/* Sfondo statico: serve come fallback durante il caricamento del
+                video e come immagine se la scena non ha nessun video. */}
             <img
               src={currentImage}
               alt={scene.alt}
               draggable={false}
-              className="h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover"
             />
+
+            {scene.video?.src && (
+              <video
+                key={`${scene.id}-video`}
+                src={scene.video.src}
+                poster={scene.video.poster}
+                autoPlay
+                muted
+                playsInline
+                preload="auto"
+                onEnded={(e) => e.currentTarget.pause()}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            )}
 
             {/* leggero gradient per leggibilità header/footer */}
             <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/35 to-transparent" />
