@@ -92,7 +92,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
               />
             ))}
 
-            <HotspotEditor enabled={editor} sceneId={scene.id} lastClick={lastClick} />
+            <HotspotEditor enabled={editor} sceneId={scene.id} lastClick={lastClick} products={products} />
           </div>
         </motion.div>
       </AnimatePresence>
