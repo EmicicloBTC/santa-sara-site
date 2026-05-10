@@ -45,11 +45,13 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
   });
   const [lastClick, setLastClick] = useState(null);
 
-  // sceglie immagine + hotspot in base al device, con fallback intelligente
-  const currentImage = isMobile && scene.imageMobile ? scene.imageMobile : scene.image;
+  // sceglie immagine + hotspot in base al device, con fallback intelligente:
+  // se manca la foto mobile usiamo la desktop e (di conseguenza) i suoi hotspot
+  const useMobileVariant = isMobile && Boolean(scene.imageMobile);
+  const currentImage = useMobileVariant ? scene.imageMobile : scene.image;
   const currentHotspots =
-    isMobile && scene.hotspotsMobile ? scene.hotspotsMobile : scene.hotspots;
-  const usingMobileSet = isMobile && Boolean(scene.hotspotsMobile);
+    useMobileVariant && scene.hotspotsMobile ? scene.hotspotsMobile : scene.hotspots;
+  const usingMobileSet = useMobileVariant && Boolean(scene.hotspotsMobile);
 
   useEffect(() => {
     function onKey(e) {

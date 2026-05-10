@@ -36,30 +36,22 @@ export const scenes = [
     id: "scene-1",
     title: "Soggiorno · Pomeriggio",
     image: "/images/scenes/scene-1.png",
-    imageMobile: "/images/scenes/scene-1-mobile.png",
+    // imageMobile: "/images/scenes/scene-1-mobile.png", // aggiungi quando carichi la foto verticale
     alt: "Interno casa con pezzi Santa Sara mischiati ad oggetti quotidiani",
     hotspots: [
       { productId: "florence", x: 38, y: 52, r: 6 },
       { productId: "romance", x: 64, y: 58, r: 6 },
-    ],
-    hotspotsMobile: [
-      { productId: "florence", x: 38, y: 52, r: 7 },
-      { productId: "romance", x: 64, y: 58, r: 7 },
     ],
   },
   {
     id: "scene-2",
     title: "Tavolo · Sera",
     image: "/images/scenes/scene-2.png",
-    imageMobile: "/images/scenes/scene-2-mobile.png",
+    // imageMobile: "/images/scenes/scene-2-mobile.png", // aggiungi quando carichi la foto verticale
     alt: "Dettaglio interno con ceramiche Santa Sara fra oggetti casuali",
     hotspots: [
       { productId: "florence", x: 42, y: 48, r: 6 },
       { productId: "romance", x: 60, y: 55, r: 6 },
-    ],
-    hotspotsMobile: [
-      { productId: "florence", x: 42, y: 48, r: 7 },
-      { productId: "romance", x: 60, y: 55, r: 7 },
     ],
   },
   {
