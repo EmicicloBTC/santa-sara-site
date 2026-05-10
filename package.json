@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "optimize-images": "node scripts/optimize-images.js",
+    "build-favicons": "node scripts/build-favicons.js",
     "prebuild": "node scripts/optimize-images.js",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",

@@ -16,10 +16,15 @@ export function Header({ onOpenInfo }) {
     <header className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-start justify-between p-4 sm:p-6">
       <a
         href="#home"
-        className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-white/55 px-4 py-2 backdrop-blur-md ring-1 ring-stone-950/20 transition hover:bg-white/75"
+        className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-white/55 py-1.5 pl-1.5 pr-4 backdrop-blur-md ring-1 ring-stone-950/20 transition hover:bg-white/75"
       >
-        <span className="grid h-6 w-6 place-items-center rounded-full bg-stone-950 font-serif text-[10px] text-white">
-          SS
+        <span className="grid h-9 w-9 place-items-center overflow-hidden rounded-full bg-white ring-1 ring-stone-950/10">
+          <img
+            src="/logo.png"
+            alt="Logo Santa Sara"
+            className="h-full w-full object-cover"
+            draggable={false}
+          />
         </span>
         <span className="font-serif text-base tracking-[-0.02em] text-stone-950 sm:text-lg">
           Santa<span className="italic">Sara</span>
