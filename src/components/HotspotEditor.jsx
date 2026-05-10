@@ -45,7 +45,7 @@ export function HotspotEditor({ enabled, sceneId, lastClick }) {
         >
           {copied ? "Copiato!" : "Copia"}
         </button>
-        <span className="text-[10px] text-stone-500">premi ? per chiudere</span>
+        <span className="text-[10px] text-stone-500">premi E per chiudere</span>
       </div>
     </div>
   );

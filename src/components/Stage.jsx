@@ -11,14 +11,27 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
   const scene = scenes[sceneIndex];
   const sceneCount = scenes.length;
   const imgRef = useRef(null);
-  const [editor, setEditor] = useState(false);
+  const [editor, setEditor] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.location.hash.includes("edit") || window.location.search.includes("edit");
+  });
   const [lastClick, setLastClick] = useState(null);
 
   useEffect(() => {
     function onKey(e) {
-      if (e.key === "?") {
+      const target = e.target;
+      const isFormField =
+        target instanceof HTMLElement &&
+        (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable);
+      if (isFormField) return;
+
+      // Toggle editor: ?, /, oppure tasto E (più affidabile su tastiera italiana)
+      if (e.key === "?" || (e.code === "Slash" && e.shiftKey) || e.key === "e" || e.key === "E") {
+        e.preventDefault();
         setEditor((v) => !v);
-      } else if (e.key === "ArrowRight") {
+        return;
+      }
+      if (e.key === "ArrowRight") {
         onChangeScene((sceneIndex + 1) % sceneCount);
       } else if (e.key === "ArrowLeft") {
         onChangeScene((sceneIndex - 1 + sceneCount) % sceneCount);
