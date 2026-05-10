@@ -64,6 +64,31 @@ In 1-2 minuti il sito ufficiale è aggiornato. Non c'è altro da fare.
 
 I prodotti (oggetti in vendita) stanno tutti in **`src/data/products.js`**. Sono identificati da una "chiave" (es. `florence`, `romance`).
 
+### 5.0 Linee guida per le FOTO PRODOTTO (importante)
+
+Per avere il miglior risultato possibile nel modal:
+
+| Regola | Valore consigliato |
+|---|---|
+| **Formato file** | JPG (per foto), PNG (solo se serve sfondo trasparente) |
+| **Risoluzione** | 1800–2400 px sul lato lungo |
+| **Aspetto (ratio)** | **3:4 verticale** (es. 1800×2400) → ottimale per oggetti alti |
+| | **1:1 quadrata** (es. 2000×2000) → ottimale per oggetti tondi |
+| **Sfondo** | uniforme: bianco, panna, grigio chiarissimo. **Niente fondali colorati o pattern** |
+| **Inquadratura** | oggetto centrato, lasciare 8-15% di "aria" intorno |
+| **Stesso prodotto** | usa SEMPRE lo stesso ratio per tutte le foto del carosello (1.jpg, 2.jpg, 3.jpg) |
+
+**Perché è importante:**
+- Il modal mostra l'immagine **intera** senza tagliarla, su sfondo crema (lo stesso del modal). Quindi le foto si "fondono" col contenitore se hanno sfondo neutro.
+- Se le foto hanno sfondi diversi (es. una bianca, una grigia, una con muro colorato), si vedono delle "bande" di colore diverse nelle aree vuote del modal. Brutto.
+- Se i ratio sono diversi tra le foto dello stesso prodotto, durante lo scorrimento del carosello l'immagine "salta" di formato.
+
+**Risoluzione: troppo grande non è un problema.** Se carichi una foto da 5000×6500 px, lo script di ottimizzazione la ridimensiona automaticamente a max 2400px e la comprime. Quindi puoi caricare scatti pieni da fotocamera senza pensarci.
+
+**Risoluzione: troppo piccola SÌ è un problema.** Sotto i 1200px sul lato lungo le foto si vedono sgranate sul retina display.
+
+---
+
 ### 5a. Aggiungere foto a un prodotto già esistente (carosello)
 
 1. Vai in `public/images/products/<nome-prodotto>/`. Esempio: `public/images/products/florence/`.

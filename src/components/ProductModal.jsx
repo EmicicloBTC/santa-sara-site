@@ -83,7 +83,7 @@ export function ProductModal({ product, onClose }) {
               <Close size={16} />
             </button>
 
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-stone-900 md:aspect-auto md:min-h-[420px]">
+            <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#efe8db] md:aspect-auto md:min-h-[520px]">
               <AnimatePresence mode="wait" initial={false}>
                 {images[active] ? (
                   <motion.img
@@ -94,7 +94,7 @@ export function ProductModal({ product, onClose }) {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 h-full w-full object-contain p-3 sm:p-5"
                   />
                 ) : null}
               </AnimatePresence>
