@@ -163,4 +163,21 @@ export const scenes = [
       { productId: "keep-fit", x: 43, y: 30, r: 9 },
     ],
   },
+  {
+    id: "scene-9",
+    title: "Terrazza · Mediterraneo",
+    image: "/images/scenes/scene-9.png",
+    imageMobile: "/images/scenes/scene-9-mobile.png",
+    alt: "Terrazza affacciata sul mare con vaso Kentucky '73 sul tavolino e cachepot Visionari II sulla colonna",
+    hotspots: [
+      // Tavolino bistro a sinistra con il vaso Kentucky '73 (sfera rosa con 1973 + cavalli)
+      { productId: "kentucky-73", x: 22, y: 55, r: 5 },
+      // Colonna a destra con il cachepot Visionari II (terracotta + figure greche)
+      { productId: "visionari-ii", x: 78, y: 53, r: 7 },
+    ],
+    hotspotsMobile: [
+      { productId: "kentucky-73", x: 20, y: 42, r: 6 },
+      { productId: "visionari-ii", x: 55, y: 37, r: 8 },
+    ],
+  },
 ];

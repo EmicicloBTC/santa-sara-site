@@ -155,6 +155,30 @@ export const products = {
     ctaHref: "mailto:hello@santasara.com?subject=Cohort 03 — disponibilità",
     images: { slug: "vasi/cohort-03", count: 4, ext: "png" },
   },
+  "kentucky-73": {
+    id: "kentucky-73",
+    title: "Kentucky '73",
+    category: "Vasi",
+    kind: "Vaso decorato a mano",
+    dimensions: "h 28 cm · ø 26 cm",
+    description: "Omaggio al Kentucky Derby del 1973: corsa di cavalli, fantini, rose rosse e righe rosa. Pezzo unico, decorato a mano in atelier.",
+    price: "€ 420",
+    cta: "Chiedi disponibilità",
+    ctaHref: "mailto:hello@santasara.com?subject=Kentucky '73 — disponibilità",
+    images: { slug: "vasi/kentucky-73", count: 4, ext: "png" },
+  },
+  "visionari-ii": {
+    id: "visionari-ii",
+    title: "Visionari II",
+    category: "Vasi",
+    kind: "Cachepot decorato a mano",
+    dimensions: "h 30 cm · ø 32 cm",
+    description: "Cratere terracotta neoclassico con figure greche che indossano visori VR. Ironia sospesa fra antico e contemporaneo, decoro a meandro greco. Pezzo unico, decorato a mano in atelier.",
+    price: "€ 520",
+    cta: "Chiedi disponibilità",
+    ctaHref: "mailto:hello@santasara.com?subject=Visionari II — disponibilità",
+    images: { slug: "vasi/visionari-ii", count: 4, ext: "png" },
+  },
 };
 
 /** Tutte le URL del prodotto in ordine: 1.ext, 2.ext, … */
