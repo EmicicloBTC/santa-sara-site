@@ -215,10 +215,7 @@ export function ProductModal({ product, onClose }) {
                   {product.category}
                 </span>
               )}
-              <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-500">
-                {product.kind}
-              </p>
-              <h2 className="mt-3 font-serif text-4xl leading-[1.05] tracking-[-0.025em] sm:text-5xl">
+              <h2 className="font-serif text-4xl leading-[1.05] tracking-[-0.025em] sm:text-5xl">
                 {product.title}
               </h2>
 
