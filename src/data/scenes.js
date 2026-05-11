@@ -136,9 +136,9 @@ export const scenes = [
     // 4 piatti sul tavolo. Coordinate stimate, da rifinire con l'editor.
     hotspots: [
       { productId: "lady-gaga", x: 29, y: 23, r: 5 },     // alto-sx (con fragole)
-      { productId: "chappell-roan", x: 65, y: 22, r: 5 }, // alto-dx
+      { productId: "chappell-roan", x: 72, y: 22, r: 5 }, // alto-dx
       { productId: "iris-apfel", x: 12, y: 54, r: 6 },    // basso-sx
-      { productId: "yayoi-kusama", x: 43, y: 61, r: 6 },  // basso-dx (grande)
+      { productId: "yayoi-kusama", x: 50, y: 61, r: 6 },  // basso-dx (grande)
     ],
     hotspotsMobile: [
       { productId: "lady-gaga", x: 23, y: 30, r: 6 },
@@ -153,12 +153,14 @@ export const scenes = [
     image: "/images/scenes/scene-8.png",
     imageMobile: "/images/scenes/scene-8-mobile.png",
     alt: "Salotto minimale con camino e coppia di piatti Keep Fit (Body Rolling + Body Rocking) sulla mensola",
-    // Un solo hotspot CENTRATO fra i due piatti: apre il modal della coppia Keep Fit
+    // Un solo hotspot CENTRATO fra i due piatti: apre il modal della coppia Keep Fit.
+    // Y abbassato: l'immagine è 4:3 ma il viewport è 16:9, quindi viene ritagliata
+    // in alto/basso e il punto giusto è più alto rispetto alle coordinate "raw" dell'immagine.
     hotspots: [
-      { productId: "keep-fit", x: 41, y: 28, r: 8 },
+      { productId: "keep-fit", x: 40, y: 19, r: 8 },
     ],
     hotspotsMobile: [
-      { productId: "keep-fit", x: 44, y: 30, r: 9 },
+      { productId: "keep-fit", x: 43, y: 30, r: 9 },
     ],
   },
 ];

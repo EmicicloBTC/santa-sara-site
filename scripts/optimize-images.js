@@ -22,9 +22,16 @@ const ROOT = path.resolve(__dirname, "..");
 const IMAGES_DIR = path.join(ROOT, "public", "images");
 const MANIFEST_PATH = path.join(ROOT, ".image-cache.json");
 
-const MAX_DIM = 1800; // px sul lato più lungo (più che sufficiente per Retina 4K)
+// px sul lato più lungo. Per le immagini "mobile" (filename contiene -mobile)
+// abbassiamo: i telefoni non hanno mai bisogno di più di 1300 px.
+const MAX_DIM_DEFAULT = 1800;
+const MAX_DIM_MOBILE = 1300;
 const JPG_QUALITY = 78;
 const PNG_QUALITY = 75;
+
+function maxDimFor(file) {
+  return /-mobile\.(png|jpe?g)$/i.test(file) ? MAX_DIM_MOBILE : MAX_DIM_DEFAULT;
+}
 
 async function* walk(dir) {
   let entries;
@@ -77,10 +84,11 @@ async function optimize(file, manifest) {
   let pipeline = sharp(buf, { failOn: "none" });
   const meta = await pipeline.metadata();
   const longest = Math.max(meta.width || 0, meta.height || 0);
-  if (longest > MAX_DIM) {
+  const maxDim = maxDimFor(file);
+  if (longest > maxDim) {
     pipeline = pipeline.resize({
-      width: (meta.width || 0) >= (meta.height || 0) ? MAX_DIM : null,
-      height: (meta.height || 0) > (meta.width || 0) ? MAX_DIM : null,
+      width: (meta.width || 0) >= (meta.height || 0) ? maxDim : null,
+      height: (meta.height || 0) > (meta.width || 0) ? maxDim : null,
       fit: "inside",
       withoutEnlargement: true,
     });
