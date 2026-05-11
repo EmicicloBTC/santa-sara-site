@@ -171,8 +171,11 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
           }}
         >
           <div ref={imgRef} className="relative h-full w-full select-none">
-            {/* Sfondo statico: serve come fallback durante il caricamento del
-                video e come immagine se la scena non ha nessun video. */}
+            {/* Sfondo statico: visibile quando NON c'e' un video da riprodurre.
+                Se c'e' un video, nascondiamo l'immagine finche il video non
+                e' finito, altrimenti per la frazione di secondo in cui il
+                video non e' ancora partito si vedrebbe l'ultimo frame (=
+                immagine) e poi il video tornerebbe indietro: effetto "salto". */}
             <img
               src={currentImage}
               alt={scene.alt}
@@ -180,7 +183,10 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
               fetchpriority="high"
               decoding="async"
               loading="eager"
-              className="absolute inset-0 h-full w-full object-cover"
+              className={
+                "absolute inset-0 h-full w-full object-cover" +
+                (playVideoNow ? " opacity-0" : "")
+              }
             />
 
             {playVideoNow && (

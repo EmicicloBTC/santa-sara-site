@@ -47,9 +47,11 @@ export const scenes = [
     // (che combacia con scene-1.png), poi compaiono i + dei prodotti.
     video: {
       src: "/videos/scene-1.mp4",
+      poster: "/videos/scene-1-poster.jpg",
     },
     videoMobile: {
       src: "/videos/scene-1-mobile.mp4",
+      poster: "/videos/scene-1-mobile-poster.jpg",
     },
     alt: "Terrazza affacciata sul mare con vaso Kentucky '73 sul tavolino e cachepot Visionari II sulla colonna",
     hotspots: [
