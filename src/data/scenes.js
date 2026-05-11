@@ -70,14 +70,17 @@ export const scenes = [
     title: "Tavolo · Sera",
     image: "/images/scenes/scene-2.png",
     imageMobile: "/images/scenes/scene-2-mobile.png",
-    alt: "Dettaglio interno con ceramiche Santa Sara fra oggetti casuali",
+    alt: "Dettaglio interno con ceramiche Santa Sara fra oggetti casuali, incluso il pezzo Messieur",
     hotspots: [
       { productId: "florence", x: 42, y: 48, r: 6 },
       { productId: "romance", x: 60, y: 55, r: 6 },
+      // Posizione provvisoria del Messieur in scena 2: rifinisci con l'editor (tasto E)
+      { productId: "messieur", x: 80, y: 70, r: 6 },
     ],
     hotspotsMobile: [
       { productId: "florence", x: 42, y: 48, r: 7 },
       { productId: "romance", x: 60, y: 55, r: 7 },
+      { productId: "messieur", x: 78, y: 72, r: 7 },
     ],
   },
   {
@@ -176,6 +179,20 @@ export const scenes = [
     ],
     hotspotsMobile: [
       { productId: "keep-fit", x: 43, y: 30, r: 9 },
+    ],
+  },
+  {
+    id: "scene-9",
+    title: "Scena · 09",
+    image: "/images/scenes/scene-9.png",
+    imageMobile: "/images/scenes/scene-9-mobile.png",
+    alt: "Ambiente Santa Sara con il pezzo Messieur in primo piano",
+    // Coordinate provvisorie: rifinisci con l'editor (tasto E) appena online
+    hotspots: [
+      { productId: "messieur", x: 50, y: 55, r: 7 },
+    ],
+    hotspotsMobile: [
+      { productId: "messieur", x: 50, y: 55, r: 8 },
     ],
   },
 ];

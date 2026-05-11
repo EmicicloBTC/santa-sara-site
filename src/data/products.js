@@ -1,5 +1,5 @@
 /**
- * @typedef {"Vasi" | "Piatti" | "Palle"} ProductCategory
+ * @typedef {"Vasi" | "Piatti" | "Palle" | "Misc"} ProductCategory
  *
  * @typedef {object} Product
  * @property {string} id            slug univoco usato dalle scene per i hotspot
@@ -23,7 +23,8 @@
  *   public/images/products/
  *   ├─ vasi/<nome-prodotto>/1.jpg, 2.jpg, …
  *   ├─ piatti/<nome-prodotto>/1.jpg, 2.jpg, …
- *   └─ palle/<nome-prodotto>/1.jpg, 2.jpg, …
+ *   ├─ palle/<nome-prodotto>/1.jpg, 2.jpg, …
+ *   └─ misc/<nome-prodotto>/1.jpg, 2.jpg, …
  *
  * Esempio: per "Snow Yeti" (categoria Piatti) le foto stanno in
  *   public/images/products/piatti/snow-yeti/1.jpg, 2.jpg, 3.jpg, 4.jpg
@@ -178,6 +179,18 @@ export const products = {
     cta: "Chiedi disponibilità",
     ctaHref: "mailto:hello@santasara.com?subject=Visionari II — disponibilità",
     images: { slug: "vasi/visionari-ii", count: 4, ext: "png" },
+  },
+  messieur: {
+    id: "messieur",
+    title: "Messieur",
+    category: "Misc",
+    kind: "Pezzo decorativo decorato a mano",
+    dimensions: "—",
+    description: "Pezzo unico fra classico e contemporaneo, decorato a mano in atelier.",
+    price: "Su richiesta",
+    cta: "Chiedi disponibilità",
+    ctaHref: "mailto:hello@santasara.com?subject=Messieur — disponibilità",
+    images: { slug: "misc/messieur", count: 4, ext: "png" },
   },
 };
 
