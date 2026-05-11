@@ -135,18 +135,16 @@ export const scenes = [
     alt: "Apparecchiatura su tavolo all'aperto al tramonto, con quattro piatti decorati Santa Sara",
     // 4 piatti sul tavolo. Coordinate stimate, da rifinire con l'editor.
     hotspots: [
-      // Top-left (piccolo, con fragole sopra): placeholder snow-yeti finché
-      // non viene aggiunto il 4° piatto. Cambia productId quando ci sarà.
-      { productId: "snow-yeti", x: 29, y: 23, r: 5 },
-      { productId: "iris-apfel", x: 65, y: 22, r: 5 },
-      { productId: "chappell-roan", x: 12, y: 54, r: 6 },
-      { productId: "lady-gaga", x: 43, y: 61, r: 6 },
+      { productId: "lady-gaga", x: 29, y: 23, r: 5 },     // alto-sx (con fragole)
+      { productId: "chappell-roan", x: 65, y: 22, r: 5 }, // alto-dx
+      { productId: "iris-apfel", x: 12, y: 54, r: 6 },    // basso-sx
+      { productId: "yayoi-kusama", x: 43, y: 61, r: 6 },  // basso-dx (grande)
     ],
     hotspotsMobile: [
-      { productId: "snow-yeti", x: 23, y: 30, r: 6 },
-      { productId: "iris-apfel", x: 64, y: 29, r: 6 },
-      { productId: "chappell-roan", x: 16, y: 49, r: 7 },
-      { productId: "lady-gaga", x: 48, y: 54, r: 7 },
+      { productId: "lady-gaga", x: 23, y: 30, r: 6 },
+      { productId: "chappell-roan", x: 64, y: 29, r: 6 },
+      { productId: "iris-apfel", x: 16, y: 49, r: 7 },
+      { productId: "yayoi-kusama", x: 48, y: 54, r: 7 },
     ],
   },
   {

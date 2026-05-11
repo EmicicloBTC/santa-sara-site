@@ -119,6 +119,18 @@ export const products = {
     ctaHref: "mailto:hello@santasara.com?subject=Keep Fit (set) — disponibilità",
     images: { slug: "piatti/keep-fit", count: 4, ext: "png" },
   },
+  "yayoi-kusama": {
+    id: "yayoi-kusama",
+    title: "Yayoi Kusama",
+    category: "Piatti",
+    kind: "Piatto decorato a mano",
+    dimensions: "ø 32 cm",
+    description: "Omaggio all'artista giapponese: caschetto rosso, pois gialli su fondo nero e viola. Cornice a onda con tondi gialli. Pezzo unico, decorato a mano in atelier.",
+    price: "€ 180",
+    cta: "Chiedi disponibilità",
+    ctaHref: "mailto:hello@santasara.com?subject=Yayoi Kusama — disponibilità",
+    images: { slug: "piatti/yayoi-kusama", count: 4, ext: "png" },
+  },
   "prime-cut": {
     id: "prime-cut",
     title: "Prime Cut",
