@@ -88,6 +88,10 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
   const currentHotspots =
     useMobileVariant && scene.hotspotsMobile ? scene.hotspotsMobile : scene.hotspots;
   const usingMobileSet = useMobileVariant && Boolean(scene.hotspotsMobile);
+  // Variante mobile del video (opzionale): se siamo su telefono e la scena
+  // ha un videoMobile dedicato, usiamo quello. Altrimenti il desktop.
+  const currentVideo =
+    isMobile && scene.videoMobile ? scene.videoMobile : scene.video;
 
   // Precarica la scena precedente e la successiva (sia desktop sia mobile)
   // appena entriamo su una scena: navigare avanti/indietro è istantaneo.
@@ -106,7 +110,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
   // quando l'utente torna su una scena già "vissuta", l'intro non riparte.
   // È volutamente in-memory: se ricarica la pagina, il video torna a partire.
   const [playedVideos, setPlayedVideos] = useState(() => new Set());
-  const hasVideo = Boolean(scene.video?.src);
+  const hasVideo = Boolean(currentVideo?.src);
   const playVideoNow = hasVideo && !playedVideos.has(scene.id);
 
   // Quando la scena ha un video DA RIPRODURRE, gli hotspot sono nascosti
@@ -181,9 +185,9 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
 
             {playVideoNow && (
               <video
-                key={`${scene.id}-video`}
-                src={scene.video.src}
-                poster={scene.video.poster}
+                key={`${scene.id}-video-${isMobile ? "m" : "d"}`}
+                src={currentVideo.src}
+                poster={currentVideo.poster}
                 autoPlay
                 muted
                 playsInline

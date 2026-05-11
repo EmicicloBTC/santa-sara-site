@@ -24,8 +24,11 @@
  * @property {Hotspot[]} hotspots
  * @property {Hotspot[]} [hotspotsMobile]
  * @property {{ src: string, poster?: string }} [video]
- *   Video opzionale: parte automuto quando si entra nella scena, si ferma
- *   sull'ultimo frame (che dovrebbe coincidere con `image`), non si ripete.
+ *   Video opzionale (desktop): parte automuto quando si entra nella scena, si
+ *   ferma sull'ultimo frame (che dovrebbe coincidere con `image`), non si ripete.
+ * @property {{ src: string, poster?: string }} [videoMobile]
+ *   Variante mobile (verticale) del video. Se non c'è, su telefono viene
+ *   usato `video`.
  *
  * Per posizionare i hotspot facilmente attiva l'editor: premi "E" (o "?") sulla
  * landing e clicca sopra il prodotto. In alto a destra appare la riga da
@@ -37,17 +40,27 @@
 export const scenes = [
   {
     id: "scene-1",
-    title: "Soggiorno · Pomeriggio",
+    title: "Terrazza · Mediterraneo",
     image: "/images/scenes/scene-1.png",
-    // imageMobile: "/images/scenes/scene-1-mobile.png", // aggiungi quando carichi la foto verticale
+    imageMobile: "/images/scenes/scene-1-mobile.png",
+    // Intro animato: il video parte automuto e si ferma sull'ultimo frame
+    // (che combacia con scene-1.png), poi compaiono i + dei prodotti.
     video: {
       src: "/videos/scene-1.mp4",
-      poster: "/videos/scene-1-poster.jpg",
     },
-    alt: "Interno casa con pezzi Santa Sara mischiati ad oggetti quotidiani",
+    videoMobile: {
+      src: "/videos/scene-1-mobile.mp4",
+    },
+    alt: "Terrazza affacciata sul mare con vaso Kentucky '73 sul tavolino e cachepot Visionari II sulla colonna",
     hotspots: [
-      { productId: "florence", x: 38, y: 52, r: 6 },
-      { productId: "romance", x: 64, y: 58, r: 6 },
+      // Tavolino bistro a sinistra con il vaso Kentucky '73 (sfera rosa con 1973 + cavalli)
+      { productId: "kentucky-73", x: 22, y: 55, r: 5 },
+      // Colonna a destra con il cachepot Visionari II (terracotta + figure greche)
+      { productId: "visionari-ii", x: 78, y: 53, r: 7 },
+    ],
+    hotspotsMobile: [
+      { productId: "kentucky-73", x: 20, y: 52, r: 6 },
+      { productId: "visionari-ii", x: 70, y: 50, r: 8 },
     ],
   },
   {
@@ -161,23 +174,6 @@ export const scenes = [
     ],
     hotspotsMobile: [
       { productId: "keep-fit", x: 43, y: 30, r: 9 },
-    ],
-  },
-  {
-    id: "scene-9",
-    title: "Terrazza · Mediterraneo",
-    image: "/images/scenes/scene-9.png",
-    imageMobile: "/images/scenes/scene-9-mobile.png",
-    alt: "Terrazza affacciata sul mare con vaso Kentucky '73 sul tavolino e cachepot Visionari II sulla colonna",
-    hotspots: [
-      // Tavolino bistro a sinistra con il vaso Kentucky '73 (sfera rosa con 1973 + cavalli)
-      { productId: "kentucky-73", x: 22, y: 55, r: 5 },
-      // Colonna a destra con il cachepot Visionari II (terracotta + figure greche)
-      { productId: "visionari-ii", x: 78, y: 53, r: 7 },
-    ],
-    hotspotsMobile: [
-      { productId: "kentucky-73", x: 20, y: 52, r: 6 },
-      { productId: "visionari-ii", x: 70, y: 50, r: 8 },
     ],
   },
 ];
