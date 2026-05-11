@@ -145,6 +145,11 @@ export function ProductModal({ product, onClose }) {
             </button>
 
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#efe8db] md:aspect-auto md:min-h-[520px]">
+              {localized.categoryLabel && (
+                <span className="pointer-events-none absolute left-3 top-3 z-20 inline-flex items-center rounded-full bg-white/85 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.28em] text-stone-700 shadow ring-1 ring-stone-950/15 backdrop-blur-md">
+                  {localized.categoryLabel}
+                </span>
+              )}
               <AnimatePresence initial={false} custom={direction}>
                 {images[active] ? (
                   <motion.img
@@ -214,11 +219,6 @@ export function ProductModal({ product, onClose }) {
             </div>
 
             <div className="flex max-h-[90vh] flex-col overflow-y-auto p-6 sm:p-8 md:p-10">
-              {localized.categoryLabel && (
-                <span className="mb-3 inline-flex w-fit items-center rounded-full border border-stone-950/15 bg-white/70 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.28em] text-stone-700">
-                  {localized.categoryLabel}
-                </span>
-              )}
               <h2 className="font-serif text-4xl leading-[1.05] tracking-[-0.025em] sm:text-5xl">
                 {product.title}
               </h2>
