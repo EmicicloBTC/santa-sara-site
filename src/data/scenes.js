@@ -119,15 +119,15 @@ export const scenes = [
     alt: "Soggiorno serale con lampada Florence sul tavolo e piatto decorato appeso alla parete",
     // Coordinate stimate dalla foto: rifinisci con l'editor (tasto E)
     hotspots: [
-      // Florence è la lampada al centro: hotspot sul corpo decorato (figurine su erba)
-      { productId: "florence", x: 37, y: 50, r: 6 },
-      // Piatto appeso a destra — scommenta appena lo aggiungi come prodotto in products.js:
-      // { productId: "PIATTO-ID-QUI", x: 66, y: 14, r: 6 },
+      // Florence: lampada GRANDE al centro col decoro a figurine su erba
+      { productId: "florence", x: 55, y: 55, r: 6 },
+      // Piatto sulla parete (alto a destra): placeholder cohort-03 finché non
+      // viene aggiunto il prodotto vero — basta cambiare il productId.
+      { productId: "cohort-03", x: 83, y: 18, r: 6 },
     ],
     hotspotsMobile: [
-      { productId: "florence", x: 39, y: 30, r: 7 },
-      // Piatto in alto a sinistra (mobile) — scommenta appena lo aggiungi come prodotto:
-      // { productId: "PIATTO-ID-QUI", x: 18, y: 8, r: 7 },
+      { productId: "florence", x: 40, y: 32, r: 7 },
+      { productId: "cohort-03", x: 16, y: 8, r: 7 },
     ],
   },
 ];
