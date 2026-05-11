@@ -62,7 +62,7 @@ const it = {
     },
     "scene-2": {
       title: "Tavolo · Sera",
-      alt: "Dettaglio interno con ceramiche Santa Sara fra oggetti casuali, incluso il pezzo Messieur",
+      alt: "Dettaglio interno con la lampada Florence e il pezzo Messieur",
     },
     "scene-3": {
       title: "Scena · 03",
@@ -236,7 +236,7 @@ const en = {
     },
     "scene-2": {
       title: "Table · Evening",
-      alt: "Interior detail with Santa Sara ceramics among everyday objects, including the Messieur piece",
+      alt: "Interior detail with the Florence lamp and the Messieur piece",
     },
     "scene-3": {
       title: "Scene · 03",
