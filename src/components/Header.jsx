@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { Close, Menu, Instagram, TikTok, ShoppingBag } from "./icons.jsx";
 import { site } from "../data/site.js";
+import { useT, useLang } from "../i18n/index.jsx";
 
 export function Header({ onOpenInfo }) {
   const [open, setOpen] = useState(false);
+  const t = useT();
+  const { lang, setLang } = useLang();
 
   useEffect(() => {
     if (!open) return;
@@ -39,7 +42,7 @@ export function Header({ onOpenInfo }) {
       <div className="pointer-events-auto relative">
         <button
           type="button"
-          aria-label={open ? "Chiudi menu" : "Apri menu"}
+          aria-label={open ? t.ui.closeMenu : t.ui.openMenu}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
           className="grid h-12 w-12 place-items-center rounded-full bg-white/55 text-stone-950 backdrop-blur-md ring-1 ring-stone-950/20 transition hover:bg-white/75"
@@ -52,8 +55,42 @@ export function Header({ onOpenInfo }) {
             className="absolute right-0 mt-2 w-60 overflow-hidden rounded-xl bg-white/85 text-stone-950 shadow-lg ring-1 ring-stone-950/15 backdrop-blur-xl"
             role="menu"
           >
-            <div className="select-none border-b border-stone-950/10 px-4 py-3 text-[10px] uppercase tracking-[0.22em] text-stone-500">
-              Based in Italy
+            <div className="flex items-center justify-between border-b border-stone-950/10 px-4 py-3">
+              <span className="select-none text-[10px] uppercase tracking-[0.22em] text-stone-500">
+                {t.ui.basedIn}
+              </span>
+              <div
+                role="group"
+                aria-label={t.ui.languageLabel}
+                className="inline-flex overflow-hidden rounded-full bg-stone-950/5 p-0.5 text-[10px] font-medium uppercase tracking-[0.18em] ring-1 ring-stone-950/10"
+              >
+                <button
+                  type="button"
+                  onClick={() => setLang("it")}
+                  aria-pressed={lang === "it"}
+                  className={
+                    "rounded-full px-2.5 py-1 transition " +
+                    (lang === "it"
+                      ? "bg-stone-950 text-white"
+                      : "text-stone-600 hover:text-stone-950")
+                  }
+                >
+                  IT
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLang("en")}
+                  aria-pressed={lang === "en"}
+                  className={
+                    "rounded-full px-2.5 py-1 transition " +
+                    (lang === "en"
+                      ? "bg-stone-950 text-white"
+                      : "text-stone-600 hover:text-stone-950")
+                  }
+                >
+                  EN
+                </button>
+              </div>
             </div>
 
             <button
@@ -62,8 +99,8 @@ export function Header({ onOpenInfo }) {
               onClick={() => { setOpen(false); onOpenInfo?.(); }}
               className="flex w-full items-center justify-between px-4 py-3 text-left text-sm transition hover:bg-stone-950/5"
             >
-              Bio &amp; atelier
-              <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">info</span>
+              {t.ui.bioAtelier}
+              <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{t.ui.infoBadge}</span>
             </button>
 
             <a
@@ -75,9 +112,9 @@ export function Header({ onOpenInfo }) {
             >
               <span className="flex items-center gap-2">
                 <ShoppingBag size={15} />
-                Etsy shop
+                {t.ui.etsyShop}
               </span>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">acquista</span>
+              <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{t.ui.buyBadge}</span>
             </a>
 
             <a
@@ -113,8 +150,8 @@ export function Header({ onOpenInfo }) {
               role="menuitem"
               className="flex w-full items-center justify-between border-t border-stone-950/10 px-4 py-3 text-sm transition hover:bg-stone-950/5"
             >
-              Contatti
-              <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">email</span>
+              {t.ui.contacts}
+              <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{t.ui.emailBadge}</span>
             </a>
           </div>
         )}

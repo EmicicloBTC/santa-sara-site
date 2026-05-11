@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { productImages } from "../data/products.js";
 import { Arrow, ChevronLeft, ChevronRight, Close } from "./icons.jsx";
+import { useT, useLocalizedProduct } from "../i18n/index.jsx";
 
 const AUTO_MS = 3000;
 
@@ -37,6 +38,9 @@ const SLIDE_TRANSITION = {
 
 export function ProductModal({ product, onClose }) {
   const open = !!product;
+  const t = useT();
+  // localizza description / dimensions / price / cta / categoryLabel
+  const localized = useLocalizedProduct(product);
   const images = useMemo(() => (product ? productImages(product) : []), [product]);
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -112,7 +116,7 @@ export function ProductModal({ product, onClose }) {
         >
           <motion.button
             type="button"
-            aria-label="Chiudi"
+            aria-label={t.ui.close}
             onClick={onClose}
             className="absolute inset-0 cursor-default bg-stone-950/55 backdrop-blur-md"
             initial={{ opacity: 0 }}
@@ -134,7 +138,7 @@ export function ProductModal({ product, onClose }) {
             <button
               type="button"
               onClick={onClose}
-              aria-label="Chiudi"
+              aria-label={t.ui.close}
               className="absolute right-3 top-3 z-20 grid h-10 w-10 place-items-center rounded-full bg-white/85 text-stone-900 shadow ring-1 ring-stone-950/15 backdrop-blur-md transition hover:bg-white"
             >
               <Close size={16} />
@@ -177,7 +181,7 @@ export function ProductModal({ product, onClose }) {
 
                   <button
                     type="button"
-                    aria-label="Precedente"
+                    aria-label={t.ui.prev}
                     onClick={goPrev}
                     className="absolute left-3 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/30 bg-black/35 text-white backdrop-blur-md transition hover:bg-black/55"
                   >
@@ -185,7 +189,7 @@ export function ProductModal({ product, onClose }) {
                   </button>
                   <button
                     type="button"
-                    aria-label="Successiva"
+                    aria-label={t.ui.next}
                     onClick={goNext}
                     className="absolute right-3 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/30 bg-black/35 text-white backdrop-blur-md transition hover:bg-black/55"
                   >
@@ -196,7 +200,7 @@ export function ProductModal({ product, onClose }) {
                       <button
                         key={i}
                         type="button"
-                        aria-label={`Immagine ${i + 1}`}
+                        aria-label={`${t.ui.imageN} ${i + 1}`}
                         aria-current={active === i || undefined}
                         onClick={() => goTo(i)}
                         className={`h-2 rounded-full transition-all duration-300 ${
@@ -210,9 +214,9 @@ export function ProductModal({ product, onClose }) {
             </div>
 
             <div className="flex max-h-[90vh] flex-col overflow-y-auto p-6 sm:p-8 md:p-10">
-              {product.category && (
+              {localized.categoryLabel && (
                 <span className="mb-3 inline-flex w-fit items-center rounded-full border border-stone-950/15 bg-white/70 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.28em] text-stone-700">
-                  {product.category}
+                  {localized.categoryLabel}
                 </span>
               )}
               <h2 className="font-serif text-4xl leading-[1.05] tracking-[-0.025em] sm:text-5xl">
@@ -221,25 +225,25 @@ export function ProductModal({ product, onClose }) {
 
               <dl className="mt-6 grid grid-cols-2 gap-4 border-y border-stone-950/15 py-4 text-sm">
                 <div>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.28em] text-stone-500">Dimensioni</dt>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.28em] text-stone-500">{t.modal.dimensions}</dt>
                   <dd className="mt-1 font-serif text-base tracking-[-0.01em] text-stone-900">
-                    {product.dimensions || "—"}
+                    {localized.dimensions || "—"}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.28em] text-stone-500">Prezzo</dt>
-                  <dd className="mt-1 font-serif text-base tracking-[-0.01em] text-stone-900">{product.price}</dd>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.28em] text-stone-500">{t.modal.price}</dt>
+                  <dd className="mt-1 font-serif text-base tracking-[-0.01em] text-stone-900">{localized.price}</dd>
                 </div>
               </dl>
 
-              <p className="mt-6 text-base leading-[1.7] text-stone-700">{product.description}</p>
+              <p className="mt-6 text-base leading-[1.7] text-stone-700">{localized.description}</p>
 
               <div className="mt-auto pt-8">
                 <a
                   href={product.ctaHref || "#"}
                   className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-stone-950 px-6 py-4 text-[11px] font-medium uppercase tracking-[0.32em] text-white transition hover:bg-[#3a342d] sm:w-auto"
                 >
-                  {product.cta || "Chiedi disponibilità"} <Arrow size={14} />
+                  {localized.cta || t.modal.askAvailability} <Arrow size={14} />
                 </a>
               </div>
             </div>

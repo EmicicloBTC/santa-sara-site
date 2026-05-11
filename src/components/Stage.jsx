@@ -4,6 +4,7 @@ import { products } from "../data/products.js";
 import { Hotspot } from "./Hotspot.jsx";
 import { HotspotEditor } from "./HotspotEditor.jsx";
 import { ChevronLeft, ChevronRight } from "./icons.jsx";
+import { useT, useLocalizedScene } from "../i18n/index.jsx";
 
 const SWIPE_THRESHOLD = 60;
 
@@ -67,7 +68,9 @@ function preloadScene(url) {
 }
 
 export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
+  const t = useT();
   const scene = scenes[sceneIndex];
+  const localizedScene = useLocalizedScene(scene);
   const sceneCount = scenes.length;
   const detectedMobile = useIsMobile();
   const imgRef = useRef(null);
@@ -176,7 +179,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
         >
           <div ref={imgRef} className="relative h-full w-full select-none">
             <SceneMedia
-              scene={scene}
+              scene={localizedScene}
               currentImage={currentImage}
               currentVideo={currentVideo}
               playedVideos={playedVideos}
@@ -231,7 +234,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
         <>
           <button
             type="button"
-            aria-label="Scena precedente"
+            aria-label={t.ui.prevScene}
             onClick={() => go(-1)}
             className="absolute left-3 top-1/2 z-20 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-xl transition hover:bg-white/30 sm:left-6 sm:h-14 sm:w-14"
           >
@@ -239,7 +242,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
           </button>
           <button
             type="button"
-            aria-label="Scena successiva"
+            aria-label={t.ui.nextScene}
             onClick={() => go(1)}
             className="absolute right-3 top-1/2 z-20 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-xl transition hover:bg-white/30 sm:right-6 sm:h-14 sm:w-14"
           >

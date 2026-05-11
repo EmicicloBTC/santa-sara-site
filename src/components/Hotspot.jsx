@@ -1,5 +1,6 @@
 import { productImages } from "../data/products.js";
 import { Plus } from "./icons.jsx";
+import { useT, useLocalizedProduct } from "../i18n/index.jsx";
 
 // Precaricamento lazy delle immagini di un prodotto al primo hover/focus
 // sul hotspot. Quando poi l'utente clicca, il modal apre con foto già in cache.
@@ -16,6 +17,8 @@ function preloadProduct(product) {
 
 /** Punto interattivo su un prodotto dentro la scena. Le coordinate sono in % rispetto al box scena. */
 export function Hotspot({ hotspot, product, onOpen }) {
+  const t = useT();
+  const localized = useLocalizedProduct(product);
   if (!product) return null;
   const radius = hotspot.r ?? 5;
   const size = `${radius * 2}%`;
@@ -27,7 +30,7 @@ export function Hotspot({ hotspot, product, onOpen }) {
       onMouseEnter={prefetch}
       onFocus={prefetch}
       onTouchStart={prefetch}
-      aria-label={`Apri scheda ${product.title}`}
+      aria-label={`${t.ui.openProductCard} ${product.title}`}
       style={{
         left: `${hotspot.x}%`,
         top: `${hotspot.y}%`,
@@ -55,7 +58,7 @@ export function Hotspot({ hotspot, product, onOpen }) {
       </span>
       {/* tooltip nome prodotto in hover */}
       <span className="pointer-events-none absolute left-1/2 top-full mt-3 -translate-x-1/2 whitespace-nowrap rounded-full bg-stone-950/85 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.28em] text-white opacity-0 backdrop-blur-md transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-        {product.title} · {product.price}
+        {product.title} · {localized.price}
       </span>
     </button>
   );

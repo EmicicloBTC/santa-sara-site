@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Close, Instagram, TikTok, ShoppingBag } from "./icons.jsx";
 import { site } from "../data/site.js";
+import { useT } from "../i18n/index.jsx";
 
 export function InfoModal({ open, onClose }) {
+  const t = useT();
   useEffect(() => {
     if (!open) return undefined;
     const onKey = (e) => e.key === "Escape" && onClose();
@@ -23,14 +25,14 @@ export function InfoModal({ open, onClose }) {
         >
           <button
             type="button"
-            aria-label="Chiudi"
+            aria-label={t.ui.close}
             onClick={onClose}
             className="absolute inset-0 cursor-default bg-stone-950/55 backdrop-blur-md"
           />
           <motion.div
             role="dialog"
             aria-modal="true"
-            aria-label="Bio e atelier"
+            aria-label={t.info.aria}
             className="relative z-10 max-h-[85vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-[#f6f1e8] p-7 text-stone-950 shadow-2xl ring-1 ring-stone-950/15 sm:p-9"
             initial={{ opacity: 0, y: 30, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -40,23 +42,21 @@ export function InfoModal({ open, onClose }) {
             <button
               type="button"
               onClick={onClose}
-              aria-label="Chiudi"
+              aria-label={t.ui.close}
               className="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-white/80 text-stone-900 shadow ring-1 ring-stone-950/15 transition hover:bg-white"
             >
               <Close size={16} />
             </button>
 
-            <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-500">— Atelier</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-500">{t.info.atelierLabel}</p>
             <h2 className="mt-3 font-serif text-4xl leading-[1.05] tracking-[-0.025em] sm:text-5xl">
               Santa<span className="italic"> Sara</span>
             </h2>
             <p className="mt-5 text-base leading-[1.75] text-stone-700">
-              Ceramiche ornamentali decorate a mano. Ogni pezzo è unico, dipinto in atelier:
-              forma classica, segno contemporaneo. Nessuna serie industriale, nessun catalogo
-              da supermercato — solo oggetti che entrano in casa con una posizione.
+              {t.info.paragraph1}
             </p>
             <p className="mt-4 text-base leading-[1.75] text-stone-700">
-              Per disponibilità, commissioni private o visite all’atelier scrivere a{" "}
+              {t.info.paragraph2Prefix}{" "}
               <a className="underline underline-offset-4 hover:text-stone-950" href={`mailto:${site.email}`}>
                 {site.email}
               </a>
@@ -74,7 +74,7 @@ export function InfoModal({ open, onClose }) {
                   <ShoppingBag size={16} />
                   Etsy
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">shop</span>
+                <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{t.info.etsyBadge}</span>
               </a>
               <a
                 href={site.social.instagram.url}
