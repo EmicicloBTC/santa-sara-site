@@ -116,18 +116,37 @@ export const scenes = [
     title: "Soggiorno · Sera",
     image: "/images/scenes/scene-6.png",
     imageMobile: "/images/scenes/scene-6-mobile.png",
-    alt: "Soggiorno serale con lampada Florence sul tavolo e piatto decorato appeso alla parete",
+    alt: "Soggiorno serale con lampada Florence sul tavolo e piatto Iris Apfel appeso alla parete",
     // Coordinate stimate dalla foto: rifinisci con l'editor (tasto E)
     hotspots: [
-      // Florence: lampada GRANDE al centro col decoro a figurine su erba
       { productId: "florence", x: 55, y: 55, r: 6 },
-      // Piatto sulla parete (alto a destra): placeholder cohort-03 finché non
-      // viene aggiunto il prodotto vero — basta cambiare il productId.
-      { productId: "cohort-03", x: 83, y: 18, r: 6 },
+      { productId: "iris-apfel", x: 83, y: 18, r: 6 },
     ],
     hotspotsMobile: [
       { productId: "florence", x: 40, y: 32, r: 7 },
-      { productId: "cohort-03", x: 16, y: 8, r: 7 },
+      { productId: "iris-apfel", x: 16, y: 8, r: 7 },
+    ],
+  },
+  {
+    id: "scene-7",
+    title: "Tavola · Tramonto",
+    image: "/images/scenes/scene-7.png",
+    imageMobile: "/images/scenes/scene-7-mobile.png",
+    alt: "Apparecchiatura su tavolo all'aperto al tramonto, con quattro piatti decorati Santa Sara",
+    // 4 piatti sul tavolo. Coordinate stimate, da rifinire con l'editor.
+    hotspots: [
+      // Top-left (piccolo, con fragole sopra): placeholder snow-yeti finché
+      // non viene aggiunto il 4° piatto. Cambia productId quando ci sarà.
+      { productId: "snow-yeti", x: 29, y: 23, r: 5 },
+      { productId: "iris-apfel", x: 65, y: 22, r: 5 },
+      { productId: "chappell-roan", x: 12, y: 54, r: 6 },
+      { productId: "lady-gaga", x: 43, y: 61, r: 6 },
+    ],
+    hotspotsMobile: [
+      { productId: "snow-yeti", x: 23, y: 30, r: 6 },
+      { productId: "iris-apfel", x: 64, y: 29, r: 6 },
+      { productId: "chappell-roan", x: 16, y: 49, r: 7 },
+      { productId: "lady-gaga", x: 48, y: 54, r: 7 },
     ],
   },
 ];
