@@ -1,14 +1,32 @@
+import { productImages } from "../data/products.js";
 import { Plus } from "./icons.jsx";
+
+// Precaricamento lazy delle immagini di un prodotto al primo hover/focus
+// sul hotspot. Quando poi l'utente clicca, il modal apre con foto già in cache.
+const preloaded = new Set();
+function preloadProduct(product) {
+  if (!product || preloaded.has(product.id) || typeof window === "undefined") return;
+  preloaded.add(product.id);
+  for (const url of productImages(product)) {
+    const img = new Image();
+    img.decoding = "async";
+    img.src = url;
+  }
+}
 
 /** Punto interattivo su un prodotto dentro la scena. Le coordinate sono in % rispetto al box scena. */
 export function Hotspot({ hotspot, product, onOpen }) {
   if (!product) return null;
   const radius = hotspot.r ?? 5;
   const size = `${radius * 2}%`;
+  const prefetch = () => preloadProduct(product);
   return (
     <button
       type="button"
       onClick={() => onOpen(product)}
+      onMouseEnter={prefetch}
+      onFocus={prefetch}
+      onTouchStart={prefetch}
       aria-label={`Apri scheda ${product.title}`}
       style={{
         left: `${hotspot.x}%`,
