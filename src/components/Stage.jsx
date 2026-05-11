@@ -111,15 +111,19 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
   // È volutamente in-memory: se ricarica la pagina, il video torna a partire.
   const [playedVideos, setPlayedVideos] = useState(() => new Set());
   const hasVideo = Boolean(currentVideo?.src);
-  const playVideoNow = hasVideo && !playedVideos.has(scene.id);
 
   // Quando la scena ha un video DA RIPRODURRE, gli hotspot sono nascosti
   // finché il video non finisce. Altrimenti (scena senza video o video già
-  // visto) sono subito visibili.
-  const [hotspotsReady, setHotspotsReady] = useState(!playVideoNow);
+  // visto in una visita precedente) sono subito visibili.
+  const [hotspotsReady, setHotspotsReady] = useState(
+    !hasVideo || playedVideos.has(scene.id),
+  );
   useEffect(() => {
-    setHotspotsReady(!playVideoNow);
-  }, [scene.id, useMobileVariant, playVideoNow]);
+    setHotspotsReady(!hasVideo || playedVideos.has(scene.id));
+    // intenzionalmente NON ascolto playedVideos: lo aggiorniamo noi via
+    // onVideoEnded e nello stesso momento mettiamo hotspotsReady=true.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scene.id, useMobileVariant, hasVideo]);
 
   useEffect(() => {
     function onKey(e) {
@@ -171,45 +175,21 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
           }}
         >
           <div ref={imgRef} className="relative h-full w-full select-none">
-            {/* Sfondo statico: visibile quando NON c'e' un video da riprodurre.
-                Se c'e' un video, nascondiamo l'immagine finche il video non
-                e' finito, altrimenti per la frazione di secondo in cui il
-                video non e' ancora partito si vedrebbe l'ultimo frame (=
-                immagine) e poi il video tornerebbe indietro: effetto "salto". */}
-            <img
-              src={currentImage}
-              alt={scene.alt}
-              draggable={false}
-              fetchpriority="high"
-              decoding="async"
-              loading="eager"
-              className={
-                "absolute inset-0 h-full w-full object-cover" +
-                (playVideoNow ? " opacity-0" : "")
-              }
+            <SceneMedia
+              scene={scene}
+              currentImage={currentImage}
+              currentVideo={currentVideo}
+              playedVideos={playedVideos}
+              onVideoEnded={() => {
+                setHotspotsReady(true);
+                setPlayedVideos((prev) => {
+                  if (prev.has(scene.id)) return prev;
+                  const next = new Set(prev);
+                  next.add(scene.id);
+                  return next;
+                });
+              }}
             />
-
-            {playVideoNow && (
-              <video
-                key={`${scene.id}-video-${isMobile ? "m" : "d"}`}
-                src={currentVideo.src}
-                poster={currentVideo.poster}
-                autoPlay
-                muted
-                playsInline
-                preload="auto"
-                onEnded={(e) => {
-                  e.currentTarget.pause();
-                  setHotspotsReady(true);
-                  setPlayedVideos((prev) => {
-                    const next = new Set(prev);
-                    next.add(scene.id);
-                    return next;
-                  });
-                }}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            )}
 
             {/* leggero gradient per leggibilità header/footer */}
             <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/35 to-transparent" />
@@ -293,5 +273,63 @@ function SceneLayer({ children, drag, onDragEnd }) {
     >
       {children}
     </motion.div>
+  );
+}
+
+/**
+ * Sfondo della scena: <img> statica + (opzionale) <video> intro sovrapposto.
+ *
+ * Regola d'oro: il <video> NON viene mai smontato durante la riproduzione/fine.
+ * Resta in pausa sull'ultimo frame finche' la SceneLayer non viene smontata
+ * dall'AnimatePresence (cambio scena), che gestisce gia' un crossfade morbido.
+ * Cosi' al termine del video non c'e' nessun "buco" di un frame nero fra video
+ * e immagine statica.
+ *
+ * Decisione presa AL MOUNT: se la scena ha un video da riprodurre, lo
+ * renderizziamo subito (con autoplay) e teniamo l'immagine statica nascosta.
+ * Quando il video finisce reveliamo l'immagine (che combacia al pixel con
+ * l'ultimo frame: nessun salto visivo). Se invece la scena e' gia' stata
+ * "vissuta" in questa sessione, il <video> non viene proprio renderizzato e
+ * si vede solo l'immagine statica.
+ */
+function SceneMedia({ scene, currentImage, currentVideo, playedVideos, onVideoEnded }) {
+  const hasVideo = Boolean(currentVideo?.src);
+  // Catturato una sola volta al mount: e' first-visit per questa scena?
+  // Non cambia finche' SceneLayer non rimonta (cambio scena/dispositivo).
+  const [showVideo] = useState(() => hasVideo && !playedVideos.has(scene.id));
+  const [videoEndedThisVisit, setVideoEndedThisVisit] = useState(false);
+  const imgHidden = showVideo && !videoEndedThisVisit;
+
+  return (
+    <>
+      <img
+        src={currentImage}
+        alt={scene.alt}
+        draggable={false}
+        fetchpriority="high"
+        decoding="async"
+        loading="eager"
+        className={
+          "absolute inset-0 h-full w-full object-cover" +
+          (imgHidden ? " opacity-0" : "")
+        }
+      />
+      {showVideo && (
+        <video
+          src={currentVideo.src}
+          poster={currentVideo.poster}
+          autoPlay
+          muted
+          playsInline
+          preload="auto"
+          onEnded={(e) => {
+            e.currentTarget.pause();
+            setVideoEndedThisVisit(true);
+            onVideoEnded();
+          }}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      )}
+    </>
   );
 }
