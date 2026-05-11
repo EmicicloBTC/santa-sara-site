@@ -136,6 +136,11 @@ export function ProductModal({ product, onClose }) {
             </div>
 
             <div className="flex max-h-[90vh] flex-col overflow-y-auto p-6 sm:p-8 md:p-10">
+              {product.category && (
+                <span className="mb-3 inline-flex w-fit items-center rounded-full border border-stone-950/15 bg-white/70 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.28em] text-stone-700">
+                  {product.category}
+                </span>
+              )}
               <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-500">
                 {product.kind}
               </p>

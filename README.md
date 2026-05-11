@@ -13,8 +13,8 @@ Questo file è il **manuale del sito**. Tutto quello che ti serve per aggiungere
 
 | Cosa vuoi fare | Cartella / file da toccare |
 |---|---|
-| Aggiungere un **nuovo prodotto** in vendita | `public/images/products/<nome>/` + `src/data/products.js` |
-| Aggiungere foto a un prodotto già esistente (carosello) | `public/images/products/<nome>/2.jpg`, `3.jpg`… |
+| Aggiungere un **nuovo prodotto** in vendita | `public/images/products/<categoria>/<nome>/` + `src/data/products.js` |
+| Aggiungere foto a un prodotto già esistente (carosello) | `public/images/products/<categoria>/<nome>/2.jpg`, `3.jpg`… |
 | Aggiungere una **nuova scena** (foto fullscreen) | `public/images/scenes/scene-N.png` (+ `scene-N-mobile.png`) e `src/data/scenes.js` |
 | Cambiare i **link social** (Instagram, TikTok, Etsy) o l'email | `src/data/site.js` |
 | Cambiare il **logo** | sostituisci `public/logo.png` e lancia `npm run build-favicons` |
@@ -64,6 +64,34 @@ In 1-2 minuti il sito ufficiale è aggiornato. Non c'è altro da fare.
 
 I prodotti (oggetti in vendita) stanno tutti in **`src/data/products.js`**. Sono identificati da una "chiave" (es. `florence`, `romance`).
 
+### 5.cat Categorie e organizzazione cartelle
+
+I prodotti sono organizzati per **categorie**: `Vasi`, `Piatti`, `Palle`. Ogni categoria ha la sua cartella dentro `public/images/products/`, e dentro la categoria una sottocartella per ogni prodotto:
+
+```
+public/images/products/
+├─ vasi/
+│  └─ <nome-prodotto>/1.jpg, 2.jpg, 3.jpg, …
+├─ piatti/
+│  └─ snow-yeti/1.jpg, 2.jpg, 3.jpg, 4.jpg
+└─ palle/
+   └─ <nome-prodotto>/1.jpg, 2.jpg, 3.jpg, …
+```
+
+Nel blocco prodotto in `src/data/products.js` si scrive:
+
+```js
+"snow-yeti": {
+  id: "snow-yeti",
+  title: "Snow Yeti",
+  category: "Piatti",                                          // ← categoria (Vasi / Piatti / Palle)
+  // ...
+  images: { slug: "piatti/snow-yeti", count: 4, ext: "jpg" },  // ← slug = "categoria/nome"
+},
+```
+
+La categoria compare anche nel modal (pill in alto, sopra alla tipologia).
+
 ### 5.0 Linee guida per le FOTO PRODOTTO (importante)
 
 Per avere il miglior risultato possibile nel modal:
@@ -91,16 +119,17 @@ Per avere il miglior risultato possibile nel modal:
 
 ### 5a. Aggiungere foto a un prodotto già esistente (carosello)
 
-1. Vai in `public/images/products/<nome-prodotto>/`. Esempio: `public/images/products/florence/`.
+1. Vai nella cartella del prodotto, dentro la sua categoria. Esempio per Snow Yeti (Piatti):
+   `public/images/products/piatti/snow-yeti/`.
 2. Trascina dentro le foto numerate: `1.jpg`, `2.jpg`, `3.jpg`, `4.jpg`…
    - La prima (`1`) è quella principale che si vede subito.
    - Le altre scorrono nel carosello dentro al modal.
 3. Apri `src/data/products.js`, trova il prodotto e aggiorna `count`:
    ```js
-   florence: {
+   "snow-yeti": {
      // ...
-     images: { slug: "florence", count: 4, ext: "jpg" },
-     //                          ^^^^^^^^   ← numero di foto
+     images: { slug: "piatti/snow-yeti", count: 4, ext: "jpg" },
+     //                                  ^^^^^^^^   ← numero di foto
    },
    ```
 4. Salva, push.
@@ -110,23 +139,26 @@ Per avere il miglior risultato possibile nel modal:
 
 ### 5b. Aggiungere un prodotto nuovo (oggetto mai visto prima)
 
-1. Crea la cartella `public/images/products/aurora/` (tutto minuscolo, senza spazi, senza accenti).
-2. Metti dentro le foto numerate: `1.jpg`, `2.jpg`, `3.jpg`…
-3. Apri `src/data/products.js` e aggiungi un blocco nuovo:
+1. Decidi la **categoria**: `Vasi`, `Piatti` o `Palle`.
+2. Crea la cartella `public/images/products/<categoria>/<nome>/` (tutto minuscolo, senza spazi, senza accenti).
+   Esempio: `public/images/products/vasi/aurora/`.
+3. Metti dentro le foto numerate: `1.jpg`, `2.jpg`, `3.jpg`…
+4. Apri `src/data/products.js` e aggiungi un blocco nuovo:
    ```js
    aurora: {
      id: "aurora",
      title: "Aurora",
+     category: "Vasi",
      kind: "Vaso decorato a mano",
      dimensions: "h 32 cm · ø 18 cm",
      description: "Sfumature ambrate, decoro pittorico, pezzo unico.",
      price: "€ 380",
      cta: "Chiedi disponibilità",
      ctaHref: "mailto:hello@santasara.com?subject=Aurora — disponibilità",
-     images: { slug: "aurora", count: 3, ext: "jpg" },
+     images: { slug: "vasi/aurora", count: 3, ext: "jpg" },
    },
    ```
-4. Salva, push.
+5. Salva, push.
 
 Da quel momento puoi usare `productId: "aurora"` negli hotspot delle scene.
 
