@@ -31,3 +31,6 @@ Thumbs.db
 *.MP4
 *.MOV
 !public/videos/*
+
+# Messaggi commit temporanei (workaround heredoc PowerShell)
+.git-commit-msg*.tmp

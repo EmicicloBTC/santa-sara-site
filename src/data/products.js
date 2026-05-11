@@ -44,7 +44,7 @@ export const products = {
     price: "€ 420",
     cta: "Chiedi disponibilità",
     ctaHref: "mailto:hello@santasara.com?subject=Florence — disponibilità",
-    images: { slug: "vasi/florence", count: 1, ext: "png" },
+    images: { slug: "vasi/florence", count: 4, ext: "png" },
   },
   romance: {
     id: "romance",
