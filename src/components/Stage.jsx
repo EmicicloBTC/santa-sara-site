@@ -9,16 +9,23 @@ const SWIPE_THRESHOLD = 60;
 
 // Chiave segreta per attivare l'editor in produzione.
 // In sviluppo (npm run dev) l'editor è sempre disponibile.
-// In produzione devi aprire il sito con questa stringa nell'URL, es.
-//   https://...netlify.app/#santa-edit
+// In produzione devi aprire il sito con questa stringa nell'URL.
+// Funzionano TUTTE queste forme:
+//   https://...netlify.app/#santa-edit   (hash)
+//   https://...netlify.app/?santa-edit   (query string)
+//   https://...netlify.app/santa-edit    (path)
 // Cambia il valore se vuoi una chiave personale.
 const EDITOR_KEY = "santa-edit";
 
 function isEditorAllowed() {
   if (typeof window === "undefined") return false;
   if (import.meta.env.DEV) return true;
-  const { hash, search } = window.location;
-  return hash.includes(EDITOR_KEY) || search.includes(EDITOR_KEY);
+  const { hash, search, pathname } = window.location;
+  return (
+    hash.includes(EDITOR_KEY) ||
+    search.includes(EDITOR_KEY) ||
+    pathname.includes(EDITOR_KEY)
+  );
 }
 
 // Curva morbida tipo "ease-in-out" cinematografico, e tempi calibrati per

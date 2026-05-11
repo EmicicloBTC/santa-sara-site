@@ -219,10 +219,12 @@ Per non calcolare a mano le coordinate `x`/`y`, c'è un editor.
 Sempre attivo. Premi **E** sulla tastiera, si apre il pannello arancione in alto a destra.
 
 ### 7b. Sul SITO PUBBLICATO (Netlify)
-Per sicurezza l'editor è nascosto. Per attivarlo apri il sito aggiungendo questa "chiave segreta" all'URL:
+Per sicurezza l'editor è nascosto. Per attivarlo apri il sito aggiungendo questa "chiave segreta" all'URL — funzionano tutte e tre queste forme:
 
 ```
+https://NOMETUOSITO.netlify.app/santa-edit   ← più comodo
 https://NOMETUOSITO.netlify.app/#santa-edit
+https://NOMETUOSITO.netlify.app/?santa-edit
 ```
 
 Solo con la chiave nell'URL il tasto **E** apre il pannello. Senza, chi visita non vede nulla.

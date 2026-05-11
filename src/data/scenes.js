@@ -101,14 +101,14 @@ export const scenes = [
     image: "/images/scenes/scene-5.png",
     imageMobile: "/images/scenes/scene-5-mobile.png",
     alt: "Scrivania d'atelier con piatto Snow Yeti appeso e vaso Prime Cut sul piano",
-    // Coordinate iniziali: rifinisci con l'editor (tasto E sulla landing)
+    // Coordinate stimate da screenshot: rifinisci con l'editor (tasto E sulla landing)
     hotspots: [
-      { productId: "snow-yeti", x: 41, y: 31, r: 6 },
-      { productId: "prime-cut", x: 51, y: 51, r: 7 },
+      { productId: "snow-yeti", x: 50, y: 35, r: 6 },
+      { productId: "prime-cut", x: 56, y: 63, r: 7 },
     ],
     hotspotsMobile: [
-      { productId: "snow-yeti", x: 40, y: 29, r: 7 },
-      { productId: "prime-cut", x: 60, y: 50, r: 8 },
+      { productId: "snow-yeti", x: 42, y: 29, r: 7 },
+      { productId: "prime-cut", x: 63, y: 55, r: 8 },
     ],
   },
 ];

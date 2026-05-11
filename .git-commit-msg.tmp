@@ -1,0 +1,9 @@
+Editor: supporto path /santa-edit + riposizionamento hotspot scena 5
+
+- L'editor in produzione ora si attiva con TUTTE le forme dell'URL:
+  /santa-edit (path), /#santa-edit (hash), /?santa-edit (query).
+  Prima funzionava solo con hash o query: chi apriva direttamente
+  /santa-edit non vedeva attivarsi il pannello premendo E.
+- Hotspot di scena 5 ricentrati su Snow Yeti e Prime Cut (desktop +
+  mobile) con coordinate più aderenti alla foto reale.
+- README aggiornato con tutte le forme di URL accettate.
