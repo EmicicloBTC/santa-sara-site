@@ -22,9 +22,9 @@ const ROOT = path.resolve(__dirname, "..");
 const IMAGES_DIR = path.join(ROOT, "public", "images");
 const MANIFEST_PATH = path.join(ROOT, ".image-cache.json");
 
-const MAX_DIM = 2400; // px sul lato più lungo
-const JPG_QUALITY = 82;
-const PNG_QUALITY = 80;
+const MAX_DIM = 1800; // px sul lato più lungo (più che sufficiente per Retina 4K)
+const JPG_QUALITY = 78;
+const PNG_QUALITY = 75;
 
 async function* walk(dir) {
   let entries;

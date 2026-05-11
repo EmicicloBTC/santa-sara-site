@@ -55,6 +55,17 @@ function useIsMobile() {
   return isMobile;
 }
 
+// Cache "fire-and-forget" per i preload delle scene: evita di rilanciare la
+// stessa richiesta più volte.
+const preloadedScenes = new Set();
+function preloadScene(url) {
+  if (!url || preloadedScenes.has(url) || typeof window === "undefined") return;
+  preloadedScenes.add(url);
+  const img = new Image();
+  img.decoding = "async";
+  img.src = url;
+}
+
 export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
   const scene = scenes[sceneIndex];
   const sceneCount = scenes.length;
@@ -77,6 +88,19 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
   const currentHotspots =
     useMobileVariant && scene.hotspotsMobile ? scene.hotspotsMobile : scene.hotspots;
   const usingMobileSet = useMobileVariant && Boolean(scene.hotspotsMobile);
+
+  // Precarica la scena precedente e la successiva (sia desktop sia mobile)
+  // appena entriamo su una scena: navigare avanti/indietro è istantaneo.
+  useEffect(() => {
+    const nextIdx = (sceneIndex + 1) % sceneCount;
+    const prevIdx = (sceneIndex - 1 + sceneCount) % sceneCount;
+    for (const idx of [nextIdx, prevIdx]) {
+      const s = scenes[idx];
+      if (!s) continue;
+      preloadScene(s.image);
+      if (s.imageMobile) preloadScene(s.imageMobile);
+    }
+  }, [scenes, sceneIndex, sceneCount]);
 
   // Memoria delle scene il cui video è già stato visto in questa sessione:
   // quando l'utente torna su una scena già "vissuta", l'intro non riparte.
@@ -149,6 +173,9 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
               src={currentImage}
               alt={scene.alt}
               draggable={false}
+              fetchpriority="high"
+              decoding="async"
+              loading="eager"
               className="absolute inset-0 h-full w-full object-cover"
             />
 
