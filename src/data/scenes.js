@@ -172,13 +172,11 @@ export const scenes = [
     imageMobile: "/images/scenes/scene-8-mobile.png",
     alt: "Salotto minimale con camino e coppia di piatti Keep Fit (Body Rolling + Body Rocking) sulla mensola",
     // Un solo hotspot CENTRATO fra i due piatti: apre il modal della coppia Keep Fit.
-    // Y abbassato: l'immagine è 4:3 ma il viewport è 16:9, quindi viene ritagliata
-    // in alto/basso e il punto giusto è più alto rispetto alle coordinate "raw" dell'immagine.
     hotspots: [
-      { productId: "keep-fit", x: 40, y: 19, r: 8 },
+      { productId: "keep-fit", x: 60, y: 51, r: 8 },
     ],
     hotspotsMobile: [
-      { productId: "keep-fit", x: 43, y: 30, r: 9 },
+      { productId: "keep-fit", x: 50, y: 50, r: 9 },
     ],
   },
   {
