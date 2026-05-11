@@ -26,8 +26,13 @@ export function Header({ onOpenInfo }) {
             draggable={false}
           />
         </span>
-        <span className="font-serif text-base tracking-[-0.02em] text-stone-950 sm:text-lg">
-          Santa<span className="italic">Sara</span>
+        <span className="flex flex-col leading-none">
+          <span className="font-serif text-base tracking-[-0.02em] text-stone-950 sm:text-lg">
+            Santa<span className="italic">Sara</span>
+          </span>
+          <span className="mt-1 text-[9px] uppercase tracking-[0.22em] text-stone-950/55 sm:text-[10px]">
+            Unorthodox Ceramics
+          </span>
         </span>
       </a>
 
