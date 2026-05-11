@@ -107,6 +107,18 @@ export const products = {
     ctaHref: "mailto:hello@santasara.com?subject=Lady Gaga — disponibilità",
     images: { slug: "piatti/lady-gaga", count: 4, ext: "png" },
   },
+  "keep-fit": {
+    id: "keep-fit",
+    title: "Keep Fit",
+    category: "Piatti",
+    kind: "Coppia di piatti decorati a mano",
+    dimensions: "ø 32 cm cad. · set di 2",
+    description: "Body Rolling e Body Rocking: una coppia ironica in verde prato, ispirata ai manuali di ginnastica anni 50. Pezzi unici, decorati a mano in atelier. Venduti come set.",
+    price: "€ 320 (set)",
+    cta: "Chiedi disponibilità",
+    ctaHref: "mailto:hello@santasara.com?subject=Keep Fit (set) — disponibilità",
+    images: { slug: "piatti/keep-fit", count: 4, ext: "png" },
+  },
   "prime-cut": {
     id: "prime-cut",
     title: "Prime Cut",

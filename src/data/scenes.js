@@ -149,4 +149,18 @@ export const scenes = [
       { productId: "lady-gaga", x: 48, y: 54, r: 7 },
     ],
   },
+  {
+    id: "scene-8",
+    title: "Soggiorno · Camino",
+    image: "/images/scenes/scene-8.png",
+    imageMobile: "/images/scenes/scene-8-mobile.png",
+    alt: "Salotto minimale con camino e coppia di piatti Keep Fit (Body Rolling + Body Rocking) sulla mensola",
+    // Un solo hotspot CENTRATO fra i due piatti: apre il modal della coppia Keep Fit
+    hotspots: [
+      { productId: "keep-fit", x: 41, y: 28, r: 8 },
+    ],
+    hotspotsMobile: [
+      { productId: "keep-fit", x: 44, y: 30, r: 9 },
+    ],
+  },
 ];
