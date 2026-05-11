@@ -42,9 +42,9 @@ export function Header({ onOpenInfo }) {
           aria-label={open ? "Chiudi menu" : "Apri menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-full bg-white/55 text-stone-950 backdrop-blur-md ring-1 ring-stone-950/20 transition hover:bg-white/75"
+          className="grid h-12 w-12 place-items-center rounded-full bg-white/55 text-stone-950 backdrop-blur-md ring-1 ring-stone-950/20 transition hover:bg-white/75"
         >
-          {open ? <Close size={16} /> : <Menu size={16} />}
+          {open ? <Close size={18} /> : <Menu size={18} />}
         </button>
 
         {open && (
@@ -52,6 +52,10 @@ export function Header({ onOpenInfo }) {
             className="absolute right-0 mt-2 w-60 overflow-hidden rounded-xl bg-white/85 text-stone-950 shadow-lg ring-1 ring-stone-950/15 backdrop-blur-xl"
             role="menu"
           >
+            <div className="select-none border-b border-stone-950/10 px-4 py-3 text-[10px] uppercase tracking-[0.22em] text-stone-500">
+              Based in Italy
+            </div>
+
             <button
               type="button"
               role="menuitem"
