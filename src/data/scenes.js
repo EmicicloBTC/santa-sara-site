@@ -111,4 +111,23 @@ export const scenes = [
       { productId: "prime-cut", x: 63, y: 55, r: 8 },
     ],
   },
+  {
+    id: "scene-6",
+    title: "Soggiorno · Sera",
+    image: "/images/scenes/scene-6.png",
+    imageMobile: "/images/scenes/scene-6-mobile.png",
+    alt: "Soggiorno serale con lampada Florence sul tavolo e piatto decorato appeso alla parete",
+    // Coordinate stimate dalla foto: rifinisci con l'editor (tasto E)
+    hotspots: [
+      // Florence è la lampada al centro: hotspot sul corpo decorato (figurine su erba)
+      { productId: "florence", x: 37, y: 50, r: 6 },
+      // Piatto appeso a destra — scommenta appena lo aggiungi come prodotto in products.js:
+      // { productId: "PIATTO-ID-QUI", x: 66, y: 14, r: 6 },
+    ],
+    hotspotsMobile: [
+      { productId: "florence", x: 39, y: 30, r: 7 },
+      // Piatto in alto a sinistra (mobile) — scommenta appena lo aggiungi come prodotto:
+      // { productId: "PIATTO-ID-QUI", x: 18, y: 8, r: 7 },
+    ],
+  },
 ];
