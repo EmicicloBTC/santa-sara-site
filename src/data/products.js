@@ -57,7 +57,7 @@ export const products = {
     price: "Su richiesta",
     cta: "Chiedi disponibilità",
     ctaHref: "mailto:hello@santasara.com?subject=Romance — disponibilità",
-    images: { slug: "vasi/romance", count: 1, ext: "jpg" },
+    images: { slug: "vasi/romance", count: 4, ext: "png" },
   },
 
   "snow-yeti": {
