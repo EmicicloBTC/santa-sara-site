@@ -68,37 +68,37 @@ export function InfoModal({ open, onClose }) {
                 href={site.social.etsy.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-xl bg-white/70 px-4 py-3 text-sm ring-1 ring-stone-950/10 transition hover:bg-white"
+                className="group flex min-w-0 items-center justify-between gap-3 rounded-xl bg-white/70 px-4 py-3 text-sm ring-1 ring-stone-950/10 transition hover:bg-white"
               >
-                <span className="flex items-center gap-2">
+                <span className="flex min-w-0 items-center gap-2">
                   <ShoppingBag size={16} />
-                  Etsy
+                  <span className="truncate">Etsy</span>
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{t.info.etsyBadge}</span>
+                <span className="shrink-0 text-[10px] uppercase tracking-[0.18em] text-stone-500">{t.info.etsyBadge}</span>
               </a>
               <a
                 href={site.social.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-xl bg-white/70 px-4 py-3 text-sm ring-1 ring-stone-950/10 transition hover:bg-white"
+                aria-label={`Instagram ${site.social.instagram.handle}`}
+                className="group flex min-w-0 items-center justify-between gap-3 rounded-xl bg-white/70 px-4 py-3 text-sm ring-1 ring-stone-950/10 transition hover:bg-white"
               >
-                <span className="flex items-center gap-2">
-                  <Instagram size={16} />
-                  Instagram
+                <Instagram size={16} />
+                <span className="min-w-0 truncate text-[10px] uppercase tracking-[0.18em] text-stone-500">
+                  {site.social.instagram.handle}
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{site.social.instagram.handle}</span>
               </a>
               <a
                 href={site.social.tiktok.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-xl bg-white/70 px-4 py-3 text-sm ring-1 ring-stone-950/10 transition hover:bg-white"
+                aria-label={`TikTok ${site.social.tiktok.handle}`}
+                className="group flex min-w-0 items-center justify-between gap-3 rounded-xl bg-white/70 px-4 py-3 text-sm ring-1 ring-stone-950/10 transition hover:bg-white"
               >
-                <span className="flex items-center gap-2">
-                  <TikTok size={16} />
-                  TikTok
+                <TikTok size={16} />
+                <span className="min-w-0 truncate text-[10px] uppercase tracking-[0.18em] text-stone-500">
+                  {site.social.tiktok.handle}
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{site.social.tiktok.handle}</span>
               </a>
             </div>
           </motion.div>
