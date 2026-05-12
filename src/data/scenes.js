@@ -173,7 +173,7 @@ export const scenes = [
       { productId: "keep-fit", x: 60, y: 51, r: 8 },
     ],
     hotspotsMobile: [
-      { productId: "keep-fit", x: 50, y: 50, r: 9 },
+      { productId: "keep-fit", x: 58, y: 53, r: 9 },
     ],
   },
   {
