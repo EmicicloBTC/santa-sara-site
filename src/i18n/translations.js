@@ -39,6 +39,7 @@ const it = {
     price: "Prezzo",
     askAvailability: "Chiedi disponibilità",
     onRequest: "Su richiesta",
+    photosComingSoon: "Foto in arrivo",
   },
   category: {
     Vasi: "Vasi",
@@ -91,6 +92,10 @@ const it = {
     "scene-9": {
       title: "Scena · 09",
       alt: "Ambiente Santa Sara con il pezzo Messieur in primo piano",
+    },
+    "scene-10": {
+      title: "Scena · 10",
+      alt: "Ambiente Santa Sara con la coppia di vasi Doppio a sinistra, un piatto sulla parete al centro e una palla di Natale rossa a destra",
     },
   },
   products: {
@@ -185,6 +190,25 @@ const it = {
       price: "Su richiesta",
       cta: "Chiedi disponibilità",
     },
+    doppio: {
+      description:
+        "Coppia di vasi. Pezzi unici, decorati a mano in atelier. Venduti come set.",
+      dimensions: "—",
+      price: "Su richiesta",
+      cta: "Chiedi disponibilità",
+    },
+    "wall-plate": {
+      description: "Pezzo in arrivo. Scrivici per maggiori informazioni.",
+      dimensions: "—",
+      price: "Su richiesta",
+      cta: "Chiedi info",
+    },
+    "christmas-ball": {
+      description: "Pezzo in arrivo. Scrivici per maggiori informazioni.",
+      dimensions: "—",
+      price: "Su richiesta",
+      cta: "Chiedi info",
+    },
   },
 };
 
@@ -213,6 +237,7 @@ const en = {
     price: "Price",
     askAvailability: "Check availability",
     onRequest: "On request",
+    photosComingSoon: "Photos coming soon",
   },
   category: {
     Vasi: "Vases",
@@ -265,6 +290,10 @@ const en = {
     "scene-9": {
       title: "Scene · 09",
       alt: "Santa Sara setting with the Messieur piece in the foreground",
+    },
+    "scene-10": {
+      title: "Scene · 10",
+      alt: "Santa Sara setting with the Doppio pair of vases on the left, a plate on the central wall and a red Christmas ball on the right",
     },
   },
   products: {
@@ -358,6 +387,25 @@ const en = {
       dimensions: "—",
       price: "On request",
       cta: "Check availability",
+    },
+    doppio: {
+      description:
+        "Pair of vases. One-of-a-kind pieces, hand-painted in atelier. Sold as a set.",
+      dimensions: "—",
+      price: "On request",
+      cta: "Check availability",
+    },
+    "wall-plate": {
+      description: "Coming soon. Write to us for more information.",
+      dimensions: "—",
+      price: "On request",
+      cta: "Ask info",
+    },
+    "christmas-ball": {
+      description: "Coming soon. Write to us for more information.",
+      dimensions: "—",
+      price: "On request",
+      cta: "Ask info",
     },
   },
 };

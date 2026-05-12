@@ -167,7 +167,13 @@ export function ProductModal({ product, onClose }) {
                     transition={SLIDE_TRANSITION}
                     className="absolute inset-0 h-full w-full object-contain p-3 will-change-transform sm:p-5"
                   />
-                ) : null}
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-[11px] font-medium uppercase tracking-[0.32em] text-stone-500">
+                      {t.modal.photosComingSoon}
+                    </span>
+                  </div>
+                )}
               </AnimatePresence>
 
               {images.length > 1 && (

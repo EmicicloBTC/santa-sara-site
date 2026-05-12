@@ -192,6 +192,47 @@ export const products = {
     ctaHref: "mailto:hello@santasara.com?subject=Messieur — disponibilità",
     images: { slug: "misc/messieur", count: 4, ext: "png" },
   },
+  doppio: {
+    id: "doppio",
+    title: "Doppio",
+    category: "Vasi",
+    kind: "Coppia di vasi decorati a mano",
+    dimensions: "—",
+    description: "Coppia di vasi. Pezzi unici, decorati a mano in atelier. Venduti come set.",
+    price: "Su richiesta",
+    cta: "Chiedi disponibilità",
+    ctaHref: "mailto:hello@santasara.com?subject=Doppio (set) — disponibilità",
+    images: { slug: "vasi/doppio", count: 0, ext: "png" },
+  },
+  // ---- PLACEHOLDER ----
+  // Hotspot temporanei: gli oggetti esistono in scena 10 ma le foto/info
+  // del prodotto non sono state ancora caricate. Quando arrivano basta
+  // sostituire title/description/price + aggiungere le foto nella cartella
+  // e aumentare images.count.
+  "wall-plate": {
+    id: "wall-plate",
+    title: "Piatto a parete",
+    category: "Piatti",
+    kind: "Piatto decorato a mano",
+    dimensions: "—",
+    description: "Pezzo in arrivo. Scrivici per maggiori informazioni.",
+    price: "Su richiesta",
+    cta: "Chiedi info",
+    ctaHref: "mailto:hello@santasara.com?subject=Piatto a parete — info",
+    images: { slug: "piatti/wall-plate", count: 0, ext: "png" },
+  },
+  "christmas-ball": {
+    id: "christmas-ball",
+    title: "Palla di Natale",
+    category: "Palle",
+    kind: "Palla decorata a mano",
+    dimensions: "—",
+    description: "Pezzo in arrivo. Scrivici per maggiori informazioni.",
+    price: "Su richiesta",
+    cta: "Chiedi info",
+    ctaHref: "mailto:hello@santasara.com?subject=Palla di Natale — info",
+    images: { slug: "palle/christmas-ball", count: 0, ext: "png" },
+  },
 };
 
 /** Tutte le URL del prodotto in ordine: 1.ext, 2.ext, … */
