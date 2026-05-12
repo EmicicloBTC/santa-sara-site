@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Close, Menu, Instagram, TikTok, ShoppingBag } from "./icons.jsx";
+import { Close, Menu, ShoppingBag } from "./icons.jsx";
 import { site } from "../data/site.js";
 import { useT, useLang } from "../i18n/index.jsx";
 
@@ -115,34 +115,6 @@ export function Header({ onOpenInfo }) {
                 {t.ui.etsyShop}
               </span>
               <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{t.ui.buyBadge}</span>
-            </a>
-
-            <a
-              href={site.social.instagram.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              role="menuitem"
-              className="flex w-full items-center justify-between border-t border-stone-950/10 px-4 py-3 text-sm transition hover:bg-stone-950/5"
-            >
-              <span className="flex items-center gap-2">
-                <Instagram size={15} />
-                Instagram
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{site.social.instagram.handle}</span>
-            </a>
-
-            <a
-              href={site.social.tiktok.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              role="menuitem"
-              className="flex w-full items-center justify-between border-t border-stone-950/10 px-4 py-3 text-sm transition hover:bg-stone-950/5"
-            >
-              <span className="flex items-center gap-2">
-                <TikTok size={15} />
-                TikTok
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{site.social.tiktok.handle}</span>
             </a>
 
             <a
