@@ -81,7 +81,11 @@ async function optimize(file, manifest) {
   const buf = await fs.readFile(file);
   const ext = path.extname(file).toLowerCase();
 
-  let pipeline = sharp(buf, { failOn: "none" });
+  // .rotate() (senza argomenti) applica la rotazione indicata dall'EXIF e
+  // poi rimuove il tag: indispensabile per foto di smartphone, altrimenti
+  // sharp strip-pa l'EXIF SENZA ruotare i pixel e l'immagine finisce
+  // coricata (vedi commit cronologia).
+  let pipeline = sharp(buf, { failOn: "none" }).rotate();
   const meta = await pipeline.metadata();
   const longest = Math.max(meta.width || 0, meta.height || 0);
   const maxDim = maxDimFor(file);
