@@ -131,6 +131,7 @@ export const products = {
     cta: "Chiedi disponibilità",
     ctaHref: "mailto:hello@santasara.com?subject=Yayoi Kusama — disponibilità",
     images: { slug: "piatti/yayoi-kusama", count: 4, ext: "png" },
+    sold: true,
   },
   "prime-cut": {
     id: "prime-cut",

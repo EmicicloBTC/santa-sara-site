@@ -42,6 +42,7 @@ export function ProductModal({ product, onClose }) {
   // localizza description / dimensions / price / cta / categoryLabel
   const localized = useLocalizedProduct(product);
   const images = useMemo(() => (product ? productImages(product) : []), [product]);
+  const isSold = product?.sold === true;
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(1);
   const [paused, setPaused] = useState(false);
@@ -150,6 +151,14 @@ export function ProductModal({ product, onClose }) {
                   {localized.categoryLabel}
                 </span>
               )}
+              {isSold && (
+                <span
+                  aria-label={t.modal.sold}
+                  className="pointer-events-none absolute right-3 top-16 z-20 inline-flex rotate-[-8deg] items-center rounded-full bg-[#b91c1c] px-4 py-2 text-[12px] font-bold uppercase tracking-[0.4em] text-white shadow-lg ring-2 ring-white/90"
+                >
+                  {t.modal.soldStamp}
+                </span>
+              )}
               <AnimatePresence initial={false} custom={direction}>
                 {images[active] ? (
                   <motion.img
@@ -238,19 +247,39 @@ export function ProductModal({ product, onClose }) {
                 </div>
                 <div>
                   <dt className="text-[10px] font-medium uppercase tracking-[0.28em] text-stone-500">{t.modal.price}</dt>
-                  <dd className="mt-1 font-serif text-base tracking-[-0.01em] text-stone-900">{localized.price}</dd>
+                  <dd className="mt-1 font-serif text-base tracking-[-0.01em] text-stone-900">
+                    {isSold ? (
+                      <>
+                        <span className="text-stone-400 line-through">{localized.price}</span>
+                        <span className="ml-2 inline-flex items-center rounded-full bg-[#b91c1c]/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#b91c1c]">
+                          {t.modal.sold}
+                        </span>
+                      </>
+                    ) : (
+                      localized.price
+                    )}
+                  </dd>
                 </div>
               </dl>
 
               <p className="mt-6 text-base leading-[1.7] text-stone-700">{localized.description}</p>
 
               <div className="mt-auto pt-8">
-                <a
-                  href={product.ctaHref || "#"}
-                  className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-stone-950 px-6 py-4 text-[11px] font-medium uppercase tracking-[0.32em] text-white transition hover:bg-[#3a342d] sm:w-auto"
-                >
-                  {localized.cta || t.modal.askAvailability} <Arrow size={14} />
-                </a>
+                {isSold ? (
+                  <span
+                    className="inline-flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-full border border-stone-950/15 bg-stone-200/70 px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-stone-500 sm:w-auto"
+                    aria-disabled="true"
+                  >
+                    {t.modal.soldStamp}
+                  </span>
+                ) : (
+                  <a
+                    href={product.ctaHref || "#"}
+                    className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-stone-950 px-6 py-4 text-[11px] font-medium uppercase tracking-[0.32em] text-white transition hover:bg-[#3a342d] sm:w-auto"
+                  >
+                    {localized.cta || t.modal.askAvailability} <Arrow size={14} />
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>

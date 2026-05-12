@@ -40,6 +40,8 @@ const it = {
     askAvailability: "Chiedi disponibilità",
     onRequest: "Su richiesta",
     photosComingSoon: "Foto in arrivo",
+    sold: "Venduto",
+    soldStamp: "SOLD",
   },
   category: {
     Vasi: "Vasi",
@@ -239,6 +241,8 @@ const en = {
     askAvailability: "Check availability",
     onRequest: "On request",
     photosComingSoon: "Photos coming soon",
+    sold: "Sold",
+    soldStamp: "SOLD",
   },
   category: {
     Vasi: "Vases",
