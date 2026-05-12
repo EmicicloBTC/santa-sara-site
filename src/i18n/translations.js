@@ -95,7 +95,7 @@ const it = {
     },
     "scene-10": {
       title: "Scena · 10",
-      alt: "Ambiente Santa Sara con la coppia di vasi Doppio a sinistra, un piatto sulla parete al centro e una palla di Natale rossa a destra",
+      alt: "Ambiente Santa Sara con la coppia di vasi Doppio a sinistra, il piatto Baroque Clash sulla parete al centro e una palla di Natale rossa a destra",
     },
   },
   products: {
@@ -197,11 +197,12 @@ const it = {
       price: "Su richiesta",
       cta: "Chiedi disponibilità",
     },
-    "wall-plate": {
-      description: "Pezzo in arrivo. Scrivici per maggiori informazioni.",
-      dimensions: "—",
-      price: "Su richiesta",
-      cta: "Chiedi info",
+    "baroque-clash": {
+      description:
+        "Cornice barocca dorata e segno contemporaneo: piatto da parete che fa cortocircuito fra classico e pop. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "ø 32 cm",
+      price: "€ 180",
+      cta: "Chiedi disponibilità",
     },
     "christmas-ball": {
       description: "Pezzo in arrivo. Scrivici per maggiori informazioni.",
@@ -293,7 +294,7 @@ const en = {
     },
     "scene-10": {
       title: "Scene · 10",
-      alt: "Santa Sara setting with the Doppio pair of vases on the left, a plate on the central wall and a red Christmas ball on the right",
+      alt: "Santa Sara setting with the Doppio pair of vases on the left, the Baroque Clash plate on the central wall and a red Christmas ball on the right",
     },
   },
   products: {
@@ -395,11 +396,12 @@ const en = {
       price: "On request",
       cta: "Check availability",
     },
-    "wall-plate": {
-      description: "Coming soon. Write to us for more information.",
-      dimensions: "—",
-      price: "On request",
-      cta: "Ask info",
+    "baroque-clash": {
+      description:
+        "Gilded baroque border meets a contemporary mark: a wall plate that short-circuits classical and pop. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "ø 32 cm",
+      price: "€ 180",
+      cta: "Check availability",
     },
     "christmas-ball": {
       description: "Coming soon. Write to us for more information.",

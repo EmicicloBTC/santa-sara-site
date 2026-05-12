@@ -202,25 +202,25 @@ export const products = {
     price: "Su richiesta",
     cta: "Chiedi disponibilità",
     ctaHref: "mailto:hello@santasara.com?subject=Doppio (set) — disponibilità",
-    images: { slug: "vasi/doppio", count: 0, ext: "png" },
+    images: { slug: "vasi/doppio", count: 4, ext: "png" },
+  },
+  "baroque-clash": {
+    id: "baroque-clash",
+    title: "Baroque Clash",
+    category: "Piatti",
+    kind: "Piatto decorato a mano",
+    dimensions: "ø 32 cm",
+    description: "Cornice barocca dorata e segno contemporaneo: piatto da parete che fa cortocircuito fra classico e pop. Pezzo unico, decorato a mano in atelier.",
+    price: "€ 180",
+    cta: "Chiedi disponibilità",
+    ctaHref: "mailto:hello@santasara.com?subject=Baroque Clash — disponibilità",
+    images: { slug: "piatti/baroque-clash", count: 4, ext: "png" },
   },
   // ---- PLACEHOLDER ----
   // Hotspot temporanei: gli oggetti esistono in scena 10 ma le foto/info
   // del prodotto non sono state ancora caricate. Quando arrivano basta
   // sostituire title/description/price + aggiungere le foto nella cartella
   // e aumentare images.count.
-  "wall-plate": {
-    id: "wall-plate",
-    title: "Piatto a parete",
-    category: "Piatti",
-    kind: "Piatto decorato a mano",
-    dimensions: "—",
-    description: "Pezzo in arrivo. Scrivici per maggiori informazioni.",
-    price: "Su richiesta",
-    cta: "Chiedi info",
-    ctaHref: "mailto:hello@santasara.com?subject=Piatto a parete — info",
-    images: { slug: "piatti/wall-plate", count: 0, ext: "png" },
-  },
   "christmas-ball": {
     id: "christmas-ball",
     title: "Palla di Natale",
