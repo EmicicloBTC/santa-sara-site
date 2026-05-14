@@ -65,7 +65,7 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
         >
-          {/* Sfondo: scena 1 + velatura scura (sottofondo editoriale) */}
+          {/* Sfondo: scena 1 molto attenuata + velatura scura (leggibilità catalogo) */}
           <div className="pointer-events-none absolute inset-0 z-0">
             <picture className="block h-full w-full">
               <source media="(max-width: 767px)" srcSet="/images/scenes/scene-1-mobile.png" />
@@ -73,18 +73,19 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
                 src="/images/scenes/scene-1.png"
                 alt=""
                 aria-hidden
-                className="h-full w-full scale-105 object-cover object-center"
+                className="h-full w-full scale-105 object-cover object-center brightness-[0.38] saturate-[0.82]"
                 decoding="async"
               />
             </picture>
             <div
-              className="absolute inset-0 bg-gradient-to-b from-stone-950/95 via-stone-950/88 to-stone-950/92"
+              className="absolute inset-0 bg-gradient-to-b from-stone-950/98 via-stone-950/96 to-stone-950/98"
               aria-hidden
             />
-            <div className="absolute inset-0 bg-black/45" aria-hidden />
+            <div className="absolute inset-0 bg-black/72" aria-hidden />
+            <div className="absolute inset-0 bg-stone-950/35" aria-hidden />
           </div>
 
-          <header className="sticky top-0 z-10 border-b border-white/10 bg-stone-950/40 backdrop-blur-md">
+          <header className="sticky top-0 z-10 border-b border-white/10 bg-stone-950/55 backdrop-blur-md">
             <div className="mx-auto flex w-full max-w-7xl items-end justify-between gap-4 px-5 pb-4 pt-5 sm:px-8 sm:pb-5 sm:pt-7">
               <div className="min-w-0">
                 <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-400">
@@ -140,6 +141,21 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
 
           <div className="relative z-10 min-h-0 flex-1 overflow-y-auto">
             <div className="mx-auto w-full max-w-7xl px-5 py-6 sm:px-8 sm:py-10">
+              {/* Logo centrato: parte del flusso, scorre con il catalogo */}
+              <div
+                aria-hidden
+                className="pointer-events-none flex min-h-[min(42dvh,22rem)] flex-col items-center justify-center pb-8 pt-2 sm:min-h-[min(36dvh,26rem)] sm:pb-10 sm:pt-4"
+              >
+                <div className="rounded-full bg-white/10 p-2.5 shadow-2xl ring-1 ring-white/25 backdrop-blur-md sm:p-3">
+                  <img
+                    src="/logo.png"
+                    alt=""
+                    className="h-20 w-20 rounded-full object-cover sm:h-28 sm:w-28"
+                    draggable={false}
+                  />
+                </div>
+              </div>
+
               {visibleGroups.length === 0 && (
                 <p className="py-16 text-center text-sm text-stone-400">{t.catalog.empty}</p>
               )}
