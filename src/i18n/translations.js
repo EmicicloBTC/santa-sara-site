@@ -75,6 +75,10 @@ const it = {
   scenes: {
     "scene-1": {
       title: "Intro",
+      alt: "Scena introduttiva Santa Sara",
+    },
+    "scene-1-bis": {
+      title: "Intro · Bis",
       alt: "Balcone con grande vaso illustrato Visionari II e pezzo Kentucky '73",
     },
     "scene-2": {
@@ -314,6 +318,10 @@ const en = {
   scenes: {
     "scene-1": {
       title: "Intro",
+      alt: "Santa Sara opening scene",
+    },
+    "scene-1-bis": {
+      title: "Intro · Bis",
       alt: "Balcony with Visionari II cachepot and Kentucky '73 piece",
     },
     "scene-2": {

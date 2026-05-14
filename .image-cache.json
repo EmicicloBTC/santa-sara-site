@@ -64,8 +64,8 @@
   "public/images/products/piatti/keep-fit/1.png": "341194-1778546366938",
   "public/images/products/piatti/snow-yeti/1.png": "244452-1778547105468",
   "__sceneImageRules": 2,
-  "public/images/scenes/scene-1-mobile.png": "322262-1778778078946",
-  "public/images/scenes/scene-1.png": "475144-1778778079102",
+  "public/images/scenes/scene-1-mobile.png": "307022-1778799455751",
+  "public/images/scenes/scene-1.png": "621629-1778799456385",
   "public/images/scenes/scene-10-mobile.png": "336579-1778778079434",
   "public/images/scenes/scene-10.png": "579337-1778778079793",
   "public/images/scenes/scene-11-mobile.png": "183841-1778778079951",
@@ -97,5 +97,7 @@
   "public/images/scenes/scene-9-mobile.png": "430199-1778778091964",
   "public/images/scenes/scene-9.png": "745485-1778778092887",
   "public/images/scenes/scene-prova.png": "318060-1778433112375",
-  "public/images/bio.png": "125659-1778797296502"
+  "public/images/bio.png": "125659-1778797296502",
+  "public/images/scenes/scene-1-bis-mobile.png": "280778-1778799455200",
+  "public/images/scenes/scene-1-bis.png": "411669-1778799455335"
 }

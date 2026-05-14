@@ -43,14 +43,34 @@ export const scenes = [
     title: "Intro",
     image: "/images/scenes/scene-1.png",
     imageMobile: "/images/scenes/scene-1-mobile.png",
-    // Video intro (reverse + ultimo frame = immagine statica).
+    // Video intro nuovo (reverse + ultimo frame = immagine statica).
+    // Poster non più disponibili: il primo frame fa da fallback.
+    video: { src: "/videos/scene-1.mp4" },
+    videoMobile: { src: "/videos/scene-1-mobile.mp4" },
+    alt: "Scena introduttiva Santa Sara",
+    // Hotspot da riposizionare con l'editor (tasto E) sulla nuova composizione.
+    hotspots: [
+      { productId: "visionari-ii", x: 28, y: 44, r: 7 },
+      { productId: "kentucky-73", x: 48, y: 58, r: 7 },
+    ],
+    hotspotsMobile: [
+      { productId: "visionari-ii", x: 32, y: 42, r: 8 },
+      { productId: "kentucky-73", x: 50, y: 56, r: 8 },
+    ],
+  },
+  {
+    id: "scene-1-bis",
+    title: "Intro · Bis",
+    image: "/images/scenes/scene-1-bis.png",
+    imageMobile: "/images/scenes/scene-1-bis-mobile.png",
+    // Versione precedente della scena intro (mantenuta come alternativa).
     video: {
-      src: "/videos/scene-1.mp4",
-      poster: "/videos/scene-1-poster.jpg",
+      src: "/videos/scene-1-bis.mp4",
+      poster: "/videos/scene-1-bis-poster.jpg",
     },
     videoMobile: {
-      src: "/videos/scene-1-mobile.mp4",
-      poster: "/videos/scene-1-mobile-poster.jpg",
+      src: "/videos/scene-1-bis-mobile.mp4",
+      poster: "/videos/scene-1-bis-mobile-poster.jpg",
     },
     alt: "Balcone con grande vaso illustrato Visionari II e pezzo Kentucky '73",
     hotspots: [
