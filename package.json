@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "optimize-images": "node scripts/optimize-images.js",
+    "migrate-scene1": "node scripts/migrate-scene1-and-scene4.mjs",
     "build-favicons": "node scripts/build-favicons.js",
     "prebuild": "node scripts/optimize-images.js",
     "build": "vite build",

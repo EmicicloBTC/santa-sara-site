@@ -40,11 +40,10 @@
 export const scenes = [
   {
     id: "scene-1",
-    title: "Terrazza · Mediterraneo",
+    title: "Intro",
     image: "/images/scenes/scene-1.png",
     imageMobile: "/images/scenes/scene-1-mobile.png",
-    // Intro animato: il video parte automuto e si ferma sull'ultimo frame
-    // (che combacia con scene-1.png), poi compaiono i + dei prodotti.
+    // Video intro (reverse + ultimo frame = immagine statica). Hotspot da aggiungere con editor (E).
     video: {
       src: "/videos/scene-1.mp4",
       poster: "/videos/scene-1-poster.jpg",
@@ -53,17 +52,9 @@ export const scenes = [
       src: "/videos/scene-1-mobile.mp4",
       poster: "/videos/scene-1-mobile-poster.jpg",
     },
-    alt: "Terrazza affacciata sul mare con vaso Kentucky '73 sul tavolino e cachepot Visionari II sulla colonna",
-    hotspots: [
-      // Tavolino bistro a sinistra con il vaso Kentucky '73 (sfera rosa con 1973 + cavalli)
-      { productId: "kentucky-73", x: 22, y: 55, r: 5 },
-      // Colonna a destra con il cachepot Visionari II (terracotta + figure greche)
-      { productId: "visionari-ii", x: 78, y: 53, r: 7 },
-    ],
-    hotspotsMobile: [
-      { productId: "kentucky-73", x: 20, y: 52, r: 6 },
-      { productId: "visionari-ii", x: 70, y: 50, r: 8 },
-    ],
+    alt: "Homepage Santa Sara — ambientazione introduttiva",
+    hotspots: [],
+    hotspotsMobile: [],
   },
   {
     id: "scene-2",
@@ -97,17 +88,25 @@ export const scenes = [
   },
   {
     id: "scene-4",
-    title: "Scena · 04",
+    title: "Terrazza · Mediterraneo",
     image: "/images/scenes/scene-4.png",
     imageMobile: "/images/scenes/scene-4-mobile.png",
-    alt: "Ambiente Santa Sara con ceramiche e oggetti quotidiani",
+    video: {
+      src: "/videos/scene-4.mp4",
+      poster: "/videos/scene-4-poster.jpg",
+    },
+    videoMobile: {
+      src: "/videos/scene-4-mobile.mp4",
+      poster: "/videos/scene-4-mobile-poster.jpg",
+    },
+    alt: "Terrazza affacciata sul mare con vaso Kentucky '73 sul tavolino e cachepot Visionari II sulla colonna",
     hotspots: [
-      { productId: "florence", x: 40, y: 50, r: 6 },
-      { productId: "romance", x: 60, y: 55, r: 6 },
+      { productId: "kentucky-73", x: 22, y: 55, r: 5 },
+      { productId: "visionari-ii", x: 78, y: 53, r: 7 },
     ],
     hotspotsMobile: [
-      { productId: "florence", x: 40, y: 55, r: 7 },
-      { productId: "romance", x: 60, y: 60, r: 7 },
+      { productId: "kentucky-73", x: 20, y: 52, r: 6 },
+      { productId: "visionari-ii", x: 70, y: 50, r: 8 },
     ],
   },
   {
@@ -207,5 +206,41 @@ export const scenes = [
       { productId: "baroque-clash", x: 50, y: 28, r: 7 },
       { productId: "christmas-ball", x: 76, y: 55, r: 6 },
     ],
+  },
+  {
+    id: "scene-11",
+    title: "Scena · 11",
+    image: "/images/scenes/scene-11.png",
+    imageMobile: "/images/scenes/scene-11-mobile.png",
+    alt: "Ambiente Santa Sara con ceramiche",
+    hotspots: [],
+    hotspotsMobile: [],
+  },
+  {
+    id: "scene-12",
+    title: "Scena · 12",
+    image: "/images/scenes/scene-12.png",
+    imageMobile: "/images/scenes/scene-12-mobile.png",
+    alt: "Ambiente Santa Sara con ceramiche",
+    hotspots: [],
+    hotspotsMobile: [],
+  },
+  {
+    id: "scene-13",
+    title: "Scena · 13",
+    image: "/images/scenes/scene-13.png",
+    imageMobile: "/images/scenes/scene-13-mobile.png",
+    alt: "Ambiente Santa Sara con ceramiche",
+    hotspots: [],
+    hotspotsMobile: [],
+  },
+  {
+    id: "scene-14",
+    title: "Scena · 14",
+    image: "/images/scenes/scene-14.png",
+    imageMobile: "/images/scenes/scene-14-mobile.png",
+    alt: "Ambiente Santa Sara con ceramiche",
+    hotspots: [],
+    hotspotsMobile: [],
   },
 ];

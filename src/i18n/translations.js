@@ -60,8 +60,8 @@ const it = {
   },
   scenes: {
     "scene-1": {
-      title: "Terrazza · Mediterraneo",
-      alt: "Terrazza affacciata sul mare con vaso Kentucky '73 sul tavolino e cachepot Visionari II sulla colonna",
+      title: "Intro",
+      alt: "Homepage Santa Sara — ambientazione introduttiva",
     },
     "scene-2": {
       title: "Tavolo · Sera",
@@ -72,8 +72,8 @@ const it = {
       alt: "Ambiente Santa Sara con ceramiche e oggetti quotidiani",
     },
     "scene-4": {
-      title: "Scena · 04",
-      alt: "Ambiente Santa Sara con ceramiche e oggetti quotidiani",
+      title: "Terrazza · Mediterraneo",
+      alt: "Terrazza affacciata sul mare con vaso Kentucky '73 sul tavolino e cachepot Visionari II sulla colonna",
     },
     "scene-5": {
       title: "Atelier · Studio",
@@ -98,6 +98,22 @@ const it = {
     "scene-10": {
       title: "Scena · 10",
       alt: "Ambiente Santa Sara con la coppia di vasi Doppio a sinistra, il piatto Baroque Clash sulla parete al centro e una palla di Natale rossa a destra",
+    },
+    "scene-11": {
+      title: "Scena · 11",
+      alt: "Ambiente Santa Sara con ceramiche",
+    },
+    "scene-12": {
+      title: "Scena · 12",
+      alt: "Ambiente Santa Sara con ceramiche",
+    },
+    "scene-13": {
+      title: "Scena · 13",
+      alt: "Ambiente Santa Sara con ceramiche",
+    },
+    "scene-14": {
+      title: "Scena · 14",
+      alt: "Ambiente Santa Sara con ceramiche",
     },
   },
   products: {
@@ -261,8 +277,8 @@ const en = {
   },
   scenes: {
     "scene-1": {
-      title: "Terrace · Mediterranean",
-      alt: "Seaside terrace with the Kentucky '73 vase on the bistro table and the Visionari II cachepot on the column",
+      title: "Intro",
+      alt: "Santa Sara homepage — introductory scene",
     },
     "scene-2": {
       title: "Table · Evening",
@@ -273,8 +289,8 @@ const en = {
       alt: "Santa Sara setting with ceramics and everyday objects",
     },
     "scene-4": {
-      title: "Scene · 04",
-      alt: "Santa Sara setting with ceramics and everyday objects",
+      title: "Terrace · Mediterranean",
+      alt: "Seaside terrace with the Kentucky '73 vase on the bistro table and the Visionari II cachepot on the column",
     },
     "scene-5": {
       title: "Atelier · Studio",
@@ -299,6 +315,22 @@ const en = {
     "scene-10": {
       title: "Scene · 10",
       alt: "Santa Sara setting with the Doppio pair of vases on the left, the Baroque Clash plate on the central wall and a red Christmas ball on the right",
+    },
+    "scene-11": {
+      title: "Scene · 11",
+      alt: "Santa Sara setting with ceramics",
+    },
+    "scene-12": {
+      title: "Scene · 12",
+      alt: "Santa Sara setting with ceramics",
+    },
+    "scene-13": {
+      title: "Scene · 13",
+      alt: "Santa Sara setting with ceramics",
+    },
+    "scene-14": {
+      title: "Scene · 14",
+      alt: "Santa Sara setting with ceramics",
     },
   },
   products: {
