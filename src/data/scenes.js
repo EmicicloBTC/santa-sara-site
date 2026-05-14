@@ -233,16 +233,16 @@ export const scenes = [
     imageMobile: "/images/scenes/scene-13-mobile.png",
     alt: "Vetrina con quattro piatti: Yayoi Kusama, Chappell Roan, Lady Gaga e Iris Apfel",
     hotspots: [
-      { productId: "yayoi-kusama", x: 16, y: 54, r: 5 },
+      { productId: "yayoi-kusama", x: 24, y: 54, r: 5 },
       { productId: "chappell-roan", x: 38, y: 54, r: 5 },
       { productId: "lady-gaga", x: 60, y: 54, r: 5 },
-      { productId: "iris-apfel", x: 82, y: 54, r: 5 },
+      { productId: "iris-apfel", x: 74, y: 54, r: 5 },
     ],
     hotspotsMobile: [
-      { productId: "yayoi-kusama", x: 14, y: 52, r: 6 },
+      { productId: "yayoi-kusama", x: 22, y: 52, r: 6 },
       { productId: "chappell-roan", x: 36, y: 52, r: 6 },
       { productId: "lady-gaga", x: 58, y: 52, r: 6 },
-      { productId: "iris-apfel", x: 80, y: 52, r: 6 },
+      { productId: "iris-apfel", x: 72, y: 52, r: 6 },
     ],
   },
   {
