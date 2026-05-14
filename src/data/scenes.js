@@ -263,16 +263,14 @@ export const scenes = [
     title: "Scena · 14",
     image: "/images/scenes/scene-14.png",
     imageMobile: "/images/scenes/scene-14-mobile.png",
-    alt: "Tavolo con ciotola Romance, vaso Prime Cut e lampada Florence sullo sfondo",
+    alt: "Tavolo con ciotola Romance e vaso Prime Cut",
     hotspots: [
       { productId: "romance", x: 36, y: 58, r: 7 },
       { productId: "prime-cut", x: 58, y: 50, r: 7 },
-      { productId: "florence", x: 88, y: 28, r: 5 },
     ],
     hotspotsMobile: [
       { productId: "romance", x: 38, y: 56, r: 8 },
       { productId: "prime-cut", x: 56, y: 48, r: 8 },
-      { productId: "florence", x: 84, y: 26, r: 6 },
     ],
   },
 ];

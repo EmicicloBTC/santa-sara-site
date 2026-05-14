@@ -113,7 +113,7 @@ const it = {
     },
     "scene-14": {
       title: "Scena · 14",
-      alt: "Tavolo con ciotola Romance, vaso Prime Cut e lampada Florence sullo sfondo",
+      alt: "Tavolo con ciotola Romance e vaso Prime Cut",
     },
   },
   products: {
@@ -330,7 +330,7 @@ const en = {
     },
     "scene-14": {
       title: "Scene · 14",
-      alt: "Table with Romance bowl, Prime Cut vase and Florence lamp in the background",
+      alt: "Table with Romance bowl and Prime Cut vase",
     },
   },
   products: {
