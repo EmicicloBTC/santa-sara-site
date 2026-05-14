@@ -53,7 +53,7 @@ export const scenes = [
       { productId: "kentucky-73", x: 39, y: 64, r: 7 },
     ],
     hotspotsMobile: [
-      { productId: "visionari-ii", x: 70, y: 27, r: 9 },
+      { productId: "visionari-ii", x: 70, y: 34, r: 9 },
       { productId: "kentucky-73", x: 45, y: 50, r: 10 },
     ],
   },
