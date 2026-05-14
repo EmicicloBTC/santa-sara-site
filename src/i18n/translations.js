@@ -97,7 +97,7 @@ const it = {
     },
     "scene-10": {
       title: "Scena · 10",
-      alt: "Ambiente Santa Sara con la coppia di vasi Doppio a sinistra, il piatto Baroque Clash sulla parete al centro e una palla di Natale rossa a destra",
+      alt: "Ambiente Santa Sara con la coppia di vasi Doppio e una palla di Natale rossa",
     },
     "scene-11": {
       title: "Scena · 11",
@@ -314,7 +314,7 @@ const en = {
     },
     "scene-10": {
       title: "Scene · 10",
-      alt: "Santa Sara setting with the Doppio pair of vases on the left, the Baroque Clash plate on the central wall and a red Christmas ball on the right",
+      alt: "Santa Sara setting with the Doppio pair of vases and a red Christmas ball",
     },
     "scene-11": {
       title: "Scene · 11",

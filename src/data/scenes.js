@@ -192,17 +192,14 @@ export const scenes = [
     title: "Scena · 10",
     image: "/images/scenes/scene-10.png",
     imageMobile: "/images/scenes/scene-10-mobile.png",
-    alt: "Ambiente Santa Sara con la coppia di vasi Doppio a sinistra, il piatto Baroque Clash sulla parete al centro e una palla di Natale rossa a destra",
-    // Coordinate provvisorie: rifinisci con l'editor (tasto E)
+    alt: "Ambiente Santa Sara con la coppia di vasi Doppio e una palla di Natale rossa",
     hotspots: [
-      { productId: "doppio", x: 20, y: 60, r: 7 },           // due vasi a sinistra
-      { productId: "baroque-clash", x: 50, y: 30, r: 6 },    // piatto al muro, centro-alto
-      { productId: "christmas-ball", x: 82, y: 55, r: 5 },   // palla rossa, spostata di poco a dx per liberare il volto
+      { productId: "doppio", x: 38, y: 58, r: 7 },
+      { productId: "christmas-ball", x: 62, y: 55, r: 5 },
     ],
     hotspotsMobile: [
-      { productId: "doppio", x: 25, y: 55, r: 8 },
-      { productId: "baroque-clash", x: 50, y: 28, r: 7 },
-      { productId: "christmas-ball", x: 76, y: 55, r: 6 },
+      { productId: "doppio", x: 38, y: 53, r: 8 },
+      { productId: "christmas-ball", x: 62, y: 54, r: 6 },
     ],
   },
   {
