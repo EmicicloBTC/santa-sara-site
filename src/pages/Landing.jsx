@@ -5,12 +5,14 @@ import { Header } from "../components/Header.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { ProductModal } from "../components/ProductModal.jsx";
 import { InfoModal } from "../components/InfoModal.jsx";
+import { CatalogModal } from "../components/CatalogModal.jsx";
 import { useLocalizedScene } from "../i18n/index.jsx";
 
 export default function Landing() {
   const [sceneIndex, setSceneIndex] = useState(0);
   const [openProduct, setOpenProduct] = useState(null);
   const [infoOpen, setInfoOpen] = useState(false);
+  const [catalogOpen, setCatalogOpen] = useState(false);
 
   const scene = scenes[sceneIndex];
   const localizedScene = useLocalizedScene(scene);
@@ -23,8 +25,16 @@ export default function Landing() {
         onChangeScene={setSceneIndex}
         onOpenProduct={setOpenProduct}
       />
-      <Header onOpenInfo={() => setInfoOpen(true)} />
+      <Header
+        onOpenInfo={() => setInfoOpen(true)}
+        onOpenCatalog={() => setCatalogOpen(true)}
+      />
       <Footer sceneTitle={localizedScene.title} sceneIndex={sceneIndex} sceneCount={scenes.length} />
+      <CatalogModal
+        open={catalogOpen}
+        onClose={() => setCatalogOpen(false)}
+        onOpenProduct={setOpenProduct}
+      />
       <ProductModal product={openProduct} onClose={() => setOpenProduct(null)} />
       <InfoModal open={infoOpen} onClose={() => setInfoOpen(false)} />
     </main>

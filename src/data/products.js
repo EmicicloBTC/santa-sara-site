@@ -243,3 +243,35 @@ export function productImages(product) {
   const safeExt = ext.startsWith(".") ? ext.slice(1) : ext;
   return Array.from({ length: count }, (_, i) => `/images/products/${slug}/${i + 1}.${safeExt}`);
 }
+
+/**
+ * URL della copertina (1.ext) o stringa vuota se il prodotto non ha ancora
+ * foto caricate (images.count === 0). Usata dalle card del catalogo.
+ */
+export function productCover(product) {
+  if (!product?.images) return "";
+  const { slug, count, ext } = product.images;
+  if (!count) return "";
+  const safeExt = ext.startsWith(".") ? ext.slice(1) : ext;
+  return `/images/products/${slug}/1.${safeExt}`;
+}
+
+/** Ordine di rendering delle categorie nel catalogo. */
+export const CATEGORY_ORDER = ["Vasi", "Piatti", "Palle", "Misc"];
+
+/**
+ * Restituisce l'elenco di prodotti raggruppati per categoria, nell'ordine di
+ * CATEGORY_ORDER. L'ordine interno è quello di dichiarazione in `products`.
+ * Prodotti senza categoria vanno in "Misc".
+ *
+ * @returns {{ category: string, items: Product[] }[]}
+ */
+export function getProductsByCategory() {
+  const buckets = new Map(CATEGORY_ORDER.map((c) => [c, []]));
+  for (const p of Object.values(products)) {
+    const cat = p.category && buckets.has(p.category) ? p.category : "Misc";
+    buckets.get(cat).push(p);
+  }
+  return CATEGORY_ORDER.map((category) => ({ category, items: buckets.get(category) || [] }))
+    .filter((g) => g.items.length > 0);
+}

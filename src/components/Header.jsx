@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Close, Menu, Instagram, TikTok, ShoppingBag } from "./icons.jsx";
+import { Close, Menu, Instagram, TikTok, ShoppingBag, Grid } from "./icons.jsx";
 import { site } from "../data/site.js";
 import { useT, useLang } from "../i18n/index.jsx";
 
-export function Header({ onOpenInfo }) {
+export function Header({ onOpenInfo, onOpenCatalog }) {
   const [open, setOpen] = useState(false);
   const t = useT();
   const { lang, setLang } = useLang();
@@ -96,8 +96,21 @@ export function Header({ onOpenInfo }) {
             <button
               type="button"
               role="menuitem"
-              onClick={() => { setOpen(false); onOpenInfo?.(); }}
+              onClick={() => { setOpen(false); onOpenCatalog?.(); }}
               className="flex w-full items-center justify-between px-4 py-3 text-left text-sm transition hover:bg-stone-950/5"
+            >
+              <span className="flex items-center gap-2">
+                <Grid size={15} />
+                {t.ui.catalog}
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{t.ui.catalogBadge}</span>
+            </button>
+
+            <button
+              type="button"
+              role="menuitem"
+              onClick={() => { setOpen(false); onOpenInfo?.(); }}
+              className="flex w-full items-center justify-between border-t border-stone-950/10 px-4 py-3 text-left text-sm transition hover:bg-stone-950/5"
             >
               {t.ui.bioAtelier}
               <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{t.ui.infoBadge}</span>

@@ -33,6 +33,19 @@ const it = {
     next: "Successiva",
     imageN: "Immagine",
     openProductCard: "Apri scheda",
+    catalog: "Catalogo",
+    catalogBadge: "opere",
+  },
+  catalog: {
+    aria: "Catalogo opere",
+    title: "Catalogo",
+    subtitle: "Pezzi unici, decorati a mano in atelier.",
+    filterAll: "Tutti",
+    pieceCountOne: "1 pezzo",
+    pieceCountMany: "{n} pezzi",
+    empty: "Nessun pezzo in questa categoria, per ora.",
+    comingSoon: "Foto in arrivo",
+    sold: "Venduto",
   },
   modal: {
     dimensions: "Dimensioni",
@@ -117,7 +130,7 @@ const it = {
     },
     "scene-15": {
       title: "Soggiorno · Marmo nero",
-      alt: "Soggiorno scuro con tavolino in marmo nero, palla decorativa su vassoio e vaso bianco con decoro blu e terracotta",
+      alt: "Soggiorno scuro con tavolino in marmo nero: palla decorata a mano su vassoio bianco a sinistra e grande vaso bianco con decoro blu e terracotta al centro",
     },
     "scene-16": {
       title: "Scena · 16",
@@ -258,6 +271,19 @@ const en = {
     next: "Next",
     imageN: "Image",
     openProductCard: "Open product card",
+    catalog: "Catalog",
+    catalogBadge: "works",
+  },
+  catalog: {
+    aria: "Works catalog",
+    title: "Catalog",
+    subtitle: "One-of-a-kind pieces, hand-painted in the atelier.",
+    filterAll: "All",
+    pieceCountOne: "1 piece",
+    pieceCountMany: "{n} pieces",
+    empty: "No pieces in this category yet.",
+    comingSoon: "Photos coming soon",
+    sold: "Sold",
   },
   modal: {
     dimensions: "Dimensions",
@@ -342,7 +368,7 @@ const en = {
     },
     "scene-15": {
       title: "Living room · Black marble",
-      alt: "Dark living room with a black marble coffee table, decorative bauble on a tray and a white vase with blue and terracotta decoration",
+      alt: "Dark living room with a black marble coffee table: hand-painted bauble on a white tray on the left and a large white vase with blue and terracotta decoration in the center",
     },
     "scene-16": {
       title: "Scene · 16",

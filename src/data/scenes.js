@@ -265,14 +265,14 @@ export const scenes = [
     title: "Soggiorno · Marmo nero",
     image: "/images/scenes/scene-15.png",
     imageMobile: "/images/scenes/scene-15-mobile.png",
-    alt: "Soggiorno scuro con tavolino in marmo nero, palla decorativa su vassoio e vaso bianco con decoro blu e terracotta",
+    alt: "Soggiorno scuro con tavolino in marmo nero: palla decorata a mano su vassoio bianco a sinistra e grande vaso bianco con decoro blu e terracotta al centro",
     hotspots: [
-      { productId: "christmas-ball", x: 44, y: 58, r: 6 },
-      { productId: "messieur", x: 74, y: 54, r: 7 },
+      { productId: "christmas-ball", x: 36, y: 60, r: 6 },
+      { productId: "messieur", x: 62, y: 54, r: 9 },
     ],
     hotspotsMobile: [
-      { productId: "christmas-ball", x: 42, y: 56, r: 7 },
-      { productId: "messieur", x: 72, y: 52, r: 8 },
+      { productId: "christmas-ball", x: 33, y: 60, r: 7 },
+      { productId: "messieur", x: 60, y: 52, r: 10 },
     ],
   },
   {
