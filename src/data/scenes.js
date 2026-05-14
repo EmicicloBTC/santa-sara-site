@@ -262,18 +262,17 @@ export const scenes = [
   },
   {
     id: "scene-15",
-    title: "Scena · 15",
+    title: "Soggiorno · Marmo nero",
     image: "/images/scenes/scene-15.png",
     imageMobile: "/images/scenes/scene-15-mobile.png",
-    alt: "Tavolino con palla di Natale e vaso decorato a mano",
-    // Palla a sinistra, vaso a destra. Se il vaso è un altro catalogo (es. Romance), cambia productId con editor E.
+    alt: "Soggiorno scuro con tavolino in marmo nero, palla decorativa su vassoio e vaso bianco con decoro blu e terracotta",
     hotspots: [
-      { productId: "christmas-ball", x: 34, y: 56, r: 6 },
-      { productId: "messieur", x: 68, y: 52, r: 7 },
+      { productId: "christmas-ball", x: 44, y: 58, r: 6 },
+      { productId: "messieur", x: 74, y: 54, r: 7 },
     ],
     hotspotsMobile: [
-      { productId: "christmas-ball", x: 32, y: 54, r: 7 },
-      { productId: "messieur", x: 66, y: 50, r: 8 },
+      { productId: "christmas-ball", x: 42, y: 56, r: 7 },
+      { productId: "messieur", x: 72, y: 52, r: 8 },
     ],
   },
   {

@@ -116,8 +116,8 @@ const it = {
       alt: "Tavolo con ciotola Romance e vaso Prime Cut",
     },
     "scene-15": {
-      title: "Scena · 15",
-      alt: "Tavolino con palla di Natale e vaso decorato a mano",
+      title: "Soggiorno · Marmo nero",
+      alt: "Soggiorno scuro con tavolino in marmo nero, palla decorativa su vassoio e vaso bianco con decoro blu e terracotta",
     },
     "scene-16": {
       title: "Scena · 16",
@@ -341,8 +341,8 @@ const en = {
       alt: "Table with Romance bowl and Prime Cut vase",
     },
     "scene-15": {
-      title: "Scene · 15",
-      alt: "Side table with a Christmas ball and a hand-painted vase",
+      title: "Living room · Black marble",
+      alt: "Dark living room with a black marble coffee table, decorative bauble on a tray and a white vase with blue and terracotta decoration",
     },
     "scene-16": {
       title: "Scene · 16",
