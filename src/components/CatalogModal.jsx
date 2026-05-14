@@ -13,6 +13,9 @@ import { useT } from "../i18n/index.jsx";
  * filtro a tab. Cliccando su una card si apre il ProductModal esistente
  * (la card delega al genitore tramite `onOpenProduct`).
  *
+ * Sfondo scena 1 scurito; logo watermark centrato nel viewport (sticky) dietro
+ * alla griglia, così le card scorrono sopra.
+ *
  * - `open`            controlla la visibilità
  * - `onClose`         chiude l'overlay
  * - `onOpenProduct`   apre il modal del prodotto selezionato
@@ -85,7 +88,7 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
             <div className="absolute inset-0 bg-stone-950/35" aria-hidden />
           </div>
 
-          <header className="sticky top-0 z-10 border-b border-white/10 bg-stone-950/55 backdrop-blur-md">
+          <header className="sticky top-0 z-20 border-b border-white/10 bg-stone-950/55 backdrop-blur-md">
             <div className="mx-auto flex w-full max-w-7xl items-end justify-between gap-4 px-5 pb-4 pt-5 sm:px-8 sm:pb-5 sm:pt-7">
               <div className="min-w-0">
                 <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-400">
@@ -140,22 +143,27 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
           </header>
 
           <div className="relative z-10 min-h-0 flex-1 overflow-y-auto">
-            <div className="mx-auto w-full max-w-7xl px-5 py-6 sm:px-8 sm:py-10">
-              {/* Logo centrato: parte del flusso, scorre con il catalogo */}
+            <div className="relative mx-auto min-h-full w-full max-w-7xl">
+              {/* Logo watermark: centrato nel viewport, sticky con lo scroll, z-0 dietro alle card */}
               <div
+                className="pointer-events-none absolute inset-0 z-0 flex justify-center"
                 aria-hidden
-                className="pointer-events-none flex min-h-[min(42dvh,22rem)] flex-col items-center justify-center pb-8 pt-2 sm:min-h-[min(36dvh,26rem)] sm:pb-10 sm:pt-4"
               >
-                <div className="rounded-full bg-white/10 p-2.5 shadow-2xl ring-1 ring-white/25 backdrop-blur-md sm:p-3">
-                  <img
-                    src="/logo.png"
-                    alt=""
-                    className="h-20 w-20 rounded-full object-cover sm:h-28 sm:w-28"
-                    draggable={false}
-                  />
+                <div className="sticky top-[50dvh] z-0 flex h-0 w-full justify-center">
+                  <div className="-translate-y-1/2">
+                    <div className="rounded-full bg-white/10 p-3 shadow-2xl ring-1 ring-white/30 backdrop-blur-md sm:p-4">
+                      <img
+                        src="/logo.png"
+                        alt=""
+                        className="h-36 w-36 rounded-full object-cover opacity-90 sm:h-48 sm:w-48 md:h-56 md:w-56"
+                        draggable={false}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
 
+              <div className="relative z-10 px-5 py-6 sm:px-8 sm:py-10">
               {visibleGroups.length === 0 && (
                 <p className="py-16 text-center text-sm text-stone-400">{t.catalog.empty}</p>
               )}
@@ -190,6 +198,7 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
                   </ul>
                 </section>
               ))}
+              </div>
             </div>
           </div>
         </motion.div>
@@ -236,7 +245,7 @@ function CatalogCard({ product, onClick, t }) {
       type="button"
       onClick={onClick}
       aria-label={`${product.title} — ${t.ui.openProductCard}`}
-      className="group block w-full overflow-hidden rounded-xl bg-white/70 text-left shadow-sm ring-1 ring-stone-950/10 transition hover:bg-white hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-950"
+      className="group relative z-10 block w-full overflow-hidden rounded-xl bg-white/70 text-left shadow-sm ring-1 ring-stone-950/10 transition hover:bg-white hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-950"
     >
       <div className="relative aspect-square w-full overflow-hidden bg-[#efe8db]">
         {categoryLabel && (
