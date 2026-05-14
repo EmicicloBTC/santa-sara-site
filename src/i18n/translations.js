@@ -61,7 +61,7 @@ const it = {
   scenes: {
     "scene-1": {
       title: "Intro",
-      alt: "Balcone con lampada Florence, grande vaso illustrato Visionari II e pezzo Kentucky '73",
+      alt: "Balcone con grande vaso illustrato Visionari II e pezzo Kentucky '73",
     },
     "scene-2": {
       title: "Tavolo · Sera",
@@ -278,7 +278,7 @@ const en = {
   scenes: {
     "scene-1": {
       title: "Intro",
-      alt: "Balcony with Florence lamp, Visionari II cachepot and Kentucky '73 piece",
+      alt: "Balcony with Visionari II cachepot and Kentucky '73 piece",
     },
     "scene-2": {
       title: "Table · Evening",

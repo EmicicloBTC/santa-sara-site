@@ -52,16 +52,14 @@ export const scenes = [
       src: "/videos/scene-1-mobile.mp4",
       poster: "/videos/scene-1-mobile-poster.jpg",
     },
-    alt: "Balcone con lampada Florence, grande vaso illustrato Visionari II e pezzo Kentucky '73",
+    alt: "Balcone con grande vaso illustrato Visionari II e pezzo Kentucky '73",
     hotspots: [
       { productId: "visionari-ii", x: 28, y: 44, r: 7 },
       { productId: "kentucky-73", x: 48, y: 58, r: 7 },
-      { productId: "florence", x: 66, y: 36, r: 6 },
     ],
     hotspotsMobile: [
       { productId: "visionari-ii", x: 32, y: 42, r: 8 },
       { productId: "kentucky-73", x: 50, y: 56, r: 8 },
-      { productId: "florence", x: 58, y: 34, r: 7 },
     ],
   },
   {
