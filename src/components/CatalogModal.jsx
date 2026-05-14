@@ -196,7 +196,7 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
                     />
                   </div>
                   <p className="mt-5 text-center font-serif text-xl tracking-[-0.02em] text-stone-100 sm:text-2xl">
-                    Santa<span className="italic">Sara</span>
+                    Santa Sara
                   </p>
                   <p className="mt-1.5 text-[10px] uppercase tracking-[0.28em] text-stone-500">
                     Unorthodox Ceramics

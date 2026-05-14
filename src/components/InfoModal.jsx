@@ -50,7 +50,7 @@ export function InfoModal({ open, onClose }) {
 
             <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-500">{t.info.atelierLabel}</p>
             <h2 className="mt-3 font-serif text-4xl leading-[1.05] tracking-[-0.025em] sm:text-5xl">
-              Santa<span className="italic"> Sara</span>
+              Santa Sara
             </h2>
 
             <figure className="mx-auto mt-6 w-full max-w-[13.5rem] sm:max-w-[15rem]">
