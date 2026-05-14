@@ -59,22 +59,41 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
           role="dialog"
           aria-modal="true"
           aria-label={t.catalog.aria}
-          className="fixed inset-0 z-50 flex flex-col bg-[#f6f1e8] text-stone-950"
+          className="fixed inset-0 z-50 flex min-h-0 flex-col overflow-hidden text-stone-100"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
         >
-          <header className="sticky top-0 z-10 border-b border-stone-950/10 bg-[#f6f1e8]/95 backdrop-blur-md">
+          {/* Sfondo: scena 1 + velatura scura (sottofondo editoriale) */}
+          <div className="pointer-events-none absolute inset-0 z-0">
+            <picture className="block h-full w-full">
+              <source media="(max-width: 767px)" srcSet="/images/scenes/scene-1-mobile.png" />
+              <img
+                src="/images/scenes/scene-1.png"
+                alt=""
+                aria-hidden
+                className="h-full w-full scale-105 object-cover object-center"
+                decoding="async"
+              />
+            </picture>
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-stone-950/95 via-stone-950/88 to-stone-950/92"
+              aria-hidden
+            />
+            <div className="absolute inset-0 bg-black/45" aria-hidden />
+          </div>
+
+          <header className="sticky top-0 z-10 border-b border-white/10 bg-stone-950/40 backdrop-blur-md">
             <div className="mx-auto flex w-full max-w-7xl items-end justify-between gap-4 px-5 pb-4 pt-5 sm:px-8 sm:pb-5 sm:pt-7">
               <div className="min-w-0">
-                <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-500">
+                <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-400">
                   Santa Sara · {formatCount(totalCount)}
                 </p>
-                <h2 className="mt-1 font-serif text-3xl leading-[1.05] tracking-[-0.025em] sm:text-5xl">
+                <h2 className="mt-1 font-serif text-3xl leading-[1.05] tracking-[-0.025em] text-stone-50 sm:text-5xl">
                   {t.catalog.title}
                 </h2>
-                <p className="mt-2 max-w-xl text-sm leading-[1.55] text-stone-600 sm:text-base">
+                <p className="mt-2 max-w-xl text-sm leading-[1.55] text-stone-300 sm:text-base">
                   {t.catalog.subtitle}
                 </p>
               </div>
@@ -82,7 +101,7 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
                 type="button"
                 onClick={onClose}
                 aria-label={t.ui.close}
-                className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white/85 text-stone-900 shadow ring-1 ring-stone-950/15 transition hover:bg-white"
+                className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white/15 text-white shadow ring-1 ring-white/25 backdrop-blur-md transition hover:bg-white/25"
               >
                 <Close size={16} />
               </button>
@@ -119,10 +138,10 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
             </nav>
           </header>
 
-          <div className="flex-1 overflow-y-auto">
+          <div className="relative z-10 min-h-0 flex-1 overflow-y-auto">
             <div className="mx-auto w-full max-w-7xl px-5 py-6 sm:px-8 sm:py-10">
               {visibleGroups.length === 0 && (
-                <p className="py-16 text-center text-sm text-stone-500">{t.catalog.empty}</p>
+                <p className="py-16 text-center text-sm text-stone-400">{t.catalog.empty}</p>
               )}
 
               {visibleGroups.map((group, idx) => (
@@ -131,11 +150,11 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
                   className={idx === 0 ? "" : "mt-10 sm:mt-14"}
                   aria-label={t.category?.[group.category] ?? group.category}
                 >
-                  <header className="mb-4 flex items-baseline justify-between gap-4 border-b border-stone-950/10 pb-2 sm:mb-6">
-                    <h3 className="font-serif text-xl tracking-[-0.02em] sm:text-2xl">
+                  <header className="mb-4 flex items-baseline justify-between gap-4 border-b border-white/15 pb-2 sm:mb-6">
+                    <h3 className="font-serif text-xl tracking-[-0.02em] text-stone-50 sm:text-2xl">
                       {t.category?.[group.category] ?? group.category}
                     </h3>
-                    <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-stone-500">
+                    <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-stone-400">
                       {formatCount(group.items.length)}
                     </span>
                   </header>
@@ -172,15 +191,15 @@ function FilterChip({ label, count, active, onClick }) {
       className={
         "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-medium uppercase tracking-[0.22em] transition " +
         (active
-          ? "border-stone-950 bg-stone-950 text-white"
-          : "border-stone-950/15 bg-white/70 text-stone-700 hover:bg-white hover:text-stone-950")
+          ? "border-white bg-white text-stone-950 shadow-sm"
+          : "border-white/20 bg-white/10 text-stone-200 backdrop-blur-sm hover:border-white/30 hover:bg-white/15 hover:text-white")
       }
     >
       <span>{label}</span>
       <span
         className={
           "rounded-full px-1.5 py-0.5 text-[9px] tracking-[0.18em] " +
-          (active ? "bg-white/15 text-white/85" : "bg-stone-950/5 text-stone-500")
+          (active ? "bg-stone-950/10 text-stone-600" : "bg-black/25 text-stone-300")
         }
       >
         {count}
