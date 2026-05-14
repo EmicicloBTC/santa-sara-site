@@ -276,4 +276,19 @@ export const scenes = [
       { productId: "messieur", x: 66, y: 50, r: 8 },
     ],
   },
+  {
+    id: "scene-16",
+    title: "Scena · 16",
+    image: "/images/scenes/scene-16.png",
+    imageMobile: "/images/scenes/scene-16-mobile.png",
+    alt: "Parete a righe con piatti Keep Fit (Body Rolling e Body Rocking) in alto e coppia di vasi Doppio sulla mensola",
+    hotspots: [
+      { productId: "keep-fit", x: 50, y: 26, r: 8 },
+      { productId: "doppio", x: 50, y: 62, r: 8 },
+    ],
+    hotspotsMobile: [
+      { productId: "keep-fit", x: 50, y: 24, r: 9 },
+      { productId: "doppio", x: 50, y: 58, r: 9 },
+    ],
+  },
 ];

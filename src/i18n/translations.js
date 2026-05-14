@@ -119,6 +119,10 @@ const it = {
       title: "Scena · 15",
       alt: "Tavolino con palla di Natale e vaso decorato a mano",
     },
+    "scene-16": {
+      title: "Scena · 16",
+      alt: "Parete a righe con piatti Keep Fit (Body Rolling e Body Rocking) in alto e coppia di vasi Doppio sulla mensola",
+    },
   },
   products: {
     florence: {
@@ -339,6 +343,10 @@ const en = {
     "scene-15": {
       title: "Scene · 15",
       alt: "Side table with a Christmas ball and a hand-painted vase",
+    },
+    "scene-16": {
+      title: "Scene · 16",
+      alt: "Striped wall with Keep Fit plates (Body Rolling and Body Rocking) above and the Doppio pair of vases on the shelf",
     },
   },
   products: {
