@@ -52,7 +52,21 @@ export function InfoModal({ open, onClose }) {
             <h2 className="mt-3 font-serif text-4xl leading-[1.05] tracking-[-0.025em] sm:text-5xl">
               Santa<span className="italic"> Sara</span>
             </h2>
-            <p className="mt-5 text-base leading-[1.75] text-stone-700">
+
+            <figure className="mx-auto mt-6 w-full max-w-[13.5rem] sm:max-w-[15rem]">
+              <div className="aspect-square overflow-hidden rounded-full bg-stone-200/90 shadow-[0_12px_40px_-8px_rgba(28,25,23,0.35)] ring-2 ring-white/90 ring-offset-2 ring-offset-[#f6f1e8]">
+                <img
+                  src="/images/bio.png"
+                  alt={t.info.bioPhotoAlt}
+                  className="h-full w-full object-cover object-center"
+                  decoding="async"
+                  loading="lazy"
+                  draggable={false}
+                />
+              </div>
+            </figure>
+
+            <p className="mt-6 text-base leading-[1.75] text-stone-700">
               {t.info.paragraph1}
             </p>
             <p className="mt-4 text-base leading-[1.75] text-stone-700">

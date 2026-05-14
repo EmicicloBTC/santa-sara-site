@@ -65,6 +65,7 @@ const it = {
   info: {
     aria: "Bio e atelier",
     atelierLabel: "— Atelier",
+    bioPhotoAlt: "Santa Sara in atelier",
     paragraph1:
       "Ceramiche ornamentali decorate a mano. Ogni pezzo è unico, dipinto in atelier: forma classica, segno contemporaneo. Nessuna serie industriale, nessun catalogo da supermercato — solo oggetti che entrano in casa con una posizione.",
     paragraph2Prefix:
@@ -303,6 +304,7 @@ const en = {
   info: {
     aria: "Bio and atelier",
     atelierLabel: "— Atelier",
+    bioPhotoAlt: "Santa Sara in the atelier",
     paragraph1:
       "Hand-painted ornamental ceramics. Each piece is unique, painted in the atelier: classical form, contemporary mark. No industrial series, no supermarket catalogue — only objects that enter the home with a stance.",
     paragraph2Prefix:
