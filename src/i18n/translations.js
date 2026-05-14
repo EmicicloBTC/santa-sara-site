@@ -61,7 +61,7 @@ const it = {
   scenes: {
     "scene-1": {
       title: "Intro",
-      alt: "Homepage Santa Sara — ambientazione introduttiva",
+      alt: "Balcone con lampada Florence, grande vaso illustrato Visionari II e pezzo Kentucky '73",
     },
     "scene-2": {
       title: "Tavolo · Sera",
@@ -101,19 +101,19 @@ const it = {
     },
     "scene-11": {
       title: "Scena · 11",
-      alt: "Ambiente Santa Sara con ceramiche",
+      alt: "Sala con vaso Messieur, ciotola Romance e dettaglio Prime Cut",
     },
     "scene-12": {
       title: "Scena · 12",
-      alt: "Ambiente Santa Sara con ceramiche",
+      alt: "Parete verde con lampada Florence, coppia Doppio su madia e dettaglio Prime Cut",
     },
     "scene-13": {
       title: "Scena · 13",
-      alt: "Ambiente Santa Sara con ceramiche",
+      alt: "Vetrina con quattro piatti: Yayoi Kusama, Chappell Roan, Lady Gaga e Iris Apfel",
     },
     "scene-14": {
       title: "Scena · 14",
-      alt: "Ambiente Santa Sara con ceramiche",
+      alt: "Tavolo con ciotola Romance, vaso Prime Cut e lampada Florence sullo sfondo",
     },
   },
   products: {
@@ -278,7 +278,7 @@ const en = {
   scenes: {
     "scene-1": {
       title: "Intro",
-      alt: "Santa Sara homepage — introductory scene",
+      alt: "Balcony with Florence lamp, Visionari II cachepot and Kentucky '73 piece",
     },
     "scene-2": {
       title: "Table · Evening",
@@ -318,19 +318,19 @@ const en = {
     },
     "scene-11": {
       title: "Scene · 11",
-      alt: "Santa Sara setting with ceramics",
+      alt: "Room with Messieur vase, Romance bowl and Prime Cut detail",
     },
     "scene-12": {
       title: "Scene · 12",
-      alt: "Santa Sara setting with ceramics",
+      alt: "Green wall with Florence lamp, Doppio pair on sideboard and Prime Cut detail",
     },
     "scene-13": {
       title: "Scene · 13",
-      alt: "Santa Sara setting with ceramics",
+      alt: "Shop window with four plates: Yayoi Kusama, Chappell Roan, Lady Gaga and Iris Apfel",
     },
     "scene-14": {
       title: "Scene · 14",
-      alt: "Santa Sara setting with ceramics",
+      alt: "Table with Romance bowl, Prime Cut vase and Florence lamp in the background",
     },
   },
   products: {
