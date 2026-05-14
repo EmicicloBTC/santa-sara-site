@@ -192,14 +192,14 @@ export const scenes = [
     title: "Scena · 10",
     image: "/images/scenes/scene-10.png",
     imageMobile: "/images/scenes/scene-10-mobile.png",
-    alt: "Ambiente Santa Sara con la coppia di vasi Doppio e una palla di Natale rossa",
+    alt: "Ambiente Santa Sara con il vaso Kentucky '73 a sinistra e il vaso Prime Cut a destra",
     hotspots: [
-      { productId: "doppio", x: 38, y: 58, r: 7 },
-      { productId: "christmas-ball", x: 62, y: 55, r: 5 },
+      { productId: "kentucky-73", x: 38, y: 58, r: 7 },
+      { productId: "prime-cut", x: 62, y: 55, r: 7 },
     ],
     hotspotsMobile: [
-      { productId: "doppio", x: 38, y: 53, r: 8 },
-      { productId: "christmas-ball", x: 62, y: 54, r: 6 },
+      { productId: "kentucky-73", x: 38, y: 53, r: 8 },
+      { productId: "prime-cut", x: 62, y: 54, r: 7 },
     ],
   },
   {

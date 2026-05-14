@@ -97,7 +97,7 @@ const it = {
     },
     "scene-10": {
       title: "Scena · 10",
-      alt: "Ambiente Santa Sara con la coppia di vasi Doppio e una palla di Natale rossa",
+      alt: "Ambiente Santa Sara con il vaso Kentucky '73 a sinistra e il vaso Prime Cut a destra",
     },
     "scene-11": {
       title: "Scena · 11",
@@ -314,7 +314,7 @@ const en = {
     },
     "scene-10": {
       title: "Scene · 10",
-      alt: "Santa Sara setting with the Doppio pair of vases and a red Christmas ball",
+      alt: "Santa Sara setting with the Kentucky '73 vase on the left and the Prime Cut vase on the right",
     },
     "scene-11": {
       title: "Scene · 11",
