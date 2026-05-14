@@ -115,6 +115,10 @@ const it = {
       title: "Scena · 14",
       alt: "Tavolo con ciotola Romance e vaso Prime Cut",
     },
+    "scene-15": {
+      title: "Scena · 15",
+      alt: "Tavolino con palla di Natale e vaso decorato a mano",
+    },
   },
   products: {
     florence: {
@@ -331,6 +335,10 @@ const en = {
     "scene-14": {
       title: "Scene · 14",
       alt: "Table with Romance bowl and Prime Cut vase",
+    },
+    "scene-15": {
+      title: "Scene · 15",
+      alt: "Side table with a Christmas ball and a hand-painted vase",
     },
   },
   products: {
