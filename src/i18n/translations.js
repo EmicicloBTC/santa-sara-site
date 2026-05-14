@@ -75,7 +75,7 @@ const it = {
   scenes: {
     "scene-1": {
       title: "Intro",
-      alt: "Scena introduttiva Santa Sara",
+      alt: "Terrazza affacciata sul mare con cachepot Visionari II sul muretto e vaso Kentucky '73 in primo piano",
     },
     "scene-1-bis": {
       title: "Intro · Bis",
@@ -318,7 +318,7 @@ const en = {
   scenes: {
     "scene-1": {
       title: "Intro",
-      alt: "Santa Sara opening scene",
+      alt: "Seaside terrace with the Visionari II cachepot on the wall and the Kentucky '73 vase in the foreground",
     },
     "scene-1-bis": {
       title: "Intro · Bis",

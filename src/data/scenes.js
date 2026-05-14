@@ -47,15 +47,14 @@ export const scenes = [
     // Poster non più disponibili: il primo frame fa da fallback.
     video: { src: "/videos/scene-1.mp4" },
     videoMobile: { src: "/videos/scene-1-mobile.mp4" },
-    alt: "Scena introduttiva Santa Sara",
-    // Hotspot da riposizionare con l'editor (tasto E) sulla nuova composizione.
+    alt: "Terrazza affacciata sul mare con cachepot Visionari II sul muretto e vaso Kentucky '73 in primo piano",
     hotspots: [
-      { productId: "visionari-ii", x: 28, y: 44, r: 7 },
-      { productId: "kentucky-73", x: 48, y: 58, r: 7 },
+      { productId: "visionari-ii", x: 72, y: 26, r: 8 },
+      { productId: "kentucky-73", x: 39, y: 64, r: 7 },
     ],
     hotspotsMobile: [
-      { productId: "visionari-ii", x: 32, y: 42, r: 8 },
-      { productId: "kentucky-73", x: 50, y: 56, r: 8 },
+      { productId: "visionari-ii", x: 70, y: 27, r: 9 },
+      { productId: "kentucky-73", x: 45, y: 50, r: 10 },
     ],
   },
   {
