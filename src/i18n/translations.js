@@ -101,7 +101,7 @@ const it = {
     },
     "scene-11": {
       title: "Scena · 11",
-      alt: "Sala con vaso Messieur, ciotola Romance e dettaglio Prime Cut",
+      alt: "Sala con vaso Messieur e cachepot Visionari II al centro",
     },
     "scene-12": {
       title: "Scena · 12",
@@ -318,7 +318,7 @@ const en = {
     },
     "scene-11": {
       title: "Scene · 11",
-      alt: "Room with Messieur vase, Romance bowl and Prime Cut detail",
+      alt: "Room with Messieur vase and Visionari II cachepot in the center",
     },
     "scene-12": {
       title: "Scene · 12",

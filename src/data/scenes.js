@@ -210,16 +210,14 @@ export const scenes = [
     title: "Scena · 11",
     image: "/images/scenes/scene-11.png",
     imageMobile: "/images/scenes/scene-11-mobile.png",
-    alt: "Sala con vaso decorato Messieur, ciotola Romance e dettaglio Prime Cut",
+    alt: "Sala con vaso Messieur e cachepot Visionari II al centro",
     hotspots: [
       { productId: "messieur", x: 22, y: 42, r: 6 },
-      { productId: "romance", x: 50, y: 50, r: 6 },
-      { productId: "prime-cut", x: 72, y: 48, r: 6 },
+      { productId: "visionari-ii", x: 50, y: 54, r: 7 },
     ],
     hotspotsMobile: [
       { productId: "messieur", x: 24, y: 40, r: 7 },
-      { productId: "romance", x: 48, y: 48, r: 7 },
-      { productId: "prime-cut", x: 70, y: 46, r: 7 },
+      { productId: "visionari-ii", x: 48, y: 52, r: 7 },
     ],
   },
   {
