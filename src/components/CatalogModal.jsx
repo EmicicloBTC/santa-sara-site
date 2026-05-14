@@ -68,7 +68,7 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
         >
-          {/* Sfondo: scena 1 attenuata + velatura (focus sulle card) */}
+          {/* Sfondo: scena 1 molto attenuata + velatura scura (leggibilità catalogo) */}
           <div className="pointer-events-none absolute inset-0 z-0">
             <picture className="block h-full w-full">
               <source media="(max-width: 767px)" srcSet="/images/scenes/scene-1-mobile.png" />
@@ -76,19 +76,19 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
                 src="/images/scenes/scene-1.png"
                 alt=""
                 aria-hidden
-                className="h-full w-full scale-105 object-cover object-center brightness-[0.30] saturate-[0.75]"
+                className="h-full w-full scale-105 object-cover object-center brightness-[0.38] saturate-[0.82]"
                 decoding="async"
               />
             </picture>
             <div
-              className="absolute inset-0 bg-gradient-to-b from-stone-950/[0.99] via-stone-950/98 to-stone-950/[0.99]"
+              className="absolute inset-0 bg-gradient-to-b from-stone-950/98 via-stone-950/96 to-stone-950/98"
               aria-hidden
             />
-            <div className="absolute inset-0 bg-black/80" aria-hidden />
-            <div className="absolute inset-0 bg-stone-950/45" aria-hidden />
+            <div className="absolute inset-0 bg-black/72" aria-hidden />
+            <div className="absolute inset-0 bg-stone-950/35" aria-hidden />
           </div>
 
-          <header className="sticky top-0 z-20 border-b border-white/10 bg-stone-950/60 backdrop-blur-md">
+          <header className="sticky top-0 z-20 border-b border-white/10 bg-stone-950/55 backdrop-blur-md">
             <div className="mx-auto flex w-full max-w-7xl items-end justify-between gap-4 px-5 pb-4 pt-5 sm:px-8 sm:pb-5 sm:pt-7">
               <div className="min-w-0">
                 <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-400">
