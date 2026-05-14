@@ -13,8 +13,8 @@ import { useT } from "../i18n/index.jsx";
  * filtro a tab. Cliccando su una card si apre il ProductModal esistente
  * (la card delega al genitore tramite `onOpenProduct`).
  *
- * Sfondo scena 1 scurito; logo watermark centrato nel viewport (sticky) dietro
- * alla griglia, così le card scorrono sopra.
+ * Sfondo scena 1 scurito; logo in fondo al catalogo con entrata morbida
+ * quando entra in viewport (scroll).
  *
  * - `open`            controlla la visibilità
  * - `onClose`         chiude l'overlay
@@ -68,7 +68,7 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
         >
-          {/* Sfondo: scena 1 molto attenuata + velatura scura (leggibilità catalogo) */}
+          {/* Sfondo: scena 1 attenuata + velatura (focus sulle card) */}
           <div className="pointer-events-none absolute inset-0 z-0">
             <picture className="block h-full w-full">
               <source media="(max-width: 767px)" srcSet="/images/scenes/scene-1-mobile.png" />
@@ -76,19 +76,19 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
                 src="/images/scenes/scene-1.png"
                 alt=""
                 aria-hidden
-                className="h-full w-full scale-105 object-cover object-center brightness-[0.38] saturate-[0.82]"
+                className="h-full w-full scale-105 object-cover object-center brightness-[0.30] saturate-[0.75]"
                 decoding="async"
               />
             </picture>
             <div
-              className="absolute inset-0 bg-gradient-to-b from-stone-950/98 via-stone-950/96 to-stone-950/98"
+              className="absolute inset-0 bg-gradient-to-b from-stone-950/[0.99] via-stone-950/98 to-stone-950/[0.99]"
               aria-hidden
             />
-            <div className="absolute inset-0 bg-black/72" aria-hidden />
-            <div className="absolute inset-0 bg-stone-950/35" aria-hidden />
+            <div className="absolute inset-0 bg-black/80" aria-hidden />
+            <div className="absolute inset-0 bg-stone-950/45" aria-hidden />
           </div>
 
-          <header className="sticky top-0 z-20 border-b border-white/10 bg-stone-950/55 backdrop-blur-md">
+          <header className="sticky top-0 z-20 border-b border-white/10 bg-stone-950/60 backdrop-blur-md">
             <div className="mx-auto flex w-full max-w-7xl items-end justify-between gap-4 px-5 pb-4 pt-5 sm:px-8 sm:pb-5 sm:pt-7">
               <div className="min-w-0">
                 <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-stone-400">
@@ -143,27 +143,7 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
           </header>
 
           <div className="relative z-10 min-h-0 flex-1 overflow-y-auto">
-            <div className="relative mx-auto min-h-full w-full max-w-7xl">
-              {/* Logo watermark: centrato nel viewport, sticky con lo scroll, z-0 dietro alle card */}
-              <div
-                className="pointer-events-none absolute inset-0 z-0 flex justify-center"
-                aria-hidden
-              >
-                <div className="sticky top-[50dvh] z-0 flex h-0 w-full justify-center">
-                  <div className="-translate-y-1/2">
-                    <div className="rounded-full bg-white/10 p-3 shadow-2xl ring-1 ring-white/30 backdrop-blur-md sm:p-4">
-                      <img
-                        src="/logo.png"
-                        alt=""
-                        className="h-36 w-36 rounded-full object-cover opacity-90 sm:h-48 sm:w-48 md:h-56 md:w-56"
-                        draggable={false}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative z-10 px-5 py-6 sm:px-8 sm:py-10">
+            <div className="mx-auto w-full max-w-7xl px-5 py-6 sm:px-8 sm:py-10">
               {visibleGroups.length === 0 && (
                 <p className="py-16 text-center text-sm text-stone-400">{t.catalog.empty}</p>
               )}
@@ -198,7 +178,31 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
                   </ul>
                 </section>
               ))}
-              </div>
+
+              <footer className="mt-16 flex flex-col items-center border-t border-white/10 pb-12 pt-14 sm:mt-24 sm:pb-16 sm:pt-20">
+                <motion.div
+                  initial={{ opacity: 0, y: 40, scale: 0.94 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: false, amount: 0.45, margin: "0px 0px -8% 0px" }}
+                  transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex flex-col items-center"
+                >
+                  <div className="rounded-full bg-white/10 p-3 shadow-2xl ring-1 ring-white/30 backdrop-blur-md sm:p-4">
+                    <img
+                      src="/logo.png"
+                      alt="Santa Sara"
+                      className="h-28 w-28 rounded-full object-cover sm:h-36 sm:w-36 md:h-40 md:w-40"
+                      draggable={false}
+                    />
+                  </div>
+                  <p className="mt-5 text-center font-serif text-xl tracking-[-0.02em] text-stone-100 sm:text-2xl">
+                    Santa<span className="italic">Sara</span>
+                  </p>
+                  <p className="mt-1.5 text-[10px] uppercase tracking-[0.28em] text-stone-500">
+                    Unorthodox Ceramics
+                  </p>
+                </motion.div>
+              </footer>
             </div>
           </div>
         </motion.div>
@@ -245,7 +249,7 @@ function CatalogCard({ product, onClick, t }) {
       type="button"
       onClick={onClick}
       aria-label={`${product.title} — ${t.ui.openProductCard}`}
-      className="group relative z-10 block w-full overflow-hidden rounded-xl bg-white/70 text-left shadow-sm ring-1 ring-stone-950/10 transition hover:bg-white hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-950"
+      className="group block w-full overflow-hidden rounded-xl bg-white/70 text-left shadow-sm ring-1 ring-stone-950/10 transition hover:bg-white hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-950"
     >
       <div className="relative aspect-square w-full overflow-hidden bg-[#efe8db]">
         {categoryLabel && (
