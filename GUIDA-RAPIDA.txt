@@ -22,6 +22,9 @@ SANTA SARA — Guida rapida (senza terminale)
        mobile:   scene-1-mobile.png  (1080x1920 o simile)
      Se non hai ancora la mobile, lascia stare: il sito usa la desktop come
      fallback (su telefono però l'immagine viene croppata ai lati).
+     Dopo ogni build lo script segnala in console se orientamento o risoluzione
+     delle scene numerate (scene-1.png, scene-1-mobile.png, …) non sono coerenti
+     (vedi punto 8).
    - Apri src\data\scenes.js e per ogni scena imposta:
        image:        "/images/scenes/scene-1.png"
        imageMobile:  "/images/scenes/scene-1-mobile.png"   (opzionale)
@@ -79,6 +82,10 @@ SANTA SARA — Guida rapida (senza terminale)
    - Ogni volta che fai "npm run build" (o quando deploya Netlify), uno script
      comprime automaticamente tutte le immagini in public\images\ (PNG e JPG),
      le ridimensiona se più larghe di 2400px e le riscrive sul disco.
+   - Stesso script controlla le DIMENSIONI delle foto in public\images\scenes\:
+     desktop = orizzontale (larghezza > altezza), mobile = verticale (altezza
+     > larghezza). Se qualcosa non torna, nella finestra nera compare una riga
+     [optimize-images] ⚠ ... — correggi il file o riscrivi l'export.
    - I file già ottimizzati vengono saltati grazie a un manifest in
      .image-cache.json (committato nel repo).
    - Quindi tu carica le foto a piena risoluzione: ci pensa il sistema.

@@ -68,8 +68,8 @@ const it = {
       alt: "Dettaglio interno con la lampada Florence e il pezzo Messieur",
     },
     "scene-3": {
-      title: "Scena · 03",
-      alt: "Ambiente Santa Sara con ceramiche e oggetti quotidiani",
+      title: "Lobby · Classico",
+      alt: "Lobby classica con lampada Florence sulla console a sinistra e piatto Baroque Clash al centro su cavalletto",
     },
     "scene-4": {
       title: "Terrazza · Mediterraneo",
@@ -293,8 +293,8 @@ const en = {
       alt: "Interior detail with the Florence lamp and the Messieur piece",
     },
     "scene-3": {
-      title: "Scene · 03",
-      alt: "Santa Sara setting with ceramics and everyday objects",
+      title: "Lobby · Classic",
+      alt: "Classic lobby with the Florence lamp on the left console and the Baroque Clash plate on a stand at the center",
     },
     "scene-4": {
       title: "Terrace · Mediterranean",

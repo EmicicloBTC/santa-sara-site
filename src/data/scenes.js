@@ -79,17 +79,17 @@ export const scenes = [
   },
   {
     id: "scene-3",
-    title: "Scena · 03",
+    title: "Lobby · Classico",
     image: "/images/scenes/scene-3.png",
     imageMobile: "/images/scenes/scene-3-mobile.png",
-    alt: "Ambiente Santa Sara con ceramiche e oggetti quotidiani",
+    alt: "Lobby classica con lampada Florence sulla console a sinistra e piatto Baroque Clash al centro su cavalletto",
     hotspots: [
-      { productId: "florence", x: 40, y: 50, r: 6 },
-      { productId: "romance", x: 60, y: 55, r: 6 },
+      { productId: "florence", x: 22, y: 48, r: 7 },
+      { productId: "baroque-clash", x: 50, y: 52, r: 6 },
     ],
     hotspotsMobile: [
-      { productId: "florence", x: 40, y: 55, r: 7 },
-      { productId: "romance", x: 60, y: 60, r: 7 },
+      { productId: "florence", x: 28, y: 46, r: 8 },
+      { productId: "baroque-clash", x: 52, y: 50, r: 7 },
     ],
   },
   {

@@ -7,6 +7,8 @@
  * - Sovrascrive il file solo se l'output è effettivamente più piccolo
  * - Tiene traccia dei file già processati in .image-cache.json
  *   (basato su size+mtime) così le build successive sono no-op
+ * - Dopo l'ottimizzazione, controlla orientamento e risoluzione minima delle
+ *   immagini in public/images/scenes/ (solo scene-NN.png / scene-NN-mobile.png)
  *
  * Uso:
  *   npm run optimize-images   (manuale)
@@ -75,6 +77,73 @@ function isImage(file) {
 
 function fmtKB(bytes) {
   return `${(bytes / 1024).toFixed(0)} KB`;
+}
+
+const SCENES_DIR = path.join(IMAGES_DIR, "scenes");
+/** Lato lungo minimo consigliato (px) dopo lettura file — avviso, non errore. */
+const MIN_LONG_EDGE_SCENE_DESKTOP = 1000;
+const MIN_LONG_EDGE_SCENE_MOBILE = 900;
+
+/**
+ * Verifica orientamento e risoluzione minima delle scene (desktop = orizzontale,
+ * mobile = verticale). Stampa avvisi in console così ogni build / optimize
+ * segnala subito PNG/JPG incoerenti.
+ * Solo file `scene-<numero>.png` e `scene-<numero>-mobile.png` (es. scene-3.png).
+ */
+async function validateSceneDimensions() {
+  try {
+    await fs.access(SCENES_DIR);
+  } catch {
+    return;
+  }
+
+  for await (const file of walk(SCENES_DIR)) {
+    if (!isImage(file)) continue;
+    const rel = path.relative(ROOT, file).replaceAll("\\", "/");
+    const base = path.basename(file);
+    if (!/^scene-\d+(-mobile)?\.(png|jpe?g)$/i.test(base)) continue;
+
+    const mobile = /-mobile\.(png|jpe?g)$/i.test(base);
+
+    let meta;
+    try {
+      const buf = await fs.readFile(file);
+      meta = await sharp(buf, { failOn: "none" }).rotate().metadata();
+    } catch (err) {
+      console.warn(`[optimize-images] ⚠ ${rel}: impossibile leggere le dimensioni (${err.message})`);
+      continue;
+    }
+
+    const w = meta.width || 0;
+    const h = meta.height || 0;
+    if (!w || !h) continue;
+
+    const longest = Math.max(w, h);
+
+    if (mobile) {
+      if (w >= h) {
+        console.warn(
+          `[optimize-images] ⚠ ${rel}: mobile atteso in VERTICALE (altezza > larghezza). Risultato: ${w}×${h}px.`,
+        );
+      }
+      if (longest < MIN_LONG_EDGE_SCENE_MOBILE) {
+        console.warn(
+          `[optimize-images] ⚠ ${rel}: lato lungo ${longest}px < ${MIN_LONG_EDGE_SCENE_MOBILE}px consigliati per fullscreen nitida su telefono.`,
+        );
+      }
+    } else {
+      if (h >= w) {
+        console.warn(
+          `[optimize-images] ⚠ ${rel}: desktop atteso in ORIZZONTALE (larghezza > altezza). Risultato: ${w}×${h}px.`,
+        );
+      }
+      if (longest < MIN_LONG_EDGE_SCENE_DESKTOP) {
+        console.warn(
+          `[optimize-images] ⚠ ${rel}: lato lungo ${longest}px < ${MIN_LONG_EDGE_SCENE_DESKTOP}px consigliati per fullscreen nitida.`,
+        );
+      }
+    }
+  }
 }
 
 async function loadManifest() {
@@ -181,6 +250,8 @@ async function main() {
   }
 
   await saveManifest(manifest);
+
+  await validateSceneDimensions();
 
   if (optimized > 0) {
     const saved = totalBefore - totalAfter;
