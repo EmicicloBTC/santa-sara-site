@@ -227,17 +227,9 @@ export const scenes = [
     title: "Scena · 12",
     image: "/images/scenes/scene-12.png",
     imageMobile: "/images/scenes/scene-12-mobile.png",
-    alt: "Parete verde con lampada Florence, coppia di vasi Doppio su madia e dettaglio Prime Cut",
-    hotspots: [
-      { productId: "florence", x: 16, y: 44, r: 6 },
-      { productId: "doppio", x: 48, y: 48, r: 7 },
-      { productId: "prime-cut", x: 82, y: 36, r: 6 },
-    ],
-    hotspotsMobile: [
-      { productId: "florence", x: 18, y: 42, r: 7 },
-      { productId: "doppio", x: 50, y: 46, r: 8 },
-      { productId: "prime-cut", x: 78, y: 34, r: 7 },
-    ],
+    alt: "Parete verde con coppia di vasi Doppio su madia",
+    hotspots: [{ productId: "doppio", x: 45, y: 48, r: 8 }],
+    hotspotsMobile: [{ productId: "doppio", x: 47, y: 46, r: 9 }],
   },
   {
     id: "scene-13",

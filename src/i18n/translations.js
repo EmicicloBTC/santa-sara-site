@@ -105,7 +105,7 @@ const it = {
     },
     "scene-12": {
       title: "Scena · 12",
-      alt: "Parete verde con lampada Florence, coppia Doppio su madia e dettaglio Prime Cut",
+      alt: "Parete verde con coppia di vasi Doppio su madia",
     },
     "scene-13": {
       title: "Scena · 13",
@@ -322,7 +322,7 @@ const en = {
     },
     "scene-12": {
       title: "Scene · 12",
-      alt: "Green wall with Florence lamp, Doppio pair on sideboard and Prime Cut detail",
+      alt: "Green wall with the Doppio pair of vases on the sideboard",
     },
     "scene-13": {
       title: "Scene · 13",
