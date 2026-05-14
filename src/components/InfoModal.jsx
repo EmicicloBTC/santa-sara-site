@@ -54,7 +54,8 @@ export function InfoModal({ open, onClose }) {
             </h2>
 
             <figure className="mx-auto mt-6 w-full max-w-[13.5rem] sm:max-w-[15rem]">
-              <div className="aspect-square overflow-hidden rounded-full bg-stone-200/90 shadow-[0_12px_40px_-8px_rgba(28,25,23,0.35)] ring-2 ring-white/90 ring-offset-2 ring-offset-[#f6f1e8]">
+              {/* Sopra rettilineo, base a arco (semicerchio) */}
+              <div className="aspect-[5/6] w-full overflow-hidden rounded-t-none rounded-b-full bg-stone-200/90 shadow-[0_12px_40px_-8px_rgba(28,25,23,0.35)] ring-2 ring-white/90 ring-offset-2 ring-offset-[#f6f1e8]">
                 <img
                   src="/images/bio.png"
                   alt={t.info.bioPhotoAlt}
