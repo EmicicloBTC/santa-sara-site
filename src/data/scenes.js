@@ -58,30 +58,6 @@ export const scenes = [
     ],
   },
   {
-    id: "scene-1-bis",
-    title: "Intro · Bis",
-    image: "/images/scenes/scene-1-bis.png",
-    imageMobile: "/images/scenes/scene-1-bis-mobile.png",
-    // Versione precedente della scena intro (mantenuta come alternativa).
-    video: {
-      src: "/videos/scene-1-bis.mp4",
-      poster: "/videos/scene-1-bis-poster.jpg",
-    },
-    videoMobile: {
-      src: "/videos/scene-1-bis-mobile.mp4",
-      poster: "/videos/scene-1-bis-mobile-poster.jpg",
-    },
-    alt: "Balcone con grande vaso illustrato Visionari II e pezzo Kentucky '73",
-    hotspots: [
-      { productId: "visionari-ii", x: 28, y: 44, r: 7 },
-      { productId: "kentucky-73", x: 48, y: 58, r: 7 },
-    ],
-    hotspotsMobile: [
-      { productId: "visionari-ii", x: 32, y: 42, r: 8 },
-      { productId: "kentucky-73", x: 50, y: 56, r: 8 },
-    ],
-  },
-  {
     id: "scene-2",
     title: "Tavolo · Sera",
     image: "/images/scenes/scene-2.png",
@@ -190,6 +166,30 @@ export const scenes = [
     ],
     hotspotsMobile: [
       { productId: "keep-fit", x: 58, y: 53, r: 9 },
+    ],
+  },
+  {
+    id: "scene-1-bis",
+    title: "Intro · Bis",
+    image: "/images/scenes/scene-1-bis.png",
+    imageMobile: "/images/scenes/scene-1-bis-mobile.png",
+    // Versione precedente della scena intro (mantenuta come alternativa).
+    video: {
+      src: "/videos/scene-1-bis.mp4",
+      poster: "/videos/scene-1-bis-poster.jpg",
+    },
+    videoMobile: {
+      src: "/videos/scene-1-bis-mobile.mp4",
+      poster: "/videos/scene-1-bis-mobile-poster.jpg",
+    },
+    alt: "Balcone con grande vaso illustrato Visionari II e pezzo Kentucky '73",
+    hotspots: [
+      { productId: "visionari-ii", x: 28, y: 44, r: 7 },
+      { productId: "kentucky-73", x: 48, y: 58, r: 7 },
+    ],
+    hotspotsMobile: [
+      { productId: "visionari-ii", x: 32, y: 42, r: 8 },
+      { productId: "kentucky-73", x: 50, y: 56, r: 8 },
     ],
   },
   {
