@@ -99,14 +99,6 @@ export const scenes = [
     title: "Terrazza · Mediterraneo",
     image: "/images/scenes/scene-4.png",
     imageMobile: "/images/scenes/scene-4-mobile.png",
-    video: {
-      src: "/videos/scene-4.mp4",
-      poster: "/videos/scene-4-poster.jpg",
-    },
-    videoMobile: {
-      src: "/videos/scene-4-mobile.mp4",
-      poster: "/videos/scene-4-mobile-poster.jpg",
-    },
     alt: "Terrazza affacciata sul mare con vaso Kentucky '73 sul tavolino e cachepot Visionari II sulla colonna",
     hotspots: [
       { productId: "kentucky-73", x: 22, y: 55, r: 5 },

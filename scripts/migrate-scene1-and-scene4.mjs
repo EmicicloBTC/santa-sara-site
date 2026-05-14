@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * One-shot migration:
- * 1) Ripristina da git HEAD i vecchi asset della scena 1 (terrazza + video) e
- *    li scrive come scena 4 (immagini + video + poster).
+ * Script di migrazione intro scena 1:
+ * 1) Ripristina da git HEAD le vecchie immagini della scena 1 (terrazza) come
+ *    scene-4.png / scene-4-mobile.png (la scena 4 nel sito è solo statica, senza video).
  * 2) Processa i NUOVI scene-1.mp4 / scene-1-mobile.mp4 nella working tree:
  *    reverse, H.264, estrae ultimo frame → scene-1.png / scene-1-mobile.png,
  *    primo frame → poster JPG.
@@ -70,14 +70,10 @@ function processIntroVideo({ inputMp4, outMp4, outPng, outPoster }) {
   runFfmpeg(["-y", "-i", outMp4, "-frames:v", "1", "-update", "1", "-q:v", "2", outPoster]);
 }
 
-// --- 1) Vecchia scena 1 → file scena 4
+// --- 1) Vecchia scena 1 → immagini scena 4 (solo statiche; niente video in scena 4)
 const pairs = [
   ["public/images/scenes/scene-1.png", "public/images/scenes/scene-4.png"],
   ["public/images/scenes/scene-1-mobile.png", "public/images/scenes/scene-4-mobile.png"],
-  ["public/videos/scene-1.mp4", "public/videos/scene-4.mp4"],
-  ["public/videos/scene-1-mobile.mp4", "public/videos/scene-4-mobile.mp4"],
-  ["public/videos/scene-1-poster.jpg", "public/videos/scene-4-poster.jpg"],
-  ["public/videos/scene-1-mobile-poster.jpg", "public/videos/scene-4-mobile-poster.jpg"],
 ];
 
 for (const [from, to] of pairs) {
@@ -105,7 +101,7 @@ processIntroVideo({
   outPoster: path.join(ROOT, "public/videos/scene-1-mobile-poster.jpg"),
 });
 
-console.log("[migrate] Fatto: scena 4 da HEAD vecchia scena 1; nuova scena 1 video+png+poster.");
+console.log("[migrate] Fatto: immagini scena 4 da HEAD vecchia scena 1; nuova scena 1 video+png+poster.");
 
 // Rimuovi backup raw locali (non vanno in repo)
 for (const f of [rawDesktop, rawMobile]) {
