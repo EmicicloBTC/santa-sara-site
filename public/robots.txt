@@ -1,0 +1,11 @@
+# https://santa-sara.com/robots.txt
+# Aperto a tutti i crawler "buoni": niente da nascondere, è un sito vetrina.
+
+User-agent: *
+Allow: /
+
+# Eccezioni: assets interni e cartelle di sistema (non hanno senso indicizzare).
+Disallow: /assets/
+Disallow: /_originals/
+
+Sitemap: https://santa-sara.com/sitemap.xml

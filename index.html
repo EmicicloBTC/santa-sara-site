@@ -4,17 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#14110f" />
-    <title>Santa Sara — Ceramiche d'autore</title>
-    <meta name="description" content="Santa Sara: ceramiche ornamentali decorate a mano. Pezzi unici, dipinti in atelier." />
+
+    <!-- ====== SEO base ====== -->
+    <title>Santa Sara — Ceramiche d'autore, dipinte a mano in Italia</title>
+    <meta
+      name="description"
+      content="Santa Sara: ceramica d'autore italiana decorata a mano. Vasi, piatti e oggetti d'arredo unici, dipinti uno per uno in atelier."
+    />
+    <meta
+      name="keywords"
+      content="Santa Sara, ceramica, ceramiche d'autore, ceramica artigianale, vasi decorati, piatti dipinti a mano, oggetti d'arredo, made in Italy, ceramica italiana"
+    />
+    <meta name="author" content="Santa Sara" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://santa-sara.com/" />
+
+    <!-- Lingue alternative: IT è il default, EN è disponibile come switch nel sito -->
+    <link rel="alternate" hreflang="it" href="https://santa-sara.com/" />
+    <link rel="alternate" hreflang="en" href="https://santa-sara.com/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://santa-sara.com/" />
+
+    <!-- ====== Open Graph (WhatsApp, Facebook, LinkedIn, Telegram, Slack…) ====== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Santa Sara" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:url" content="https://santa-sara.com/" />
+    <meta property="og:title" content="Santa Sara — Ceramiche d'autore, dipinte a mano in Italia" />
+    <meta
+      property="og:description"
+      content="Ceramica d'autore italiana decorata a mano. Vasi, piatti e oggetti d'arredo unici, dipinti uno per uno in atelier."
+    />
+    <meta property="og:image" content="https://santa-sara.com/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://santa-sara.com/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Terrazza affacciata sul mare con cachepot Visionari II e vaso Kentucky '73 di Santa Sara"
+    />
+
+    <!-- ====== Twitter / X ====== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Santa Sara — Ceramiche d'autore, dipinte a mano in Italia" />
+    <meta
+      name="twitter:description"
+      content="Ceramica d'autore italiana decorata a mano. Vasi, piatti e oggetti d'arredo unici, dipinti uno per uno in atelier."
+    />
+    <meta name="twitter:image" content="https://santa-sara.com/og-image.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="Terrazza affacciata sul mare con cachepot Visionari II e vaso Kentucky '73 di Santa Sara"
+    />
+
+    <!-- ====== Icone ====== -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- ====== Font ====== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
     <!--
       Preload della PRIMA scena (la più importante per la sensazione "subito").
       Il browser inizia a scaricare l'immagine prima ancora di parsare React,
@@ -22,6 +78,43 @@
       fetchpriority="high" la mette in cima alla coda di rete.
     -->
     <link rel="preload" as="image" href="/images/scenes/scene-1.png" fetchpriority="high" />
+
+    <!-- ====== Structured data (JSON-LD) ====== -->
+    <!-- Aiuta Google a capire chi sei e a mostrare un risultato "ricco". -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://santa-sara.com/#organization",
+            "name": "Santa Sara",
+            "url": "https://santa-sara.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://santa-sara.com/apple-touch-icon.png",
+              "width": 180,
+              "height": 180
+            },
+            "image": "https://santa-sara.com/og-image.jpg",
+            "description": "Ceramica d'autore italiana decorata a mano. Vasi, piatti e oggetti d'arredo unici, dipinti uno per uno in atelier.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "IT"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://santa-sara.com/#website",
+            "url": "https://santa-sara.com/",
+            "name": "Santa Sara",
+            "description": "Ceramiche d'autore, dipinte a mano in Italia.",
+            "publisher": { "@id": "https://santa-sara.com/#organization" },
+            "inLanguage": ["it-IT", "en-US"]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

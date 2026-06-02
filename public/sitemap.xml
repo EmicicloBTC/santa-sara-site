@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1">
+
+  <!--
+    Il sito è una landing single-page con scene/prodotti/info dentro modali
+    della stessa URL. Per ora c'è una sola pagina indicizzabile, in due lingue.
+    Quando aggiungeremo route reali (es. /shop, /bio, ...) basterà aggiungerle qui.
+  -->
+  <url>
+    <loc>https://santa-sara.com/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://santa-sara.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://santa-sara.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://santa-sara.com/" />
+    <image:image>
+      <image:loc>https://santa-sara.com/og-image.jpg</image:loc>
+      <image:title>Santa Sara — Ceramiche d'autore</image:title>
+      <image:caption>Terrazza affacciata sul mare con cachepot Visionari II e vaso Kentucky '73 di Santa Sara.</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
