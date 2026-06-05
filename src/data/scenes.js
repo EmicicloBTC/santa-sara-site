@@ -40,21 +40,21 @@
 export const scenes = [
   {
     id: "scene-1",
-    title: "Intro",
+    title: "Terrazza · Mare",
     image: "/images/scenes/scene-1.png",
     imageMobile: "/images/scenes/scene-1-mobile.png",
     // Video intro nuovo (reverse + ultimo frame = immagine statica).
     // Poster non più disponibili: il primo frame fa da fallback.
     video: { src: "/videos/scene-1.mp4" },
     videoMobile: { src: "/videos/scene-1-mobile.mp4" },
-    alt: "Terrazza affacciata sul mare con cachepot Visionari II sul muretto e vaso Kentucky '73 in primo piano",
+    alt: "Terrazza affacciata sul mare con cachepot Visionari II sul muretto e vaso Dandy Land in primo piano",
     hotspots: [
       { productId: "visionari-ii", x: 72, y: 26, r: 8 },
-      { productId: "kentucky-73", x: 39, y: 64, r: 7 },
+      { productId: "dandy-land", x: 39, y: 64, r: 7 },
     ],
     hotspotsMobile: [
       { productId: "visionari-ii", x: 70, y: 34, r: 9 },
-      { productId: "kentucky-73", x: 45, y: 50, r: 10 },
+      { productId: "dandy-land", x: 45, y: 50, r: 10 },
     ],
   },
   {
@@ -62,14 +62,14 @@ export const scenes = [
     title: "Tavolo · Sera",
     image: "/images/scenes/scene-2.png",
     imageMobile: "/images/scenes/scene-2-mobile.png",
-    alt: "Dettaglio interno con la lampada Florence e il pezzo Messieur",
+    alt: "Tavolo serale con lampada Florence e vaso Dandy Land al centro",
     hotspots: [
       { productId: "florence", x: 42, y: 48, r: 6 },
-      { productId: "messieur", x: 60, y: 55, r: 6 },
+      { productId: "dandy-land", x: 46, y: 52, r: 7 },
     ],
     hotspotsMobile: [
       { productId: "florence", x: 42, y: 48, r: 7 },
-      { productId: "messieur", x: 60, y: 55, r: 7 },
+      { productId: "dandy-land", x: 46, y: 52, r: 8 },
     ],
   },
   {
@@ -170,7 +170,7 @@ export const scenes = [
   },
   {
     id: "scene-1-bis",
-    title: "Intro · Bis",
+    title: "Balcone · Città",
     image: "/images/scenes/scene-1-bis.png",
     imageMobile: "/images/scenes/scene-1-bis-mobile.png",
     // Versione precedente della scena intro (mantenuta come alternativa).
@@ -182,19 +182,19 @@ export const scenes = [
       src: "/videos/scene-1-bis-mobile.mp4",
       poster: "/videos/scene-1-bis-mobile-poster.jpg",
     },
-    alt: "Balcone con grande vaso illustrato Visionari II e pezzo Kentucky '73",
+    alt: "Balcone con cachepot Visionari II e vaso Dandy Land al centro",
     hotspots: [
       { productId: "visionari-ii", x: 28, y: 44, r: 7 },
-      { productId: "kentucky-73", x: 48, y: 58, r: 7 },
+      { productId: "dandy-land", x: 48, y: 58, r: 7 },
     ],
     hotspotsMobile: [
       { productId: "visionari-ii", x: 32, y: 42, r: 8 },
-      { productId: "kentucky-73", x: 50, y: 56, r: 8 },
+      { productId: "dandy-land", x: 50, y: 56, r: 8 },
     ],
   },
   {
     id: "scene-9",
-    title: "Scena · 09",
+    title: "Interno · Messieur",
     image: "/images/scenes/scene-9.png",
     imageMobile: "/images/scenes/scene-9-mobile.png",
     alt: "Ambiente Santa Sara con il pezzo Messieur in primo piano",
@@ -208,7 +208,7 @@ export const scenes = [
   },
   {
     id: "scene-10",
-    title: "Scena · 10",
+    title: "Sala · Vasi",
     image: "/images/scenes/scene-10.png",
     imageMobile: "/images/scenes/scene-10-mobile.png",
     alt: "Ambiente Santa Sara con il vaso Kentucky '73 a sinistra e il vaso Prime Cut a destra",
@@ -223,22 +223,22 @@ export const scenes = [
   },
   {
     id: "scene-11",
-    title: "Scena · 11",
+    title: "Salotto · Geometrico",
     image: "/images/scenes/scene-11.png",
     imageMobile: "/images/scenes/scene-11-mobile.png",
-    alt: "Sala con vaso Messieur e cachepot Visionari II al centro",
+    alt: "Sala con vaso Dandy Land sulla console e cachepot Visionari II al centro",
     hotspots: [
-      { productId: "messieur", x: 22, y: 42, r: 6 },
+      { productId: "dandy-land", x: 22, y: 42, r: 6 },
       { productId: "visionari-ii", x: 50, y: 54, r: 7 },
     ],
     hotspotsMobile: [
-      { productId: "messieur", x: 24, y: 40, r: 7 },
+      { productId: "dandy-land", x: 24, y: 40, r: 7 },
       { productId: "visionari-ii", x: 48, y: 52, r: 7 },
     ],
   },
   {
     id: "scene-12",
-    title: "Scena · 12",
+    title: "Soggiorno · Parete verde",
     image: "/images/scenes/scene-12.png",
     imageMobile: "/images/scenes/scene-12-mobile.png",
     alt: "Parete verde con coppia di vasi Padded Dynasty su madia",
@@ -247,7 +247,7 @@ export const scenes = [
   },
   {
     id: "scene-13",
-    title: "Scena · 13",
+    title: "Vetrina · Piatti",
     image: "/images/scenes/scene-13.png",
     imageMobile: "/images/scenes/scene-13-mobile.png",
     alt: "Vetrina con quattro piatti: Yayoi Kusama, Chappell Roan, Lady Gaga e Iris Apfel",
@@ -266,17 +266,17 @@ export const scenes = [
   },
   {
     id: "scene-14",
-    title: "Scena · 14",
+    title: "Tavolo · Studio",
     image: "/images/scenes/scene-14.png",
     imageMobile: "/images/scenes/scene-14-mobile.png",
-    alt: "Tavolo con ciotola Romance e vaso Prime Cut",
+    alt: "Tavolo con ciotola Romance e vaso Dandy Land",
     hotspots: [
       { productId: "romance", x: 36, y: 58, r: 7 },
-      { productId: "prime-cut", x: 58, y: 50, r: 7 },
+      { productId: "dandy-land", x: 58, y: 50, r: 7 },
     ],
     hotspotsMobile: [
       { productId: "romance", x: 38, y: 56, r: 8 },
-      { productId: "prime-cut", x: 56, y: 48, r: 8 },
+      { productId: "dandy-land", x: 56, y: 48, r: 8 },
     ],
   },
   {
@@ -284,19 +284,19 @@ export const scenes = [
     title: "Soggiorno · Marmo nero",
     image: "/images/scenes/scene-15.png",
     imageMobile: "/images/scenes/scene-15-mobile.png",
-    alt: "Soggiorno scuro con tavolino in marmo nero: palla decorata a mano su vassoio bianco a sinistra e vaso Look-up al centro",
+    alt: "Soggiorno scuro con tavolino in marmo nero: palla Gift Giving su vassoio bianco a sinistra e vaso Look-up al centro",
     hotspots: [
-      { productId: "christmas-ball", x: 36, y: 60, r: 6 },
+      { productId: "gift-giving", x: 36, y: 60, r: 6 },
       { productId: "look-up", x: 62, y: 54, r: 9 },
     ],
     hotspotsMobile: [
-      { productId: "christmas-ball", x: 33, y: 60, r: 7 },
+      { productId: "gift-giving", x: 33, y: 60, r: 7 },
       { productId: "look-up", x: 60, y: 52, r: 10 },
     ],
   },
   {
     id: "scene-16",
-    title: "Scena · 16",
+    title: "Studio · Righe",
     image: "/images/scenes/scene-16.png",
     imageMobile: "/images/scenes/scene-16-mobile.png",
     alt: "Parete a righe con piatti Keep Fit (Body Rolling e Body Rocking) in alto e coppia di vasi Doppio sulla mensola",

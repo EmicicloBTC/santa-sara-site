@@ -74,16 +74,16 @@ const it = {
   },
   scenes: {
     "scene-1": {
-      title: "Intro",
-      alt: "Terrazza affacciata sul mare con cachepot Visionari II sul muretto e vaso Kentucky '73 in primo piano",
+      title: "Terrazza · Mare",
+      alt: "Terrazza affacciata sul mare con cachepot Visionari II sul muretto e vaso Dandy Land in primo piano",
     },
     "scene-1-bis": {
-      title: "Intro · Bis",
-      alt: "Balcone con grande vaso illustrato Visionari II e pezzo Kentucky '73",
+      title: "Balcone · Città",
+      alt: "Balcone con cachepot Visionari II e vaso Dandy Land al centro",
     },
     "scene-2": {
       title: "Tavolo · Sera",
-      alt: "Dettaglio interno con la lampada Florence e il pezzo Messieur",
+      alt: "Tavolo serale con lampada Florence e vaso Dandy Land al centro",
     },
     "scene-3": {
       title: "Lobby · Classico",
@@ -110,35 +110,35 @@ const it = {
       alt: "Salotto minimale con camino e coppia di piatti Keep Fit (Body Rolling + Body Rocking) sulla mensola",
     },
     "scene-9": {
-      title: "Scena · 09",
+      title: "Interno · Messieur",
       alt: "Ambiente Santa Sara con il pezzo Messieur in primo piano",
     },
     "scene-10": {
-      title: "Scena · 10",
+      title: "Sala · Vasi",
       alt: "Ambiente Santa Sara con il vaso Kentucky '73 a sinistra e il vaso Prime Cut a destra",
     },
     "scene-11": {
-      title: "Scena · 11",
-      alt: "Sala con vaso Messieur e cachepot Visionari II al centro",
+      title: "Salotto · Geometrico",
+      alt: "Sala con vaso Dandy Land sulla console e cachepot Visionari II al centro",
     },
     "scene-12": {
-      title: "Scena · 12",
+      title: "Soggiorno · Parete verde",
       alt: "Parete verde con coppia di vasi Padded Dynasty su madia",
     },
     "scene-13": {
-      title: "Scena · 13",
+      title: "Vetrina · Piatti",
       alt: "Vetrina con quattro piatti: Yayoi Kusama, Chappell Roan, Lady Gaga e Iris Apfel",
     },
     "scene-14": {
-      title: "Scena · 14",
-      alt: "Tavolo con ciotola Romance e vaso Prime Cut",
+      title: "Tavolo · Studio",
+      alt: "Tavolo con ciotola Romance e vaso Dandy Land",
     },
     "scene-15": {
       title: "Soggiorno · Marmo nero",
-      alt: "Soggiorno scuro con tavolino in marmo nero: palla decorata a mano su vassoio bianco a sinistra e vaso Look-up al centro",
+      alt: "Soggiorno scuro con tavolino in marmo nero: palla Gift Giving su vassoio bianco a sinistra e vaso Look-up al centro",
     },
     "scene-16": {
-      title: "Scena · 16",
+      title: "Studio · Righe",
       alt: "Parete a righe con piatti Keep Fit (Body Rolling e Body Rocking) in alto e coppia di vasi Doppio sulla mensola",
     },
   },
@@ -213,6 +213,13 @@ const it = {
       price: "€ 210",
       cta: "Acquista su Etsy",
     },
+    "dandy-land": {
+      description:
+        "Anfora decorata a mano con ritratto dandy, scritta DANDY sul collo e fiori stilizzati sulla base. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "—",
+      price: "Su richiesta",
+      cta: "Chiedi disponibilità",
+    },
     "kentucky-73": {
       description:
         "Materiali: ceramica, smalti. Omaggio al Kentucky Derby del 1973: corsa di cavalli, fantini, rose rosse e righe rosa. Pezzo unico, decorato a mano in atelier.",
@@ -262,11 +269,12 @@ const it = {
       price: "€ 160",
       cta: "Acquista su Etsy",
     },
-    "christmas-ball": {
-      description: "Pezzo in arrivo. Scrivici per maggiori informazioni.",
-      dimensions: "—",
-      price: "Su richiesta",
-      cta: "Chiedi info",
+    "gift-giving": {
+      description:
+        "Materiali: ceramica. Palla natalizia decorata a mano con ritratto e scritta Gift Giving. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 12 cm",
+      price: "€ 45",
+      cta: "Acquista su Etsy",
     },
   },
 };
@@ -331,16 +339,16 @@ const en = {
   },
   scenes: {
     "scene-1": {
-      title: "Intro",
-      alt: "Seaside terrace with the Visionari II cachepot on the wall and the Kentucky '73 vase in the foreground",
+      title: "Terrace · Sea",
+      alt: "Seaside terrace with the Visionari II cachepot on the wall and the Dandy Land vase in the foreground",
     },
     "scene-1-bis": {
-      title: "Intro · Bis",
-      alt: "Balcony with Visionari II cachepot and Kentucky '73 piece",
+      title: "Balcony · City",
+      alt: "Balcony with Visionari II cachepot and Dandy Land vase at the center",
     },
     "scene-2": {
       title: "Table · Evening",
-      alt: "Interior detail with the Florence lamp and the Messieur piece",
+      alt: "Evening table with the Florence lamp and Dandy Land vase at the center",
     },
     "scene-3": {
       title: "Lobby · Classic",
@@ -367,35 +375,35 @@ const en = {
       alt: "Minimal living room with a fireplace and the Keep Fit pair of plates (Body Rolling + Body Rocking) on the mantel",
     },
     "scene-9": {
-      title: "Scene · 09",
+      title: "Interior · Messieur",
       alt: "Santa Sara setting with the Messieur piece in the foreground",
     },
     "scene-10": {
-      title: "Scene · 10",
+      title: "Room · Vases",
       alt: "Santa Sara setting with the Kentucky '73 vase on the left and the Prime Cut vase on the right",
     },
     "scene-11": {
-      title: "Scene · 11",
-      alt: "Room with Messieur vase and Visionari II cachepot in the center",
+      title: "Living room · Geometric",
+      alt: "Room with Dandy Land vase on the console and Visionari II cachepot in the center",
     },
     "scene-12": {
-      title: "Scene · 12",
+      title: "Living room · Green wall",
       alt: "Green wall with the Padded Dynasty pair of vases on the sideboard",
     },
     "scene-13": {
-      title: "Scene · 13",
+      title: "Shop window · Plates",
       alt: "Shop window with four plates: Yayoi Kusama, Chappell Roan, Lady Gaga and Iris Apfel",
     },
     "scene-14": {
-      title: "Scene · 14",
-      alt: "Table with Romance bowl and Prime Cut vase",
+      title: "Table · Studio",
+      alt: "Table with Romance bowl and Dandy Land vase",
     },
     "scene-15": {
       title: "Living room · Black marble",
-      alt: "Dark living room with a black marble coffee table: hand-painted bauble on a white tray on the left and Look-up vase in the center",
+      alt: "Dark living room with a black marble coffee table: Gift Giving bauble on a white tray on the left and Look-up vase in the center",
     },
     "scene-16": {
-      title: "Scene · 16",
+      title: "Studio · Stripes",
       alt: "Striped wall with Keep Fit plates (Body Rolling and Body Rocking) above and the Doppio pair of vases on the shelf",
     },
   },
@@ -470,6 +478,13 @@ const en = {
       price: "€ 210",
       cta: "Buy on Etsy",
     },
+    "dandy-land": {
+      description:
+        "Hand-painted amphora with a dandy portrait, DANDY lettering on the neck and stylized flowers on the base. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "—",
+      price: "On request",
+      cta: "Check availability",
+    },
     "kentucky-73": {
       description:
         "Materials: ceramic, glazes. An homage to the 1973 Kentucky Derby: horse race, jockeys, red roses and pink stripes. One-of-a-kind, hand-painted in atelier.",
@@ -519,11 +534,12 @@ const en = {
       price: "€ 160",
       cta: "Buy on Etsy",
     },
-    "christmas-ball": {
-      description: "Coming soon. Write to us for more information.",
-      dimensions: "—",
-      price: "On request",
-      cta: "Ask info",
+    "gift-giving": {
+      description:
+        "Materials: ceramic. Hand-painted Christmas bauble with portrait and Gift Giving lettering. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 12 cm",
+      price: "€ 45",
+      cta: "Buy on Etsy",
     },
   },
 };

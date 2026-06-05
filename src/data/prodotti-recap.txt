@@ -132,6 +132,24 @@ baroque-clash
   Etsy:         https://www.etsy.com/it/listing/4470222859/baroque-clash-hand-painted-ceramic-wall
   Note:         scena 3 (Lobby · Classico)
 
+dandy-land
+  Titolo:       Dandy Land
+  Categoria:    Vasi
+  Prezzo:       (da completare)
+  Materiali:    (da completare)
+  Dimensioni:   (da completare)
+  Etsy:         (da completare)
+  Scene:        intro (1), Tavolo · Sera (2), Intro · Bis (1-bis), scena 11, scena 14
+
+gift-giving
+  Titolo:       Gift Giving
+  Categoria:    Palle
+  Prezzo:       € 45
+  Materiali:    ceramica
+  Dimensioni:   l 12 cm
+  Etsy:         https://www.etsy.com/it/listing/4403794692/handmade-ceramic-christmas-ball-1350
+  Note:         scena 15 (Soggiorno · Marmo nero)
+
 ────────────────────────────────────────
 DA AGGIUNGERE (prossimi batch)
 ────────────────────────────────────────

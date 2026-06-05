@@ -165,6 +165,19 @@ export const products = {
     ctaHref: "https://www.etsy.com/it/listing/4500295298/hand-painted-ceramic-vase-cohort-03",
     images: { slug: "vasi/cohort-03", count: 4, ext: "png" },
   },
+  "dandy-land": {
+    id: "dandy-land",
+    title: "Dandy Land",
+    category: "Vasi",
+    kind: "Vaso decorato a mano",
+    dimensions: "—",
+    description:
+      "Anfora decorata a mano con ritratto dandy, scritta DANDY sul collo e fiori stilizzati sulla base. Pezzo unico, decorato a mano in atelier.",
+    price: "Su richiesta",
+    cta: "Chiedi disponibilità",
+    ctaHref: "mailto:hello@santasara.com?subject=Dandy Land — disponibilità",
+    images: { slug: "vasi/dandy-land", count: 4, ext: "jpg" },
+  },
   "kentucky-73": {
     id: "kentucky-73",
     title: "Kentucky '73",
@@ -255,22 +268,18 @@ export const products = {
     ctaHref: "https://www.etsy.com/it/listing/4470222859/baroque-clash-hand-painted-ceramic-wall",
     images: { slug: "piatti/baroque-clash", count: 4, ext: "png" },
   },
-  // ---- PLACEHOLDER ----
-  // Hotspot temporanei: gli oggetti esistono in scena 10 ma le foto/info
-  // del prodotto non sono state ancora caricate. Quando arrivano basta
-  // sostituire title/description/price + aggiungere le foto nella cartella
-  // e aumentare images.count.
-  "christmas-ball": {
-    id: "christmas-ball",
-    title: "Palla di Natale",
+  "gift-giving": {
+    id: "gift-giving",
+    title: "Gift Giving",
     category: "Palle",
     kind: "Palla decorata a mano",
-    dimensions: "—",
-    description: "Pezzo in arrivo. Scrivici per maggiori informazioni.",
-    price: "Su richiesta",
-    cta: "Chiedi info",
-    ctaHref: "mailto:hello@santasara.com?subject=Palla di Natale — info",
-    images: { slug: "palle/christmas-ball", count: 0, ext: "png" },
+    dimensions: "l 12 cm",
+    description:
+      "Materiali: ceramica. Palla natalizia decorata a mano con ritratto e scritta Gift Giving. Pezzo unico, decorato a mano in atelier.",
+    price: "€ 45",
+    cta: "Acquista su Etsy",
+    ctaHref: "https://www.etsy.com/it/listing/4403794692/handmade-ceramic-christmas-ball-1350",
+    images: { slug: "palle/gift-giving", count: 4, ext: "jpg" },
   },
 };
 
