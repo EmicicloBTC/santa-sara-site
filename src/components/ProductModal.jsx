@@ -288,6 +288,8 @@ export function ProductModal({ product, onClose }) {
                 ) : (
                   <a
                     href={product.ctaHref || "#"}
+                    target={product.ctaHref?.startsWith("http") ? "_blank" : undefined}
+                    rel={product.ctaHref?.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-stone-950 px-6 py-4 text-[11px] font-medium uppercase tracking-[0.32em] text-white transition hover:bg-[#3a342d] sm:w-auto"
                   >
                     {localized.cta || t.modal.askAvailability} <Arrow size={14} />

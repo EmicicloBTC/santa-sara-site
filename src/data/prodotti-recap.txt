@@ -1,0 +1,139 @@
+SANTA SARA — Recap prodotti (riferimento rapido)
+=================================================
+Aggiornato: 2026-06-05 (batch 1 + batch 2)
+
+I dati ufficiali del sito sono in src/data/products.js (+ traduzioni in src/i18n/translations.js).
+Questo file serve come promemoria con prezzi, materiali, dimensioni e link Etsy.
+
+Formato per ogni prodotto:
+  id slug · Titolo · Categoria · Prezzo · Materiali · Dimensioni · Link Etsy
+
+────────────────────────────────────────
+PRODOTTI CON LINK ETSY (batch 1)
+────────────────────────────────────────
+
+keep-fit
+  Titolo:       Keep Fit
+  Categoria:    Piatti (coppia)
+  Prezzo:       € 280 (set)
+  Materiali:    ceramica
+  Dimensioni:   l 37 cm · h 37 cm · set di 2
+  Etsy:         https://www.etsy.com/it/listing/4371978130/hand-painted-ceramic-wall-plate-keep-fit
+
+romance
+  Titolo:       Romance
+  Categoria:    Vasi
+  Prezzo:       € 240
+  Materiali:    ceramica, smalti
+  Dimensioni:   l 20 cm · h 31 cm
+  Etsy:         https://www.etsy.com/it/listing/4304720773/hand-decorated-ceramic-vase-errata
+
+padded-dynasty
+  Titolo:       Padded Dynasty
+  Categoria:    Vasi (coppia)
+  Prezzo:       € 220 (set)
+  Materiali:    ceramica
+  Dimensioni:   l 11 cm · h 22 cm · set di 2
+  Etsy:         https://www.etsy.com/it/listing/4504374324/padded-dynasty-hand-decorated-ceramic
+  Note:         un solo set disponibile · scena 12
+
+florence
+  Titolo:       Florence
+  Categoria:    Vasi
+  Prezzo:       € 420
+  Materiali:    ceramica
+  Dimensioni:   l 24 cm · h 45 cm
+  Etsy:         https://www.etsy.com/it/listing/4500997615/florence-one-of-a-kind-ceramic-table
+
+cohort-03
+  Titolo:       Cohort 03
+  Categoria:    Vasi
+  Prezzo:       € 210
+  Materiali:    ceramica
+  Dimensioni:   l 15 cm · h 26 cm
+  Etsy:         https://www.etsy.com/it/listing/4500295298/hand-painted-ceramic-vase-cohort-03
+
+messieur
+  Titolo:       Messieur
+  Categoria:    Misc
+  Prezzo:       € 159
+  Materiali:    ceramica
+  Dimensioni:   l 11 cm · h 17 cm
+  Etsy:         https://www.etsy.com/it/listing/4499661433/hand-painted-decorative-ceramic-bottle
+
+snow-yeti
+  Titolo:       Snow Yeti
+  Categoria:    Piatti
+  Prezzo:       € 130
+  Materiali:    ceramica, argilla, engobbi, smalti
+  Dimensioni:   l 37 cm · h 3 cm
+  Etsy:         https://www.etsy.com/it/listing/1887573027/piatto-decorativo-in-ceramica-da
+
+────────────────────────────────────────
+PRODOTTI CON LINK ETSY (batch 2)
+────────────────────────────────────────
+
+doppio
+  Titolo:       Doppio
+  Categoria:    Vasi (coppia)
+  Prezzo:       € 180 (set)
+  Materiali:    ceramica, engobbi, smalti
+  Dimensioni:   l 14 cm · h 20 cm · set di 2
+  Etsy:         https://www.etsy.com/it/listing/4322551721/set-of-2-hand-painted-ceramic-vases
+  Note:         scena 16
+
+look-up
+  Titolo:       Look-up
+  Categoria:    Vasi
+  Prezzo:       € 310
+  Materiali:    ceramica, engobbi, smalti
+  Dimensioni:   l 29 cm · h 19,5 cm
+  Etsy:         https://www.etsy.com/it/listing/4321905772/hand-decorated-ceramic-vase-look-up
+  Note:         scena 15 (Soggiorno · Marmo nero)
+
+kentucky-73
+  Titolo:       Kentucky '73
+  Categoria:    Vasi
+  Prezzo:       € 280
+  Materiali:    ceramica, smalti
+  Dimensioni:   l 22 cm · h 25 cm
+  Etsy:         https://www.etsy.com/it/listing/4475520601/kentucky-73-vase-kentucky-derby-tribute
+
+iris-apfel
+  Titolo:       Iris Apfel (Icons)
+  Categoria:    Piatti
+  Prezzo:       € 85
+  Materiali:    ceramica
+  Dimensioni:   l 25 cm
+  Etsy:         https://www.etsy.com/it/listing/4473941459/icons-dinner-service-o-iris-apfel-o-hand
+
+chappell-roan
+  Titolo:       Chappell Roan (Icons)
+  Categoria:    Piatti
+  Prezzo:       € 85
+  Materiali:    ceramica
+  Dimensioni:   l 25 cm
+  Etsy:         https://www.etsy.com/it/listing/4473931235/icons-dinner-service-o-chappell-roan-o
+
+lady-gaga
+  Titolo:       Lady Gaga (Icons)
+  Categoria:    Piatti
+  Prezzo:       € 85
+  Materiali:    ceramica
+  Dimensioni:   l 25 cm
+  Etsy:         https://www.etsy.com/it/listing/4473913165/icons-dinner-service-o-lady-gaga-o-hand
+
+baroque-clash
+  Titolo:       Baroque Clash
+  Categoria:    Piatti
+  Prezzo:       € 160
+  Materiali:    ceramica
+  Dimensioni:   l 37 cm · h 37 cm
+  Etsy:         https://www.etsy.com/it/listing/4470222859/baroque-clash-hand-painted-ceramic-wall
+  Note:         scena 3 (Lobby · Classico)
+
+────────────────────────────────────────
+DA AGGIUNGERE (prossimi batch)
+────────────────────────────────────────
+
+(incolla qui i prossimi prodotti con lo stesso formato)

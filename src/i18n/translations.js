@@ -135,7 +135,7 @@ const it = {
     },
     "scene-15": {
       title: "Soggiorno · Marmo nero",
-      alt: "Soggiorno scuro con tavolino in marmo nero: palla decorata a mano su vassoio bianco a sinistra e grande vaso bianco con decoro blu e terracotta al centro",
+      alt: "Soggiorno scuro con tavolino in marmo nero: palla decorata a mano su vassoio bianco a sinistra e vaso Look-up al centro",
     },
     "scene-16": {
       title: "Scena · 16",
@@ -145,52 +145,52 @@ const it = {
   products: {
     florence: {
       description:
-        "Viola lucido, figure femminili, tensione classica. Pezzo unico, decorato a mano in atelier.",
-      dimensions: "h 38 cm · ø 22 cm",
+        "Materiali: ceramica. Viola lucido, figure femminili, tensione classica. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 24 cm · h 45 cm",
       price: "€ 420",
-      cta: "Chiedi disponibilità",
+      cta: "Acquista su Etsy",
     },
     romance: {
       description:
-        "Decorazione a mano: sensualità barocca, ritmo contemporaneo. Sfumature calde su base avorio.",
-      dimensions: "h 28 cm · ø 16 cm",
-      price: "Su richiesta",
-      cta: "Chiedi disponibilità",
+        "Materiali: ceramica, smalti. Decorazione a mano: sensualità barocca, ritmo contemporaneo. Sfumature calde su base avorio.",
+      dimensions: "l 20 cm · h 31 cm",
+      price: "€ 240",
+      cta: "Acquista su Etsy",
     },
     "snow-yeti": {
       description:
-        "Sfumature glaciali e tratto materico. Pezzo unico, decorato a mano in atelier.",
-      dimensions: "ø 32 cm",
-      price: "€ 180",
-      cta: "Chiedi disponibilità",
+        "Materiali: ceramica, argilla, engobbi, smalti. Sfumature glaciali e tratto materico. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 37 cm · h 3 cm",
+      price: "€ 130",
+      cta: "Acquista su Etsy",
     },
     "chappell-roan": {
       description:
-        "Ritratto pop, capelli rossi e ricami metallici. Cornice a zigzag blu con cerchi gialli. Pezzo unico, decorato a mano in atelier.",
-      dimensions: "ø 32 cm",
-      price: "€ 180",
-      cta: "Chiedi disponibilità",
+        "Materiali: ceramica. Serie Icons dinner service. Ritratto pop, capelli rossi e ricami metallici. Cornice a zigzag blu con cerchi gialli. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 25 cm",
+      price: "€ 85",
+      cta: "Acquista su Etsy",
     },
     "iris-apfel": {
       description:
-        "Omaggio all'icona dello stile: basco rosso, occhialoni tondi, bracciali. Cornice a quadrettini verdi con tondi rossi. Pezzo unico, decorato a mano in atelier.",
-      dimensions: "ø 32 cm",
-      price: "€ 180",
-      cta: "Chiedi disponibilità",
+        "Materiali: ceramica. Serie Icons dinner service. Omaggio all'icona dello stile: basco rosso, occhialoni tondi, bracciali. Cornice a quadrettini verdi con tondi rossi. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 25 cm",
+      price: "€ 85",
+      cta: "Acquista su Etsy",
     },
     "lady-gaga": {
       description:
-        "Ritratto rosso scarlatto, energia pop e taglio teatrale. Cornice a ovali gialli e segni grafici. Pezzo unico, decorato a mano in atelier.",
-      dimensions: "ø 32 cm",
-      price: "€ 180",
-      cta: "Chiedi disponibilità",
+        "Materiali: ceramica. Serie Icons dinner service. Ritratto rosso scarlatto, energia pop e taglio teatrale. Cornice a ovali gialli e segni grafici. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 25 cm",
+      price: "€ 85",
+      cta: "Acquista su Etsy",
     },
     "keep-fit": {
       description:
-        "Body Rolling e Body Rocking: una coppia ironica in verde prato, ispirata ai manuali di ginnastica anni 50. Pezzi unici, decorati a mano in atelier. Venduti come set.",
-      dimensions: "ø 32 cm cad. · set di 2",
-      price: "€ 320 (set)",
-      cta: "Chiedi disponibilità",
+        "Materiali: ceramica. Body Rolling e Body Rocking: una coppia ironica in verde prato, ispirata ai manuali di ginnastica anni 50. Pezzi unici, decorati a mano in atelier. Venduti come set.",
+      dimensions: "l 37 cm · h 37 cm · set di 2",
+      price: "€ 280 (set)",
+      cta: "Acquista su Etsy",
     },
     "yayoi-kusama": {
       description:
@@ -208,17 +208,24 @@ const it = {
     },
     "cohort-03": {
       description:
-        "Tre figure di profilo, contemporaneo e essenziale. Linea fluida su porcellana bianca. Pezzo unico, decorato a mano in atelier.",
-      dimensions: "h 30 cm · ø 18 cm",
-      price: "€ 380",
-      cta: "Chiedi disponibilità",
+        "Materiali: ceramica. Tre figure di profilo, contemporaneo e essenziale. Linea fluida su porcellana bianca. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 15 cm · h 26 cm",
+      price: "€ 210",
+      cta: "Acquista su Etsy",
     },
     "kentucky-73": {
       description:
-        "Omaggio al Kentucky Derby del 1973: corsa di cavalli, fantini, rose rosse e righe rosa. Pezzo unico, decorato a mano in atelier.",
-      dimensions: "h 28 cm · ø 26 cm",
-      price: "€ 420",
-      cta: "Chiedi disponibilità",
+        "Materiali: ceramica, smalti. Omaggio al Kentucky Derby del 1973: corsa di cavalli, fantini, rose rosse e righe rosa. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 22 cm · h 25 cm",
+      price: "€ 280",
+      cta: "Acquista su Etsy",
+    },
+    "look-up": {
+      description:
+        "Materiali: ceramica, engobbi, smalti. Vaso a pancia con decoro astratto su fondo avorio. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 29 cm · h 19,5 cm",
+      price: "€ 310",
+      cta: "Acquista su Etsy",
     },
     "visionari-ii": {
       description:
@@ -229,31 +236,31 @@ const it = {
     },
     messieur: {
       description:
-        "Pezzo unico fra classico e contemporaneo, decorato a mano in atelier.",
-      dimensions: "—",
-      price: "Su richiesta",
-      cta: "Chiedi disponibilità",
+        "Materiali: ceramica. Pezzo unico fra classico e contemporaneo, decorato a mano in atelier.",
+      dimensions: "l 11 cm · h 17 cm",
+      price: "€ 159",
+      cta: "Acquista su Etsy",
     },
     doppio: {
       description:
-        "Coppia di vasi. Pezzi unici, decorati a mano in atelier. Venduti come set.",
-      dimensions: "—",
-      price: "Su richiesta",
-      cta: "Chiedi disponibilità",
+        "Materiali: ceramica, engobbi, smalti. Coppia di vasi. Pezzi unici, decorati a mano in atelier. Venduti come set.",
+      dimensions: "l 14 cm · h 20 cm · set di 2",
+      price: "€ 180 (set)",
+      cta: "Acquista su Etsy",
     },
     "padded-dynasty": {
       description:
-        "Coppia di vasi in terracotta con ritratti ispirati alla dinastia cinese e giacche imbottite contemporanee. Pezzi unici, decorati a mano in atelier. Venduti come set — un solo set disponibile.",
+        "Materiali: ceramica. Coppia di vasi in terracotta con ritratti ispirati alla dinastia cinese e giacche imbottite contemporanee. Pezzi unici, decorati a mano in atelier. Venduti come set — un solo set disponibile.",
       dimensions: "l 11 cm · h 22 cm · set di 2",
       price: "€ 220 (set)",
-      cta: "Chiedi disponibilità",
+      cta: "Acquista su Etsy",
     },
     "baroque-clash": {
       description:
-        "Cornice barocca dorata e segno contemporaneo: piatto da parete che fa cortocircuito fra classico e pop. Pezzo unico, decorato a mano in atelier.",
-      dimensions: "ø 32 cm",
-      price: "€ 180",
-      cta: "Chiedi disponibilità",
+        "Materiali: ceramica. Cornice barocca dorata e segno contemporaneo: piatto da parete che fa cortocircuito fra classico e pop. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 37 cm · h 37 cm",
+      price: "€ 160",
+      cta: "Acquista su Etsy",
     },
     "christmas-ball": {
       description: "Pezzo in arrivo. Scrivici per maggiori informazioni.",
@@ -385,7 +392,7 @@ const en = {
     },
     "scene-15": {
       title: "Living room · Black marble",
-      alt: "Dark living room with a black marble coffee table: hand-painted bauble on a white tray on the left and a large white vase with blue and terracotta decoration in the center",
+      alt: "Dark living room with a black marble coffee table: hand-painted bauble on a white tray on the left and Look-up vase in the center",
     },
     "scene-16": {
       title: "Scene · 16",
@@ -395,52 +402,52 @@ const en = {
   products: {
     florence: {
       description:
-        "Glossy purple, female figures, classical tension. One-of-a-kind, hand-painted in atelier.",
-      dimensions: "h 38 cm · ø 22 cm",
+        "Materials: ceramic. Glossy purple, female figures, classical tension. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 24 cm · h 45 cm",
       price: "€ 420",
-      cta: "Check availability",
+      cta: "Buy on Etsy",
     },
     romance: {
       description:
-        "Hand-painted decoration: baroque sensuality, contemporary rhythm. Warm shades on ivory ground.",
-      dimensions: "h 28 cm · ø 16 cm",
-      price: "On request",
-      cta: "Check availability",
+        "Materials: ceramic, glazes. Hand-painted decoration: baroque sensuality, contemporary rhythm. Warm shades on ivory ground.",
+      dimensions: "w 20 cm · h 31 cm",
+      price: "€ 240",
+      cta: "Buy on Etsy",
     },
     "snow-yeti": {
       description:
-        "Glacial shades and a textured mark. One-of-a-kind, hand-painted in atelier.",
-      dimensions: "ø 32 cm",
-      price: "€ 180",
-      cta: "Check availability",
+        "Materials: ceramic, clay, engobes, glazes. Glacial shades and a textured mark. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 37 cm · h 3 cm",
+      price: "€ 130",
+      cta: "Buy on Etsy",
     },
     "chappell-roan": {
       description:
-        "Pop portrait, red hair and metallic embroidery. Blue zigzag border with yellow circles. One-of-a-kind, hand-painted in atelier.",
-      dimensions: "ø 32 cm",
-      price: "€ 180",
-      cta: "Check availability",
+        "Materials: ceramic. Icons dinner service series. Pop portrait, red hair and metallic embroidery. Blue zigzag border with yellow circles. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 25 cm",
+      price: "€ 85",
+      cta: "Buy on Etsy",
     },
     "iris-apfel": {
       description:
-        "An homage to the style icon: red beret, round oversize glasses, bracelets. Green check border with red dots. One-of-a-kind, hand-painted in atelier.",
-      dimensions: "ø 32 cm",
-      price: "€ 180",
-      cta: "Check availability",
+        "Materials: ceramic. Icons dinner service series. An homage to the style icon: red beret, round oversize glasses, bracelets. Green check border with red dots. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 25 cm",
+      price: "€ 85",
+      cta: "Buy on Etsy",
     },
     "lady-gaga": {
       description:
-        "Scarlet-red portrait, pop energy and theatrical cut. Yellow oval border with graphic marks. One-of-a-kind, hand-painted in atelier.",
-      dimensions: "ø 32 cm",
-      price: "€ 180",
-      cta: "Check availability",
+        "Materials: ceramic. Icons dinner service series. Scarlet-red portrait, pop energy and theatrical cut. Yellow oval border with graphic marks. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 25 cm",
+      price: "€ 85",
+      cta: "Buy on Etsy",
     },
     "keep-fit": {
       description:
-        "Body Rolling and Body Rocking: an ironic duo in grass-green, inspired by 1950s gymnastics manuals. One-of-a-kind, hand-painted in atelier. Sold as a set.",
-      dimensions: "ø 32 cm each · set of 2",
-      price: "€ 320 (set)",
-      cta: "Check availability",
+        "Materials: ceramic. Body Rolling and Body Rocking: an ironic duo in grass-green, inspired by 1950s gymnastics manuals. One-of-a-kind, hand-painted in atelier. Sold as a set.",
+      dimensions: "w 37 cm · h 37 cm · set of 2",
+      price: "€ 280 (set)",
+      cta: "Buy on Etsy",
     },
     "yayoi-kusama": {
       description:
@@ -458,17 +465,24 @@ const en = {
     },
     "cohort-03": {
       description:
-        "Three figures in profile, contemporary and essential. Fluid line on white porcelain. One-of-a-kind, hand-painted in atelier.",
-      dimensions: "h 30 cm · ø 18 cm",
-      price: "€ 380",
-      cta: "Check availability",
+        "Materials: ceramic. Three figures in profile, contemporary and essential. Fluid line on white porcelain. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 15 cm · h 26 cm",
+      price: "€ 210",
+      cta: "Buy on Etsy",
     },
     "kentucky-73": {
       description:
-        "An homage to the 1973 Kentucky Derby: horse race, jockeys, red roses and pink stripes. One-of-a-kind, hand-painted in atelier.",
-      dimensions: "h 28 cm · ø 26 cm",
-      price: "€ 420",
-      cta: "Check availability",
+        "Materials: ceramic, glazes. An homage to the 1973 Kentucky Derby: horse race, jockeys, red roses and pink stripes. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 22 cm · h 25 cm",
+      price: "€ 280",
+      cta: "Buy on Etsy",
+    },
+    "look-up": {
+      description:
+        "Materials: ceramic, engobes, glazes. Bulbous vase with abstract decoration on an ivory ground. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 29 cm · h 19.5 cm",
+      price: "€ 310",
+      cta: "Buy on Etsy",
     },
     "visionari-ii": {
       description:
@@ -479,31 +493,31 @@ const en = {
     },
     messieur: {
       description:
-        "One-of-a-kind piece between classical and contemporary, hand-painted in atelier.",
-      dimensions: "—",
-      price: "On request",
-      cta: "Check availability",
+        "Materials: ceramic. One-of-a-kind piece between classical and contemporary, hand-painted in atelier.",
+      dimensions: "w 11 cm · h 17 cm",
+      price: "€ 159",
+      cta: "Buy on Etsy",
     },
     doppio: {
       description:
-        "Pair of vases. One-of-a-kind pieces, hand-painted in atelier. Sold as a set.",
-      dimensions: "—",
-      price: "On request",
-      cta: "Check availability",
+        "Materials: ceramic, engobes, glazes. Pair of vases. One-of-a-kind pieces, hand-painted in atelier. Sold as a set.",
+      dimensions: "w 14 cm · h 20 cm · set of 2",
+      price: "€ 180 (set)",
+      cta: "Buy on Etsy",
     },
     "padded-dynasty": {
       description:
-        "Pair of terracotta vases with portraits inspired by Chinese dynasty figures and contemporary padded jackets. One-of-a-kind, hand-painted in atelier. Sold as a set — only one set available.",
+        "Materials: ceramic. Pair of terracotta vases with portraits inspired by Chinese dynasty figures and contemporary padded jackets. One-of-a-kind, hand-painted in atelier. Sold as a set — only one set available.",
       dimensions: "w 11 cm · h 22 cm · set of 2",
       price: "€ 220 (set)",
-      cta: "Check availability",
+      cta: "Buy on Etsy",
     },
     "baroque-clash": {
       description:
-        "Gilded baroque border meets a contemporary mark: a wall plate that short-circuits classical and pop. One-of-a-kind, hand-painted in atelier.",
-      dimensions: "ø 32 cm",
-      price: "€ 180",
-      cta: "Check availability",
+        "Materials: ceramic. Gilded baroque border meets a contemporary mark: a wall plate that short-circuits classical and pop. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 37 cm · h 37 cm",
+      price: "€ 160",
+      cta: "Buy on Etsy",
     },
     "christmas-ball": {
       description: "Coming soon. Write to us for more information.",
