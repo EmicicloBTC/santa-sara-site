@@ -62,14 +62,14 @@ export const scenes = [
     title: "Tavolo · Sera",
     image: "/images/scenes/scene-2.png",
     imageMobile: "/images/scenes/scene-2-mobile.png",
-    alt: "Tavolo serale con lampada Florence e vaso Dandy Land al centro",
+    alt: "Tavolo serale con vaso Dandy Land a sinistra e pezzo Messieur a destra",
     hotspots: [
-      { productId: "florence", x: 42, y: 48, r: 6 },
-      { productId: "dandy-land", x: 46, y: 52, r: 7 },
+      { productId: "dandy-land", x: 40, y: 54, r: 7 },
+      { productId: "messieur", x: 72, y: 56, r: 6 },
     ],
     hotspotsMobile: [
-      { productId: "florence", x: 42, y: 48, r: 7 },
-      { productId: "dandy-land", x: 46, y: 52, r: 8 },
+      { productId: "dandy-land", x: 38, y: 52, r: 8 },
+      { productId: "messieur", x: 70, y: 54, r: 7 },
     ],
   },
   {
@@ -269,14 +269,14 @@ export const scenes = [
     title: "Tavolo · Studio",
     image: "/images/scenes/scene-14.png",
     imageMobile: "/images/scenes/scene-14-mobile.png",
-    alt: "Tavolo con ciotola Romance e vaso Dandy Land",
+    alt: "Tavolo con cachepot Visionari II a sinistra e vaso Dandy Land a destra",
     hotspots: [
-      { productId: "romance", x: 36, y: 58, r: 7 },
-      { productId: "dandy-land", x: 58, y: 50, r: 7 },
+      { productId: "visionari-ii", x: 34, y: 58, r: 7 },
+      { productId: "dandy-land", x: 62, y: 50, r: 7 },
     ],
     hotspotsMobile: [
-      { productId: "romance", x: 38, y: 56, r: 8 },
-      { productId: "dandy-land", x: 56, y: 48, r: 8 },
+      { productId: "visionari-ii", x: 32, y: 56, r: 8 },
+      { productId: "dandy-land", x: 60, y: 48, r: 8 },
     ],
   },
   {

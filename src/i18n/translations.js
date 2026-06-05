@@ -83,7 +83,7 @@ const it = {
     },
     "scene-2": {
       title: "Tavolo · Sera",
-      alt: "Tavolo serale con lampada Florence e vaso Dandy Land al centro",
+      alt: "Tavolo serale con vaso Dandy Land a sinistra e pezzo Messieur a destra",
     },
     "scene-3": {
       title: "Lobby · Classico",
@@ -131,7 +131,7 @@ const it = {
     },
     "scene-14": {
       title: "Tavolo · Studio",
-      alt: "Tavolo con ciotola Romance e vaso Dandy Land",
+      alt: "Tavolo con cachepot Visionari II a sinistra e vaso Dandy Land a destra",
     },
     "scene-15": {
       title: "Soggiorno · Marmo nero",
@@ -348,7 +348,7 @@ const en = {
     },
     "scene-2": {
       title: "Table · Evening",
-      alt: "Evening table with the Florence lamp and Dandy Land vase at the center",
+      alt: "Evening table with Dandy Land vase on the left and Messieur piece on the right",
     },
     "scene-3": {
       title: "Lobby · Classic",
@@ -396,7 +396,7 @@ const en = {
     },
     "scene-14": {
       title: "Table · Studio",
-      alt: "Table with Romance bowl and Dandy Land vase",
+      alt: "Table with Visionari II cachepot on the left and Dandy Land vase on the right",
     },
     "scene-15": {
       title: "Living room · Black marble",
