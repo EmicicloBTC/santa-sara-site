@@ -241,9 +241,9 @@ export const scenes = [
     title: "Scena · 12",
     image: "/images/scenes/scene-12.png",
     imageMobile: "/images/scenes/scene-12-mobile.png",
-    alt: "Parete verde con coppia di vasi Doppio su madia",
-    hotspots: [{ productId: "doppio", x: 45, y: 48, r: 8 }],
-    hotspotsMobile: [{ productId: "doppio", x: 47, y: 46, r: 9 }],
+    alt: "Parete verde con coppia di vasi Padded Dynasty su madia",
+    hotspots: [{ productId: "padded-dynasty", x: 45, y: 48, r: 8 }],
+    hotspotsMobile: [{ productId: "padded-dynasty", x: 47, y: 46, r: 9 }],
   },
   {
     id: "scene-13",

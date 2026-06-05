@@ -205,6 +205,19 @@ export const products = {
     ctaHref: "mailto:hello@santasara.com?subject=Doppio (set) — disponibilità",
     images: { slug: "vasi/doppio", count: 4, ext: "png" },
   },
+  "padded-dynasty": {
+    id: "padded-dynasty",
+    title: "Padded Dynasty",
+    category: "Vasi",
+    kind: "Coppia di vasi decorati a mano",
+    dimensions: "l 11 cm · h 22 cm · set di 2",
+    description:
+      "Coppia di vasi in terracotta con ritratti ispirati alla dinastia cinese e giacche imbottite contemporanee. Pezzi unici, decorati a mano in atelier. Venduti come set — un solo set disponibile.",
+    price: "€ 220 (set)",
+    cta: "Chiedi disponibilità",
+    ctaHref: "mailto:hello@santasara.com?subject=Padded Dynasty (set) — disponibilità",
+    images: { slug: "vasi/padded-dynasty", count: 4, ext: "jpg" },
+  },
   "baroque-clash": {
     id: "baroque-clash",
     title: "Baroque Clash",

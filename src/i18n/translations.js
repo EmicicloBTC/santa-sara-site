@@ -123,7 +123,7 @@ const it = {
     },
     "scene-12": {
       title: "Scena · 12",
-      alt: "Parete verde con coppia di vasi Doppio su madia",
+      alt: "Parete verde con coppia di vasi Padded Dynasty su madia",
     },
     "scene-13": {
       title: "Scena · 13",
@@ -239,6 +239,13 @@ const it = {
         "Coppia di vasi. Pezzi unici, decorati a mano in atelier. Venduti come set.",
       dimensions: "—",
       price: "Su richiesta",
+      cta: "Chiedi disponibilità",
+    },
+    "padded-dynasty": {
+      description:
+        "Coppia di vasi in terracotta con ritratti ispirati alla dinastia cinese e giacche imbottite contemporanee. Pezzi unici, decorati a mano in atelier. Venduti come set — un solo set disponibile.",
+      dimensions: "l 11 cm · h 22 cm · set di 2",
+      price: "€ 220 (set)",
       cta: "Chiedi disponibilità",
     },
     "baroque-clash": {
@@ -366,7 +373,7 @@ const en = {
     },
     "scene-12": {
       title: "Scene · 12",
-      alt: "Green wall with the Doppio pair of vases on the sideboard",
+      alt: "Green wall with the Padded Dynasty pair of vases on the sideboard",
     },
     "scene-13": {
       title: "Scene · 13",
@@ -482,6 +489,13 @@ const en = {
         "Pair of vases. One-of-a-kind pieces, hand-painted in atelier. Sold as a set.",
       dimensions: "—",
       price: "On request",
+      cta: "Check availability",
+    },
+    "padded-dynasty": {
+      description:
+        "Pair of terracotta vases with portraits inspired by Chinese dynasty figures and contemporary padded jackets. One-of-a-kind, hand-painted in atelier. Sold as a set — only one set available.",
+      dimensions: "w 11 cm · h 22 cm · set of 2",
+      price: "€ 220 (set)",
       cta: "Check availability",
     },
     "baroque-clash": {
