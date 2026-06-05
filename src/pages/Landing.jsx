@@ -24,6 +24,7 @@ export default function Landing() {
         sceneIndex={sceneIndex}
         onChangeScene={setSceneIndex}
         onOpenProduct={setOpenProduct}
+        sceneNavLocked={!!openProduct || infoOpen || catalogOpen}
       />
       <Header
         onOpenInfo={() => setInfoOpen(true)}

@@ -67,7 +67,7 @@ function preloadScene(url) {
   img.src = url;
 }
 
-export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
+export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct, sceneNavLocked = false }) {
   const t = useT();
   const scene = scenes[sceneIndex];
   const localizedScene = useLocalizedScene(scene);
@@ -144,15 +144,19 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct }) {
         setEditor((v) => !v);
         return;
       }
+      if (sceneNavLocked) return;
+
       if (e.key === "ArrowRight") {
+        e.preventDefault();
         onChangeScene((sceneIndex + 1) % sceneCount);
       } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
         onChangeScene((sceneIndex - 1 + sceneCount) % sceneCount);
       }
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [sceneIndex, sceneCount, onChangeScene, editorAllowed]);
+  }, [sceneIndex, sceneCount, onChangeScene, editorAllowed, sceneNavLocked]);
 
   function handleStageClick(e) {
     if (!editor || !imgRef.current) return;
