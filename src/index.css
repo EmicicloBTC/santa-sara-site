@@ -53,7 +53,7 @@ select {
   }
 }
 
-/* Frecce navigazione scene: contrasto su sfondi chiari e scuri */
+/* Frecce navigazione: glassmorphism elegante + contrasto su sfondi chiari/scuri */
 .scene-nav-btn {
   width: 3rem;
   height: 3rem;
@@ -61,26 +61,43 @@ select {
   display: grid;
   place-items: center;
   color: #fff;
-  background: rgba(20, 17, 15, 0.78);
-  border: 1.5px solid rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.12) 45%,
+    rgba(20, 17, 15, 0.2) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(18px) saturate(1.12);
+  -webkit-backdrop-filter: blur(18px) saturate(1.12);
   box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.4),
-    0 4px 22px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    0 0 0 1px rgba(0, 0, 0, 0.2),
+    0 6px 24px rgba(0, 0, 0, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
   transition:
-    background 0.2s ease,
-    border-color 0.2s ease;
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .scene-nav-btn:hover {
-  background: rgba(20, 17, 15, 0.92);
-  border-color: #fff;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.36) 0%,
+    rgba(255, 255, 255, 0.16) 45%,
+    rgba(20, 17, 15, 0.26) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.68);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.26),
+    0 8px 28px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.52),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.07);
 }
 
 .scene-nav-btn svg {
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
 }
 
 @media (min-width: 640px) {
