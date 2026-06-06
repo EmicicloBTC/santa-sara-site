@@ -374,7 +374,7 @@ function SceneMedia({ scene, currentImage, currentVideo, playedVideos, onVideoEn
 
 /**
  * Scena intermedia: prodotto a tutto schermo, cliccabile per aprire il modal.
- * Usa una delle foto prodotto (productImageIndex in scenes.js).
+ * Immagine in cover con lento pan/zoom (effetto inquadratura premium).
  */
 function ProductFocusSlide({ scene, product, imageUrl, onOpen }) {
   const t = useT();
@@ -388,37 +388,51 @@ function ProductFocusSlide({ scene, product, imageUrl, onOpen }) {
   return (
     <>
       <div aria-hidden className="absolute inset-0 bg-[#14110f]" />
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(239,232,219,0.14)_0%,_transparent_68%)]"
-      />
       <button
         type="button"
         onClick={() => onOpen(product)}
         aria-label={`${t.ui.openProductCard} ${product.title}${isSold ? ` (${t.modal.sold})` : ""}`}
-        className="absolute inset-0 flex items-center justify-center px-5 pb-24 pt-16 sm:px-10 sm:pb-28 sm:pt-20 md:px-16"
+        className="absolute inset-0 overflow-hidden"
       >
         {imageUrl ? (
-          <motion.img
-            src={imageUrl}
-            alt={scene.alt}
-            draggable={false}
-            decoding="async"
-            loading="eager"
-            initial={{ opacity: 0, scale: 0.97, y: 12 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="max-h-[min(78vh,920px)] max-w-[min(92vw,760px)] object-contain drop-shadow-[0_28px_80px_rgba(0,0,0,0.55)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.015] active:scale-[0.995]"
-          />
+          <motion.div
+            className="absolute inset-0 will-change-transform"
+            initial={{ opacity: 0, scale: 1.05, x: "-1.5%" }}
+            animate={{
+              opacity: 1,
+              scale: [1.06, 1.14, 1.06],
+              x: ["-2.8%", "2.8%", "-2.8%"],
+            }}
+            transition={{
+              opacity: { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
+              scale: { duration: 24, ease: "easeInOut", repeat: Infinity, times: [0, 0.5, 1] },
+              x: { duration: 24, ease: "easeInOut", repeat: Infinity, times: [0, 0.5, 1] },
+            }}
+          >
+            <img
+              src={imageUrl}
+              alt={scene.alt}
+              draggable={false}
+              decoding="async"
+              loading="eager"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+          </motion.div>
         ) : (
-          <span className="text-[11px] font-medium uppercase tracking-[0.32em] text-stone-400">
-            {t.modal.photosComingSoon}
-          </span>
+          <div className="flex h-full w-full items-center justify-center">
+            <span className="text-[11px] font-medium uppercase tracking-[0.32em] text-stone-400">
+              {t.modal.photosComingSoon}
+            </span>
+          </div>
         )}
       </button>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-black/75 via-black/35 to-transparent sm:h-56"
+      />
       <div className="pointer-events-none absolute bottom-24 left-1/2 z-10 max-w-[90vw] -translate-x-1/2 text-center sm:bottom-28">
-        <p className="font-serif text-2xl tracking-[-0.02em] text-stone-100 sm:text-3xl">{product.title}</p>
-        <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.28em] text-stone-400">
+        <p className="font-serif text-2xl tracking-[-0.02em] text-stone-50 sm:text-3xl">{product.title}</p>
+        <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.28em] text-stone-300/90">
           {isSold ? t.modal.sold : localized.price} · {t.ui.openProductCard}
         </p>
       </div>
