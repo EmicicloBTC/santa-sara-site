@@ -85,10 +85,10 @@ export const scenes = [
       { productId: "dragonbell", x: 72, y: 71, r: 6 },
     ],
     hotspotsMobile: [
-      { productId: "divine-bovine", x: 30, y: 26, r: 7 },
-      { productId: "gift-giving", x: 58, y: 26, r: 7 },
-      { productId: "mid-winter", x: 40, y: 48, r: 6 },
-      { productId: "dragonbell", x: 62, y: 50, r: 7 },
+      { productId: "divine-bovine", x: 28, y: 45, r: 7 },
+      { productId: "gift-giving", x: 53, y: 44, r: 7 },
+      { productId: "mid-winter", x: 50, y: 64, r: 6 },
+      { productId: "dragonbell", x: 72, y: 64, r: 7 },
     ],
   },
   {
