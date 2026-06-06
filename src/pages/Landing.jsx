@@ -10,12 +10,19 @@ import { CatalogModal } from "../components/CatalogModal.jsx";
 import { ContactModal } from "../components/ContactModal.jsx";
 import { useLang, useLocalizedScene } from "../i18n/index.jsx";
 import {
+  findSceneIndexById,
   findSceneIndexForProduct,
   readProductIdFromUrl,
+  readSceneIdFromUrl,
   syncProductInUrl,
 } from "../utils/share.js";
 
 function getInitialSceneIndex() {
+  const sceneId = readSceneIdFromUrl();
+  if (sceneId) {
+    const idx = findSceneIndexById(scenes, sceneId);
+    if (idx >= 0) return idx;
+  }
   const productId = readProductIdFromUrl();
   if (productId && products[productId]) {
     return findSceneIndexForProduct(scenes, productId);
@@ -36,8 +43,6 @@ export default function Landing() {
   const [catalogOpen, setCatalogOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
   const [autoAdvance, setAutoAdvance] = useState(() => !getInitialProduct());
-
-  const disableAutoAdvance = () => setAutoAdvance(false);
 
   const handleOpenProduct = useCallback(
     (product) => {
@@ -71,7 +76,6 @@ export default function Landing() {
         onOpenProduct={handleOpenProduct}
         sceneNavLocked={!!openProduct || infoOpen || catalogOpen || contactOpen}
         autoAdvance={autoAdvance}
-        onDisableAutoAdvance={disableAutoAdvance}
       />
       <Header
         onOpenInfo={() => setInfoOpen(true)}
@@ -80,7 +84,12 @@ export default function Landing() {
         autoAdvance={autoAdvance}
         onAutoAdvanceChange={setAutoAdvance}
       />
-      <Footer sceneTitle={localizedScene.title} sceneIndex={sceneIndex} sceneCount={scenes.length} />
+      <Footer
+        sceneTitle={localizedScene.title}
+        sceneId={scene.id}
+        sceneIndex={sceneIndex}
+        sceneCount={scenes.length}
+      />
       <CatalogModal
         open={catalogOpen}
         onClose={() => setCatalogOpen(false)}

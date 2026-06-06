@@ -8,7 +8,7 @@
     "optimize-videos": "node scripts/optimize-scene-videos.mjs",
     "migrate-scene1": "node scripts/migrate-scene1-and-scene4.mjs",
     "build-favicons": "node scripts/build-favicons.js",
-    "prebuild": "node scripts/optimize-images.js && node scripts/generate-seo.mjs",
+    "prebuild": "node scripts/optimize-images.js && node scripts/generate-seo.mjs && node scripts/generate-share-pages.mjs",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
     "deploy:netlify": "npm run build && netlify deploy --prod --dir=dist"

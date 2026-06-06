@@ -156,7 +156,7 @@ divine-bovine
   Prezzo:       € 45
   Materiali:    ceramica
   Dimensioni:   l 12 cm
-  Etsy:         (da completare)
+  Etsy:         https://www.etsy.com/it/listing/4403799858/handmade-ceramic-christmas-ball-0750
   Note:         catalogo
 
 dragonbell
@@ -165,7 +165,7 @@ dragonbell
   Prezzo:       € 50
   Materiali:    ceramica
   Dimensioni:   l 10 cm
-  Etsy:         (da completare)
+  Etsy:         https://www.etsy.com/it/listing/4419100933/handmade-ceramic-christmas-ball-2650
   Note:         catalogo
 
 mid-winter

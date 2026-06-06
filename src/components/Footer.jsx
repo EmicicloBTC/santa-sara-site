@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useT } from "../i18n/index.jsx";
-import { copyTextToClipboard, getSiteShareUrl } from "../utils/share.js";
+import { useLang, useT } from "../i18n/index.jsx";
+import { copyTextToClipboard, getSceneShareUrl } from "../utils/share.js";
 
 const HINT_MS = 2400;
 
-export function Footer({ sceneTitle, sceneIndex, sceneCount }) {
+export function Footer({ sceneTitle, sceneId, sceneIndex, sceneCount }) {
   const t = useT();
+  const { lang } = useLang();
   const [copied, setCopied] = useState(false);
   const timer = useRef(null);
   const counter = `${String(sceneIndex + 1).padStart(2, "0")} / ${String(sceneCount).padStart(2, "0")}`;
@@ -17,8 +18,8 @@ export function Footer({ sceneTitle, sceneIndex, sceneCount }) {
     };
   }, []);
 
-  async function handleCopySiteLink() {
-    await copyTextToClipboard(getSiteShareUrl());
+  async function handleCopySceneLink() {
+    await copyTextToClipboard(getSceneShareUrl(sceneId, lang));
     setCopied(true);
     if (timer.current) window.clearTimeout(timer.current);
     timer.current = window.setTimeout(() => setCopied(false), HINT_MS);
@@ -29,9 +30,9 @@ export function Footer({ sceneTitle, sceneIndex, sceneCount }) {
       <div className="relative">
         <button
           type="button"
-          onClick={handleCopySiteLink}
-          title={t.ui.copySiteLinkHint}
-          aria-label={t.ui.copySiteLinkHint}
+          onClick={handleCopySceneLink}
+          title={t.ui.copySceneLinkHint}
+          aria-label={t.ui.copySceneLinkHint}
           className="pointer-events-auto rounded-full bg-white/55 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.32em] text-stone-800 backdrop-blur-md ring-1 ring-stone-950/15 transition hover:bg-white/75 sm:text-[11px]"
         >
           {sceneTitle}

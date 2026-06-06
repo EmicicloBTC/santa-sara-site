@@ -292,8 +292,8 @@ export const products = {
     description:
       "Materiali: ceramica. Palla natalizia decorata a mano con ritratto bovino e scritta Bovine Divine. Pezzo unico, decorato a mano in atelier.",
     price: "€ 45",
-    cta: "Chiedi disponibilità",
-    ctaHref: mailtoLink("Bovine Divine — disponibilità"),
+    cta: "Acquista su Etsy",
+    ctaHref: "https://www.etsy.com/it/listing/4403799858/handmade-ceramic-christmas-ball-0750",
     images: { slug: "palle/divine-bovine", count: 4, ext: "png" },
   },
   dragonbell: {
@@ -305,8 +305,8 @@ export const products = {
     description:
       "Materiali: ceramica. Palla natalizia decorata a mano con drago e campana. Pezzo unico, decorato a mano in atelier.",
     price: "€ 50",
-    cta: "Chiedi disponibilità",
-    ctaHref: mailtoLink("Dragonbell — disponibilità"),
+    cta: "Acquista su Etsy",
+    ctaHref: "https://www.etsy.com/it/listing/4419100933/handmade-ceramic-christmas-ball-2650",
     images: { slug: "palle/dragonbell", count: 4, ext: "jpg" },
   },
   "mid-winter": {

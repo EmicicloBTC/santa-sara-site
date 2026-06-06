@@ -84,7 +84,6 @@ export function Stage({
   onOpenProduct,
   sceneNavLocked = false,
   autoAdvance = false,
-  onDisableAutoAdvance,
 }) {
   const t = useT();
   const scene = scenes[sceneIndex];
@@ -95,6 +94,8 @@ export function Stage({
   const sceneCount = scenes.length;
   const detectedMobile = useIsMobile();
   const imgRef = useRef(null);
+  const autoAdvanceTimer = useRef(null);
+  const autoAdvanceEpoch = useRef(0);
   const editorAllowed = isEditorAllowed();
   const [editor, setEditor] = useState(() => editorAllowed);
   const [lastClick, setLastClick] = useState(null);
@@ -155,12 +156,24 @@ export function Stage({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scene.id, useMobileVariant, hasVideo]);
 
+  function clearAutoAdvanceTimer() {
+    if (autoAdvanceTimer.current != null) {
+      window.clearTimeout(autoAdvanceTimer.current);
+      autoAdvanceTimer.current = null;
+    }
+  }
+
+  // Un solo timeout per scena: si resetta a ogni cambio (manuale o automatico).
   useEffect(() => {
+    clearAutoAdvanceTimer();
     if (!autoAdvance || sceneNavLocked || sceneCount <= 1) return undefined;
-    const id = window.setInterval(() => {
+    const epoch = autoAdvanceEpoch.current;
+    autoAdvanceTimer.current = window.setTimeout(() => {
+      autoAdvanceTimer.current = null;
+      if (autoAdvanceEpoch.current !== epoch) return;
       onChangeScene((i) => (i + 1) % sceneCount);
     }, AUTO_ADVANCE_MS);
-    return () => window.clearInterval(id);
+    return clearAutoAdvanceTimer;
   }, [autoAdvance, sceneNavLocked, sceneIndex, sceneCount, onChangeScene]);
 
   useEffect(() => {
@@ -191,7 +204,7 @@ export function Stage({
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [sceneIndex, sceneCount, onChangeScene, editorAllowed, sceneNavLocked, onDisableAutoAdvance]);
+  }, [sceneIndex, sceneCount, onChangeScene, editorAllowed, sceneNavLocked]);
 
   function handleStageClick(e) {
     if (!editor || !imgRef.current) return;
@@ -202,7 +215,10 @@ export function Stage({
   }
 
   function go(delta, fromUser = false) {
-    if (fromUser) onDisableAutoAdvance?.();
+    if (fromUser) {
+      clearAutoAdvanceTimer();
+      autoAdvanceEpoch.current += 1;
+    }
     onChangeScene((sceneIndex + delta + sceneCount) % sceneCount);
   }
 

@@ -36,7 +36,7 @@ const it = {
     catalog: "Catalogo",
     catalogBadge: "opere",
     linkCopied: "Link copiato",
-    copySiteLinkHint: "Copia link al sito",
+    copySceneLinkHint: "Copia link a questa scena",
   },
   catalog: {
     aria: "Catalogo opere",
@@ -371,14 +371,14 @@ const it = {
         "Materiali: ceramica. Palla natalizia decorata a mano con ritratto bovino e scritta Bovine Divine. Pezzo unico, decorato a mano in atelier.",
       dimensions: "l 12 cm",
       price: "€ 45",
-      cta: "Chiedi disponibilità",
+      cta: "Acquista su Etsy",
     },
     dragonbell: {
       description:
         "Materiali: ceramica. Palla natalizia decorata a mano con drago e campana. Pezzo unico, decorato a mano in atelier.",
       dimensions: "l 10 cm",
       price: "€ 50",
-      cta: "Chiedi disponibilità",
+      cta: "Acquista su Etsy",
     },
     "mid-winter": {
       description:
@@ -419,7 +419,7 @@ const en = {
     catalog: "Catalog",
     catalogBadge: "works",
     linkCopied: "Link copied",
-    copySiteLinkHint: "Copy site link",
+    copySceneLinkHint: "Copy link to this scene",
   },
   catalog: {
     aria: "Works catalog",
@@ -754,14 +754,14 @@ const en = {
         "Materials: ceramic. Hand-painted Christmas bauble with bovine portrait and Bovine Divine lettering. One-of-a-kind, hand-painted in atelier.",
       dimensions: "w 12 cm",
       price: "€ 45",
-      cta: "Check availability",
+      cta: "Buy on Etsy",
     },
     dragonbell: {
       description:
         "Materials: ceramic. Hand-painted Christmas bauble with dragon and bell motif. One-of-a-kind, hand-painted in atelier.",
       dimensions: "w 10 cm",
       price: "€ 50",
-      cta: "Check availability",
+      cta: "Buy on Etsy",
     },
     "mid-winter": {
       description:

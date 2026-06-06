@@ -73,11 +73,10 @@
 
     <!--
       Preload della PRIMA scena (la più importante per la sensazione "subito").
-      Il browser inizia a scaricare l'immagine prima ancora di parsare React,
-      così quando il componente <Stage> monta, l'immagine è già pronta o quasi.
-      fetchpriority="high" la mette in cima alla coda di rete.
+      Desktop e mobile separati: su telefono non scarichiamo la PNG orizzontale inutile.
     -->
-    <link rel="preload" as="image" href="/images/scenes/scene-1.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/scenes/scene-1.png" fetchpriority="high" media="(min-width: 768px)" />
+    <link rel="preload" as="image" href="/images/scenes/scene-1-mobile.png" fetchpriority="high" media="(max-width: 767px)" />
 
     <!-- ====== Structured data (JSON-LD) — rigenerato da scripts/generate-seo.mjs ====== -->
     <script type="application/ld+json">
@@ -729,7 +728,7 @@
         "@type": "Offer",
         "priceCurrency": "EUR",
         "availability": "https://schema.org/InStock",
-        "url": "https://santa-sara.com/",
+        "url": "https://www.etsy.com/it/listing/4403799858/handmade-ceramic-christmas-ball-0750",
         "price": "45"
       },
       "image": "https://santa-sara.com/images/products/palle/divine-bovine/1.png"
@@ -750,7 +749,7 @@
         "@type": "Offer",
         "priceCurrency": "EUR",
         "availability": "https://schema.org/InStock",
-        "url": "https://santa-sara.com/",
+        "url": "https://www.etsy.com/it/listing/4419100933/handmade-ceramic-christmas-ball-2650",
         "price": "50"
       },
       "image": "https://santa-sara.com/images/products/palle/dragonbell/1.jpg"
