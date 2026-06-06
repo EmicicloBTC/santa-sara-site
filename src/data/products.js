@@ -33,6 +33,8 @@
  *   images: { slug: "piatti/snow-yeti", count: 4, ext: "jpg" },
  */
 
+import { mailtoLink } from "./site.js";
+
 /** @type {Record<string, Product>} */
 export const products = {
   florence: {
@@ -136,7 +138,7 @@ export const products = {
     description: "Omaggio all'artista giapponese: caschetto rosso, pois gialli su fondo nero e viola. Cornice a onda con tondi gialli. Pezzo unico, decorato a mano in atelier.",
     price: "€ 180",
     cta: "Chiedi disponibilità",
-    ctaHref: "mailto:hello@santasara.com?subject=Yayoi Kusama — disponibilità",
+    ctaHref: mailtoLink("Yayoi Kusama — disponibilità"),
     images: { slug: "piatti/yayoi-kusama", count: 4, ext: "png" },
     sold: true,
   },
@@ -149,7 +151,7 @@ export const products = {
     description: "Figura femminile e schema anatomico, stelle rosse e cornice barocca. Pezzo unico, decorato a mano in atelier.",
     price: "€ 420",
     cta: "Chiedi disponibilità",
-    ctaHref: "mailto:hello@santasara.com?subject=Prime Cut — disponibilità",
+    ctaHref: mailtoLink("Prime Cut — disponibilità"),
     images: { slug: "vasi/prime-cut", count: 4, ext: "png" },
   },
   "cohort-03": {
@@ -175,7 +177,7 @@ export const products = {
       "Anfora decorata a mano con ritratto dandy, scritta DANDY sul collo e fiori stilizzati sulla base. Pezzo unico, decorato a mano in atelier.",
     price: "Su richiesta",
     cta: "Chiedi disponibilità",
-    ctaHref: "mailto:hello@santasara.com?subject=Dandy Land — disponibilità",
+    ctaHref: mailtoLink("Dandy Land — disponibilità"),
     images: { slug: "vasi/dandy-land", count: 4, ext: "jpg" },
   },
   "kentucky-73": {
@@ -213,7 +215,7 @@ export const products = {
     description: "Cratere terracotta neoclassico con figure greche che indossano visori VR. Ironia sospesa fra antico e contemporaneo, decoro a meandro greco. Pezzo unico, decorato a mano in atelier.",
     price: "€ 520",
     cta: "Chiedi disponibilità",
-    ctaHref: "mailto:hello@santasara.com?subject=Visionari II — disponibilità",
+    ctaHref: mailtoLink("Visionari II — disponibilità"),
     images: { slug: "vasi/visionari-ii", count: 4, ext: "png" },
   },
   messieur: {
@@ -291,7 +293,7 @@ export const products = {
       "Materiali: ceramica. Palla natalizia decorata a mano con ritratto bovino e scritta Bovine Divine. Pezzo unico, decorato a mano in atelier.",
     price: "€ 45",
     cta: "Chiedi disponibilità",
-    ctaHref: "mailto:hello@santasara.com?subject=Bovine Divine — disponibilità",
+    ctaHref: mailtoLink("Bovine Divine — disponibilità"),
     images: { slug: "palle/divine-bovine", count: 4, ext: "png" },
   },
   dragonbell: {
@@ -304,7 +306,7 @@ export const products = {
       "Materiali: ceramica. Palla natalizia decorata a mano con drago e campana. Pezzo unico, decorato a mano in atelier.",
     price: "€ 50",
     cta: "Chiedi disponibilità",
-    ctaHref: "mailto:hello@santasara.com?subject=Dragonbell — disponibilità",
+    ctaHref: mailtoLink("Dragonbell — disponibilità"),
     images: { slug: "palle/dragonbell", count: 4, ext: "jpg" },
   },
   "mid-winter": {
@@ -317,7 +319,7 @@ export const products = {
       "Materiali: ceramica. Palla natalizia decorata a mano con atmosfera mid-winter. Pezzo unico, decorato a mano in atelier.",
     price: "€ 50",
     cta: "Chiedi disponibilità",
-    ctaHref: "mailto:hello@santasara.com?subject=Mid Winter — disponibilità",
+    ctaHref: mailtoLink("Mid Winter — disponibilità"),
     images: { slug: "palle/mid-winter", count: 4, ext: "jpg" },
   },
 };

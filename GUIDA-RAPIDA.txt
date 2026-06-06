@@ -94,6 +94,21 @@ SANTA SARA — Guida rapida (senza terminale)
 
 9) Se qualcosa non funziona, copia l'errore della finestra nera in chat.
 
+10) Email pubblica e inoltro alla casella reale
+   - Sul sito resta visibile: hello@santasara.com (bio, menu Contatti, mailto).
+   - Le email inviate lì devono arrivare a: lillosara84@gmail.com
+   - Il sito da solo NON può inoltrare: serve configurare il dominio santasara.com.
+
+   Opzione consigliata (gratis): ImprovMX — https://www.improvmx.com
+   a) Registrati e aggiungi il dominio santasara.com
+   b) Crea alias: hello  →  lillosara84@gmail.com
+   c) In Netlify → Domain management → DNS del dominio, aggiungi i record MX
+      che ImprovMX ti mostra (di solito mx1.improvmx.com e mx2.improvmx.com)
+   d) Attendi fino a 24–48 ore, poi prova a scrivere a hello@santasara.com
+
+   Alternativa: inoltro email dal pannello del registrar del dominio, se previsto.
+   L'indirizzo da modificare nel codice (solo visualizzazione) è in src\data\site.js
+
 ────────────────────────────────────────
 DA FARE DOPO (promemoria)
 ────────────────────────────────────────
