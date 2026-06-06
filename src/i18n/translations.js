@@ -93,6 +93,10 @@ const it = {
       title: "Balcone · Città",
       alt: "Balcone con cachepot Visionari II e vaso Dandy Land al centro",
     },
+    "scene-1-bis-focus-dandy-land": {
+      title: "Dandy Land",
+      alt: "Dandy Land — vaso decorato a mano",
+    },
     "scene-2": {
       title: "Tavolo · Sera",
       alt: "Tavolo serale con vaso Dandy Land a sinistra e pezzo Messieur a destra",
@@ -105,25 +109,49 @@ const it = {
       title: "Lobby · Classico",
       alt: "Lobby classica con lampada Florence sulla console a sinistra e piatto Baroque Clash al centro su cavalletto",
     },
+    "scene-3-focus-baroque-clash": {
+      title: "Baroque Clash",
+      alt: "Baroque Clash — piatto decorato a mano",
+    },
     "scene-4": {
       title: "Terrazza · Mediterraneo",
       alt: "Terrazza affacciata sul mare con vaso Kentucky '73 sul tavolino e cachepot Visionari II sulla colonna",
+    },
+    "scene-4-focus-kentucky-73": {
+      title: "Kentucky '73",
+      alt: "Kentucky '73 — vaso decorato a mano",
     },
     "scene-5": {
       title: "Atelier · Studio",
       alt: "Scrivania d'atelier con piatto Snow Yeti appeso e vaso Prime Cut sul piano",
     },
+    "scene-5-focus-snow-yeti": {
+      title: "Snow Yeti",
+      alt: "Snow Yeti — piatto decorato a mano",
+    },
     "scene-6": {
       title: "Soggiorno · Sera",
       alt: "Soggiorno serale con lampada Florence sul tavolo e piatto Iris Apfel appeso alla parete",
+    },
+    "scene-6-focus-florence": {
+      title: "Florence",
+      alt: "Florence — lampada decorata a mano",
     },
     "scene-7": {
       title: "Tavola · Tramonto",
       alt: "Apparecchiatura su tavolo all'aperto al tramonto, con quattro piatti decorati Santa Sara",
     },
+    "scene-7-focus-lady-gaga": {
+      title: "Lady Gaga",
+      alt: "Lady Gaga — piatto Icons decorato a mano",
+    },
     "scene-8": {
       title: "Soggiorno · Camino",
       alt: "Salotto minimale con camino e coppia di piatti Keep Fit (Body Rolling + Body Rocking) sulla mensola",
+    },
+    "scene-8-focus-keep-fit": {
+      title: "Keep Fit",
+      alt: "Keep Fit — coppia di piatti decorati a mano",
     },
     "scene-9": {
       title: "Interno · Messieur",
@@ -133,6 +161,10 @@ const it = {
       title: "Sala · Vasi",
       alt: "Ambiente Santa Sara con il vaso Kentucky '73 a sinistra e il vaso Prime Cut a destra",
     },
+    "scene-10-focus-prime-cut": {
+      title: "Prime Cut",
+      alt: "Prime Cut — vaso decorato a mano",
+    },
     "scene-11": {
       title: "Salotto · Geometrico",
       alt: "Sala con vaso Dandy Land sulla console e cachepot Visionari II al centro",
@@ -141,9 +173,17 @@ const it = {
       title: "Soggiorno · Parete verde",
       alt: "Parete verde con coppia di vasi Padded Dynasty su madia",
     },
+    "scene-12-focus-padded-dynasty": {
+      title: "Padded Dynasty",
+      alt: "Padded Dynasty — coppia di vasi decorati a mano",
+    },
     "scene-13": {
       title: "Vetrina · Piatti",
       alt: "Vetrina con quattro piatti: Yayoi Kusama, Chappell Roan, Lady Gaga e Iris Apfel",
+    },
+    "scene-13-focus-iris-apfel": {
+      title: "Iris Apfel",
+      alt: "Iris Apfel — piatto Icons decorato a mano",
     },
     "scene-14": {
       title: "Tavolo · Studio",
@@ -153,9 +193,17 @@ const it = {
       title: "Soggiorno · Marmo nero",
       alt: "Soggiorno scuro con tavolino in marmo nero: palla Gift Giving su vassoio bianco a sinistra e vaso Look-up al centro",
     },
+    "scene-15-focus-look-up": {
+      title: "Look-up",
+      alt: "Look-up — vaso decorato a mano",
+    },
     "scene-16": {
       title: "Studio · Righe",
       alt: "Parete a righe con piatti Keep Fit (Body Rolling e Body Rocking) in alto e coppia di vasi Doppio sulla mensola",
+    },
+    "scene-16-focus-doppio": {
+      title: "Doppio",
+      alt: "Doppio — coppia di vasi decorati a mano",
     },
   },
   products: {
@@ -395,6 +443,10 @@ const en = {
       title: "Balcony · City",
       alt: "Balcony with Visionari II cachepot and Dandy Land vase at the center",
     },
+    "scene-1-bis-focus-dandy-land": {
+      title: "Dandy Land",
+      alt: "Dandy Land — hand-painted vase",
+    },
     "scene-2": {
       title: "Table · Evening",
       alt: "Evening table with Dandy Land vase on the left and Messieur piece on the right",
@@ -407,25 +459,49 @@ const en = {
       title: "Lobby · Classic",
       alt: "Classic lobby with the Florence lamp on the left console and the Baroque Clash plate on a stand at the center",
     },
+    "scene-3-focus-baroque-clash": {
+      title: "Baroque Clash",
+      alt: "Baroque Clash — hand-painted decorative plate",
+    },
     "scene-4": {
       title: "Terrace · Mediterranean",
       alt: "Seaside terrace with the Kentucky '73 vase on the bistro table and the Visionari II cachepot on the column",
+    },
+    "scene-4-focus-kentucky-73": {
+      title: "Kentucky '73",
+      alt: "Kentucky '73 — hand-painted vase",
     },
     "scene-5": {
       title: "Atelier · Studio",
       alt: "Atelier desk with the Snow Yeti plate on the wall and the Prime Cut vase on the surface",
     },
+    "scene-5-focus-snow-yeti": {
+      title: "Snow Yeti",
+      alt: "Snow Yeti — hand-painted decorative plate",
+    },
     "scene-6": {
       title: "Living room · Evening",
       alt: "Evening living room with the Florence lamp on the table and the Iris Apfel plate on the wall",
+    },
+    "scene-6-focus-florence": {
+      title: "Florence",
+      alt: "Florence — hand-painted lamp",
     },
     "scene-7": {
       title: "Table · Sunset",
       alt: "Outdoor table set at sunset with four hand-painted Santa Sara plates",
     },
+    "scene-7-focus-lady-gaga": {
+      title: "Lady Gaga",
+      alt: "Lady Gaga — hand-painted Icons plate",
+    },
     "scene-8": {
       title: "Living room · Fireplace",
       alt: "Minimal living room with a fireplace and the Keep Fit pair of plates (Body Rolling + Body Rocking) on the mantel",
+    },
+    "scene-8-focus-keep-fit": {
+      title: "Keep Fit",
+      alt: "Keep Fit — pair of hand-painted plates",
     },
     "scene-9": {
       title: "Interior · Messieur",
@@ -435,6 +511,10 @@ const en = {
       title: "Room · Vases",
       alt: "Santa Sara setting with the Kentucky '73 vase on the left and the Prime Cut vase on the right",
     },
+    "scene-10-focus-prime-cut": {
+      title: "Prime Cut",
+      alt: "Prime Cut — hand-painted vase",
+    },
     "scene-11": {
       title: "Living room · Geometric",
       alt: "Room with Dandy Land vase on the console and Visionari II cachepot in the center",
@@ -443,9 +523,17 @@ const en = {
       title: "Living room · Green wall",
       alt: "Green wall with the Padded Dynasty pair of vases on the sideboard",
     },
+    "scene-12-focus-padded-dynasty": {
+      title: "Padded Dynasty",
+      alt: "Padded Dynasty — pair of hand-painted vases",
+    },
     "scene-13": {
       title: "Shop window · Plates",
       alt: "Shop window with four plates: Yayoi Kusama, Chappell Roan, Lady Gaga and Iris Apfel",
+    },
+    "scene-13-focus-iris-apfel": {
+      title: "Iris Apfel",
+      alt: "Iris Apfel — hand-painted Icons plate",
     },
     "scene-14": {
       title: "Table · Studio",
@@ -455,9 +543,17 @@ const en = {
       title: "Living room · Black marble",
       alt: "Dark living room with a black marble coffee table: Gift Giving bauble on a white tray on the left and Look-up vase in the center",
     },
+    "scene-15-focus-look-up": {
+      title: "Look-up",
+      alt: "Look-up — hand-painted vase",
+    },
     "scene-16": {
       title: "Studio · Stripes",
       alt: "Striped wall with Keep Fit plates (Body Rolling and Body Rocking) above and the Doppio pair of vases on the shelf",
+    },
+    "scene-16-focus-doppio": {
+      title: "Doppio",
+      alt: "Doppio — pair of hand-painted vases",
     },
   },
   products: {
