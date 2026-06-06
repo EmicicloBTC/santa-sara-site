@@ -183,6 +183,10 @@ const it = {
       title: "Interno · Messieur",
       alt: "Ambiente Santa Sara con il pezzo Messieur in primo piano",
     },
+    "scene-9-focus-messieur": {
+      title: "Messieur",
+      alt: "Messieur — bottiglia decorativa decorata a mano",
+    },
     "scene-10": {
       title: "Sala · Vasi",
       alt: "Ambiente Santa Sara con il vaso Kentucky '73 a sinistra e il vaso Prime Cut a destra",
@@ -194,6 +198,10 @@ const it = {
     "scene-11": {
       title: "Salotto · Geometrico",
       alt: "Sala con vaso Dandy Land sulla console e cachepot Visionari II al centro",
+    },
+    "scene-11-focus-visionari-ii": {
+      title: "Visionari II",
+      alt: "Visionari II — cachepot neoclassico decorato a mano",
     },
     "scene-12": {
       title: "Soggiorno · Parete verde",
@@ -230,6 +238,14 @@ const it = {
     "scene-16-focus-doppio": {
       title: "Doppio",
       alt: "Doppio — coppia di vasi decorati a mano",
+    },
+    "scene-17": {
+      title: "Studio · Roma",
+      alt: "Scrivania industrial con vaso Romance a sinistra e palla No Coming Down sulla lampada a destra",
+    },
+    "scene-17-focus-no-coming-down": {
+      title: "No Coming Down",
+      alt: "No Coming Down — palla natalizia decorata a mano",
     },
   },
   products: {
@@ -391,6 +407,13 @@ const it = {
       description:
         "Materiali: ceramica. Palla natalizia decorata a mano Back To Velvet. Pezzo unico, decorato a mano in atelier.",
       dimensions: "l 10 cm",
+      price: "€ 40",
+      cta: "Acquista su Etsy",
+    },
+    "no-coming-down": {
+      description:
+        "Materiali: ceramica. Palla natalizia decorata a mano con scritta «A NATALE NON SCENDO». Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 12 cm",
       price: "€ 40",
       cta: "Acquista su Etsy",
     },
@@ -566,6 +589,10 @@ const en = {
       title: "Interior · Messieur",
       alt: "Santa Sara setting with the Messieur piece in the foreground",
     },
+    "scene-9-focus-messieur": {
+      title: "Messieur",
+      alt: "Messieur — hand-painted decorative bottle",
+    },
     "scene-10": {
       title: "Room · Vases",
       alt: "Santa Sara setting with the Kentucky '73 vase on the left and the Prime Cut vase on the right",
@@ -577,6 +604,10 @@ const en = {
     "scene-11": {
       title: "Living room · Geometric",
       alt: "Room with Dandy Land vase on the console and Visionari II cachepot in the center",
+    },
+    "scene-11-focus-visionari-ii": {
+      title: "Visionari II",
+      alt: "Visionari II — hand-painted neoclassical cachepot",
     },
     "scene-12": {
       title: "Living room · Green wall",
@@ -613,6 +644,14 @@ const en = {
     "scene-16-focus-doppio": {
       title: "Doppio",
       alt: "Doppio — pair of hand-painted vases",
+    },
+    "scene-17": {
+      title: "Studio · Rome",
+      alt: "Industrial desk with the Romance vase on the left and the No Coming Down bauble on the lamp to the right",
+    },
+    "scene-17-focus-no-coming-down": {
+      title: "No Coming Down",
+      alt: "No Coming Down — hand-painted Christmas bauble",
     },
   },
   products: {
@@ -774,6 +813,13 @@ const en = {
       description:
         "Materials: ceramic. Hand-painted Christmas bauble Back To Velvet. One-of-a-kind, hand-painted in atelier.",
       dimensions: "w 10 cm",
+      price: "€ 40",
+      cta: "Buy on Etsy",
+    },
+    "no-coming-down": {
+      description:
+        "Materials: ceramic. Hand-painted Christmas bauble with «A NATALE NON SCENDO» lettering. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 12 cm",
       price: "€ 40",
       cta: "Buy on Etsy",
     },

@@ -303,7 +303,7 @@ export const scenes = [
     type: "productFocus",
     title: "Dandy Land",
     productId: "dandy-land",
-    productImageIndex: 2,
+    productImageIndex: 3,
     alt: "Dandy Land — vaso decorato a mano",
     hotspots: [],
   },
@@ -320,6 +320,15 @@ export const scenes = [
     hotspotsMobile: [
       { productId: "messieur", x: 50, y: 55, r: 8 },
     ],
+  },
+  {
+    id: "scene-9-focus-messieur",
+    type: "productFocus",
+    title: "Messieur",
+    productId: "messieur",
+    productImageIndex: 3,
+    alt: "Messieur — bottiglia decorativa decorata a mano",
+    hotspots: [],
   },
   {
     id: "scene-10",
@@ -359,6 +368,15 @@ export const scenes = [
       { productId: "dandy-land", x: 24, y: 40, r: 7 },
       { productId: "visionari-ii", x: 48, y: 52, r: 7 },
     ],
+  },
+  {
+    id: "scene-11-focus-visionari-ii",
+    type: "productFocus",
+    title: "Visionari II",
+    productId: "visionari-ii",
+    productImageIndex: 3,
+    alt: "Visionari II — cachepot neoclassico decorato a mano",
+    hotspots: [],
   },
   {
     id: "scene-12",
@@ -476,6 +494,30 @@ export const scenes = [
     productId: "doppio",
     productImageIndex: 2,
     alt: "Doppio — coppia di vasi decorati a mano",
+    hotspots: [],
+  },
+  {
+    id: "scene-17",
+    title: "Studio · Roma",
+    image: "/images/scenes/scene-17.png",
+    imageMobile: "/images/scenes/scene-17-mobile.png",
+    alt: "Scrivania industrial con vaso Romance a sinistra e palla No Coming Down sulla lampada a destra",
+    hotspots: [
+      { productId: "romance", x: 24, y: 56, r: 7 },
+      { productId: "no-coming-down", x: 74, y: 50, r: 6 },
+    ],
+    hotspotsMobile: [
+      { productId: "romance", x: 26, y: 54, r: 8 },
+      { productId: "no-coming-down", x: 72, y: 48, r: 7 },
+    ],
+  },
+  {
+    id: "scene-17-focus-no-coming-down",
+    type: "productFocus",
+    title: "No Coming Down",
+    productId: "no-coming-down",
+    productImageIndex: 1,
+    alt: "No Coming Down — palla natalizia decorata a mano",
     hotspots: [],
   },
 ];

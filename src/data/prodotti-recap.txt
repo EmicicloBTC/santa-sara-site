@@ -177,6 +177,15 @@ mid-winter
   Etsy:         (da completare)
   Note:         catalogo
 
+no-coming-down
+  Titolo:       No Coming Down
+  Categoria:    Palle
+  Prezzo:       € 40
+  Materiali:    ceramica
+  Dimensioni:   l 12 cm
+  Etsy:         https://www.etsy.com/it/listing/4395334174/handmade-ceramic-christmas-ball-0950-no
+  Note:         scena 17 (Studio · Roma)
+
 ────────────────────────────────────────
 DA AGGIUNGERE (prossimi batch)
 ────────────────────────────────────────

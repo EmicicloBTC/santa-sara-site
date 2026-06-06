@@ -335,6 +335,20 @@ export const products = {
     ctaHref: "https://www.etsy.com/it/listing/4406148798/handmade-ceramic-christmas-ball-2150",
     images: { slug: "palle/back-to-velvet", count: 4, ext: "png" },
   },
+  "no-coming-down": {
+    id: "no-coming-down",
+    title: "No Coming Down",
+    category: "Palle",
+    kind: "Palla natalizia decorata a mano",
+    dimensions: "l 12 cm",
+    description:
+      "Materiali: ceramica. Palla natalizia decorata a mano con scritta «A NATALE NON SCENDO». Pezzo unico, decorato a mano in atelier.",
+    price: "€ 40",
+    cta: "Acquista su Etsy",
+    ctaHref:
+      "https://www.etsy.com/it/listing/4395334174/handmade-ceramic-christmas-ball-0950-no",
+    images: { slug: "palle/no-coming-down", count: 4, ext: "png" },
+  },
 };
 
 /** Tutte le URL del prodotto in ordine: 1.ext, 2.ext, … */
