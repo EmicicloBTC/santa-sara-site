@@ -60,9 +60,14 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
     if (coversReady) setRevealGeneration((g) => g + 1);
   }, [coversReady, activeFilter]);
 
+  // Reset filtro solo quando il catalogo si apre (open: false → true).
+  // Non legare a onClose: in Landing è inline e cambia reference aprendo il modal prodotto.
+  useEffect(() => {
+    if (open) setActiveFilter("__all");
+  }, [open]);
+
   useEffect(() => {
     if (!open) return undefined;
-    setActiveFilter("__all");
     const onKey = (e) => {
       if (e.key === "Escape") onClose();
     };
