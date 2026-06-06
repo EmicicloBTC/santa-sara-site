@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { productImages } from "../data/products.js";
-import { Arrow, ChevronLeft, ChevronRight, Close } from "./icons.jsx";
-import { useT, useLocalizedProduct } from "../i18n/index.jsx";
+import { Arrow, ChevronLeft, ChevronRight, Close, Share } from "./icons.jsx";
+import { useT, useLocalizedProduct, useLang } from "../i18n/index.jsx";
 import { loadImage, preloadUrls } from "../utils/imagePreload.js";
+import { getProductShareUrl, shareOrCopy } from "../utils/share.js";
 
 const AUTO_MS = 3000;
 
@@ -23,7 +24,7 @@ const SLIDE_TRANSITION = {
 export function ProductModal({ product, onClose }) {
   const open = !!product;
   const t = useT();
-  // localizza description / dimensions / price / cta / categoryLabel
+  const { lang } = useLang();
   const localized = useLocalizedProduct(product);
   const images = useMemo(() => (product ? productImages(product) : []), [product]);
   const isSold = product?.sold === true;
@@ -32,6 +33,7 @@ export function ProductModal({ product, onClose }) {
   const [paused, setPaused] = useState(false);
   const [galleryReady, setGalleryReady] = useState(false);
   const [decodedUrls, setDecodedUrls] = useState(() => new Set());
+  const [shareHint, setShareHint] = useState(null);
 
   useEffect(() => {
     if (!images.length) {
@@ -58,11 +60,20 @@ export function ProductModal({ product, onClose }) {
     };
   }, [images]);
 
-  // Reset slide quando cambia prodotto.
   useEffect(() => {
     setActive(0);
     setDirection(1);
+    setShareHint(null);
   }, [product?.id]);
+
+  async function handleShare() {
+    if (!product) return;
+    const url = getProductShareUrl(product.id, lang);
+    const result = await shareOrCopy(url, { title: product.title, text: product.title });
+    if (result === "aborted") return;
+    setShareHint(result === "shared" ? "shared" : "copied");
+    window.setTimeout(() => setShareHint(null), 2400);
+  }
 
   const goNext = () => {
     if (images.length <= 1) return;
@@ -288,7 +299,7 @@ export function ProductModal({ product, onClose }) {
 
               <p className="mt-6 text-base leading-[1.7] text-stone-700">{localized.description}</p>
 
-              <div className="mt-auto pt-8">
+              <div className="mt-auto space-y-3 pt-8">
                 {isSold ? (
                   <span
                     className="inline-flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-full border border-stone-950/15 bg-stone-200/70 px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-stone-500 sm:w-auto"
@@ -306,6 +317,18 @@ export function ProductModal({ product, onClose }) {
                     {localized.cta || t.modal.askAvailability} <Arrow size={14} />
                   </a>
                 )}
+                <button
+                  type="button"
+                  onClick={handleShare}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stone-950/15 bg-white/55 px-6 py-3 text-[10px] font-medium uppercase tracking-[0.28em] text-stone-700 transition hover:bg-white sm:w-auto"
+                >
+                  <Share size={14} />
+                  {shareHint === "copied"
+                    ? t.modal.linkCopied
+                    : shareHint === "shared"
+                      ? t.modal.linkShared
+                      : t.modal.share}
+                </button>
               </div>
             </div>
           </motion.div>

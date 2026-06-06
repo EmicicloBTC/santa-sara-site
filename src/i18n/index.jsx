@@ -21,6 +21,8 @@ const I18nContext = createContext({
 
 function readInitialLang() {
   if (typeof window === "undefined") return DEFAULT_LANG;
+  const fromUrl = new URLSearchParams(window.location.search).get("lang");
+  if (SUPPORTED_LANGS.includes(fromUrl)) return fromUrl;
   try {
     const saved = window.localStorage.getItem(STORAGE_KEY);
     if (SUPPORTED_LANGS.includes(saved)) return saved;

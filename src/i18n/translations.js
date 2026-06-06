@@ -35,6 +35,8 @@ const it = {
     openProductCard: "Apri scheda",
     catalog: "Catalogo",
     catalogBadge: "opere",
+    linkCopied: "Link copiato",
+    copySiteLinkHint: "Copia link al sito",
   },
   catalog: {
     aria: "Catalogo opere",
@@ -58,6 +60,9 @@ const it = {
     photosComingSoon: "Foto in arrivo",
     sold: "Venduto",
     soldStamp: "SOLD",
+    share: "Condividi",
+    linkCopied: "Link copiato",
+    linkShared: "Condiviso",
   },
   category: {
     Vasi: "Vasi",
@@ -413,6 +418,8 @@ const en = {
     openProductCard: "Open product card",
     catalog: "Catalog",
     catalogBadge: "works",
+    linkCopied: "Link copied",
+    copySiteLinkHint: "Copy site link",
   },
   catalog: {
     aria: "Works catalog",
@@ -436,6 +443,9 @@ const en = {
     photosComingSoon: "Photos coming soon",
     sold: "Sold",
     soldStamp: "SOLD",
+    share: "Share",
+    linkCopied: "Link copied",
+    linkShared: "Shared",
   },
   category: {
     Vasi: "Vases",

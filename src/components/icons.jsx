@@ -89,3 +89,13 @@ export function ShoppingBag({ className = "", size = 18 }) {
     </svg>
   );
 }
+
+export function Share({ className = "", size = 18 }) {
+  return (
+    <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 16V4" />
+      <path d="m8 8 4-4 4 4" />
+      <path d="M4 20h16" />
+    </svg>
+  );
+}
