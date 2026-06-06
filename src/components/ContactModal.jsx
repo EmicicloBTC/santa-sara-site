@@ -5,6 +5,8 @@ import { site } from "../data/site.js";
 import { useT } from "../i18n/index.jsx";
 
 const FORM_NAME = "contact";
+// POST su pagina HTML statica: il redirect SPA (/* → index.html) blocca POST su "/"
+const FORM_ENDPOINT = "/netlify-forms-detect.html";
 
 const EMPTY = { name: "", email: "", country: "", message: "" };
 
@@ -55,12 +57,14 @@ export function ContactModal({ open, onClose }) {
     });
 
     try {
-      const res = await fetch("/", {
+      const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body.toString(),
       });
-      if (!res.ok) throw new Error("submit failed");
+      const text = await res.text();
+      // Se il redirect SPA risponde con la homepage React, l'invio non è arrivato a Netlify
+      if (!res.ok || text.includes('id="root"')) throw new Error("submit failed");
       setStatus("success");
       setFields(EMPTY);
     } catch {

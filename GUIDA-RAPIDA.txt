@@ -119,6 +119,10 @@ SANTA SARA — Guida rapida (senza terminale)
      → Form: se non compare "contact", usa "Any form" (va bene lo stesso)
    - Se Forms è vuoto: abilita "Enable form detection", poi attendi un deploy
      (push su GitHub). Dopo 1-2 min ricarica Forms: deve comparire "contact".
+   - Se invii dal sito ma non arriva email: Netlify → Forms → contact →
+     "Verified submissions" (devono comparire lì). Se la lista è vuota, il form
+     non stava registrando gli invii (fix già nel codice: POST su pagina statica).
+     Controlla anche spam in Gmail.
 
 ────────────────────────────────────────
 DA FARE DOPO (promemoria)

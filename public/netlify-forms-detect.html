@@ -6,7 +6,14 @@
   </head>
   <body>
     <!-- Pagina statica solo per il rilevamento form Netlify al deploy (non linkata dal sito). -->
-    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <form
+      name="contact"
+      method="POST"
+      action="/netlify-forms-detect.html"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
       <input type="hidden" name="form-name" value="contact" />
       <input type="text" name="name" />
       <input type="email" name="email" />
