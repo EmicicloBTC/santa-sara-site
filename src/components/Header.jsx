@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Close, Menu, Instagram, TikTok, ShoppingBag, Grid } from "./icons.jsx";
 import { site } from "../data/site.js";
 import { useT, useLang } from "../i18n/index.jsx";
+
+const MENU_EASE = [0.22, 1, 0.36, 1];
+const MENU_PANEL_TRANSITION = { duration: 0.32, ease: MENU_EASE };
 
 export function Header({ onOpenInfo, onOpenCatalog }) {
   const [open, setOpen] = useState(false);
@@ -50,11 +54,17 @@ export function Header({ onOpenInfo, onOpenCatalog }) {
           {open ? <Close size={18} /> : <Menu size={18} />}
         </button>
 
-        {open && (
-          <div
-            className="absolute right-0 mt-2 w-60 overflow-hidden rounded-xl bg-white/85 text-stone-950 shadow-lg ring-1 ring-stone-950/15 backdrop-blur-xl"
-            role="menu"
-          >
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              key="header-menu"
+              role="menu"
+              initial={{ opacity: 0, y: -10, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.97 }}
+              transition={MENU_PANEL_TRANSITION}
+              className="absolute right-0 mt-2 w-60 origin-top-right overflow-hidden rounded-xl bg-white/85 text-stone-950 shadow-lg ring-1 ring-stone-950/15 backdrop-blur-xl"
+            >
             <div className="flex items-center justify-between border-b border-stone-950/10 px-4 py-3">
               <span className="select-none text-[10px] uppercase tracking-[0.22em] text-stone-500">
                 {t.ui.basedIn}
@@ -166,8 +176,9 @@ export function Header({ onOpenInfo, onOpenCatalog }) {
               {t.ui.contacts}
               <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{t.ui.emailBadge}</span>
             </a>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );
