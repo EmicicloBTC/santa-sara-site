@@ -74,8 +74,8 @@
   "public/images/scenes/scene-12.png": "491885-1778778080668",
   "public/images/scenes/scene-13-mobile.png": "343878-1778778081002",
   "public/images/scenes/scene-13.png": "712866-1778778081255",
-  "public/images/scenes/scene-14-mobile.png": "286223-1778778081523",
-  "public/images/scenes/scene-14.png": "524994-1778778081828",
+  "public/images/scenes/scene-14-mobile.png": "408029-1780744666756",
+  "public/images/scenes/scene-14.png": "715065-1780744668169",
   "public/images/scenes/scene-15-mobile.png": "328336-1778794757062",
   "public/images/scenes/scene-15.png": "585655-1778794653313",
   "public/images/scenes/scene-16-mobile.png": "303526-1778778083105",
@@ -129,5 +129,9 @@
   "public/images/products/palle/divine-bovine/3.png": "592813-1780738049965",
   "public/images/products/palle/divine-bovine/4.png": "617648-1780738050737",
   "public/images/scenes/scene-1-second-mobile.png": "349875-1780739053505",
-  "public/images/scenes/scene-1-second.png": "525114-1780739054094"
+  "public/images/scenes/scene-1-second.png": "525114-1780739054094",
+  "public/images/products/palle/back-to-velvet/1.png": "466556-1780744664395",
+  "public/images/products/palle/back-to-velvet/2.png": "388961-1780744664937",
+  "public/images/products/palle/back-to-velvet/3.png": "638037-1780744665492",
+  "public/images/products/palle/back-to-velvet/4.png": "412964-1780744666017"
 }

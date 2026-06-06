@@ -322,6 +322,19 @@ export const products = {
     ctaHref: mailtoLink("Mid Winter — disponibilità"),
     images: { slug: "palle/mid-winter", count: 4, ext: "jpg" },
   },
+  "back-to-velvet": {
+    id: "back-to-velvet",
+    title: "Back To Velvet",
+    category: "Palle",
+    kind: "Palla natalizia decorata a mano",
+    dimensions: "l 10 cm",
+    description:
+      "Materiali: ceramica. Palla natalizia decorata a mano Back To Velvet. Pezzo unico, decorato a mano in atelier.",
+    price: "€ 40",
+    cta: "Chiedi disponibilità",
+    ctaHref: mailtoLink("Back To Velvet — disponibilità"),
+    images: { slug: "palle/back-to-velvet", count: 4, ext: "png" },
+  },
 };
 
 /** Tutte le URL del prodotto in ordine: 1.ext, 2.ext, … */
