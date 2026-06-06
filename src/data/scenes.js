@@ -80,14 +80,14 @@ export const scenes = [
     alt: "Tavolo con le quattro palle natalizie: Bovine Divine, Mid Winter, Gift Giving e Dragonbell",
     hotspots: [
       { productId: "divine-bovine", x: 23, y: 44, r: 6 },
-      { productId: "mid-winter", x: 42, y: 42, r: 6 },
-      { productId: "gift-giving", x: 52, y: 70, r: 5 },
+      { productId: "gift-giving", x: 42, y: 42, r: 6 },
+      { productId: "mid-winter", x: 52, y: 70, r: 5 },
       { productId: "dragonbell", x: 72, y: 71, r: 6 },
     ],
     hotspotsMobile: [
       { productId: "divine-bovine", x: 30, y: 26, r: 7 },
-      { productId: "mid-winter", x: 58, y: 26, r: 7 },
-      { productId: "gift-giving", x: 40, y: 48, r: 6 },
+      { productId: "gift-giving", x: 58, y: 26, r: 7 },
+      { productId: "mid-winter", x: 40, y: 48, r: 6 },
       { productId: "dragonbell", x: 62, y: 50, r: 7 },
     ],
   },
@@ -108,7 +108,7 @@ export const scenes = [
     alt: "Tavolo serale con vaso Dandy Land a sinistra e pezzo Messieur a destra",
     hotspots: [
       { productId: "dandy-land", x: 40, y: 54, r: 7 },
-      { productId: "messieur", x: 72, y: 56, r: 6 },
+      { productId: "messieur", x: 70, y: 56, r: 6 },
     ],
     hotspotsMobile: [
       { productId: "dandy-land", x: 38, y: 52, r: 8 },
