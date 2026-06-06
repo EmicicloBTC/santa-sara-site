@@ -2,16 +2,12 @@
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
-  xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1">
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!--
-    Il sito è una landing single-page con scene/prodotti/info dentro modali
-    della stessa URL. Per ora c'è una sola pagina indicizzabile, in due lingue.
-    Quando aggiungeremo route reali (es. /shop, /bio, ...) basterà aggiungerle qui.
-  -->
+  <!-- Generato da scripts/generate-seo.mjs — 2026-06-06 -->
   <url>
     <loc>https://santa-sara.com/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://santa-sara.com/" />
@@ -20,7 +16,117 @@
     <image:image>
       <image:loc>https://santa-sara.com/og-image.jpg</image:loc>
       <image:title>Santa Sara — Ceramiche d'autore</image:title>
-      <image:caption>Terrazza affacciata sul mare con cachepot Visionari II e vaso Kentucky '73 di Santa Sara.</image:caption>
+      <image:caption>Terrazza con cachepot Visionari II e vaso Kentucky '73.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/vasi/florence/1.png</image:loc>
+      <image:title>Florence — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Viola lucido, figure femminili, tensione classica. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/vasi/romance/1.png</image:loc>
+      <image:title>Romance — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica, smalti. Decorazione a mano: sensualità barocca, ritmo contemporaneo. Sfumature calde su base avorio.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/piatti/snow-yeti/1.png</image:loc>
+      <image:title>Snow Yeti — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica, argilla, engobbi, smalti. Sfumature glaciali e tratto materico. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/piatti/chappell-roan/1.png</image:loc>
+      <image:title>Chappell Roan — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Serie Icons dinner service. Ritratto pop, capelli rossi e ricami metallici. Cornice a zigzag blu con cerchi gialli. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/piatti/iris-apfel/1.png</image:loc>
+      <image:title>Iris Apfel — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Serie Icons dinner service. Omaggio all'icona dello stile: basco rosso, occhialoni tondi, bracciali. Cornice a quadrettini verdi con tondi rossi. Pezzo unico, decorato a mano in a</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/piatti/lady-gaga/1.png</image:loc>
+      <image:title>Lady Gaga — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Serie Icons dinner service. Ritratto rosso scarlatto, energia pop e taglio teatrale. Cornice a ovali gialli e segni grafici. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/piatti/keep-fit/1.png</image:loc>
+      <image:title>Keep Fit — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Body Rolling e Body Rocking: una coppia ironica in verde prato, ispirata ai manuali di ginnastica anni 50. Pezzi unici, decorati a mano in atelier. Venduti come set.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/piatti/yayoi-kusama/1.png</image:loc>
+      <image:title>Yayoi Kusama — Santa Sara</image:title>
+      <image:caption>Omaggio all'artista giapponese: caschetto rosso, pois gialli su fondo nero e viola. Cornice a onda con tondi gialli. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/vasi/prime-cut/1.png</image:loc>
+      <image:title>Prime Cut — Santa Sara</image:title>
+      <image:caption>Figura femminile e schema anatomico, stelle rosse e cornice barocca. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/vasi/cohort-03/1.png</image:loc>
+      <image:title>Cohort 03 — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Tre figure di profilo, contemporaneo e essenziale. Linea fluida su porcellana bianca. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/vasi/dandy-land/1.jpg</image:loc>
+      <image:title>Dandy Land — Santa Sara</image:title>
+      <image:caption>Anfora decorata a mano con ritratto dandy, scritta DANDY sul collo e fiori stilizzati sulla base. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/vasi/kentucky-73/1.png</image:loc>
+      <image:title>Kentucky '73 — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica, smalti. Omaggio al Kentucky Derby del 1973: corsa di cavalli, fantini, rose rosse e righe rosa. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/vasi/look-up/1.jpg</image:loc>
+      <image:title>Look-up — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica, engobbi, smalti. Vaso a pancia con decoro astratto su fondo avorio. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/vasi/visionari-ii/1.png</image:loc>
+      <image:title>Visionari II — Santa Sara</image:title>
+      <image:caption>Cratere terracotta neoclassico con figure greche che indossano visori VR. Ironia sospesa fra antico e contemporaneo, decoro a meandro greco. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/misc/messieur/1.png</image:loc>
+      <image:title>Messieur — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Pezzo unico fra classico e contemporaneo, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/vasi/doppio/1.png</image:loc>
+      <image:title>Doppio — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica, engobbi, smalti. Coppia di vasi. Pezzi unici, decorati a mano in atelier. Venduti come set.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/vasi/padded-dynasty/1.jpg</image:loc>
+      <image:title>Padded Dynasty — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Coppia di vasi in terracotta con ritratti ispirati alla dinastia cinese e giacche imbottite contemporanee. Pezzi unici, decorati a mano in atelier. Venduti come set — un solo set </image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/piatti/baroque-clash/1.png</image:loc>
+      <image:title>Baroque Clash — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Cornice barocca dorata e segno contemporaneo: piatto da parete che fa cortocircuito fra classico e pop. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/palle/gift-giving/1.jpg</image:loc>
+      <image:title>Gift Giving — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Palla natalizia decorata a mano con ritratto e scritta Gift Giving. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/palle/divine-bovine/1.png</image:loc>
+      <image:title>Bovine Divine — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Palla natalizia decorata a mano con ritratto bovino e scritta Bovine Divine. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/palle/dragonbell/1.jpg</image:loc>
+      <image:title>Dragonbell — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Palla natalizia decorata a mano con drago e campana. Pezzo unico, decorato a mano in atelier.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://santa-sara.com/images/products/palle/mid-winter/1.jpg</image:loc>
+      <image:title>Mid Winter — Santa Sara</image:title>
+      <image:caption>Materiali: ceramica. Palla natalizia decorata a mano con atmosfera mid-winter. Pezzo unico, decorato a mano in atelier.</image:caption>
     </image:image>
   </url>
 

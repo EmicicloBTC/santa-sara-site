@@ -129,6 +129,11 @@ SANTA SARA — Guida rapida (senza terminale)
 DA FARE DOPO (promemoria)
 ────────────────────────────────────────
 
+□ Rispondere ai clienti COME hello@santasara.com (non da lillosara84@gmail.com)
+  - ImprovMX gratis inoltra solo le email in arrivo; per inviare serve SMTP
+    (ImprovMX a pagamento, Zoho Mail gratis, o Google Workspace).
+  - Gmail → Impostazioni → Invia messaggio come → hello@santasara.com
+
 □ Google Search Console — verifica dominio santa-sara.com
   - Vai su: https://search.google.com/search-console
   - Aggiungi proprietà → Prefisso URL → https://santa-sara.com/
@@ -137,5 +142,9 @@ DA FARE DOPO (promemoria)
   - Richiedi indicizzazione della home
   - Test anteprima social (cache WhatsApp/IG): developers.facebook.com/tools/debug
 
-  Nota: meta SEO, og-image, robots.txt e sitemap.xml sono già sul sito (commit 27f7343).
-  Manca solo la registrazione su Search Console e il refresh cache delle preview social.
+  Già sul sito (si aggiornano soli a ogni build):
+  - meta title/description, Open Graph, Twitter Card, canonical
+  - robots.txt, sitemap.xml con immagini prodotti
+  - JSON-LD (Organization, catalogo prodotti, ItemList)
+  - testo noscript per crawler senza JavaScript
+  - redirect www → santa-sara.com (canonical unico)

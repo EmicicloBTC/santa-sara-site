@@ -2,6 +2,13 @@
   command = "npm run build"
   publish = "dist"
 
+# Canonical: www → dominio principale (SEO)
+[[redirects]]
+  from = "https://www.santa-sara.com/*"
+  to = "https://santa-sara.com/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

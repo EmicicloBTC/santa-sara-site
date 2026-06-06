@@ -7,5 +7,6 @@ Allow: /
 # Eccezioni: assets interni e cartelle di sistema (non hanno senso indicizzare).
 Disallow: /assets/
 Disallow: /_originals/
+Disallow: /netlify-forms-detect.html
 
 Sitemap: https://santa-sara.com/sitemap.xml
