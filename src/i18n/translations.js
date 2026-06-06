@@ -46,6 +46,9 @@ const it = {
     empty: "Nessun pezzo in questa categoria, per ora.",
     comingSoon: "Foto in arrivo",
     sold: "Venduto",
+    piattiGrandi: "Piatti grandi",
+    piattiIcons: "Icons · formato standard",
+    piattiAltri: "Altri piatti",
   },
   modal: {
     dimensions: "Dimensioni",
@@ -421,6 +424,9 @@ const en = {
     empty: "No pieces in this category yet.",
     comingSoon: "Photos coming soon",
     sold: "Sold",
+    piattiGrandi: "Large plates",
+    piattiIcons: "Icons · standard size",
+    piattiAltri: "Other plates",
   },
   modal: {
     dimensions: "Dimensions",

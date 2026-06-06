@@ -7,7 +7,7 @@ import { useT, useLang } from "../i18n/index.jsx";
 const MENU_EASE = [0.22, 1, 0.36, 1];
 const MENU_PANEL_TRANSITION = { duration: 0.32, ease: MENU_EASE };
 
-export function Header({ onOpenInfo, onOpenCatalog, onOpenContact }) {
+export function Header({ onOpenInfo, onOpenCatalog, onOpenContact, onDisableAutoAdvance }) {
   const [open, setOpen] = useState(false);
   const t = useT();
   const { lang, setLang } = useLang();
@@ -23,6 +23,10 @@ export function Header({ onOpenInfo, onOpenCatalog, onOpenContact }) {
     <header className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-start justify-between p-4 sm:p-6">
       <a
         href="#home"
+        onClick={(e) => {
+          e.preventDefault();
+          onDisableAutoAdvance?.();
+        }}
         className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-white/55 py-1.5 pl-1.5 pr-4 backdrop-blur-md ring-1 ring-stone-950/20 transition hover:bg-white/75"
       >
         <span className="grid h-9 w-9 place-items-center overflow-hidden rounded-full bg-white ring-1 ring-stone-950/10">

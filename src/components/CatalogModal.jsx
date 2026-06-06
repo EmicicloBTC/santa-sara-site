@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Close } from "./icons.jsx";
 import {
   CATEGORY_ORDER,
+  getPiattiCatalogSections,
   getProductsByCategory,
   productCover,
 } from "../data/products.js";
@@ -183,7 +184,14 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
                 <p className="py-16 text-center text-sm text-stone-400">{t.catalog.empty}</p>
               )}
 
-              {visibleGroups.map((group, idx) => (
+              {visibleGroups.map((group, idx) => {
+                const piattiSections =
+                  group.category === "Piatti" ? getPiattiCatalogSections(group.items) : null;
+                let staggerBase = visibleGroups
+                  .slice(0, idx)
+                  .reduce((acc, g) => acc + g.items.length, 0);
+
+                return (
                 <section
                   key={group.category}
                   className={idx === 0 ? "" : "mt-10 sm:mt-14"}
@@ -198,12 +206,43 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
                     </span>
                   </header>
 
+                  {piattiSections ? (
+                    piattiSections.map((section, sIdx) => {
+                      const sectionBase = staggerBase;
+                      staggerBase += section.items.length;
+                      return (
+                        <div
+                          key={section.labelKey ?? `piatti-${sIdx}`}
+                          className={sIdx === 0 ? "" : "mt-8 border-t border-white/10 pt-8 sm:mt-10 sm:pt-10"}
+                        >
+                          {section.labelKey && (
+                            <h4 className="mb-4 font-serif text-base tracking-[-0.015em] text-stone-200 sm:mb-5 sm:text-lg">
+                              {t.catalog[section.labelKey] ?? section.labelKey}
+                            </h4>
+                          )}
+                          <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
+                            {section.items.map((product, itemIdx) => (
+                              <li key={product.id}>
+                                <CatalogCard
+                                  product={product}
+                                  staggerIndex={sectionBase + itemIdx}
+                                  revealKey={revealGeneration}
+                                  animateIn={coversReady}
+                                  onClick={() => {
+                                    onOpenProduct?.(product);
+                                  }}
+                                  t={t}
+                                />
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      );
+                    })
+                  ) : (
                   <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
                     {group.items.map((product, itemIdx) => {
-                      const staggerIndex =
-                        visibleGroups
-                          .slice(0, idx)
-                          .reduce((acc, g) => acc + g.items.length, 0) + itemIdx;
+                      const staggerIndex = staggerBase + itemIdx;
                       return (
                         <li key={product.id}>
                           <CatalogCard
@@ -220,8 +259,10 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
                       );
                     })}
                   </ul>
+                  )}
                 </section>
-              ))}
+              );
+              })}
 
               <footer className="mt-16 flex flex-col items-center border-t border-white/10 pb-12 pt-14 sm:mt-24 sm:pb-16 sm:pt-20">
                 <motion.div

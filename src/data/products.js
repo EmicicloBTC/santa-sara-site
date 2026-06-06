@@ -360,6 +360,44 @@ export function productCover(product) {
 /** Ordine di rendering delle categorie nel catalogo. */
 export const CATEGORY_ORDER = ["Vasi", "Piatti", "Palle", "Misc"];
 
+/** Sottosezioni del catalogo nella categoria Piatti. */
+export const PIATTI_CATALOG_SUBGROUPS = [
+  {
+    id: "grandi",
+    labelKey: "piattiGrandi",
+    productIds: ["snow-yeti", "baroque-clash", "keep-fit"],
+  },
+  {
+    id: "icons",
+    labelKey: "piattiIcons",
+    productIds: ["chappell-roan", "iris-apfel", "lady-gaga"],
+  },
+];
+
+/**
+ * Suddivide i piatti in sottosezioni catalogo (grandi vs Icons).
+ * I piatti non elencati finiscono in un gruppo "altri", se presenti.
+ *
+ * @param {Product[]} items
+ * @returns {{ labelKey: string | null, items: Product[] }[]}
+ */
+export function getPiattiCatalogSections(items) {
+  const byId = new Map(items.map((p) => [p.id, p]));
+  const used = new Set();
+  const sections = [];
+
+  for (const sg of PIATTI_CATALOG_SUBGROUPS) {
+    const sgItems = sg.productIds.map((id) => byId.get(id)).filter(Boolean);
+    sgItems.forEach((p) => used.add(p.id));
+    if (sgItems.length) sections.push({ labelKey: sg.labelKey, items: sgItems });
+  }
+
+  const rest = items.filter((p) => !used.has(p.id));
+  if (rest.length) sections.push({ labelKey: "piattiAltri", items: rest });
+
+  return sections;
+}
+
 /**
  * Restituisce l'elenco di prodotti raggruppati per categoria, nell'ordine di
  * CATEGORY_ORDER. L'ordine interno è quello di dichiarazione in `products`.

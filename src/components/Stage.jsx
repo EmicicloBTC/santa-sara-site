@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight } from "./icons.jsx";
 import { useT, useLocalizedProduct, useLocalizedScene } from "../i18n/index.jsx";
 
 const SWIPE_THRESHOLD = 60;
+const AUTO_ADVANCE_MS = 30_000;
 
 // Chiave segreta per attivare l'editor in produzione.
 // In sviluppo (npm run dev) l'editor è sempre disponibile.
@@ -76,7 +77,15 @@ function getProductFocusImage(scene) {
   return images[idx] ?? images[0];
 }
 
-export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct, sceneNavLocked = false }) {
+export function Stage({
+  scenes,
+  sceneIndex,
+  onChangeScene,
+  onOpenProduct,
+  sceneNavLocked = false,
+  autoAdvance = false,
+  onDisableAutoAdvance,
+}) {
   const t = useT();
   const scene = scenes[sceneIndex];
   const localizedScene = useLocalizedScene(scene);
@@ -147,6 +156,14 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct, sceneN
   }, [scene.id, useMobileVariant, hasVideo]);
 
   useEffect(() => {
+    if (!autoAdvance || sceneNavLocked || sceneCount <= 1) return undefined;
+    const id = window.setInterval(() => {
+      onChangeScene((i) => (i + 1) % sceneCount);
+    }, AUTO_ADVANCE_MS);
+    return () => window.clearInterval(id);
+  }, [autoAdvance, sceneNavLocked, sceneIndex, sceneCount, onChangeScene]);
+
+  useEffect(() => {
     function onKey(e) {
       const target = e.target;
       const isFormField =
@@ -166,15 +183,15 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct, sceneN
 
       if (e.key === "ArrowRight") {
         e.preventDefault();
-        onChangeScene((sceneIndex + 1) % sceneCount);
+        go(1, true);
       } else if (e.key === "ArrowLeft") {
         e.preventDefault();
-        onChangeScene((sceneIndex - 1 + sceneCount) % sceneCount);
+        go(-1, true);
       }
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [sceneIndex, sceneCount, onChangeScene, editorAllowed, sceneNavLocked]);
+  }, [sceneIndex, sceneCount, onChangeScene, editorAllowed, sceneNavLocked, onDisableAutoAdvance]);
 
   function handleStageClick(e) {
     if (!editor || !imgRef.current) return;
@@ -184,7 +201,8 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct, sceneN
     setLastClick({ x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 });
   }
 
-  function go(delta) {
+  function go(delta, fromUser = false) {
+    if (fromUser) onDisableAutoAdvance?.();
     onChangeScene((sceneIndex + delta + sceneCount) % sceneCount);
   }
 
@@ -195,8 +213,8 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct, sceneN
           key={`${scene.id}-${isMobile ? "m" : "d"}`}
           drag={sceneCount > 1 ? "x" : false}
           onDragEnd={(_, info) => {
-            if (info.offset.x < -SWIPE_THRESHOLD) go(1);
-            else if (info.offset.x > SWIPE_THRESHOLD) go(-1);
+            if (info.offset.x < -SWIPE_THRESHOLD) go(1, true);
+            else if (info.offset.x > SWIPE_THRESHOLD) go(-1, true);
           }}
         >
           <div ref={imgRef} className="relative h-full w-full select-none">
@@ -270,7 +288,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct, sceneN
           <button
             type="button"
             aria-label={t.ui.prevScene}
-            onClick={() => go(-1)}
+            onClick={() => go(-1, true)}
             className="scene-nav-btn absolute left-3 top-1/2 z-30 -translate-y-1/2 sm:left-6"
           >
             <ChevronLeft size={22} />
@@ -278,7 +296,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct, sceneN
           <button
             type="button"
             aria-label={t.ui.nextScene}
-            onClick={() => go(1)}
+            onClick={() => go(1, true)}
             className="scene-nav-btn absolute right-3 top-1/2 z-30 -translate-y-1/2 sm:right-6"
           >
             <ChevronRight size={22} />
