@@ -18,7 +18,6 @@ export default function Landing() {
   const [autoAdvance, setAutoAdvance] = useState(true);
 
   const disableAutoAdvance = () => setAutoAdvance(false);
-  const toggleAutoAdvance = () => setAutoAdvance((v) => !v);
 
   const openContact = () => {
     setInfoOpen(false);
@@ -43,16 +42,10 @@ export default function Landing() {
         onOpenInfo={() => setInfoOpen(true)}
         onOpenCatalog={() => setCatalogOpen(true)}
         onOpenContact={openContact}
-        onDisableAutoAdvance={disableAutoAdvance}
         autoAdvance={autoAdvance}
+        onAutoAdvanceChange={setAutoAdvance}
       />
-      <Footer
-        sceneTitle={localizedScene.title}
-        sceneIndex={sceneIndex}
-        sceneCount={scenes.length}
-        autoAdvance={autoAdvance}
-        onToggleAutoAdvance={toggleAutoAdvance}
-      />
+      <Footer sceneTitle={localizedScene.title} sceneIndex={sceneIndex} sceneCount={scenes.length} />
       <CatalogModal
         open={catalogOpen}
         onClose={() => setCatalogOpen(false)}

@@ -35,11 +35,6 @@ const it = {
     openProductCard: "Apri scheda",
     catalog: "Catalogo",
     catalogBadge: "opere",
-    autoModeOn: "Auto",
-    autoModeOff: "Manuale",
-    autoModeAria: "Attiva o disattiva lo scorrimento automatico delle scene",
-    autoModeOnHint: "Scorrimento automatico attivo — clicca per passare a manuale",
-    autoModeOffHint: "Navigazione manuale — clicca per riattivare lo scorrimento automatico",
   },
   catalog: {
     aria: "Catalogo opere",
@@ -418,11 +413,6 @@ const en = {
     openProductCard: "Open product card",
     catalog: "Catalog",
     catalogBadge: "works",
-    autoModeOn: "Auto",
-    autoModeOff: "Manual",
-    autoModeAria: "Turn automatic scene slideshow on or off",
-    autoModeOnHint: "Automatic slideshow on — click to switch to manual",
-    autoModeOffHint: "Manual navigation — click to turn automatic slideshow back on",
   },
   catalog: {
     aria: "Works catalog",
