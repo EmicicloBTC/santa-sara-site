@@ -4,7 +4,7 @@ import { Close, Instagram, TikTok, ShoppingBag } from "./icons.jsx";
 import { site } from "../data/site.js";
 import { useT } from "../i18n/index.jsx";
 
-export function InfoModal({ open, onClose }) {
+export function InfoModal({ open, onClose, onOpenContact }) {
   const t = useT();
   useEffect(() => {
     if (!open) return undefined;
@@ -72,10 +72,14 @@ export function InfoModal({ open, onClose }) {
             </p>
             <p className="mt-4 text-base leading-[1.75] text-stone-700">
               {t.info.paragraph2Prefix}{" "}
-              <a className="underline underline-offset-4 hover:text-stone-950" href={`mailto:${site.email}`}>
-                {site.email}
-              </a>
-              .
+              <button
+                type="button"
+                onClick={() => onOpenContact?.()}
+                className="font-medium underline underline-offset-4 transition hover:text-stone-950"
+              >
+                {t.contact.writeUs}
+              </button>
+              {" "}({site.email}).
             </p>
 
             <div className="mt-7 grid gap-2 sm:grid-cols-3">

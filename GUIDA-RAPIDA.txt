@@ -109,6 +109,13 @@ SANTA SARA — Guida rapida (senza terminale)
    Alternativa: inoltro email dal pannello del registrar del dominio, se previsto.
    L'indirizzo da modificare nel codice (solo visualizzazione) è in src\data\site.js
 
+11) Modulo Contatti (form sul sito)
+   - Menu → Contatti, oppure Bio → "scrivici qui": si apre un modal con nome,
+     email, nazione e messaggio (non apre più il client email).
+   - I messaggi arrivano in Netlify → Site configuration → Forms → contact
+   - Per riceverli su Gmail: Forms → Form notifications → aggiungi
+     lillosara84@gmail.com (o attiva le notifiche del team Netlify)
+
 ────────────────────────────────────────
 DA FARE DOPO (promemoria)
 ────────────────────────────────────────

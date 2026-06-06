@@ -117,6 +117,13 @@
     </script>
   </head>
   <body>
+    <!-- Form nascosto per Netlify Forms (SPA): il modal React invia qui i messaggi -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="country" />
+      <textarea name="message"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

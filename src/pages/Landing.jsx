@@ -6,6 +6,7 @@ import { Footer } from "../components/Footer.jsx";
 import { ProductModal } from "../components/ProductModal.jsx";
 import { InfoModal } from "../components/InfoModal.jsx";
 import { CatalogModal } from "../components/CatalogModal.jsx";
+import { ContactModal } from "../components/ContactModal.jsx";
 import { useLocalizedScene } from "../i18n/index.jsx";
 
 export default function Landing() {
@@ -13,6 +14,12 @@ export default function Landing() {
   const [openProduct, setOpenProduct] = useState(null);
   const [infoOpen, setInfoOpen] = useState(false);
   const [catalogOpen, setCatalogOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+
+  const openContact = () => {
+    setInfoOpen(false);
+    setContactOpen(true);
+  };
 
   const scene = scenes[sceneIndex];
   const localizedScene = useLocalizedScene(scene);
@@ -24,11 +31,12 @@ export default function Landing() {
         sceneIndex={sceneIndex}
         onChangeScene={setSceneIndex}
         onOpenProduct={setOpenProduct}
-        sceneNavLocked={!!openProduct || infoOpen || catalogOpen}
+        sceneNavLocked={!!openProduct || infoOpen || catalogOpen || contactOpen}
       />
       <Header
         onOpenInfo={() => setInfoOpen(true)}
         onOpenCatalog={() => setCatalogOpen(true)}
+        onOpenContact={openContact}
       />
       <Footer sceneTitle={localizedScene.title} sceneIndex={sceneIndex} sceneCount={scenes.length} />
       <CatalogModal
@@ -37,7 +45,8 @@ export default function Landing() {
         onOpenProduct={setOpenProduct}
       />
       <ProductModal product={openProduct} onClose={() => setOpenProduct(null)} />
-      <InfoModal open={infoOpen} onClose={() => setInfoOpen(false)} />
+      <InfoModal open={infoOpen} onClose={() => setInfoOpen(false)} onOpenContact={openContact} />
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </main>
   );
 }

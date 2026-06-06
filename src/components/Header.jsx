@@ -7,7 +7,7 @@ import { useT, useLang } from "../i18n/index.jsx";
 const MENU_EASE = [0.22, 1, 0.36, 1];
 const MENU_PANEL_TRANSITION = { duration: 0.32, ease: MENU_EASE };
 
-export function Header({ onOpenInfo, onOpenCatalog }) {
+export function Header({ onOpenInfo, onOpenCatalog, onOpenContact }) {
   const [open, setOpen] = useState(false);
   const t = useT();
   const { lang, setLang } = useLang();
@@ -168,14 +168,18 @@ export function Header({ onOpenInfo, onOpenCatalog }) {
               </span>
             </a>
 
-            <a
-              href={`mailto:${site.email}`}
+            <button
+              type="button"
               role="menuitem"
-              className="flex w-full items-center justify-between border-t border-stone-950/10 px-4 py-3 text-sm transition hover:bg-stone-950/5"
+              onClick={() => {
+                setOpen(false);
+                onOpenContact?.();
+              }}
+              className="flex w-full items-center justify-between border-t border-stone-950/10 px-4 py-3 text-left text-sm transition hover:bg-stone-950/5"
             >
               {t.ui.contacts}
               <span className="text-[10px] uppercase tracking-[0.18em] text-stone-500">{t.ui.emailBadge}</span>
-            </a>
+            </button>
             </motion.div>
           )}
         </AnimatePresence>

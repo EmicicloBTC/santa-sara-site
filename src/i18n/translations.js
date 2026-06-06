@@ -69,8 +69,26 @@ const it = {
     paragraph1:
       "Ceramiche ornamentali decorate a mano. Ogni pezzo è unico, dipinto in atelier: forma classica, segno contemporaneo. Nessuna serie industriale, nessun catalogo da supermercato — solo oggetti che entrano in casa con una posizione.",
     paragraph2Prefix:
-      "Per disponibilità, commissioni private o visite all'atelier scrivere a",
+      "Per disponibilità, commissioni private o visite all'atelier",
     etsyBadge: "shop",
+  },
+  contact: {
+    aria: "Modulo contatti",
+    title: "Scrivici",
+    subtitle: "Per disponibilità, commissioni private o domande sui pezzi.",
+    name: "Nome",
+    namePlaceholder: "Il tuo nome",
+    email: "Email",
+    emailPlaceholder: "nome@esempio.com",
+    country: "Nazione",
+    countryPlaceholder: "Italia, United Kingdom…",
+    message: "Messaggio",
+    messagePlaceholder: "Scrivi qui il tuo messaggio…",
+    send: "Invia messaggio",
+    sending: "Invio in corso…",
+    success: "Messaggio inviato. Ti risponderemo presto a questa email.",
+    error: "Invio non riuscito. Riprova tra poco o scrivi a hello@santasara.com",
+    writeUs: "scrivici qui",
   },
   scenes: {
     "scene-1": {
@@ -419,8 +437,26 @@ const en = {
     paragraph1:
       "Hand-painted ornamental ceramics. Each piece is unique, painted in the atelier: classical form, contemporary mark. No industrial series, no supermarket catalogue — only objects that enter the home with a stance.",
     paragraph2Prefix:
-      "For availability, private commissions or atelier visits, please write to",
+      "For availability, private commissions or atelier visits",
     etsyBadge: "shop",
+  },
+  contact: {
+    aria: "Contact form",
+    title: "Get in touch",
+    subtitle: "For availability, private commissions or questions about the pieces.",
+    name: "Name",
+    namePlaceholder: "Your name",
+    email: "Email",
+    emailPlaceholder: "name@example.com",
+    country: "Country",
+    countryPlaceholder: "Italy, United Kingdom…",
+    message: "Message",
+    messagePlaceholder: "Write your message here…",
+    send: "Send message",
+    sending: "Sending…",
+    success: "Message sent. We will reply to your email soon.",
+    error: "Could not send. Please try again or email hello@santasara.com",
+    writeUs: "contact us here",
   },
   scenes: {
     "scene-1": {
