@@ -7,6 +7,7 @@ import {
   productCover,
 } from "../data/products.js";
 import { useT } from "../i18n/index.jsx";
+import { preloadAll } from "../utils/imagePreload.js";
 
 /**
  * Overlay catalogo: griglia di tutte le opere raggruppate per categoria con
@@ -29,6 +30,35 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
   );
 
   const [activeFilter, setActiveFilter] = useState("__all");
+  const [coversReady, setCoversReady] = useState(false);
+  const [revealGeneration, setRevealGeneration] = useState(0);
+
+  const coverUrls = useMemo(
+    () => groups.flatMap((g) => g.items.map((p) => productCover(p)).filter(Boolean)),
+    [groups],
+  );
+
+  useEffect(() => {
+    if (!open) {
+      setCoversReady(false);
+      return undefined;
+    }
+
+    let alive = true;
+    setCoversReady(false);
+
+    preloadAll(coverUrls).then(() => {
+      if (alive) setCoversReady(true);
+    });
+
+    return () => {
+      alive = false;
+    };
+  }, [open, coverUrls]);
+
+  useEffect(() => {
+    if (coversReady) setRevealGeneration((g) => g + 1);
+  }, [coversReady, activeFilter]);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -164,17 +194,26 @@ export function CatalogModal({ open, onClose, onOpenProduct }) {
                   </header>
 
                   <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
-                    {group.items.map((product) => (
-                      <li key={product.id}>
-                        <CatalogCard
-                          product={product}
-                          onClick={() => {
-                            onOpenProduct?.(product);
-                          }}
-                          t={t}
-                        />
-                      </li>
-                    ))}
+                    {group.items.map((product, itemIdx) => {
+                      const staggerIndex =
+                        visibleGroups
+                          .slice(0, idx)
+                          .reduce((acc, g) => acc + g.items.length, 0) + itemIdx;
+                      return (
+                        <li key={product.id}>
+                          <CatalogCard
+                            product={product}
+                            staggerIndex={staggerIndex}
+                            revealKey={revealGeneration}
+                            animateIn={coversReady}
+                            onClick={() => {
+                              onOpenProduct?.(product);
+                            }}
+                            t={t}
+                          />
+                        </li>
+                      );
+                    })}
                   </ul>
                 </section>
               ))}
@@ -237,12 +276,18 @@ function FilterChip({ label, count, active, onClick }) {
   );
 }
 
-function CatalogCard({ product, onClick, t }) {
+function CatalogCard({ product, onClick, t, staggerIndex, revealKey, animateIn }) {
   const cover = productCover(product);
   const isSold = product.sold === true;
   const categoryLabel = product.category
     ? t.category?.[product.category] ?? product.category
     : null;
+
+  const imageTransition = {
+    duration: 0.5,
+    delay: animateIn ? staggerIndex * 0.045 : 0,
+    ease: [0.22, 1, 0.36, 1],
+  };
 
   return (
     <button
@@ -252,6 +297,12 @@ function CatalogCard({ product, onClick, t }) {
       className="group block w-full overflow-hidden rounded-xl bg-white/70 text-left shadow-sm ring-1 ring-stone-950/10 transition hover:bg-white hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-950"
     >
       <div className="relative aspect-square w-full overflow-hidden bg-[#efe8db]">
+        {!animateIn && cover && (
+          <div
+            aria-hidden
+            className="absolute inset-0 animate-pulse bg-gradient-to-br from-[#e8e0d4] via-[#efe8db] to-[#e5ddd0]"
+          />
+        )}
         {categoryLabel && (
           <span className="pointer-events-none absolute left-2 top-2 z-10 inline-flex items-center rounded-full bg-white/85 px-2.5 py-1 text-[9px] font-medium uppercase tracking-[0.24em] text-stone-700 shadow ring-1 ring-stone-950/10 backdrop-blur-md">
             {categoryLabel}
@@ -266,12 +317,19 @@ function CatalogCard({ product, onClick, t }) {
           </span>
         )}
         {cover ? (
-          <img
+          <motion.img
+            key={`${product.id}-${revealKey}`}
             src={cover}
             alt={product.title}
-            loading="lazy"
             decoding="async"
             draggable={false}
+            initial={{ opacity: 0, scale: 1.025 }}
+            animate={
+              animateIn
+                ? { opacity: 1, scale: 1 }
+                : { opacity: 0, scale: 1.025 }
+            }
+            transition={imageTransition}
             className="h-full w-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
           />
         ) : (

@@ -3,25 +3,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { productImages } from "../data/products.js";
 import { Arrow, ChevronLeft, ChevronRight, Close } from "./icons.jsx";
 import { useT, useLocalizedProduct } from "../i18n/index.jsx";
+import { loadImage, preloadUrls } from "../utils/imagePreload.js";
 
 const AUTO_MS = 3000;
-
-/**
- * Precarica un set di URL nel browser (cache HTTP). Idempotente:
- * tiene traccia di cosa è già stato richiesto e non ripete il lavoro.
- * Così quando il modal cambia foto, il browser le mostra istantaneamente.
- */
-const preloadedUrls = new Set();
-function preloadUrls(urls) {
-  if (typeof window === "undefined") return;
-  for (const url of urls) {
-    if (preloadedUrls.has(url)) continue;
-    preloadedUrls.add(url);
-    const img = new Image();
-    img.decoding = "async";
-    img.src = url;
-  }
-}
 
 // Variants per la slide "galleria": la foto nuova entra da destra (o sinistra,
 // se si va indietro), quella vecchia esce dal lato opposto.
@@ -46,11 +30,32 @@ export function ProductModal({ product, onClose }) {
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(1);
   const [paused, setPaused] = useState(false);
+  const [galleryReady, setGalleryReady] = useState(false);
+  const [decodedUrls, setDecodedUrls] = useState(() => new Set());
 
-  // Precarica tutte le foto del prodotto appena cambia (anche prima di aprire,
-  // perché preloadUrls non blocca). Così l'apertura non ha "salti".
   useEffect(() => {
-    if (images.length) preloadUrls(images);
+    if (!images.length) {
+      setGalleryReady(true);
+      setDecodedUrls(new Set());
+      return undefined;
+    }
+
+    preloadUrls(images);
+    let alive = true;
+    setGalleryReady(false);
+    setDecodedUrls(new Set());
+
+    Promise.all(images.map((url) => loadImage(url).then(() => url).catch(() => null))).then(
+      (results) => {
+        if (!alive) return;
+        setDecodedUrls(new Set(results.filter(Boolean)));
+        setGalleryReady(true);
+      },
+    );
+
+    return () => {
+      alive = false;
+    };
   }, [images]);
 
   // Reset slide quando cambia prodotto.
@@ -110,13 +115,13 @@ export function ProductModal({ product, onClose }) {
   }, [open]);
 
   useEffect(() => {
-    if (!open || images.length <= 1 || paused) return undefined;
+    if (!open || images.length <= 1 || paused || !galleryReady) return undefined;
     const id = window.setInterval(() => {
       setDirection(1);
       setActive((p) => (p + 1) % images.length);
     }, AUTO_MS);
     return () => window.clearInterval(id);
-  }, [open, images.length, paused, product?.id]);
+  }, [open, images.length, paused, galleryReady, product?.id]);
 
   return (
     <AnimatePresence>
@@ -159,6 +164,12 @@ export function ProductModal({ product, onClose }) {
             </button>
 
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#efe8db] md:aspect-auto md:min-h-[520px]">
+              {!galleryReady && (
+                <div
+                  aria-hidden
+                  className="absolute inset-0 z-[5] animate-pulse bg-gradient-to-br from-[#e8e0d4] via-[#efe8db] to-[#e5ddd0]"
+                />
+              )}
               {localized.categoryLabel && (
                 <span className="pointer-events-none absolute left-3 top-3 z-20 inline-flex items-center rounded-full bg-white/85 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.28em] text-stone-700 shadow ring-1 ring-stone-950/15 backdrop-blur-md">
                   {localized.categoryLabel}
@@ -173,7 +184,7 @@ export function ProductModal({ product, onClose }) {
                 </span>
               )}
               <AnimatePresence initial={false} custom={direction}>
-                {images[active] ? (
+                {images[active] && galleryReady && decodedUrls.has(images[active]) ? (
                   <motion.img
                     key={images[active]}
                     src={images[active]}
@@ -189,13 +200,13 @@ export function ProductModal({ product, onClose }) {
                     transition={SLIDE_TRANSITION}
                     className="absolute inset-0 h-full w-full object-contain p-3 will-change-transform sm:p-5"
                   />
-                ) : (
+                ) : !images[active] ? (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-[11px] font-medium uppercase tracking-[0.32em] text-stone-500">
                       {t.modal.photosComingSoon}
                     </span>
                   </div>
-                )}
+                ) : null}
               </AnimatePresence>
 
               {images.length > 1 && (

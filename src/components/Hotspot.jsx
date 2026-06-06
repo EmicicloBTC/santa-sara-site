@@ -1,18 +1,13 @@
 import { productImages } from "../data/products.js";
 import { Plus } from "./icons.jsx";
 import { useT, useLocalizedProduct } from "../i18n/index.jsx";
+import { preloadUrls } from "../utils/imagePreload.js";
 
-// Precaricamento lazy delle immagini di un prodotto al primo hover/focus
-// sul hotspot. Quando poi l'utente clicca, il modal apre con foto già in cache.
-const preloaded = new Set();
+const preloadedProducts = new Set();
 function preloadProduct(product) {
-  if (!product || preloaded.has(product.id) || typeof window === "undefined") return;
-  preloaded.add(product.id);
-  for (const url of productImages(product)) {
-    const img = new Image();
-    img.decoding = "async";
-    img.src = url;
-  }
+  if (!product || preloadedProducts.has(product.id) || typeof window === "undefined") return;
+  preloadedProducts.add(product.id);
+  preloadUrls(productImages(product));
 }
 
 /** Punto interattivo su un prodotto dentro la scena. Le coordinate sono in % rispetto al box scena. */
