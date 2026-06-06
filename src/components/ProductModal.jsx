@@ -157,7 +157,7 @@ export function ProductModal({ product, onClose }) {
             role="dialog"
             aria-modal="true"
             aria-label={product.title}
-            className="relative z-10 grid max-h-[90vh] w-full max-w-5xl overflow-hidden rounded-2xl bg-[#f6f1e8] text-stone-950 shadow-2xl ring-1 ring-stone-950/20 md:grid-cols-[1.1fr_1fr]"
+            className="relative z-10 flex max-h-[92dvh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-[#f6f1e8] text-stone-950 shadow-2xl ring-1 ring-stone-950/20 md:grid md:max-h-[90vh] md:grid-cols-[1.1fr_1fr]"
             initial={{ opacity: 0, y: 30, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
@@ -174,7 +174,7 @@ export function ProductModal({ product, onClose }) {
               <Close size={16} />
             </button>
 
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#efe8db] md:aspect-auto md:min-h-[520px]">
+            <div className="relative aspect-[4/5] max-h-[44dvh] w-full shrink-0 overflow-hidden bg-[#efe8db] md:aspect-auto md:max-h-none md:min-h-[520px]">
               {!galleryReady && (
                 <div
                   aria-hidden
@@ -266,14 +266,27 @@ export function ProductModal({ product, onClose }) {
                   </div>
                 </>
               )}
+
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/70 via-black/35 to-transparent px-4 pb-3 pt-12 md:hidden"
+              >
+                <p className="font-serif text-2xl leading-[1.05] tracking-[-0.025em] text-white">
+                  {product.title}
+                </p>
+                <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.28em] text-stone-200/90">
+                  {isSold ? t.modal.sold : localized.price}
+                  {localized.dimensions ? ` · ${localized.dimensions}` : ""}
+                </p>
+              </div>
             </div>
 
-            <div className="flex max-h-[90vh] flex-col overflow-y-auto p-6 sm:p-8 md:p-10">
-              <h2 className="font-serif text-4xl leading-[1.05] tracking-[-0.025em] sm:text-5xl">
+            <div className="flex min-h-0 flex-1 flex-col overflow-hidden p-4 sm:p-8 md:max-h-[90vh] md:overflow-y-auto md:p-10">
+              <h2 className="hidden font-serif text-4xl leading-[1.05] tracking-[-0.025em] md:block sm:text-5xl">
                 {product.title}
               </h2>
 
-              <dl className="mt-6 grid grid-cols-2 gap-4 border-y border-stone-950/15 py-4 text-sm">
+              <dl className="mt-0 hidden grid-cols-2 gap-3 border-y border-stone-950/15 py-3 text-sm md:mt-6 md:grid md:gap-4 md:py-4">
                 <div>
                   <dt className="text-[10px] font-medium uppercase tracking-[0.28em] text-stone-500">{t.modal.dimensions}</dt>
                   <dd className="mt-1 font-serif text-base tracking-[-0.01em] text-stone-900">
@@ -297,12 +310,14 @@ export function ProductModal({ product, onClose }) {
                 </div>
               </dl>
 
-              <p className="mt-6 text-base leading-[1.7] text-stone-700">{localized.description}</p>
+              <p className="mt-3 line-clamp-2 text-sm leading-[1.55] text-stone-700 md:mt-6 md:line-clamp-none md:text-base md:leading-[1.7]">
+                {localized.description}
+              </p>
 
-              <div className="mt-auto space-y-3 pt-8">
+              <div className="mt-auto space-y-2 pt-4 md:space-y-3 md:pt-8">
                 {isSold ? (
                   <span
-                    className="inline-flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-full border border-stone-950/15 bg-stone-200/70 px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-stone-500 sm:w-auto"
+                    className="inline-flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-full border border-stone-950/15 bg-stone-200/70 px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-stone-500 md:px-6 md:py-4 md:text-[11px] sm:w-auto"
                     aria-disabled="true"
                   >
                     {t.modal.soldStamp}
@@ -312,7 +327,7 @@ export function ProductModal({ product, onClose }) {
                     href={product.ctaHref || "#"}
                     target={product.ctaHref?.startsWith("http") ? "_blank" : undefined}
                     rel={product.ctaHref?.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-stone-950 px-6 py-4 text-[11px] font-medium uppercase tracking-[0.32em] text-white transition hover:bg-[#3a342d] sm:w-auto"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-stone-950 px-5 py-3 text-[10px] font-medium uppercase tracking-[0.3em] text-white transition hover:bg-[#3a342d] md:gap-3 md:px-6 md:py-4 md:text-[11px] md:tracking-[0.32em] sm:w-auto"
                   >
                     {localized.cta || t.modal.askAvailability} <Arrow size={14} />
                   </a>
@@ -320,7 +335,7 @@ export function ProductModal({ product, onClose }) {
                 <button
                   type="button"
                   onClick={handleShare}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stone-950/15 bg-white/55 px-6 py-3 text-[10px] font-medium uppercase tracking-[0.28em] text-stone-700 transition hover:bg-white sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stone-950/15 bg-white/55 px-5 py-2.5 text-[10px] font-medium uppercase tracking-[0.26em] text-stone-700 transition hover:bg-white md:px-6 md:py-3 md:tracking-[0.28em] sm:w-auto"
                 >
                   <Share size={14} />
                   {shareHint === "copied"
