@@ -113,8 +113,12 @@ SANTA SARA — Guida rapida (senza terminale)
    - Menu → Contatti, oppure Bio → "scrivici qui": si apre un modal con nome,
      email, nazione e messaggio (non apre più il client email).
    - I messaggi arrivano in Netlify → Site configuration → Forms → contact
-   - Per riceverli su Gmail: Forms → Form notifications → aggiungi
-     lillosara84@gmail.com (o attiva le notifiche del team Netlify)
+   - Per riceverli su Gmail: Project configuration → Notifications →
+     Form submission notifications → Add notification → Email notification
+     → Email: lillosara84@gmail.com
+     → Form: se non compare "contact", usa "Any form" (va bene lo stesso)
+   - Se Forms è vuoto: abilita "Enable form detection", poi attendi un deploy
+     (push su GitHub). Dopo 1-2 min ricarica Forms: deve comparire "contact".
 
 ────────────────────────────────────────
 DA FARE DOPO (promemoria)
