@@ -108,7 +108,7 @@ export const scenes = [
     alt: "Tavolo serale con vaso Dandy Land a sinistra e pezzo Messieur a destra",
     hotspots: [
       { productId: "dandy-land", x: 40, y: 54, r: 7 },
-      { productId: "messieur", x: 70, y: 56, r: 6 },
+      { productId: "messieur", x: 62, y: 56, r: 6 },
     ],
     hotspotsMobile: [
       { productId: "dandy-land", x: 38, y: 52, r: 8 },
