@@ -326,7 +326,7 @@ export const scenes = [
     type: "productFocus",
     title: "Messieur",
     productId: "messieur",
-    productImageIndex: 3,
+    productImageIndex: 1,
     alt: "Messieur — bottiglia decorativa decorata a mano",
     hotspots: [],
   },
