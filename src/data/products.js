@@ -370,7 +370,7 @@ export const PIATTI_CATALOG_SUBGROUPS = [
   {
     id: "icons",
     labelKey: "piattiIcons",
-    productIds: ["chappell-roan", "iris-apfel", "lady-gaga"],
+    productIds: ["chappell-roan", "iris-apfel", "lady-gaga", "yayoi-kusama"],
   },
 ];
 
