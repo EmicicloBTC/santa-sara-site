@@ -81,6 +81,14 @@ const it = {
       title: "Visionari II",
       alt: "Visionari II — cachepot neoclassico decorato a mano",
     },
+    "scene-1-second": {
+      title: "Tavolo · Natale",
+      alt: "Tavolo con le quattro palle natalizie: Bovine Divine, Mid Winter, Gift Giving e Dragonbell",
+    },
+    "scene-1-focus-dragonbell": {
+      title: "Dragonbell",
+      alt: "Dragonbell — palla natalizia decorata a mano",
+    },
     "scene-1-bis": {
       title: "Balcone · Città",
       alt: "Balcone con cachepot Visionari II e vaso Dandy Land al centro",
@@ -88,6 +96,10 @@ const it = {
     "scene-2": {
       title: "Tavolo · Sera",
       alt: "Tavolo serale con vaso Dandy Land a sinistra e pezzo Messieur a destra",
+    },
+    "scene-2-focus-messieur": {
+      title: "Messieur",
+      alt: "Messieur — bottiglia decorativa decorata a mano",
     },
     "scene-3": {
       title: "Lobby · Classico",
@@ -371,6 +383,14 @@ const en = {
       title: "Visionari II",
       alt: "Visionari II — hand-painted neoclassical cachepot",
     },
+    "scene-1-second": {
+      title: "Table · Christmas",
+      alt: "Table with four Christmas baubles: Bovine Divine, Mid Winter, Gift Giving and Dragonbell",
+    },
+    "scene-1-focus-dragonbell": {
+      title: "Dragonbell",
+      alt: "Dragonbell — hand-painted Christmas bauble",
+    },
     "scene-1-bis": {
       title: "Balcony · City",
       alt: "Balcony with Visionari II cachepot and Dandy Land vase at the center",
@@ -378,6 +398,10 @@ const en = {
     "scene-2": {
       title: "Table · Evening",
       alt: "Evening table with Dandy Land vase on the left and Messieur piece on the right",
+    },
+    "scene-2-focus-messieur": {
+      title: "Messieur",
+      alt: "Messieur — hand-painted decorative bottle",
     },
     "scene-3": {
       title: "Lobby · Classic",
