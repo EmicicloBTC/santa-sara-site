@@ -271,7 +271,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct, sceneN
             type="button"
             aria-label={t.ui.prevScene}
             onClick={() => go(-1)}
-            className="absolute left-3 top-1/2 z-20 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-xl transition hover:bg-white/30 sm:left-6 sm:h-14 sm:w-14"
+            className="scene-nav-btn absolute left-3 top-1/2 z-30 -translate-y-1/2 sm:left-6"
           >
             <ChevronLeft size={22} />
           </button>
@@ -279,7 +279,7 @@ export function Stage({ scenes, sceneIndex, onChangeScene, onOpenProduct, sceneN
             type="button"
             aria-label={t.ui.nextScene}
             onClick={() => go(1)}
-            className="absolute right-3 top-1/2 z-20 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-xl transition hover:bg-white/30 sm:right-6 sm:h-14 sm:w-14"
+            className="scene-nav-btn absolute right-3 top-1/2 z-30 -translate-y-1/2 sm:right-6"
           >
             <ChevronRight size={22} />
           </button>
