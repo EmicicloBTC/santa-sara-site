@@ -120,9 +120,10 @@ SANTA SARA — Guida rapida (senza terminale)
    - Se Forms è vuoto: abilita "Enable form detection", poi attendi un deploy
      (push su GitHub). Dopo 1-2 min ricarica Forms: deve comparire "contact".
    - Se invii dal sito ma non arriva email: Netlify → Forms → contact →
-     "Verified submissions" (devono comparire lì). Se la lista è vuota, il form
-     non stava registrando gli invii (fix già nel codice: POST su pagina statica).
-     Controlla anche spam in Gmail.
+     "Verified submissions" (devono comparire lì). Se la lista è vuota, apri il
+     menu in alto e controlla anche "Spam submissions".
+     Se vedi "Last submission" ma "No submissions yet", spesso l'invio è in Spam
+     oppure bloccato dal redirect SPA (fix nel codice). Controlla anche Gmail spam.
 
 ────────────────────────────────────────
 DA FARE DOPO (promemoria)

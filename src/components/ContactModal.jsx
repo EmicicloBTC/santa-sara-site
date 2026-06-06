@@ -53,7 +53,6 @@ export function ContactModal({ open, onClose }) {
       email: fields.email.trim(),
       country: fields.country.trim(),
       message: fields.message.trim(),
-      "bot-field": "",
     });
 
     try {
