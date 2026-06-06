@@ -272,7 +272,7 @@ export const products = {
     id: "gift-giving",
     title: "Gift Giving",
     category: "Palle",
-    kind: "Palla decorata a mano",
+    kind: "Palla natalizia decorata a mano",
     dimensions: "l 12 cm",
     description:
       "Materiali: ceramica. Palla natalizia decorata a mano con ritratto e scritta Gift Giving. Pezzo unico, decorato a mano in atelier.",
@@ -280,6 +280,45 @@ export const products = {
     cta: "Acquista su Etsy",
     ctaHref: "https://www.etsy.com/it/listing/4403794692/handmade-ceramic-christmas-ball-1350",
     images: { slug: "palle/gift-giving", count: 4, ext: "jpg" },
+  },
+  "divine-bovine": {
+    id: "divine-bovine",
+    title: "Bovine Divine",
+    category: "Palle",
+    kind: "Palla natalizia decorata a mano",
+    dimensions: "l 12 cm",
+    description:
+      "Materiali: ceramica. Palla natalizia decorata a mano con ritratto bovino e scritta Bovine Divine. Pezzo unico, decorato a mano in atelier.",
+    price: "€ 45",
+    cta: "Chiedi disponibilità",
+    ctaHref: "mailto:hello@santasara.com?subject=Bovine Divine — disponibilità",
+    images: { slug: "palle/divine-bovine", count: 4, ext: "png" },
+  },
+  dragonbell: {
+    id: "dragonbell",
+    title: "Dragonbell",
+    category: "Palle",
+    kind: "Palla natalizia decorata a mano",
+    dimensions: "l 10 cm",
+    description:
+      "Materiali: ceramica. Palla natalizia decorata a mano con drago e campana. Pezzo unico, decorato a mano in atelier.",
+    price: "€ 50",
+    cta: "Chiedi disponibilità",
+    ctaHref: "mailto:hello@santasara.com?subject=Dragonbell — disponibilità",
+    images: { slug: "palle/dragonbell", count: 4, ext: "jpg" },
+  },
+  "mid-winter": {
+    id: "mid-winter",
+    title: "Mid Winter",
+    category: "Palle",
+    kind: "Palla natalizia decorata a mano",
+    dimensions: "l 10 cm",
+    description:
+      "Materiali: ceramica. Palla natalizia decorata a mano con atmosfera mid-winter. Pezzo unico, decorato a mano in atelier.",
+    price: "€ 50",
+    cta: "Chiedi disponibilità",
+    ctaHref: "mailto:hello@santasara.com?subject=Mid Winter — disponibilità",
+    images: { slug: "palle/mid-winter", count: 4, ext: "jpg" },
   },
 };
 

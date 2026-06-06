@@ -150,6 +150,33 @@ gift-giving
   Etsy:         https://www.etsy.com/it/listing/4403794692/handmade-ceramic-christmas-ball-1350
   Note:         scena 15 (Soggiorno · Marmo nero)
 
+divine-bovine
+  Titolo:       Bovine Divine
+  Categoria:    Palle
+  Prezzo:       € 45
+  Materiali:    ceramica
+  Dimensioni:   l 12 cm
+  Etsy:         (da completare)
+  Note:         catalogo
+
+dragonbell
+  Titolo:       Dragonbell
+  Categoria:    Palle
+  Prezzo:       € 50
+  Materiali:    ceramica
+  Dimensioni:   l 10 cm
+  Etsy:         (da completare)
+  Note:         catalogo
+
+mid-winter
+  Titolo:       Mid Winter
+  Categoria:    Palle
+  Prezzo:       € 50
+  Materiali:    ceramica
+  Dimensioni:   l 10 cm
+  Etsy:         (da completare)
+  Note:         catalogo
+
 ────────────────────────────────────────
 DA AGGIUNGERE (prossimi batch)
 ────────────────────────────────────────

@@ -77,6 +77,10 @@ const it = {
       title: "Terrazza · Mare",
       alt: "Terrazza affacciata sul mare con cachepot Visionari II sul muretto e vaso Dandy Land in primo piano",
     },
+    "scene-1-focus-visionari-ii": {
+      title: "Visionari II",
+      alt: "Visionari II — cachepot neoclassico decorato a mano",
+    },
     "scene-1-bis": {
       title: "Balcone · Città",
       alt: "Balcone con cachepot Visionari II e vaso Dandy Land al centro",
@@ -276,6 +280,27 @@ const it = {
       price: "€ 45",
       cta: "Acquista su Etsy",
     },
+    "divine-bovine": {
+      description:
+        "Materiali: ceramica. Palla natalizia decorata a mano con ritratto bovino e scritta Bovine Divine. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 12 cm",
+      price: "€ 45",
+      cta: "Chiedi disponibilità",
+    },
+    dragonbell: {
+      description:
+        "Materiali: ceramica. Palla natalizia decorata a mano con drago e campana. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 10 cm",
+      price: "€ 50",
+      cta: "Chiedi disponibilità",
+    },
+    "mid-winter": {
+      description:
+        "Materiali: ceramica. Palla natalizia decorata a mano con atmosfera mid-winter. Pezzo unico, decorato a mano in atelier.",
+      dimensions: "l 10 cm",
+      price: "€ 50",
+      cta: "Chiedi disponibilità",
+    },
   },
 };
 
@@ -341,6 +366,10 @@ const en = {
     "scene-1": {
       title: "Terrace · Sea",
       alt: "Seaside terrace with the Visionari II cachepot on the wall and the Dandy Land vase in the foreground",
+    },
+    "scene-1-focus-visionari-ii": {
+      title: "Visionari II",
+      alt: "Visionari II — hand-painted neoclassical cachepot",
     },
     "scene-1-bis": {
       title: "Balcony · City",
@@ -540,6 +569,27 @@ const en = {
       dimensions: "w 12 cm",
       price: "€ 45",
       cta: "Buy on Etsy",
+    },
+    "divine-bovine": {
+      description:
+        "Materials: ceramic. Hand-painted Christmas bauble with bovine portrait and Bovine Divine lettering. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 12 cm",
+      price: "€ 45",
+      cta: "Check availability",
+    },
+    dragonbell: {
+      description:
+        "Materials: ceramic. Hand-painted Christmas bauble with dragon and bell motif. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 10 cm",
+      price: "€ 50",
+      cta: "Check availability",
+    },
+    "mid-winter": {
+      description:
+        "Materials: ceramic. Hand-painted Christmas bauble with a mid-winter atmosphere. One-of-a-kind, hand-painted in atelier.",
+      dimensions: "w 10 cm",
+      price: "€ 50",
+      cta: "Check availability",
     },
   },
 };

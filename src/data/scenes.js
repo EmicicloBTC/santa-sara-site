@@ -29,6 +29,12 @@
  * @property {{ src: string, poster?: string }} [videoMobile]
  *   Variante mobile (verticale) del video. Se non c'è, su telefono viene
  *   usato `video`.
+ * @property {"productFocus"} [type]
+ *   Scena intermedia: mostra un prodotto a tutto schermo, cliccabile.
+ * @property {string} [productId]
+ *   Prodotto da mostrare (richiesto se type === "productFocus").
+ * @property {number} [productImageIndex]
+ *   Indice foto prodotto (1-based). Default 1.
  *
  * Per posizionare i hotspot facilmente attiva l'editor: premi "E" (o "?") sulla
  * landing e clicca sopra il prodotto. In alto a destra appare la riga da
@@ -56,6 +62,15 @@ export const scenes = [
       { productId: "visionari-ii", x: 70, y: 34, r: 9 },
       { productId: "dandy-land", x: 45, y: 50, r: 10 },
     ],
+  },
+  {
+    id: "scene-1-focus-visionari-ii",
+    type: "productFocus",
+    title: "Visionari II",
+    productId: "visionari-ii",
+    productImageIndex: 2,
+    alt: "Visionari II — cachepot neoclassico decorato a mano",
+    hotspots: [],
   },
   {
     id: "scene-2",
