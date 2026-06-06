@@ -331,8 +331,8 @@ export const products = {
     description:
       "Materiali: ceramica. Palla natalizia decorata a mano Back To Velvet. Pezzo unico, decorato a mano in atelier.",
     price: "€ 40",
-    cta: "Chiedi disponibilità",
-    ctaHref: mailtoLink("Back To Velvet — disponibilità"),
+    cta: "Acquista su Etsy",
+    ctaHref: "https://www.etsy.com/it/listing/4406148798/handmade-ceramic-christmas-ball-2150",
     images: { slug: "palle/back-to-velvet", count: 4, ext: "png" },
   },
 };

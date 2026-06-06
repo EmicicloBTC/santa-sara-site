@@ -243,12 +243,12 @@ export const scenes = [
     ],
   },
   {
-    id: "scene-7-focus-lady-gaga",
+    id: "scene-7-focus-chappell-roan",
     type: "productFocus",
-    title: "Lady Gaga",
-    productId: "lady-gaga",
-    productImageIndex: 2,
-    alt: "Lady Gaga — piatto Icons decorato a mano",
+    title: "Chappell Roan",
+    productId: "chappell-roan",
+    productImageIndex: 3,
+    alt: "Chappell Roan — piatto Icons decorato a mano",
     hotspots: [],
   },
   {
@@ -418,7 +418,7 @@ export const scenes = [
     ],
     hotspotsMobile: [
       { productId: "cohort-03", x: 32, y: 54, r: 8 },
-      { productId: "back-to-velvet", x: 68, y: 50, r: 7 },
+      { productId: "back-to-velvet", x: 68, y: 44, r: 7 },
     ],
   },
   {

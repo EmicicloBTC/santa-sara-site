@@ -35,6 +35,11 @@ const it = {
     openProductCard: "Apri scheda",
     catalog: "Catalogo",
     catalogBadge: "opere",
+    autoModeOn: "Auto",
+    autoModeOff: "Manuale",
+    autoModeAria: "Attiva o disattiva lo scorrimento automatico delle scene",
+    autoModeOnHint: "Scorrimento automatico attivo — clicca per passare a manuale",
+    autoModeOffHint: "Navigazione manuale — clicca per riattivare lo scorrimento automatico",
   },
   catalog: {
     aria: "Catalogo opere",
@@ -387,7 +392,7 @@ const it = {
         "Materiali: ceramica. Palla natalizia decorata a mano Back To Velvet. Pezzo unico, decorato a mano in atelier.",
       dimensions: "l 10 cm",
       price: "€ 40",
-      cta: "Chiedi disponibilità",
+      cta: "Acquista su Etsy",
     },
   },
 };
@@ -413,6 +418,11 @@ const en = {
     openProductCard: "Open product card",
     catalog: "Catalog",
     catalogBadge: "works",
+    autoModeOn: "Auto",
+    autoModeOff: "Manual",
+    autoModeAria: "Turn automatic scene slideshow on or off",
+    autoModeOnHint: "Automatic slideshow on — click to switch to manual",
+    autoModeOffHint: "Manual navigation — click to turn automatic slideshow back on",
   },
   catalog: {
     aria: "Works catalog",
@@ -765,7 +775,7 @@ const en = {
         "Materials: ceramic. Hand-painted Christmas bauble Back To Velvet. One-of-a-kind, hand-painted in atelier.",
       dimensions: "w 10 cm",
       price: "€ 40",
-      cta: "Check availability",
+      cta: "Buy on Etsy",
     },
   },
 };

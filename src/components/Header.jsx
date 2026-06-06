@@ -7,7 +7,7 @@ import { useT, useLang } from "../i18n/index.jsx";
 const MENU_EASE = [0.22, 1, 0.36, 1];
 const MENU_PANEL_TRANSITION = { duration: 0.32, ease: MENU_EASE };
 
-export function Header({ onOpenInfo, onOpenCatalog, onOpenContact, onDisableAutoAdvance }) {
+export function Header({ onOpenInfo, onOpenCatalog, onOpenContact, onDisableAutoAdvance, autoAdvance }) {
   const [open, setOpen] = useState(false);
   const t = useT();
   const { lang, setLang } = useLang();
@@ -29,7 +29,13 @@ export function Header({ onOpenInfo, onOpenCatalog, onOpenContact, onDisableAuto
         }}
         className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-white/55 py-1.5 pl-1.5 pr-4 backdrop-blur-md ring-1 ring-stone-950/20 transition hover:bg-white/75"
       >
-        <span className="grid h-9 w-9 place-items-center overflow-hidden rounded-full bg-white ring-1 ring-stone-950/10">
+        <span className="relative grid h-9 w-9 place-items-center overflow-hidden rounded-full bg-white ring-1 ring-stone-950/10">
+          {autoAdvance && (
+            <span
+              aria-hidden
+              className="absolute -right-0.5 -top-0.5 z-10 h-2.5 w-2.5 rounded-full bg-amber-500 ring-2 ring-white animate-pulse"
+            />
+          )}
           <img
             src="/logo.png"
             alt="Logo Santa Sara"
